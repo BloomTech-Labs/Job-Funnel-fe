@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 const LoginForm = (props) => {
   const [login, setLogin] = useState({
@@ -16,19 +16,20 @@ const LoginForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios
+    axiosWithAuth()
     .post('https://quickhire.herokuapp.com/api/auth/login', login)
         .then( res => {
             console.log('res from post', res.data)
+            sessionStorage.setItem('token', res.data.token)
+            sessionStorage.setItem('id', res.data.user.id)
             setLogin({...login, isLoggedIn: true})
-            props.history.push('/dashboardtest')
-            // save id and save token to local storage/session storage here
+            props.history.push('/dashboardexample')
+
         })
         .catch(error => {
             console.error(error)
         })
   }
-
 
     return (
         <div>

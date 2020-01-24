@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
+import axiosWithAuth from "../utils/axiosWithAuth"
+
 
 const RegisterForm = (props) => {
   const [register, setRegister] = useState({
@@ -25,9 +27,21 @@ const RegisterForm = (props) => {
         .post('https://quickhire.herokuapp.com/api/auth/register', register)
         .then( res => {
             console.log('res from post', res.data)
-            setRegister({...register})
-            props.history.push('/dashboardtest')
-            // save id and save token to local storage/session storage here
+            axios
+            .post("https://quickhire.herokuapp.com/api/auth/login", {
+                email: register.email,
+                password: register.password
+            })
+            .then(res => {
+                sessionStorage.setItem('token', res.data.token)
+                sessionStorage.setItem('id', res.data.user.id)
+                setRegister({...register})
+                props.history.push('/dashboardexample')
+            })
+            .catch(err => {
+                console.err(err)
+            })
+
         })
         .catch(error => {
             console.error(error)
