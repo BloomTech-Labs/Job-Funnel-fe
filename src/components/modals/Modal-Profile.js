@@ -91,7 +91,7 @@ function ModalProfile(){
                 <Div>
                     <form>
                         <input type="file" id="files" name="add-photo" accept="application/jpeg"/>
-                        <Button className="submit-modal-button" onClick={openModal2}>Submit Changes</Button>
+                        <Button className="submit-modal-button" >Submit Changes</Button>
                     </form>
                 </Div>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
