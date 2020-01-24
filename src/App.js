@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import { openModal } from './redux-store/actions';
+import ModalProfessional from './components/modals/Modal-Profesional';
 
-function App(props) {
-    console.log(props)
-  useEffect(() => {
-    props.openModal()
-  })
+function App() {
 
   return (
     <div>
-      <button onClick={props.openModal}>Change</button>
-      {console.log("This works", props.openModal)}
+      <ModalProfessional/>
     </div>
   );
 }
@@ -24,6 +19,6 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { openModal })(App);
+export default connect(mapStateToProps, {})(App);
 
 

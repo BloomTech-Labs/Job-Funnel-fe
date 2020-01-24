@@ -11,6 +11,11 @@ export const modalReducer = (state = initialState, action) => {
                 ...state,
                 openModal: true
             }
+        case 'CLOSE_MODAL':
+            return {
+                ...state,
+                openModal: false
+            }
         default: 
             return state;
     }
