@@ -1,7 +1,7 @@
 import React from "react";
 import "./switch.css";
 
-const Switch = ({ isOn, handleToggle }) => {
+const ToggleSwitch = ({ isOn, handleToggle }) => {
     return (
         <>
             <input
@@ -22,4 +22,4 @@ const Switch = ({ isOn, handleToggle }) => {
     );
 };
 
-export default Switch;
+export default ToggleSwitch;
