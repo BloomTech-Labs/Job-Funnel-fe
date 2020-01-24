@@ -73,14 +73,16 @@ const RegisterForm = (props) => {
                     <input
                         type="text"
                         name="user_type"
-                        placeholder=" select what kind of user you are"
+                        placeholder=" Job Applicant or Recruiter?"
                         value={register.user_type}
                         onChange={handleChange}
                     />
-                    {/* <select value={register.user_type} onChange={handleChange}>
-                        <option name="applicant">Job Applicant</option>
-                        <option name="recruiter">Recruiter</option>
-                    </select> */}
+
+                        {/* <select value={register.user_type} onChange={handleChange}>
+                            <option value="applicant">Applicant</option>
+                            <option value="recruiter">Recruiter</option>
+                            <option value="company">Company</option>
+                        </select> */}
                 </div>
                 <button onClick={handleSubmit}>Register</button>
             </form>

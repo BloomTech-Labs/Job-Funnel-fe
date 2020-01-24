@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+import axios from "axios";
 
 const LoginForm = (props) => {
   const [login, setLogin] = useState({
@@ -15,15 +16,25 @@ const LoginForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.history.push('/dashboard')
+    axios
+    .post('https://quickhire.herokuapp.com/api/auth/login', login)
+        .then( res => {
+            console.log('res from post', res.data)
+            setLogin({...login, isLoggedIn: true})
+            props.history.push('/dashboardtest')
+            // save id and save token to local storage/session storage here
+        })
+        .catch(error => {
+            console.error(error)
+        })
   }
 
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h4>Login</h4>
-                <div onSubmit={handleSubmit}>
+                <div>
                     <input
                         type="text"
                         name="email"
