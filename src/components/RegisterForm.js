@@ -1,4 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+
+import axios from "axios";
+
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 
 const RegisterForm = (props) => {
@@ -7,26 +11,50 @@ const RegisterForm = (props) => {
     last_name: '',
     email:'',
     password:'',
-    user_type: '',
-    isLoggedIn: false
+    user_type: ''
+    // isLoggedIn: false
   })
 
   const handleChange = event => {
     setRegister({ ...register, [event.target.name]: event.target.value })
   }
 
-
+  console.log('set register', register)
   const handleSubmit = event => {
+    console.log('set register 2', register)
     event.preventDefault();
-    props.history.push('/dashboard')
+    axios
+        .post('https://quickhire.herokuapp.com/api/auth/register', register)
+        .then( res => {
+            console.log('res from post', res.data)
+            axios
+            .post("https://quickhire.herokuapp.com/api/auth/login", {
+                email: register.email,
+                password: register.password
+            })
+            .then(res => {
+                sessionStorage.setItem('token', res.data.token)
+                sessionStorage.setItem('id', res.data.user.id)
+                setRegister({...register})
+                props.history.push('/dashboardexample')
+            })
+            .catch(err => {
+                console.err(err)
+            })
+
+        })
+        .catch(error => {
+            console.error(error)
+        })
+
   }
 
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h4>Register</h4>
-                <div onSubmit={handleSubmit}>
+                <div>
                     <input
                         type="text"
                         name="first_name"
@@ -55,14 +83,20 @@ const RegisterForm = (props) => {
                         value={register.password}
                         onChange={handleChange}
                     />
-                    <select value={register.user_type} onChange={handleChange}>
-                        <option name="applicant">Job Applicant</option>
-                        <option name="recruiter">Recruiter</option>
-                    </select>
-                       
-                        
+                    
+                    <input
+                        type="text"
+                        name="user_type"
+                        placeholder=" Job Applicant or Recruiter?"
+                        value={register.user_type}
+                        onChange={handleChange}
+                    />
 
-                  
+                        {/* <select value={register.user_type} onChange={handleChange}>
+                            <option value="applicant">Applicant</option>
+                            <option value="recruiter">Recruiter</option>
+                            <option value="company">Company</option>
+                        </select> */}
                 </div>
                 <button onClick={handleSubmit}>Register</button>
             </form>
