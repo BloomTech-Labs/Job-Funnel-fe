@@ -1,5 +1,5 @@
 import React from 'react';
-import Switch from "./Switch";
+import ToggleSwitch from "./ToggleSwitch";
 
 export const SeachBar = () => {
 
