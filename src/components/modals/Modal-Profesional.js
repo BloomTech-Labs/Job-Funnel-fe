@@ -1,6 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
+import ModalProfile from './Modal-Profile';
+
+
 
 // Complete Style for Modal
 const customStyles = {
@@ -51,12 +54,16 @@ function ModalProfessional(){
     }
 
     function closeModal(){
-        setOpen(false);
+        setOpen(false)
     }
 
     //Styling the modal after it's opened
     function afterOpenModal(){
         subtitle.style.color= '#f00';
+    }
+
+    const nextModal = () => {
+
     }
 
     return (
@@ -75,7 +82,7 @@ function ModalProfessional(){
                 <Div>
                     <form>
                         <input type="file" id="files" name="resume-input" accept="application/pdf, application/msword,.docx"/>
-                        <Button className="submit-modal-button">Submit Changes</Button>
+                        <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                     </form>
                 </Div>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
