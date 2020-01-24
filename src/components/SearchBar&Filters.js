@@ -1,8 +1,28 @@
 import React, { useState } from 'react';
 import ToggleSwitch from "./ToggleSwitch";
 
-export const SeachBar = () => {
+export const SearchBar = () => {
+    const [textSearchTerm, setTextSearchTerm] = useState("");
 
+    const changeHandler = e => {
+        setTextSearchTerm(e.target.value);
+    };
+
+    return (
+        <div classname="search-bars">
+            <form className="search">
+                <input
+                    name="textSearch"
+                    id="textSearch"
+                    type="text"
+                    placeholder="Job Search"
+                    onChange={changeHandler}
+                    value={textSearchTerm}
+                    />
+
+            </form>
+        </div>
+    )
 };
 
 export const Filters = () => {
