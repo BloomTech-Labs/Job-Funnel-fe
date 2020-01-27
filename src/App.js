@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
-import DashboardCards from '../src/components/DashboardCards';
+import { Route, Switch } from "react-router-dom";
+
+import RegisterForm from "./components/RegisterForm"
+import LoginForm from "./components/LoginForm"
+import DashboardCards from "./components/DashboardCards"
 
 
 function App() {
@@ -8,6 +12,12 @@ function App() {
     <div>
       <DashboardCards/>
       
+      <Switch>
+        <Route path='/register' component={RegisterForm} />
+        <Route path='/login' component={LoginForm} />
+        <Route path='/dashboard' component={DashboardCards} />
+      </Switch>
+
     </div>
   );
 }
