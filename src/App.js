@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import DashboardCards from '../src/components/DashboardCards';
+
 
 function App() {
   return (
     <div>
-      <h1>:)</h1>
+      <DashboardCards/>
+      
     </div>
   );
 }
