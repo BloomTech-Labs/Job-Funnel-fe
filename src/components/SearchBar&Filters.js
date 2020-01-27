@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ToggleSwitch from "./ToggleSwitch";
 
+import './SearchBar&Filters.css';
+
 export const SearchBar = () => {
     const [textSearchTerm, setTextSearchTerm] = useState("");
 
