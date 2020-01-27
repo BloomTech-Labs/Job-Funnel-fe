@@ -1,16 +1,12 @@
 import React from "react";
-import ModalProfessional from '../modals/Modal-Profesional'
-import ModalProfile from '../modals/Modal-Profile'
-import ModalJobPref from '../modals/Modal-JobPref'
+import ModalBase from '../modals/Modal-Base'
 
 
-const DashboardExample = () => {
+const DashboardExample = (props) => {
     return (
         <div>
             <h3>Dash</h3>
-            <ModalProfessional/>
-            <ModalProfile/>
-            <ModalJobPref/>
+            <ModalBase onClick={console.log(props.match.params)} id={0}/>
         </div>
     )
 }

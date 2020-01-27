@@ -46,12 +46,10 @@ function ModalJobPref(props){
     var subtitle;
 
     const[modalOpen, setOpen] = React.useState(false)
-    const [job, setJob] = React.useState({
-        jobPref: ''
-    })
+    const [job, setJob] = useState('')
     
     const handleChange = event => {
-        setJob({ ...job, [event.target.name]: event.target.value })
+        setJob({...job, [event.target.name]: event.target.value})
     }
     
     
@@ -73,13 +71,9 @@ function ModalJobPref(props){
         subtitle.style.color= '#f00';
     }
 
-    const nextModal = () => {
-        
-    }
-
     return (
         <div>
-            <button onClick={openModal}>Open Modal</button>
+            <button onClick={openModal}>Job Preferences</button>
             <Modal
                 isOpen={modalOpen}
                 onAfterOpen={afterOpenModal}
@@ -89,12 +83,8 @@ function ModalJobPref(props){
             >
                 <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
                 <h3>Make Sure To Add Job Preferences</h3> 
-                <Div>
-                    <form>
-                        <input type="text" name="job_input" value={job.jobPref} onChange={handleChange}/>
+                        <input type="text" name="job-input" value={props.job} onChange={handleChange}/>
                         <Button className="submit-modal-button">Next</Button>
-                    </form>
-                </Div>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
             </Modal>
         </div>

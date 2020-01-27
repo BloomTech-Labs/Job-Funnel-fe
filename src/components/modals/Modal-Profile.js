@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
-import ModalProfessional from './Modal-Profesional'
+
 // Complete Style for Modal
 const customStyles = {
     content : {
@@ -77,7 +77,7 @@ function ModalProfile(){
 
         return (
             <div>
-            <button onClick={openModal}>Open Modal</button>
+            <button onClick={openModal}>Update Profile</button>
             <Modal
                 isOpen={modalOpen}
                 onAfterOpen={afterOpenModal}
@@ -88,44 +88,12 @@ function ModalProfile(){
                 <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
                 {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
                 <h3>Make Sure To Add Your Photo</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
-                <Div>
-                    <form>
                         <input type="file" id="files" name="add-photo" accept="application/jpeg"/>
                         <Button className="submit-modal-button" >Submit Changes</Button>
-                    </form>
-                </Div>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
             </Modal>
         </div>
         )
-    // } else if (modalOpen2 === true){
-    //     return (
-    //         <div>
-    //         <button onClick={openModal2}>Open Modal 2</button>
-    //         <Modal
-    //             isOpen={modalOpen2}
-    //             onAfterOpen={afterOpenModal}
-    //             onRequestClose={closeModal}
-    //             style={customStyles}
-    //             contentLabel="Test Modal"
-    //         >
-    //             <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
-    //             {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
-    //             <h3>Make Sure To Add Your Photo</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
-    //             <Div>
-    //                 <form>
-    //                     <input type="file" id="files" name="add-photo" accept="application/jpeg"/>
-    //                     <Button className="submit-modal-button">Submit Changes</Button>
-    //                 </form>
-    //             </Div>
-    //             <Button onClick={closeModal} className="modal-button">Close Modal</Button>
-    //         </Modal>
-    //     </div>
-    //     )
-
-
-  
-
 }
 
 export default ModalProfile;

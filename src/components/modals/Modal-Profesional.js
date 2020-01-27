@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
-import ModalProfile from './Modal-Profile';
 
 
 
@@ -68,7 +67,7 @@ function ModalProfessional(){
 
     return (
         <div>
-            <button onClick={openModal}>Open Modal</button>
+            <button onClick={openModal}>Professional</button>
             <Modal
                 isOpen={modalOpen}
                 onAfterOpen={afterOpenModal}
@@ -79,12 +78,8 @@ function ModalProfessional(){
                 <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
                 {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
                 <h3>Make Sure To Add Your Resume</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
-                <Div>
-                    <form>
                         <input type="file" id="files" name="resume-input" accept="application/pdf, application/msword,.docx"/>
-                        <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
-                    </form>
-                </Div>
+                <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
             </Modal>
         </div>
