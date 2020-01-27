@@ -72,12 +72,20 @@ function ModalBase(){
     }
 
     const nextModal = () => {
-           setActiveModal(activeModal + 1)
+        setActiveModal(activeModal + 1)
+        // import into a put request and use as a submit. 
+        // use this for updating data. 
+    }
+
+    const skipModal = () => {
+        setActiveModal(activeModal + 1)
+
     }
 
     const prevModal = () => {
            setActiveModal(activeModal - 1)
     }
+
 
 
     if(activeModal === 0){
@@ -101,6 +109,7 @@ function ModalBase(){
                         <h4>Portfolio</h4>
                         <input type="url" id="urls" name="portfolio-input"/>
                     <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
+                    <Button className="submit-modal-button" onClick={nextModal}>Skip</Button>
                     <Button onClick={closeModal} className="modal-button">Close Modal</Button>
                 </Modal>
             </div>
@@ -120,6 +129,7 @@ function ModalBase(){
                 <h2>Job Preferences</h2>
                 <h3>Make Sure To Add Job Preferences</h3> 
                         <input type="text" name="job-input" value={job} onChange={handleChange}/>
+                <Button className="submit-modal-button" onClick={nextModal}>Skip</Button>
                 <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
@@ -142,6 +152,7 @@ function ModalBase(){
                 {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
                 <h3>Make Sure To Add Your Resume</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
                         <input type="file" id="files" name="resume-input" accept="application/pdf, application/msword,.docx"/>
+                <Button className="submit-modal-button" onClick={nextModal}>Skip</Button>
                 <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
@@ -164,6 +175,7 @@ function ModalBase(){
                 {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
                 <h3>Make Sure To Add Your Photo</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
                         <input type="file" id="files" name="add-photo" accept="application/jpeg"/>
+                <Button className="submit-modal-button" onClick={nextModal}>Skip</Button>
                 <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
@@ -186,6 +198,7 @@ function ModalBase(){
                 {/* MAKE SURE TO ADD IF/ELSE STATEMENT FOR RESUME/EDUCATION*/}
                 <h3>Make Sure To Add Your Skills</h3> {/*OR* <h3>Make Sure To Add Your Resume</h3>*/} 
                         <input type="file" id="files" name="add-photo" accept="application/jpeg"/>
+                <Button className="submit-modal-button" onClick={nextModal}>Skip</Button>
                 <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
                 <Button onClick={closeModal} className="modal-button">Close Modal</Button>
@@ -195,7 +208,7 @@ function ModalBase(){
     if(activeModal > 4){
         return(
             <div>
-                <h3>"Return to Dashboard"</h3>
+                <h3>"Return to Profile"</h3>
             </div>
         )
     }
