@@ -5,18 +5,18 @@ import PrivateRoute from "./utils/PrivateRoute"
 
 import RegisterForm from "./components/RegisterForm"
 import LoginForm from "./components/LoginForm"
-import DashboardExample from "./components/Dashboard/DashboardExample"
-
+import Dashboard from "../src/components/Dashboard/Dashboard"
 
 
 function App() {
 
   return (
     <div>
+      
       <Switch>
         <Route path='/register' component={RegisterForm} />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboardexample' component={DashboardExample}/>
+        <Route path='/dashboard' component={Dashboard}/>
       </Switch>
 
     </div>
