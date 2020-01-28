@@ -23,7 +23,7 @@ const LoginForm = (props) => {
             sessionStorage.setItem('token', res.data.token)
             sessionStorage.setItem('id', res.data.user.id)
             setLogin({...login, isLoggedIn: true})
-            props.history.push('/dashboardexample')
+            props.history.push('/dashboard')
 
         })
         .catch(error => {

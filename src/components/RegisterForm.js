@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
-import axiosWithAuth from "../utils/axiosWithAuth"
-
 
 const RegisterForm = (props) => {
   const [register, setRegister] = useState({
@@ -36,7 +34,7 @@ const RegisterForm = (props) => {
                 sessionStorage.setItem('token', res.data.token)
                 sessionStorage.setItem('id', res.data.user.id)
                 setRegister({...register})
-                props.history.push('/dashboardexample')
+                props.history.push('/dashboard')
             })
             .catch(err => {
                 console.err(err)
@@ -84,14 +82,6 @@ const RegisterForm = (props) => {
                         onChange={handleChange}
                     />
                     
-                    {/* <input
-                        type="text"
-                        name="user_type"
-                        placeholder=" Job Applicant or Recruiter?"
-                        value={register.user_type}
-                        onChange={handleChange}
-                    /> */}
-
                         <select name="user_type" onChange={handleChange}>
                             <option value={"applicant"}>Applicant</option>
                             <option value={"recruiter"}>Recruiter</option>
