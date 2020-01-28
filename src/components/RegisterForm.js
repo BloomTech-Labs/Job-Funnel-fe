@@ -12,7 +12,6 @@ const RegisterForm = (props) => {
     email:'',
     password:'',
     user_type: ''
-    // isLoggedIn: false
   })
 
   const handleChange = event => {
@@ -20,6 +19,7 @@ const RegisterForm = (props) => {
   }
 
   console.log('set register', register)
+
   const handleSubmit = event => {
     console.log('set register 2', register)
     event.preventDefault();
@@ -84,19 +84,19 @@ const RegisterForm = (props) => {
                         onChange={handleChange}
                     />
                     
-                    <input
+                    {/* <input
                         type="text"
                         name="user_type"
                         placeholder=" Job Applicant or Recruiter?"
                         value={register.user_type}
                         onChange={handleChange}
-                    />
+                    /> */}
 
-                        {/* <select value={register.user_type} onChange={handleChange}>
-                            <option value="applicant">Applicant</option>
-                            <option value="recruiter">Recruiter</option>
-                            <option value="company">Company</option>
-                        </select> */}
+                        <select name="user_type" onChange={handleChange}>
+                            <option value={"applicant"}>Applicant</option>
+                            <option value={"recruiter"}>Recruiter</option>
+                            <option value={"company"}>Company</option>
+                        </select> 
                 </div>
                 <button onClick={handleSubmit}>Register</button>
             </form>
