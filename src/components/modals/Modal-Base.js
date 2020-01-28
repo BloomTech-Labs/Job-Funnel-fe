@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import ModalData from './ModalData.js';
 import styled from 'styled-components';
@@ -62,6 +62,7 @@ function ModalBase(){
 
     function closeModal(){
         setOpen(false)
+        setActiveModal(0)
     }
 
     //Styling the modal after it's open

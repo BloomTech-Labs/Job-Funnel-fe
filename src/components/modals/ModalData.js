@@ -59,10 +59,7 @@ export default function ModalData(props) {
                 return ( 
                     <h2>Click Next To Improve Profile</h2>
             )}
-
           })()}  
-
-          {(()=>{})()}
         </>
     )
 }
