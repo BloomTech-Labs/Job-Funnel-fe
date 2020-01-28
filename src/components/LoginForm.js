@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+import axiosWithAuth from "../utils/axiosWithAuth"
 
 const LoginForm = (props) => {
   const [login, setLogin] = useState({
@@ -15,15 +16,26 @@ const LoginForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.history.push('/dashboard')
-  }
+    axiosWithAuth()
+    .post('https://quickhire.herokuapp.com/api/auth/login', login)
+        .then( res => {
+            console.log('res from post', res.data)
+            sessionStorage.setItem('token', res.data.token)
+            sessionStorage.setItem('id', res.data.user.id)
+            setLogin({...login, isLoggedIn: true})
+            props.history.push('/dashboardexample')
 
+        })
+        .catch(error => {
+            console.error(error)
+        })
+  }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h4>Login</h4>
-                <div onSubmit={handleSubmit}>
+                <div>
                     <input
                         type="text"
                         name="email"
