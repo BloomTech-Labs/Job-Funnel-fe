@@ -4,18 +4,17 @@ import { Route, Switch } from "react-router-dom";
 
 import RegisterForm from "./components/RegisterForm"
 import LoginForm from "./components/LoginForm"
-import DashboardCards from "./components/DashboardCards"
+import Dashboard from "../src/components/Dashboard/Dashboard"
 
 
 function App() {
   return (
     <div>
-      <DashboardCards/>
       
       <Switch>
         <Route path='/register' component={RegisterForm} />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboard' component={DashboardCards} />
+        <Route path='/dashboard' component={Dashboard} />
       </Switch>
 
     </div>
