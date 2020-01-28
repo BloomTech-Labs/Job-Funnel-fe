@@ -1,0 +1,131 @@
+
+
+.search input {
+    width: 78%;
+    margin-top: 13%;
+    margin-left: 10%;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-list1 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.filter-list2 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+.filter-list label {
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* height: 5%;
+    width: 34px; */
+}
+
+.options1 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options2 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options3 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options4 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options5 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options6 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options7 {
+    font-size: 0.9rem;
+    font-family: 'roboto';
+    background-color: white;
+    width: 93%;
+    height: 33px;
+    padding-left: 5%;
+    padding-top: 5%;
+    border: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+}
