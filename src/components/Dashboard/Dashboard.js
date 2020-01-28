@@ -1,14 +1,14 @@
-import React from "react"
-import { Filters, SearchBar } from "../SearchBar&Filters"
+import React from 'react';
+import DashboardCards from "./DashboardCards";
+import {SearchBar, Filters} from "./SearchBar&Filters";
 
-const Dashboard = () => {
-    
-    
+export default function Dashboard() {
     return (
         <div>
-           
+            <SearchBar/>
+            <Filters/>
+            <DashboardCards/>
         </div>
     )
 }
 
-export default Dashboard;

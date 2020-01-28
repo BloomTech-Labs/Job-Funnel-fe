@@ -46,3 +46,5 @@ export const Filters = () => {
         </div>
     )
 };
+
+export default SearchBar;
