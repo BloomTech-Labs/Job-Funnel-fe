@@ -2,14 +2,8 @@ import React, {useState} from "react";
 import axios from 'axios'
 import TopNav from "./TopNav"
 
-<<<<<<< HEAD
-=======
-import "../less/ComponentStyles/LoginForm.less"
->>>>>>> c1c08127fa8d33c247c79c7b76993827c564461f
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
-
-import "./LoginForm.css"
 
 const LoginForm = (props) => {
 
