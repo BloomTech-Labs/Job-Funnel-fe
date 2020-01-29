@@ -1,59 +1,70 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import { isValidPassword, validateInputs } from '../utils/AppUtils.js';
 
 import TopNav from "./TopNav"
 import "./RegisterForm.css"
 
 import styled from "styled-components";
 
+import LoadingOverlay from "react-loading-overlay";
 
 const RegisterForm = (props) => {
-  const [register, setRegister] = useState({
-    first_name: '',
-    last_name: '',
-    email:'',
-    password:'',
-    user_type: ''
-  })
+    const [loading, setLoading] = useState(false)
+    const [register, setRegister] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        user_type: ''
 
-  const handleChange = event => {
-    setRegister({ ...register, [event.target.name]: event.target.value })
-  }
+    })  
+    
+    const handleChange = event => {
+        setRegister({ ...register, [event.target.name]: event.target.value })
+    }
 
-  console.log('set register', register)
-
-  const handleSubmit = event => {
-    console.log('set register 2', register)
-    event.preventDefault();
-    axios
-        .post('https://quickhire.herokuapp.com/api/auth/register', register)
-        .then( res => {
-            console.log('res from post', res.data)
+    console.log('set register', register)
+    const handleSubmit = event => {
+        console.log('set register 2', register)
+        event.preventDefault();
+        if (validateInputs(register) && isValidPassword(register.password)) {
+            setLoading(true);
             axios
-            .post("https://quickhire.herokuapp.com/api/auth/login", {
-                email: register.email,
-                password: register.password
-            })
-            .then(res => {
-                sessionStorage.setItem('token', res.data.token)
-                sessionStorage.setItem('id', res.data.user.id)
-                setRegister({...register})
-                props.history.push('/dashboard')
-            })
-            .catch(err => {
-                console.err(err)
-            })
+                .post('https://quickhire.herokuapp.com/api/auth/register', register)
+                .then(res => {
+                    console.log('res from post', res.data)
+                    axios
+                        .post("https://quickhire.herokuapp.com/api/auth/login", {
+                            email: register.email,
+                            password: register.password
+                        })
+                        .then(res => {
+                            sessionStorage.setItem('token', res.data.token)
+                            sessionStorage.setItem('id', res.data.user.id)
+                            setRegister({ ...register })
+                            props.history.push('/dashboard')
+                            setLoading(false);
+                        })
+                        .catch(err => {
+                            console.err(err.response.data.message);
+                            setLoading(false);
+                            alert(err.response.data.message);
+                        })
 
-        })
-        .catch(error => {
-            console.error(error)
-        })
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+        }
 
-  }
+
+    }
 
 
     return (
+    <StyledLoader active={loading} spinner text='Loading...'>
         <>
         <TopNav/>
         <div className="main-div2">
@@ -104,6 +115,7 @@ const RegisterForm = (props) => {
         </div>
         </div>
         </>
+        </StyledLoader>
     )
 }
 
@@ -118,3 +130,8 @@ const Buttonc = styled.div`
 `
 
 
+const StyledLoader = styled(LoadingOverlay)`
+    min-height: 100vh;
+    width:100%;
+    z-index: 2;
+`;

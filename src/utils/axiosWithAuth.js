@@ -1,11 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
-const axiosWithAuth = () => {
+export default function axiosWithAuth() {
+    const token = sessionStorage.getItem('token');
     return axios.create({
-      headers: {
-        authorization: sessionStorage.getItem("token")
-      }
+        baseURL: 'https://quickhire.herokuapp.com/api',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`,
+        },
     });
-  };
-
-  export default axiosWithAuth;
+};
