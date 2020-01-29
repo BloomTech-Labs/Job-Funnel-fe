@@ -9,6 +9,7 @@ import Profile from "./components/Profile"
 import Dashboard from "../src/components/Dashboard/Dashboard"
 
 
+
 function App() {
 
   return (
@@ -17,8 +18,8 @@ function App() {
       <Switch>
         <Route path='/register' component={RegisterForm} />
         <Route path='/login' component={LoginForm} />
-        <Route path='/dashboard' component={Dashboard}/>
         <Route path='/profile' component={Profile}/>
+        <PrivateRoute path='/dashboard' component={Dashboard}/>
       </Switch>
 
     </div>

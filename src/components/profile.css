@@ -1,6 +1,7 @@
 .profile-container {
 	display: flex;
 	flex-flow: column;
+	background-color: ;
 }
 .image-container {
 	margin-top: 3%;

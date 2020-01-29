@@ -1,0 +1,20 @@
+.top {
+    background: #fff;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.top .title {
+    color: #AC2A38;
+}
+
+.top button {
+    color: #3062A9;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #3062A9;
+}

@@ -1,0 +1,49 @@
+.profile-container {
+	display: flex;
+	flex-flow: column;
+}
+.image-container {
+	margin-top: 3%;
+	padding: 1%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background-color: burlywood;
+	border: 1px solid black;
+}
+
+.image-content {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	text-align: top;
+	line-height: .2;
+}
+
+.profile-image {
+	margin-top: 2%;
+	height: 150px;
+	width: 180px;
+	border-radius: 70px;
+	border: 1px solid black;
+}
+
+/*****  PROFILE BODY *****/
+.profile-body-container {
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.about-me {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	border: 1px solid black;
+}
