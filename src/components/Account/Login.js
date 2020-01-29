@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 import axios from 'axios'
-import TopNav from "./TopNav"
+import TopNav from "../TopNav"
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
-const LoginForm = (props) => {
-
+const Login = (props) => {
   const [loading, setLoading] = useState(false)
   const [login, setLogin] = useState({
     email: '',
@@ -17,7 +16,6 @@ const LoginForm = (props) => {
   const handleChange = event => {
     setLogin({ ...login, [event.target.name]: event.target.value })
   }
-
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -46,9 +44,9 @@ const LoginForm = (props) => {
                     <form className="main-form" onSubmit={handleSubmit}>
                         <div className="form-inputs">
                             <label>Email</label>
-                                <input type="text" name="email" value={login.email} onChange={handleChange} />
+                            <input type="text" name="email" value={login.email} onChange={handleChange} />
                             <label>Password</label>
-                                <input type="password" name="password" value={login.password} onChange={handleChange} />
+                            <input type="password" name="password" value={login.password} onChange={handleChange} />
                         </div>
                         <button className="buttonclass"onClick={handleSubmit}>Login</button>
                     </form>
@@ -59,15 +57,9 @@ const LoginForm = (props) => {
     )
 }
 
-export default LoginForm;
+export default Login;
 
-const Buttonc = styled.div`
 
-&: hover .buttonclass{
-  background: #fff;
-  color: #3073AB; 
-  }
-`
 const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
     width:100%;
