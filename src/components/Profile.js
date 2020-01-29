@@ -1,23 +1,38 @@
-import React, { useState } from 'react';
-import './profile.css'
-
+import React, { useState, useEffect } from 'react';
+import './profile.css';
+import axiosWithAuth from '../utils/axiosWithAuth';
+import axios from 'axios';
 
 export default function Profile() {
-    const [image, setImage] = useState([]);
-    const [userInfo, setUserInfo] = useState([]);
-    const [resume, setResume] = useState([]);
-    const [artifactURL, setArtifactURL] = useState([]);
-    const [skills, setSkills] = useState(null);
-    const [jobPref, setJobPref] = useState('');
+    const [userInfo, setUserInfo] = useState({
+        first_name: "Austin",
+        last_name: "Powers",
+        email: "austin@gmail.com",
+        education: "Lambda School",
+        resume: "A PDF",
+        profile_img: "https://www.simplemost.com/wp-content/uploads/2018/06/maxresdefault-1-750x500.jpg"
+    });
+
+
+    useEffect(() => {
+        axiosWithAuth()
+            .get(`/debug/users`)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
 
     return (
         <>
-        <div>THIS IS WHERE THE NAV WILL GO</div>
+        <div>NAV COMPONENT</div>
         <div className="profile-container">
             <div className="image-container">
-                <img className="profile-image" src="https://www.simplemost.com/wp-content/uploads/2018/06/maxresdefault-1-750x500.jpg" />
+                <img className="profile-image" src={userInfo.profile_img} />
                 <div className="image-content">
-                    <h3>Austin Powers</h3>
+                    <h3>{userInfo.first_name} {userInfo.last_name}</h3>
                     <h4>Data Scientist</h4>
                     {/* <h3>{userInfo.firstName} {userInfo.lastName}</h3> */}
                 </div>
@@ -26,9 +41,10 @@ export default function Profile() {
                 <div className="about-me">
                     <h3>About Me</h3>
                     <p>International Man of Mystery</p>
+                    <p>Education: {userInfo.education}</p>
                 </div>
                 <div className="resume">
-                    <p>This is where the resume will go.</p>
+                    <p>Resume: {userInfo.resume}</p>
                     <p>Artifacts will go under resume as well</p>
                 </div>
                 <div className="skills">
