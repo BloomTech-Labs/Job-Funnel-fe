@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import './SearchBar&Filters.css';
 
 export const SearchBar = () => {
     const [textSearchTerm, setTextSearchTerm] = useState("");
