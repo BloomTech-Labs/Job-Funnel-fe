@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
+import TopNav from "./TopNav"
+
 
 const RegisterForm = (props) => {
   const [register, setRegister] = useState({
@@ -49,6 +51,8 @@ const RegisterForm = (props) => {
 
 
     return (
+        <>
+        <TopNav/>
         <div>
             <form onSubmit={handleSubmit}>
                 <h4>Register</h4>
@@ -91,6 +95,7 @@ const RegisterForm = (props) => {
                 <button onClick={handleSubmit}>Register</button>
             </form>
         </div>
+        </>
     )
 }
 
