@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import axios from 'axios';
-import axiosWithAuth from "../utils/axiosWithAuth"
+
+// import axiosWithAuth from "../utils/axiosWithAuth"
+import axios from 'axios'
 import TopNav from "./TopNav"
 
 import "./LoginForm.css"
@@ -21,7 +22,8 @@ const LoginForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.post('https://quickhire.herokuapp.com/api/auth/login', login)
+    axios
+    .post('https://quickhire.herokuapp.com/api/auth/login', login)
         .then( res => {
             console.log('res from post', res.data)
             sessionStorage.setItem('token', res.data.token)
