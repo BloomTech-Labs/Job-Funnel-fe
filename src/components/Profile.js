@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
+=======
+import '../less/ComponentStyles/Profile.less';
+>>>>>>> c1c08127fa8d33c247c79c7b76993827c564461f
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 import '../less/index.less';
