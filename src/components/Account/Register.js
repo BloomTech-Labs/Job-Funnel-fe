@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-
 import axios from "axios";
-import { isValidPassword, validateInputs } from '../utils/AppUtils.js';
+import { isValidPassword, validateInputs } from '../../utils/AppUtils.js';
 
-import TopNav from "./TopNav"
-import "./RegisterForm.css"
-
+import TopNav from "../TopNav"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
-const RegisterForm = (props) => {
+const Register = (props) => {
     // #region localstate
     const [loading, setLoading] = useState(false)
     const [register, setRegister] = useState({
@@ -23,46 +20,45 @@ const RegisterForm = (props) => {
     // #endregion
 
     // #region console logs
-        // console.log('set register', register)
+    // console.log('set register', register)
     // #endregion
 
     // #region local functions
-        const handleChange = event => {
-            setRegister({ ...register, [event.target.name]: event.target.value })
-        }
+    const handleChange = event => {
+        setRegister({ ...register, [event.target.name]: event.target.value })
+    }
 
-        const handleSubmit = event => {
-            // console.log('handleSubmit', register)
-            event.preventDefault();
-            if (validateInputs(register) && isValidPassword(register.password)) {
-                setLoading(true);
-                axios.post('https://quickhire.herokuapp.com/api/auth/register', register)
+    const handleSubmit = event => {
+        // console.log('handleSubmit', register)
+        event.preventDefault();
+        if (validateInputs(register) && isValidPassword(register.password)) {
+            setLoading(true);
+            axios.post('https://quickhire.herokuapp.com/api/auth/register', register)
+            .then(res => {
+                console.log('res from post', res.data)
+                axios.post("https://quickhire.herokuapp.com/api/auth/login", {
+                    email: register.email,
+                    password: register.password
+                })
                 .then(res => {
-                    console.log('res from post', res.data)
-                    axios.post("https://quickhire.herokuapp.com/api/auth/login", {
-                        email: register.email,
-                        password: register.password
-                    })
-                    .then(res => {
-                        sessionStorage.setItem('token', res.data.token)
-                        sessionStorage.setItem('id', res.data.user.id)
-                        setRegister({ ...register })
-                        props.history.push('/dashboard')
-                        setLoading(false);
-                    })
-                    .catch(err => {
-                        console.err(err.response.data.message);
-                        setLoading(false);
-                        alert(err.response.data.message);
-                    })
+                    sessionStorage.setItem('token', res.data.token)
+                    sessionStorage.setItem('id', res.data.user.id)
+                    setRegister({ ...register })
+                    props.history.push('/dashboard')
+                    setLoading(false);
                 })
                 .catch(err => {
-                    console.log(err.response.data.message);
+                    console.err(err.response.data.message);
+                    setLoading(false);
+                    alert(err.response.data.message);
                 })
-            }
+            })
+            .catch(err => {
+                console.log(err.response.data.message);
+            })
         }
+    }
     // #endregion
-
 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
@@ -89,9 +85,7 @@ const RegisterForm = (props) => {
                             <option value={"company"}>Company</option>
                         </select>  */}
                     </div>
-                    <Buttonc>
-                        <button className="buttonclass" onClick={handleSubmit}>Register</button>
-                    </Buttonc>
+                    <button className="buttonclass" onClick={handleSubmit}>Register</button>
                 </form>
                 </div>
             </div>
@@ -100,15 +94,7 @@ const RegisterForm = (props) => {
     )
 }
 
-export default RegisterForm;
-
-const Buttonc = styled.div`
-
-&: hover .buttonclass{
-  background: #fff;
-  color: #3073AB; 
-  }
-`
+export default Register;
 
 
 const StyledLoader = styled(LoadingOverlay)`
