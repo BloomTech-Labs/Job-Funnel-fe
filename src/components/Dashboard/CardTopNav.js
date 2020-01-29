@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../less/ComponentStyles/Dashboard.less'
 
 function CardTopNav() {
     return (

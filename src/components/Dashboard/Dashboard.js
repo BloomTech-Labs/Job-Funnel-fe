@@ -3,8 +3,8 @@ import DashboardCards from "./DashboardCards";
 import {SearchBar, Filters} from "./SearchBar&Filters";
 import CardTopNav from "./CardTopNav";
 import TopNav from "./TopNav";
-import DashboardCardAPI from "../Dashboard/DashboardCard-api";
-import "./Dashboard.css";
+import SuggestedJobs from "./SuggestedJobs.js";
+import '../../less/ComponentStyles/Dashboard.less'
 
 export default function Dashboard() {
     return (
@@ -18,7 +18,7 @@ export default function Dashboard() {
                 <div className="card-items">
                     <CardTopNav/>
                     <DashboardCards/>
-                    <DashboardCardAPI/>
+                    <SuggestedJobs />
                 </div>
             </div>
         </>
