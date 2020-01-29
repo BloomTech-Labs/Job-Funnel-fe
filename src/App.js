@@ -8,6 +8,7 @@ import LoginForm from "./components/LoginForm"
 import Dashboard from "../src/components/Dashboard/Dashboard"
 
 
+
 function App() {
 
   return (
@@ -15,8 +16,8 @@ function App() {
       
       <Switch>
         <Route path='/register' component={RegisterForm} />
-        <Route path='/' component={LoginForm} />
-        <Route path='/dashboard' component={Dashboard}/>
+        <Route path='/login' component={LoginForm} />
+        <PrivateRoute path='/dashboard' component={Dashboard}/>
       </Switch>
 
     </div>
