@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import TopNav from "./TopNav"
+import "./RegisterForm.css"
+
+import styled from "styled-components";
 
 
 const RegisterForm = (props) => {
@@ -53,52 +56,65 @@ const RegisterForm = (props) => {
     return (
         <>
         <TopNav/>
-        <div>
-            <form onSubmit={handleSubmit}>
-                <h4>Register</h4>
-                <div>
+        <div className="main-div2">
+            <div className="second-main2">
+             <h3 className="make2">Make the most of your professional life.</h3>
+            <form className="main-form2" onSubmit={handleSubmit}>
+                <div className="form-inputs2">
+                    <label>First Name</label>
                     <input
                         type="text"
                         name="first_name"
-                        placeholder="Enter Your First Name"
                         value={register.first_name}
                         onChange={handleChange}
                     />
+                    <label>Last Name</label>
                     <input
                         type="text"
                         name="last_name"
-                        placeholder=" Enter Your Last Name"
                         value={register.last_name}
                         onChange={handleChange}
                     />
+                    <label>Enter Email</label>
                     <input
                         type="text"
                         name="email"
-                        placeholder="Enter Your Email"
                         value={register.email}
                         onChange={handleChange}
                     />
+                    <label>Create Password</label>
                     <input
                         type="password"
                         name="password"
-                        placeholder=" Create a Password"
                         value={register.password}
                         onChange={handleChange}
                     />
-                    
-                        <select name="user_type" onChange={handleChange}>
+                        <label>Select User Type</label>
+                        <select  name="user_type" onChange={handleChange}>
+                            <option/>
                             <option value={"applicant"}>Applicant</option>
                             <option value={"recruiter"}>Recruiter</option>
                             <option value={"company"}>Company</option>
                         </select> 
                 </div>
-                <button onClick={handleSubmit}>Register</button>
+                <Buttonc>
+                    <button className="buttonclass" onClick={handleSubmit}>Register</button>
+                </Buttonc>
             </form>
+        </div>
         </div>
         </>
     )
 }
 
 export default RegisterForm;
+
+const Buttonc = styled.div`
+
+&: hover .buttonclass{
+  background: #fff;
+  color: #3073AB; 
+  }
+`
 
 

@@ -1,5 +1,5 @@
 
-.main-div {
+.main-div2 {
     height: 90vh;
     display: flex;
     background: #fff;
@@ -16,7 +16,7 @@
 /* } */
 
 
-.main-div .second-main .make {
+.main-div2 .second-main2 .make2 {
     text-align: center;
     padding: 2%;
 }
@@ -26,7 +26,7 @@
     border: 1px solid blue;
 } */
 
-.main-div .second-main .main-form {
+.main-div2 .second-main2 .main-form2 {
     border: 1px solid #D6D6D6;
     background: #F9F9F9;
     box-sizing: border-box;
@@ -35,47 +35,53 @@
     align-items: center;
     justify-content: space-around;
     width: 473px;
-    height: 360px;
-    /* border: 1px solid red; */
+    height: 432px;
     
 }
 
-.main-div .second-main button {
+.main-div2 .second-main2 button {
     width: 387px;
-    height: 58px;
+    height: 48px;
     background: #3073AB;
     border: 1px solid #D3D3D3;
     color: #fff;
     font-size: 1rem;
     border-radius: 8px;
+    margin-top: 5%;
 
     
 }
 
-.main-form .form-inputs  {
+.main-form2 .form-inputs2  {
     /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
     height: 20vh;
-    /* border: 1px solid blue; */
+}
+
+.main-form2 .form-inputs2 select {
+    width: 387px;
+    background: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    height: 96px;
+
 }
 
 
-.main-form .form-inputs input {
+.main-form2 .form-inputs2 input {
     width: 387px;
-    height: 18%;
+    height: 48px;
     background: #FFFFFF;
     border: 1px solid #D3D3D3;
     font-size: 20px;
-    /* border: 1px solid green; */
-
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
 
-
-.main-form .form-inputs label {
+.main-form2 .form-inputs2 label {
     color: rgba(0, 0, 0, 0.54);
     font-style: normal;
     font-weight: normal;
