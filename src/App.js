@@ -6,6 +6,7 @@ import PrivateRoute from "./utils/PrivateRoute"
 import RegisterForm from "./components/RegisterForm"
 import LoginForm from "./components/LoginForm"
 import Dashboard from "../src/components/Dashboard/Dashboard"
+import Profile from "./components/Profile"
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Switch>
         <Route path='/register' component={RegisterForm} />
         <Route path='/login' component={LoginForm} />
+        <PrivateRoute path='/profile' component={Profile} />
         <PrivateRoute path='/dashboard' component={Dashboard}/>
       </Switch>
 
