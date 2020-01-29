@@ -4,7 +4,6 @@ import {SearchBar, Filters} from "./SearchBar&Filters";
 import CardTopNav from "./CardTopNav";
 import TopNav from "./TopNav";
 import SuggestedJobs from "./SuggestedJobs.js";
-import '../../less/ComponentStyles/Dashboard.less'
 
 export default function Dashboard() {
     return (
