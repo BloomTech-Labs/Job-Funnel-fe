@@ -420,11 +420,8 @@ ul {
 .profile-container {
   display: flex;
   flex-flow: column;
-<<<<<<< HEAD
   background-color: #E5E5E5;
   border: 1px solid black;
-=======
->>>>>>> c1c08127fa8d33c247c79c7b76993827c564461f
 }
 .image-container {
   margin-top: 3%;
@@ -459,7 +456,6 @@ ul {
   width: 100%;
   border: 1px solid black;
 }
-<<<<<<< HEAD
 .profile-body-container .about-me {
   display: flex;
   flex-flow: column;
@@ -512,15 +508,6 @@ ul {
 .buttonclass:hover {
   background: #3073AB;
   color: #fff;
-=======
-.about-me {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  border: 1px solid black;
->>>>>>> c1c08127fa8d33c247c79c7b76993827c564461f
 }
 .main-div {
   height: 90vh;
