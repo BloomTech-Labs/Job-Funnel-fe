@@ -1,25 +1,23 @@
 import React from 'react';
-import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute"
 
-import RegisterForm from "./components/RegisterForm"
-import LoginForm from "./components/LoginForm"
+import Login from "./components/Account/Login.js"
+import Profile from "./components/Account/Profile.js"
+import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
-
 
 
 function App() {
 
   return (
     <div>
-      
-      <Switch>
-        <Route path='/register' component={RegisterForm} />
-        <Route path='/login' component={LoginForm} />
-        <PrivateRoute path='/dashboard' component={Dashboard}/>
-      </Switch>
+      <Route exact path='/' component={Login} />
+      <Route exact path='/Login' component={Login} />
+      <Route exact path='/Register' component={Register} />
 
+      <PrivateRoute path='/Profile' component={Profile} />
+      <PrivateRoute path='/Dashboard' component={Dashboard}/>
     </div>
   );
 }

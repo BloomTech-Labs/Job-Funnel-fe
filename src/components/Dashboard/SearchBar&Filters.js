@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../../less/ComponentStyles/Dashboard.less'
 
 export const SearchBar = () => {
     const [textSearchTerm, setTextSearchTerm] = useState("");
@@ -27,6 +27,7 @@ export const SearchBar = () => {
 
 export const Filters = () => {
     const [toggles, setToggles] = useState({
+        full: false,
         intern: false,
         junior: false,
         mid: false,
@@ -47,37 +48,46 @@ export const Filters = () => {
 
 
     return (
-        <div className="filter-list">
-            <p>Internship</p>  
-            <label className="switch" style={{width:'60px'}}>
-                <input name="intern" type="checkbox" onClick={handleToggle} value={toggles.intern}/>
-                <span className="slider round"></span>
-            </label>
-            <p>Junior Position</p>
-            <label className="switch" style={{width:'60px'}}>
-                <input name="junior" type="checkbox" onClick={handleToggle} value={toggles.junior} />
-                <span className="slider round"></span>
-            </label>
-            <p>Mid-level Position</p>
-            <label className="switch" style={{width:'60px'}}>
-                <input name="mid" type="checkbox" onClick={handleToggle} value={toggles.mid} />
-                <span className="slider round"></span>
-            </label>
-            <p>Senior Position</p>
-            <label className="switch" style={{width:'60px'}}>
-                <input name="senior" type="checkbox" onClick={handleToggle} value={toggles.senior} />
-                <span className="slider round"></span>
-            </label>
-            <p>Contract</p>
-            <label className="switch" style={{width:'60px'}}>
-                <input name="contract" type="checkbox" onClick={handleToggle} value={toggles.contract} />
-                <span className="slider round"></span>
-            </label>
-            <p>Remote</p>
-            <label className="switch" style={{width:'60px'}}>
-                <input name="remote" type="checkbox" onClick={handleToggle} value={toggles.remote} />
-                <span className="slider round"></span>
-            </label>
+        <div className="filter-container">
+            <div className="filter-list1">
+                <p className="full-time">Full Time</p>  
+                <label className="switch">
+                    <input name="full" type="checkbox" onClick={handleToggle} value={toggles.full}/>
+                    <span className="slider round"></span>
+                </label>
+                <p className="internship">Internship</p>  
+                <label className="switch">
+                    <input name="intern" type="checkbox" onClick={handleToggle} value={toggles.intern}/>
+                    <span className="slider round"></span>
+                </label>
+                <p className="junior">Junior Position</p>
+                <label className="switch">
+                    <input name="junior" type="checkbox" onClick={handleToggle} value={toggles.junior} />
+                    <span className="slider round"></span>
+                </label>
+                <p className="mid">Mid-level Position</p>
+                <label className="switch">
+                    <input name="mid" type="checkbox" onClick={handleToggle} value={toggles.mid} />
+                    <span className="slider round"></span>
+                </label>
+            </div>
+            <div className="filter-list2">
+                <p className="senior">Senior Position</p>
+                <label className="switch">
+                    <input name="senior" type="checkbox" onClick={handleToggle} value={toggles.senior} />
+                    <span className="slider round"></span>
+                </label>
+                <p className="contract">Contract</p>
+                <label className="switch">
+                    <input name="contract" type="checkbox" onClick={handleToggle} value={toggles.contract} />
+                    <span className="slider round"></span>
+                </label>
+                <p className="remote">Remote</p>
+                <label className="switch">
+                    <input name="remote" type="checkbox" onClick={handleToggle} value={toggles.remote} />
+                    <span className="slider round"></span>
+                </label>
+            </div>
         </div>
     )
 };
