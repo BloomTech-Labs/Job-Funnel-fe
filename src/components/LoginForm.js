@@ -1,14 +1,15 @@
 import React, {useState} from "react";
-
-// import axiosWithAuth from "../utils/axiosWithAuth"
 import axios from 'axios'
 import TopNav from "./TopNav"
 
-import "./LoginForm.css"
 import styled from "styled-components";
+import LoadingOverlay from "react-loading-overlay";
 
+import "./LoginForm.css"
 
 const LoginForm = (props) => {
+
+  const [loading, setLoading] = useState(false)
   const [login, setLogin] = useState({
     email: '',
     password: '',
@@ -22,53 +23,41 @@ const LoginForm = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios
-    .post('https://quickhire.herokuapp.com/api/auth/login', login)
+    setLoading(true);
+    axios.post('https://quickhire.herokuapp.com/api/auth/login', login)
         .then( res => {
             console.log('res from post', res.data)
             sessionStorage.setItem('token', res.data.token)
-            sessionStorage.setItem('id', res.data.user.id)
             setLogin({...login, isLoggedIn: true})
             props.history.push('/dashboard')
-
+            setLoading(false);
         })
         .catch(error => {
             console.error(error)
+            setLoading(false);
         })
   }
 
     return (
-        <>
-        <TopNav
-        login={login}
-        />
-        <div className ="main-div">
-            <div className="second-main">
-            <h3 className="make">Make the most of your professional life.</h3>
-                <form className="main-form" onSubmit={handleSubmit}>
-                    <div className="form-inputs">
-                        <label>Email</label>
-                        <input
-                            type="text"
-                            name="email"
-                            value={login.email}
-                            onChange={handleChange}
-                        />
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={login.password}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <Buttonc>
+        <StyledLoader active={loading} spinner text='Loading...'>
+            <>
+            <TopNav login={login} />
+            <div className ="main-div">
+                <div className="second-main">
+                <h3 className="make">Make the most of your professional life.</h3>
+                    <form className="main-form" onSubmit={handleSubmit}>
+                        <div className="form-inputs">
+                            <label>Email</label>
+                                <input type="text" name="email" value={login.email} onChange={handleChange} />
+                            <label>Password</label>
+                                <input type="password" name="password" value={login.password} onChange={handleChange} />
+                        </div>
                         <button className="buttonclass"onClick={handleSubmit}>Login</button>
-                    </Buttonc>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        </>
+            </>
+        </StyledLoader>
     )
 }
 
@@ -81,3 +70,8 @@ const Buttonc = styled.div`
   color: #3073AB; 
   }
 `
+const StyledLoader = styled(LoadingOverlay)`
+    min-height: 100vh;
+    width:100%;
+    z-index: 2;
+`;

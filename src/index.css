@@ -1,13 +1,174 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-v.ttf) format('truetype');
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwfo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.profile-container {
+  display: flex;
+  flex-flow: column;
+  background-color: #E5E5E5;
+  border: 1px solid black;
+}
+.image-container {
+  margin-top: 3%;
+  padding: 1%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  border: 1px solid black;
+}
+.image-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: top;
+  line-height: 0.2;
+}
+.profile-image {
+  margin-top: 2%;
+  height: 150px;
+  width: 180px;
+  border-radius: 70px;
+  border: 1px solid black;
+}
+/*****  PROFILE BODY *****/
+.profile-body-container {
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+}
+.profile-body-container .about-me {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30%;
+  line-height: 0.5;
+  border: 3px inset grey;
+  border-radius: 15px;
+  margin-top: 2%;
+  background-color: #ffffff;
+}
+.profile-body-container .job-section {
+  display: flex;
+  align-content: space-between;
+  width: 90%;
+  padding: 3%;
+  margin-top: 2%;
+}
+.profile-body-container .job-section .resume {
+  border: 1px solid lightgrey;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: column;
+  border: 3px inset grey;
+  border-radius: 15px;
+  width: 40%;
+  align-items: center;
+  align-content: center;
+  line-height: 1;
+}
+.profile-body-container .job-section .skills {
+  border: 1px solid lightgrey;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: column, wrap;
+  border: 3px inset grey;
+  border-radius: 15px;
+  width: 40%;
+}
+.profile-body-container .job-section .job-pref {
+  border: 1px solid lightgrey;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: column, wrap;
+  border: 3px inset grey;
+  border-radius: 15px;
+  width: 40%;
+}
+.buttonclass:hover {
+  background: #3073AB;
+  color: #fff;
 }

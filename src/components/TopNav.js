@@ -22,13 +22,7 @@ const TopNav = (props) => {
         return (
             <div className="top">
                 <h1 className="title">QuickHire</h1>
-                <Buttonc>
-                <Link to ="/login">
-                    <button className="buttonclass">Login</button>
-                </Link>
-                </Buttonc>
-
-              
+                <Link to ="/login"><button className="buttonclass">Login</button></Link>
             </div>
         )
     }

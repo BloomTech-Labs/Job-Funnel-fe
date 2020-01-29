@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute"
 
 import RegisterForm from "./components/RegisterForm"
@@ -14,14 +13,11 @@ function App() {
 
   return (
     <div>
-      
-      <Switch>
-        <Route path='/register' component={RegisterForm} />
-        <Route path='/login' component={LoginForm} />
-        <PrivateRoute path='/profile' component={Profile} />
-        <PrivateRoute path='/dashboard' component={Dashboard}/>
-      </Switch>
-
+      <Route exact path='/' component={LoginForm} />
+      <Route exact path='/Register' component={RegisterForm} />
+      <Route exact path='/Login' component={LoginForm} />
+      <PrivateRoute path='/Profile' component={Profile} />
+      <PrivateRoute path='/Dashboard' component={Dashboard}/>
     </div>
   );
 }
