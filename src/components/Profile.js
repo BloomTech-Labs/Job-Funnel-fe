@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './profile.css';
+import './Profile.css';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import axios from 'axios';
+
 
 export default function Profile() {
     const [userInfo, setUserInfo] = useState({
