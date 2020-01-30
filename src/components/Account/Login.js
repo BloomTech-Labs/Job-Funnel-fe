@@ -40,7 +40,7 @@ const Login = (props) => {
             <TopNav login={login} />
             <div className ="main-div">
                 <div className="second-main">
-                <h3 className="make">Make the most of your professional life.</h3>
+                    <h3 className="make">Make the most of your professional life.</h3>
                     <form className="main-form" onSubmit={handleSubmit}>
                         <div className="form-inputs">
                             <label>Email</label>
