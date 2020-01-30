@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axiosWithAuth from '../utils/axiosWithAuth';
+import axiosWithAuth from '../../utils/axiosWithAuth.js';
 
 export default function Profile() {
     // #region local state
@@ -13,23 +13,35 @@ export default function Profile() {
     });
     // #endregion
 
+    // #region useEffects
+    useEffect(() => {
+        axiosWithAuth().get(`/users/user`)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {
+            console.log(err.respose.data.message);
+        })
+    }, [])
+    // #endregion
+
     return (
         <>
             <div className="profile-container">
-                    <div className="image-container">
-                        <img className="profile-image" src={userInfo.profile_img} />
-                        <div className="image-content">
-                            <h3>{userInfo.first_name} {userInfo.last_name}</h3>
-                            <h4>Data Scientist</h4>
-                            {/* <h3>{userInfo.firstName} {userInfo.lastName}</h3> */}
-                        </div>
+                <div className="image-container">
+                    <img className="profile-image" src={userInfo.profile_img} />
+                    <div className="image-content">
+                        <h3>{userInfo.first_name} {userInfo.last_name}</h3>
+                        <h4>Data Scientist</h4>
+                        {/* <h3>{userInfo.firstName} {userInfo.lastName}</h3> */}
                     </div>
-                    <div className="profile-body-container">
-                        <div className="about-me">
-                            <h3>About Me</h3>
-                            <p>International Man of Mystery</p>
-                            <p>Education: {userInfo.education}</p>
-                        </div>
+                </div>
+                <div className="profile-body-container">
+                    <div className="about-me">
+                        <h3>About Me</h3>
+                        <p>International Man of Mystery</p>
+                        <p>Education: {userInfo.education}</p>
+                    </div>
                     <div className="job-section">
                         <div className="resume">
                             <h2>Professional Links</h2>
