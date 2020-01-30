@@ -1,46 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth.js';
+import { connect } from 'react-redux';
 
-export default function Profile() {
-    // #region local state
-    const [userInfo, setUserInfo] = useState({
-        first_name: "Austin",
-        last_name: "Powers",
-        email: "austin@gmail.com",
-        bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor, mauris porttitor venenatis iaculis, eros metus aliquet mi, sit amet consequat est mi vitae tellus. Pellentesque nec nulla cursus, tempor ex id, lobortis massa. Pellentesque ornare, nulla a fringilla consectetur, nisi leo condimentum ligula, luctus suscipit urna libero quis tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aucto. ",
-        education: "Lambda School",
-        resume: "A PDF",
-        profile_img: "https://www.simplemost.com/wp-content/uploads/2018/06/maxresdefault-1-750x500.jpg"
-    });
-    // #endregion
+function Profile(props) {
+    const user = props.currentUser;
 
-    // #region useEffects
-    // useEffect(() => {
-    //     axiosWithAuth().get(`/users/user`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //     })
-    //     .catch(err => {
-    //         console.log(err.respose.data.message);
-    //     })
-    // }, [])
-    // #endregion
+    const url = "https://www.rollingstone.com/wp-content/uploads/2019/12/5879708cW.jpg?resize=900,600&w=450"
 
     return (
-        <div className="container">
-            <div className="profile-container">
+        <div className="container-profile">
                 <div className="image-container">
-                    <img className="profile-image1" src={userInfo.profile_img} />
+                    <img className="profile-image1" src={url} />
                     <div className="image-content">
-                        <h3>{userInfo.first_name} {userInfo.last_name}</h3>
-                        <h4>{userInfo.email}</h4>
+                        <h3>{user.first_name} {user.last_name}ber</h3>
+                        <h4>{user.email}</h4>
+                    </div>
+                    <div>
+                        <button>Edit</button>
                     </div>
                 </div>
                 <div className="profile-body-container">
                     <div className="about-me">
                         <h2>About Me</h2>
-                        <p>{userInfo.bio}</p>
-                        {/* <p>Education: {userInfo.education}</p> */}
+                        <p>{user.bio}</p>
+                        <p>Education: {user.education}</p>
                     </div>
                     <div className="job-section">
                         <div className="job-pref">
@@ -56,15 +39,22 @@ export default function Profile() {
                         <div className="resume">
                                 <h3>Artifacts</h3>
                                 <h4>Github: </h4>
-                                <p>Resume: {userInfo.resume}</p>
+                                <p>Resume: {user.resume}</p>
                                 <h4>Portfolio: </h4>
                                 <p>Artifacts will go under resume as well</p>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
 
+const mapStateToProps = state => {
+    // console.log('mapstatetoprops: ', state);
+    return {
+        currentUser: state.AppReducer.currentUser,
+    }
+  }
+
+export default connect(mapStateToProps, {})(Profile)
 
