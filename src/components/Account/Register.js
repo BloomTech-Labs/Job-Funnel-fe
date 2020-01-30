@@ -8,7 +8,7 @@ import LoadingOverlay from "react-loading-overlay";
 
 const Register = (props) => {
     // #region localstate
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
     const [register, setRegister] = useState({
         first_name: '',
         last_name: '',
