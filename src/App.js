@@ -9,6 +9,7 @@ import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
 import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
+import Footer from './components/Footer';
 
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
@@ -43,6 +44,7 @@ function App(props) {
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
       </StyledLoader>
+      <Footer />
     </div>
   );
 }
