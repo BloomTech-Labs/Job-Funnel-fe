@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../less/ComponentStyles/Dashboard.less'
 
 export const SearchBar = () => {
     const [textSearchTerm, setTextSearchTerm] = useState("");

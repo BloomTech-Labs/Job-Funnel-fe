@@ -9,8 +9,6 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
 import rootReducer from "./redux-store/reducers/index.js";
 
-
-
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
