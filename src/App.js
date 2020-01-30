@@ -6,6 +6,7 @@ import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
 import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
+import Footer from './components/Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
       <PrivateRoute path='/Profile' component={Profile} />
       <PrivateRoute path='/Dashboard' component={Dashboard}/>
+      <Footer />
     </div>
   );
 }
