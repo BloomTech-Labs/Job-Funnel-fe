@@ -49,9 +49,6 @@ function App(props) {
   );
 }
 
-<<<<<<< HEAD
-export default App;
-=======
 const mapStateToProps = state => {
   // console.log('mapstatetoprops: ', state);
   return {
@@ -70,4 +67,3 @@ const StyledLoader = styled(LoadingOverlay)`
     z-index: 2;
 `;
 
->>>>>>> daeaaf38e793ff38938dbfc989f4c4031fc3316b
