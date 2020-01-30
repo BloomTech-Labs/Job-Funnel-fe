@@ -25,6 +25,10 @@ export const validateInputs = (user) => {
     // if (!isValidPassword(newUser.password)) {
     //   return false;
     // }
+    if(user.first_name === "" && user.last_name === "" && user.email === ""){
+        alert('You must fill out all required forms')
+        return false;
+    }
     if (user.first_name === "") {
         alert("You must enter your first name.");
         return false;
@@ -33,10 +37,15 @@ export const validateInputs = (user) => {
         alert("You must enter your last name.");
         return false;
     }
-    if (user.user_type === '') {
-        alert('You must enter a user type.');
+
+    if(user.email === ""){
+        alert('You must enter an email.')
         return false;
     }
+    // if (user.user_type === '') {
+    //     alert('You must enter a user type.');
+    //     return false;
+    // }
     // console.log('validate inputs returning true');
     return true;
 };
