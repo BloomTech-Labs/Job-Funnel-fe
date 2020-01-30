@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from 'axios'
 import TopNav from "../TopNav"
 
+
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
@@ -19,19 +20,28 @@ const Login = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    setLoading(true);
-    axios.post('https://quickhire.herokuapp.com/api/auth/login', login)
-        .then( res => {
-            console.log('res from post', res.data)
-            sessionStorage.setItem('token', res.data.token)
-            setLogin({...login, isLoggedIn: true})
-            props.history.push('/dashboard')
-            setLoading(false);
-        })
-        .catch(error => {
-            console.error(error)
-            setLoading(false);
-        })
+    if(login.email && login.password){
+        setLoading(true);
+        axios.post('https://quickhire.herokuapp.com/api/auth/login', login)
+            .then( res => {
+                console.log('res from post', res.data)
+                sessionStorage.setItem('token', res.data.token)
+                setLogin({...login, isLoggedIn: true})
+                props.history.push('/dashboard')
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error(error)
+                setLoading(false);
+                alert('please enter a valid username and password')
+            })
+    } else if(login.email && !login.password){
+        return alert('Please enter a password.')
+    } else if(!login.email && login.password) {
+        return alert('Please enter an email.')
+    } else {
+        return alert('Please enter an email and password')
+    }
   }
 
     return (
