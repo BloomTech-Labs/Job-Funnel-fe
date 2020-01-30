@@ -507,99 +507,15 @@ ul {
   background: #fff;
   color: #3073AB;
 }
-.profile-container {
-  display: flex;
-  flex-flow: column;
-  background-color: #e5e5e5;
-  border: 1px solid black;
-}
-.image-container {
-  padding: 1%;
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  background-color: burlywood;
-  border: 1px solid black;
-}
-.profile-image {
-  margin-top: 2%;
-  height: 35vh;
-  width: 12rem;
-  border-radius: 70px;
-  border: 1px solid black;
-  align-self: flex-start;
-}
-.image-content {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  text-align: top;
-  line-height: 0.2;
-  align-self: flex-start;
-}
-/*****  PROFILE BODY *****/
-.profile-body-container {
-  display: flex;
-  flex-flow: row;
-  align-content: center;
-  align-items: center;
-  width: 100%;
-}
-.about-me {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: 30%;
-  line-height: 0.5;
-  border: 3px inset grey;
-  border-radius: 15px;
-  margin-top: 2%;
-  background-color: #ffffff;
-}
-.job-section {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: center;
-  width: 90%;
-  padding: 3%;
-  margin-top: 2%;
-  margin: 2%;
-}
-.job-section div {
-  margin: 2%;
-}
-.resume {
-  align-items: center;
-  align-content: center;
-  border: 3px inset grey;
-  border-radius: 15px;
-  background-color: #ffffff;
-  display: flex;
-  flex-flow: column;
-  width: 40%;
-  line-height: 1;
-}
-.skills {
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-flow: column;
-  border: 1px solid lightgrey;
-  background-color: #ffffff;
-  border: 3px inset grey;
-  border-radius: 15px;
-  width: 40%;
-}
-.job-pref {
-  align-items: center;
-  align-content: center;
-  display: flex;
-  border: 1px solid lightgrey;
-  background-color: #ffffff;
-  flex-flow: column;
-  border: 3px inset grey;
-  border-radius: 15px;
-  width: 80%;
+.main-profile-image {
+  max-height: 300px;
+  max-width: 180px;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: 8px;
+  border: 4px solid lightcoral;
+  border-radius: 50%;
+  box-shadow: inset -4px -4px 16px rgba(0, 0, 0, 0.7);
 }
 .main-div2 {
   height: 90vh;
