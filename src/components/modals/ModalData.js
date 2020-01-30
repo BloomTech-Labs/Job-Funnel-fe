@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-export default function ModalData(props) {
+function ModalData(props) {
+    const user = props.currentUser
 
     return (
         <>
@@ -63,3 +65,12 @@ export default function ModalData(props) {
         </>
     )
 }
+
+const mapStateToProps = state => {
+    console.log('mapstatetoprops: ', state);
+    return {
+        currentUser: state.AppReducer.currentUser,
+    }
+  }
+
+export default connect(mapStateToProps, {})(ModalData)

@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import ModalBase from '../modals/Modal-Base';
 
-import axiosWithAuth from '../../utils/axiosWithAuth.js';
 
 function Profile(props) {
-    // #region local state
-    // const [userInfo, setUserInfo] = useState({
-    //     first_name: "Austin",
-    //     last_name: "Powers",
-    //     email: "austin@gmail.com",
-    //     education: "Lambda School",
-    //     resume: "A PDF",
-    //     profile_img: "https://www.simplemost.com/wp-content/uploads/2018/06/maxresdefault-1-750x500.jpg"
-    // });
-    // #endregion
-    console.log(props.currentUser)
     const user = props.currentUser
+
     return (
         <div className="main">
             <div className="profile-container">
+            <ModalBase openModal={props.openModal} closeModal={props.closeModal} nextModal={props.nextModal}/>
                 <div className="profile-header">
                     <div className="profile-summary">
                         <div className="image-name-title">
@@ -30,7 +21,7 @@ function Profile(props) {
                             <h3>About Me</h3>
                             <p>International Man of Mystery. "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""    
                             </p>
-                            <h2>Education: {user.education}</h2>
+                        <h2>Education: {user.education}</h2>
                         </div>
                         {/* <h3>{userInfo.firstName} {userInfo.lastName}</h3> */}
                     </div>
