@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import "./TopNav.css"
+
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
@@ -10,11 +10,9 @@ const TopNav = (props) => {
         return (
             <div className="top">
                 <h1 className="title">QuickHire</h1>
-                <Buttonc>
                 <Link to ="/register">
-                    <button className="buttonclass">Register</button>
+                    <button >Register</button>
                 </Link>
-                </Buttonc>
                 
             </div>
         )
@@ -22,26 +20,12 @@ const TopNav = (props) => {
         return (
             <div className="top">
                 <h1 className="title">QuickHire</h1>
-                <Buttonc>
-                <Link to ="/login">
-                    <button className="buttonclass">Login</button>
-                </Link>
-                </Buttonc>
-
-              
+                <Link to ="/login"><button >Login</button></Link>
             </div>
         )
     }
-
 
 }
 
 export default TopNav;
 
-const Buttonc = styled.div`
-
-&: hover .buttonclass{
-  background: #3073AB; 
-  color: #fff;
-  }
-`

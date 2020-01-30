@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
-import '../less/index.less';
-
 export default function Profile() {
     // #region local state
     const [userInfo, setUserInfo] = useState({
@@ -69,6 +67,5 @@ export default function Profile() {
         </div>
     )
 }
-
 
 
