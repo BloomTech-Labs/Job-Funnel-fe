@@ -46,7 +46,7 @@ function App(props) {
         <Route path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
       </StyledLoader>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
