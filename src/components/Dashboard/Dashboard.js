@@ -6,6 +6,9 @@ import CardTopNav from "./CardTopNav";
 import Navigation from "./Navigation";
 import SuggestedJobs from "./SuggestedJobs.js";
 
+
+function Dashboard() {
+
     return (
         <>
             <Navigation />
