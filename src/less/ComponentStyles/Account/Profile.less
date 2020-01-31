@@ -1,101 +1,165 @@
-.profile-container {
-	display: flex;
-	flex-flow: column;
-	background-color: #e5e5e5;
-	border: 1px solid black;
+ 
+//Main Profile Page
+.container-profile { // BOTH EDIT AND PROFILE
+    // border: 1px solid green;
+    background: #ffffff;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+.profile-section {
+    display: flex;
+    // border: 1px solid black;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 .image-container {
-	padding: 1%;
-	display: flex;
-	flex-flow: row;
-	align-items: center;
-	background-color: burlywood;
-	border: 1px solid black;
+    // border: 1px solid blue;
+    padding: 2%;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        margin-top: 10%;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    button {
+        width: 30%;
+        height: 60%;
+        background: #3073AB;
+        border: 1px solid #D3D3D3;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 8px;
+        &:hover {
+            background: #ffffff;
+            color: #3073AB;
+        }
+    }
 }
 
-.profile-image {
-	margin-top: 2%;
-	height: 35vh;
-	width: 12rem;
-	border-radius: 70px;
-	border: 1px solid black;
-	align-self: flex-start;
-}
-.image-content {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	text-align: top;
-	line-height: .2;
-	align-self: flex-start;
+.profile-info {
+    // border: 1px solid blue;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    height: 100%;
+    color: white;
+    background: @quickhire-red;
+    margin: 0;
+    padding: 0;
+
+    div {
+        border: 2px solid black;
+        border-radius: 8px;
+        background-color: #f8f8f8;
+        color: black;
+        width: 30%;
+        height: 45vh;
+        text-align: center;
+        line-height: 2;
+        margin: 30px 0 0 0;
+        // padding: 2%;
+    }
+    h3 {
+        // border: 1px solid black;
+        margin: 0;
+        padding: 0;
+    }
 
 }
 
 
 
-/*****  PROFILE BODY *****/
-.profile-body-container {
-	display: flex;
-	flex-flow: row;
-	align-content: center;
-	align-items: center;
-	width: 100%;
+// EDIT PROFILE STYLE
+.profile-main-div2 {
+    height: 100vh;
+    display: flex;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+
+    .profile-second-main2 {
+
+        .profile-make2 {
+            text-align: center;
+            padding: 2%;
+            
+        }
+
+        button {
+            width: 387px;
+            height: 48px;
+            background: #3073AB;
+            border: 1px solid #D3D3D3;
+            color: #ffffff;
+            font-size: 1rem;
+            border-radius: 8px;
+            margin-top: 5%;
+            &:hover {
+                background: #ffffff;
+                color: #3073AB;
+            }
+        }
+        
+    }
+
+
 }
 
-.about-me {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	width: 30%;
-	line-height: .5;
-	border: 3px inset grey;
-	border-radius: 15px;
-	margin-top: 2%;
-	background-color: #ffffff;
+.profile-main-form2 {
+    border: 1px solid #D6D6D6;
+    padding: 2%;
+    background: #F9F9F9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 473px;
+
 }
 
-.job-section {
-	display: flex;
-	flex-flow: row wrap;
-	align-content: center;
-	width: 90%;
-	padding: 3%;
-	margin-top: 2%;
-	margin: 2%;
-	div{
-		margin: 2%;
-	}
-}
-.resume {
-	align-items: center;
-	align-content: center;
-	border: 3px inset grey;
-	border-radius: 15px;
-	background-color: #ffffff;
-	display: flex;
-	flex-flow: column;
-	width: 40%;
-	line-height: 1;
-}
-.skills {
-	align-items: center;
-	align-content: center;
-	display: flex;
-	flex-flow: column;
-	border: 1px solid lightgrey;
-	background-color: #ffffff;
-	border: 3px inset grey;
-	border-radius: 15px;
-	width: 40%;
-}
-.job-pref {
-	align-items: center;
-	align-content: center;
-	display: flex;
-	border: 1px solid lightgrey;
-	background-color: #ffffff;
-	flex-flow: column;
-	border: 3px inset grey;
-	border-radius: 15px;
-	width: 80%;
-}
+
+.profile-form-inputs2  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 600px;
+        input {
+        width: 387px;
+        height: 25px;
+        background: #FFFFFF;
+        border: 1px solid #D3D3D3;
+        font-size: 20px;
+
+        }
+
+        label {
+        color: rgba(0, 0, 0, 0.54);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        padding: 1%;
+        margin-top: 2%;
+        
+        }
+        button {
+            margin-bottom: 4%;
+        }
+    }
