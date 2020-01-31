@@ -27,16 +27,14 @@ export default function SuggestedJobs() {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="suggested-jobs-container">
+                 <div className="card-container">
                     {jobs.map((user, index) => {
                         return (
-                            <DashboardCards key={index}
-                                title={user.title}
-                                // pay_exact={user.pay_exact}
+                            <DashboardCards key={index} title={user.title} // pay_exact={user.pay_exact} 
                             />
                         )
                     })}
-
-
+                </div>
             </div>
         </StyledLoader>
     )
