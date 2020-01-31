@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import DashboardCards from "./DashboardCards";
+import { useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SearchBar, Filters } from "./SearchBar&Filters";
-import CardTopNav from "./CardTopNav";
-import Navigation from "./Navigation";
+import DashboardNav from "./DashboardNav";
 import SuggestedJobs from "./SuggestedJobs.js";
 
 
 function Dashboard() {
+    const location = useLocation();
 
     return (
         <>
-            <Navigation />
-            <div className="container">
-                <div className="left-nav">
+            <div style={{display: 'flex'}}>
+                <div className="dashboard-SideBar">
                     <SearchBar />
                     <Filters />
                 </div>
-                <div className="card-items">
-                    <CardTopNav />
+                <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', }}>
+                    <DashboardNav />
                     <SuggestedJobs />
                 </div>
             </div>
@@ -27,7 +26,7 @@ function Dashboard() {
 }
 
 const mapStateToProps = state => {
-    console.log('mapstatetoprops: ', state);
+    // console.log('mapstatetoprops: ', state);
     return {
         currentUser: state.AppReducer.currentUser,
     }

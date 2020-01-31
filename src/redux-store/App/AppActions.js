@@ -21,7 +21,6 @@ export const logout = () => {
     return ({ type: LOGOUT, payload: null });
 }
 export const getCurrentUser = () => dispatch => {
-    dispatch({ type: LOADING_START, payload: null });
     axiosWithAuth().get('/users/user')
     .then(res =>{
         dispatch({ type: SET_CURRENT_USER, payload: res.data })
