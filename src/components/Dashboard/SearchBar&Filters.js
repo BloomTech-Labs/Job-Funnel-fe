@@ -8,7 +8,7 @@ export const SearchBar = () => {
     };
 
     return (
-        <div classname="search-bars">
+        <div className="search-bars">
             <form className="search">
                 <input
                     name="textSearch"
@@ -49,43 +49,59 @@ export const Filters = () => {
     return (
         <div className="filter-container">
             <div className="filter-list1">
-                <p className="full-time">Full Time</p>  
-                <label className="switch">
+                <div class="slider-div">
+                    <p className="full-time">Full Time</p>  
+                    <label className="switch">
                     <input name="full" type="checkbox" onClick={handleToggle} value={toggles.full}/>
                     <span className="slider round"></span>
-                </label>
-                <p className="internship">Internship</p>  
-                <label className="switch">
+                    </label>
+                </div>
+                <div class="slider-div">
+                    <p className="internship">Internship</p>  
+                    <label className="switch">
                     <input name="intern" type="checkbox" onClick={handleToggle} value={toggles.intern}/>
                     <span className="slider round"></span>
-                </label>
-                <p className="junior">Junior Position</p>
-                <label className="switch">
+                </label> 
+                </div>
+                <div class="slider-div">
+                    <p className="junior">Junior Position</p>
+                    <label className="switch">
                     <input name="junior" type="checkbox" onClick={handleToggle} value={toggles.junior} />
                     <span className="slider round"></span>
-                </label>
-                <p className="mid">Mid-level Position</p>
-                <label className="switch">
+                    </label>
+                </div>
+                <div class="slider-div"> 
+                    <p className="mid">Mid-level Position</p>
+                    <label className="switch">
                     <input name="mid" type="checkbox" onClick={handleToggle} value={toggles.mid} />
                     <span className="slider round"></span>
-                </label>
+                    </label>
+                </div>
+               
             </div>
             <div className="filter-list2">
+                <div class="slider-div">
                 <p className="senior">Senior Position</p>
                 <label className="switch">
-                    <input name="senior" type="checkbox" onClick={handleToggle} value={toggles.senior} />
-                    <span className="slider round"></span>
+                <input name="senior" type="checkbox" onClick={handleToggle} value={toggles.senior} />
+                <span className="slider round"></span>
                 </label>
-                <p className="contract">Contract</p>
-                <label className="switch">
+                 </div>
+               <div class="slider-div"> 
+                    <p className="contract">Contract</p>
+                    <label className="switch">
                     <input name="contract" type="checkbox" onClick={handleToggle} value={toggles.contract} />
                     <span className="slider round"></span>
                 </label>
-                <p className="remote">Remote</p>
-                <label className="switch">
+                </div>
+               <div class="slider-div"> 
+                    <p className="remote">Remote</p>
+                    <label className="switch">
                     <input name="remote" type="checkbox" onClick={handleToggle} value={toggles.remote} />
                     <span className="slider round"></span>
                 </label>
+                </div>
+               
             </div>
         </div>
     )

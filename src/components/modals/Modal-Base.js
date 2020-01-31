@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import ModalData from './ModalData.js';
 import styled from 'styled-components';
@@ -40,13 +41,16 @@ const Div = styled.div`
 
 
 // // CONNECT MODAL TO ROOT FOR FULL USAGE THROUGHOUT APPLICATION
-Modal.setAppElement(document.getElementById('root'));
+Modal.setAppElement(document.getElementsByClassName('container'));
 
 
-function ModalBase(){
+function ModalBase(props){
     const [modalOpen, setOpen] = useState(false)
     const [activeModal, setActiveModal] = useState(0);
     const [job, setJob] = useState(''); // State for JOB PREF
+
+    const updatedList = {};
+
 
     var subtitle;
 
@@ -62,6 +66,7 @@ function ModalBase(){
 
     function closeModal(){
         setOpen(false)
+        setActiveModal(0)
     }
 
     //Styling the modal after it's open
@@ -74,6 +79,11 @@ function ModalBase(){
 
     }
 
+    const submitModal = () => { // USE FOR SUBMITTING UPDATED DATA
+        setActiveModal(activeModal + 1)
+        props.updateUser()
+    }
+
     const skipModal = () => {
         setActiveModal(activeModal + 1)
     }
@@ -83,21 +93,30 @@ function ModalBase(){
     }
 
     return(
-        <div>
-            <div>
-                <button onClick={openModal}>UPDATE</button>
-                <Modal isOpen={modalOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal}
-                style={customStyles} contentLabel="Test Modal">
-                    <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
-                    <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal}/>
-                    <Button className="submit-modal-button" onClick={skipModal}>Skip</Button>
-                    <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
-                    <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
-                    <Button onClick={closeModal} className="modal-button">Close Modal</Button>
-                </Modal>
-            </div>
+        <div style={{zIndex: 20, display: 'absolute'}}>
+            <button onClick={openModal}>UPDATE</button>
+            <Modal isOpen={modalOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal}
+            style={customStyles} contentLabel="Test Modal">
+                <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
+                <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal}/>
+                <Button className="submit-modal-button" onClick={skipModal}>Skip</Button>
+                <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
+                <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
+                <Button className="submit-modal-button" onClick={submitModal}>Submit All</Button>
+                <Button onClick={closeModal} className="modal-button">Close Modal</Button>
+            </Modal>
         </div>
     )
 }
 
-export default ModalBase;
+
+const mapStateToProps = state => {
+    console.log('mapstatetoprops: ', state);
+    return {
+        currentUser: state.AppReducer.currentUser,
+    }
+  }
+
+
+
+export default connect(mapStateToProps, {})(ModalBase)

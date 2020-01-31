@@ -43,17 +43,17 @@ export const wipeOtherUser = () => dispatch => {
     // return null;
 }
 export const updateUser = (userObj, setLoading) => dispatch => {
-    // axiosWithAuth().put(`/users/user`, userObj)
-    // .then(res =>{
-    //     console.log(res);
-    //     dispatch({ type: SET_CURRENT_USER, payload: res.data })
-    //     dispatch({ type: SET_OTHER_USER, payload: res.data })
-    // })
-    // .catch(err => {
-    //     setLoading(false);
-    //     console.log('updateUser CATCH ERROR: ', err.response.data.message);  
-    //     alert(err.response.data.message); });
-    // return null;
+    axiosWithAuth().put(`/users/user`, userObj)
+    .then(res =>{
+        console.log("update user", res);
+        dispatch({ type: SET_CURRENT_USER, payload: res.data })
+        dispatch({ type: SET_OTHER_USER, payload: res.data })
+    })
+    .catch(err => {
+        setLoading(false);
+        console.log('updateUser CATCH ERROR: ', err.response.data.message);  
+        alert(err.response.data.message); });
+    return null;
 }
 export const adminUpdateUser = (id, userObj) => dispatch => {
     // axiosWithAuth().put(`/admin/users/${id}`, userObj)

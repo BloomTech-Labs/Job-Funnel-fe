@@ -1,0 +1,19 @@
+
+
+.search input {
+    width: 10%;
+    margin: 1%;
+    border-radius: 4px;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+.filter-list label {
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

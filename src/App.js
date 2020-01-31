@@ -12,6 +12,8 @@ import Dashboard from "../src/components/Dashboard/Dashboard"
 import Footer from './components/Footer';
 
 
+
+
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
 
@@ -41,7 +43,7 @@ function App(props) {
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
 
-        <PrivateRoute path='/Profile' component={Profile} />
+        <Route path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
       </StyledLoader>
       <Footer />
