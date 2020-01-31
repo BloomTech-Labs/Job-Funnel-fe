@@ -1,5 +1,5 @@
 
-.button(@background: #ffffff, @backgroundHover: blue, @width: 50px, @borderRadius: 6px, 
+.button(@background: #ffffff, @backgroundHover: blue, @width: 50px, @borderRadius: 6px, @borderRadiusHover: 6px,
 @fontColor: @backgroundHover, @fontColorHover: @background, @fontSize: 1.2rem, @margin: 0 0 0 0, @padding: 1.5%,
 @border: 1px solid @backgroundHover, @borderHover: 1px solid @background, ) {
   border: @border;
@@ -13,6 +13,7 @@
 
   &:hover {
     border: @borderHover;
+    border-radius: @borderRadiusHover;
     background: @backgroundHover;
     color: @fontColorHover;
     cursor: pointer;

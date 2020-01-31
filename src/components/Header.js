@@ -8,7 +8,7 @@ import { logout } from '../redux-store/App/AppActions.js';
 function Header(props) {
     const location = useLocation();
     const history = useHistory();
-    console.log('pathname', location.pathname);
+    // console.log('pathname', location.pathname);
 
     const logOut = () => {
         sessionStorage.removeItem('token');
@@ -20,7 +20,6 @@ function Header(props) {
   return (
     <>
     <header>
-        
         <Link to='/'><h1>QuickHire</h1></Link>
         {(()=>{ //immediately invoked function to allow javascript inside JSX. syntax: {(()=>{})()}
             if (location.pathname === '/dashboard' || location.pathname === '/Dashboard'){
@@ -53,19 +52,6 @@ function Header(props) {
                     </nav>
                 )
             }
-
-             
-
-            // else{
-            //     return (
-            //         <>
-            //         <nav className='notLoggedIn'>
-            //             <NavLink className='navLink' exact to='/Login'>Login</NavLink>
-            //             <NavLink className='button' to='/Register'>Register</NavLink>
-            //         </nav>
-            //         </>
-            //     );
-            // }
         })()}
     </header>
     </>

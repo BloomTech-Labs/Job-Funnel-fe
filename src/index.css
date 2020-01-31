@@ -136,6 +136,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 9;
+  border-bottom: 1px solid #e6e6e6;
 }
 header a {
   text-decoration: none;
@@ -155,13 +156,15 @@ header nav {
   align-items: center;
 }
 header nav button {
-  color: #3062A9;
+  color: #AC2A38;
   width: 100px;
   height: 35px;
-  border: 1px solid #3062A9;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
 }
 header nav button:hover {
-  background: #3062A9;
+  background: #AC2A38;
+  border-radius: 5px;
   color: #ffffff;
 }
 footer {
@@ -219,30 +222,31 @@ nav a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #cccccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   bottom: -1px;
-  background-color: #5B6578;
+  border: 1px solid #3073AB;
+  background-color: #fff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 input:checked + .slider {
-  background-color: #06D6A0;
+  background-color: #AC2A38;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #06D6A0;
+  box-shadow: 0 0 1px #AC2A38;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(42px);
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
 }
 /* Rounded sliders */
 .slider.round {
@@ -266,12 +270,39 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
 }
+/* #endregion */
+/* #region sidebar */
+.dashboard-SideBar {
+  display: flex;
+  flex-direction: column;
+  background-color: #AC2A38;
+  border-right: 0.5px solid #D5D5D5;
+  width: 20%;
+  min-width: 250px;
+  max-height: 100%;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10% auto 0 auto;
+}
+.search input {
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 80%;
+  min-width: 160px;
+  height: 30px;
+  text-align: center;
+  padding: 2%;
+}
 .filter-container {
   display: flex;
   flex-direction: column;
   height: 20%;
 }
 .filter-list {
+  border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
   background-color: white;
@@ -282,121 +313,19 @@ input:checked + .slider:before {
   padding: 2%;
 }
 /* #endregion */
-body {
-  background: linear-gradient(0deg, #FAF5F5, #FAF5F5);
+.dashboardNav {
+  width: 40%;
+  margin: 0 0 0 0;
 }
-.search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 10%;
-}
-.search input {
-  height: 30px;
-  border-radius: 8px;
-  width: 200px;
-  text-align: center;
-}
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  align-items: center;
-  height: 80px;
-  max-height: 100%;
-}
-.top-nav h1 {
-  margin-left: 4%;
-  font-size: 1.6rem;
-}
-.profile-image {
-  border-radius: 50%;
-  max-width: 46px;
-  max-height: 46px;
-  margin-right: 4%;
-  margin-bottom: 2%;
-}
-.profile-image:hover {
-  cursor: pointer;
-}
-.left-nav {
-  display: flex;
-  flex-direction: column;
-  background-color: #5B6577;
-  border-right: 0.5px solid #D5D5D5;
-  width: 20%;
-  max-height: 100%;
-}
-.top-list {
-  list-style: none;
+.dashboardNav nav {
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
   border-radius: 8px;
-  width: 800px;
-  height: 60px;
-  max-height: 60%;
-  margin: 1.8% 0 5% 9.2%;
-}
-.suggested-jobs-container {
   width: 100%;
+  height: 40px;
 }
-.suggested-jobs-container .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 100%;
-}
-.suggested-jobs-container .card-container .card {
-  border: 1px solid #E5E4E4;
-  width: 28%;
-  max-height: 300px;
-  background-color: #fafafa;
-  margin-bottom: 4%;
-  box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-}
-.suggested-jobs-container .card-container .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 5%;
-}
-.suggested-jobs-container .card-container .card span {
-  font-size: 0.8rem;
-}
-.suggested-jobs-container .card-container .card .card-image {
-  width: 18%;
-  height: 16%;
-  margin-top: 8%;
-  margin-bottom: 10%;
-  margin-left: 10%;
-  display: flex;
-}
-.suggested-jobs-container .card-container .card .card-image .image {
-  width: 100%;
-  height: 100%;
-}
-.suggested-jobs-container .card-container .card .card-text {
-  margin-left: 10%;
-}
-.suggested-jobs-container .card-container .card .card-text p {
-  margin-bottom: 5%;
-}
-.suggested-jobs-container .card-container .card .card-text p span {
-  color: #646464;
-}
-.suggested-jobs-container .card-container .card .match {
-  margin: 4% 5% 4% 10%;
-}
-.suggested-jobs-container .card-container .card .right-side {
-  margin-left: 310%;
-  font-size: 1.2rem;
-  margin-top: -28%;
-}
-.suggested-jobs-container .card-container .card .right-side:hover {
-  cursor: pointer;
-}
-.top-nav-btn {
+.dashboardNav nav button {
   border: none;
   background-color: #ffffff;
   color: black;
@@ -406,43 +335,85 @@ body {
   margin: 0 60px;
   padding: 1.5%;
 }
-.top-nav-btn:hover {
+.dashboardNav nav button:hover {
   border: none;
+  border-radius: 6px;
   background: #BCCCEA;
   color: white;
   cursor: pointer;
 }
-.save-btn {
-  border: 1px solid #3062A9;
-  background-color: #ffffff;
-  color: #3062A9;
-  width: 34%;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  margin: 0 0 0 0;
-  padding: 1.5%;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
 }
-.save-btn:hover {
-  border: 1px solid #ffffff;
-  background: #3062A9;
-  color: #ffffff;
+.jobCard {
+  border: 1px solid #AC2A38;
+  background-color: #fafafa;
+  width: 28%;
+  min-width: 250px;
+  max-height: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+.jobCard h3 {
+  font-size: 1.3rem;
+}
+.card-image {
+  display: flex;
+  width: 18%;
+  height: 16%;
+  margin: 8% 0 10% 10%;
+}
+.card-image img {
+  width: 50px;
+  height: 50px;
+}
+.card-text {
+  margin-left: 10%;
+}
+.card-text p {
+  margin-bottom: 5%;
+}
+.card-text p span {
+  color: #646464;
+}
+.match {
+  margin: 4% 5% 4% 10%;
+}
+.right-side {
+  margin-left: 310%;
+  font-size: 1.2rem;
+  margin-top: -28%;
+}
+.right-side:hover {
   cursor: pointer;
 }
-.apply-btn {
-  border: 1px solid #ffffff;
-  background-color: #3062A9;
-  color: #ffffff;
-  width: 34%;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  margin: 0 0 0 0;
-  padding: 1.5%;
+.save-btn .apply-btn button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
 }
-.apply-btn:hover {
-  border: 1px solid #3062A9;
-  background: #ffffff;
-  color: #3062A9;
-  cursor: pointer;
+.save-btn .apply-btn button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
+}
+button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
+}
+button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
 }
 .main-div {
   height: 90vh;
@@ -500,59 +471,136 @@ body {
   background: #fff;
   color: #3073AB;
 }
-.container-profile .image-container {
-  background: #3073AB;
-  color: #fff;
+.container-profile {
+  background: #ffffff;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.profile-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.image-container {
+  padding: 2%;
+  width: 40%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  height: 45vh;
-  padding-bottom: 3%;
 }
-.container-profile .image-container .profile-image1 {
-  height: 150px;
-  width: 180px;
+.image-container h3 {
+  margin-top: 10%;
+}
+.image-container img {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
-.container-profile .image-container h3 {
-  padding-top: 1%;
-}
-.container-profile .image-container button {
-  width: 10%;
-  height: 10%;
+.image-container button {
+  width: 30%;
+  height: 60%;
   background: #3073AB;
   border: 1px solid #D3D3D3;
   color: #fff;
   font-size: 1rem;
   border-radius: 8px;
 }
-.container-profile .image-container button:hover {
-  background: #fff;
+.image-container button:hover {
+  background: #ffffff;
   color: #3073AB;
 }
-.container-profile .profile-body-container {
+.profile-info {
   display: flex;
-  flex-direction: column;
+  flex-flow: row;
+  justify-content: space-evenly;
+  height: 100%;
+  color: white;
+  background: #AC2A38;
+  margin: 0;
+  padding: 0;
 }
-.container-profile .profile-body-container .about-container {
+.profile-info div {
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: black;
+  width: 30%;
+  height: 45vh;
+  text-align: center;
+  line-height: 2;
+  margin: 30px 0 0 0;
+}
+.profile-info h3 {
+  margin: 0;
+  padding: 0;
+}
+.profile-main-div2 {
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container-profile .profile-body-container .about-container .about-me {
   background: #fff;
-  padding: 1%;
-  width: 50%;
+  justify-content: center;
   align-items: center;
+}
+.profile-main-div2 .profile-second-main2 .profile-make2 {
+  text-align: center;
+  padding: 2%;
+}
+.profile-main-div2 .profile-second-main2 button {
+  width: 387px;
+  height: 48px;
+  background: #3073AB;
+  border: 1px solid #D3D3D3;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 5%;
+}
+.profile-main-div2 .profile-second-main2 button:hover {
+  background: #ffffff;
+  color: #3073AB;
+}
+.profile-main-form2 {
+  border: 1px solid #D6D6D6;
+  padding: 2%;
+  background: #F9F9F9;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: 4px 2.5px 2.5px black;
-  margin: 1%;
+  align-items: center;
+  justify-content: space-around;
+  width: 473px;
 }
-.container-profile .profile-body-container .about-container .about-me p {
-  width: 70%;
+.profile-form-inputs2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 600px;
+}
+.profile-form-inputs2 input {
+  width: 387px;
+  height: 25px;
+  background: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  font-size: 20px;
+}
+.profile-form-inputs2 label {
+  color: rgba(0, 0, 0, 0.54);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  padding: 1%;
+  margin-top: 2%;
+}
+.profile-form-inputs2 button {
+  margin-bottom: 4%;
 }
 .main-div2 {
   height: 90vh;

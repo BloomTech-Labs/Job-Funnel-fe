@@ -87,7 +87,7 @@ function Profile(props) {
     
     if (currentPassword === ''){
         alert('You must enter your current password to make changes.');
-        resetInputs();
+        // resetInputs();
     }
     else if (validateInputs(userObj) && (newPassword === '' || isValidPassword(newPassword))) {
             props.updateUser(userObj, setLoading)
@@ -105,88 +105,70 @@ function Profile(props) {
   return (
     <div className="container-profile">
       {!showEditForm && <>
-      <div className="image-container">
-        <img className="profile-image1" src={url} />
-        <div className="image-content">
-          <h3>
-            {props.currentUser.first_name} {props.currentUser.last_name}
-          </h3>
-          <h4>{props.currentUser.email}</h4>
-        </div>
-        <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
-      </div>
-      <div className="profile-body-container">
-        <div className="about-containe">
-          <div className="about-me">
-              <h3>About Me</h3>
-              <p>{props.currentUser.about} </p>
+        <section className='profile-section'>
+          <div className="image-container">
+            <img className="profile-image1" src={url} />
+              <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
+              {/* <h4>{props.currentUser.email}</h4> */}
+            <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
           </div>
-        </div>
-        <div className="container-one">   
-          <div className="education"> 
-            <h4>Education</h4>
-            <p>{props.currentUser.education}Lambda School</p>
+          <div className="profile-info">
+              <div>
+                <h3>About Me</h3>
+                <p>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
+              </div>
+              <div>
+                <h3>Education</h3>
+                <p>{props.currentUser.education}</p>
+                <h3>Skills</h3>
+                <p>This is where the skills would be listed</p>               
+                <h3>Job Preferences</h3>
+                <p>This is where the job preferences will go</p>
+              </div>
+              <div>
+                <h3>Artifacts</h3>
+                <h4>Github: {props.currentUser.github_url}</h4>
+                <p>Resume: {props.currentUser.resume}</p>
+                <h4>Portfolio: {props.currentUser.portfolio_url}</h4>
+              </div>
           </div>
-        </div>
-        <div className="profile-body-right">
-          <div className="skills">
-            <h3>Skills</h3>
-            <p>This is where the skills would be listed</p>
-          </div>
-        </div>
-        <div className="container-two">                   
-            <div className="job-pref">
-              <h3>Job Preferences</h3>
-              <p>This is where the job preferences will go</p>
-            </div>
-            <div className="resume">
-              <h3>Artifacts</h3>
-              <h4>Github: {props.currentUser.github_url}</h4>
-              <p>Resume: {props.currentUser.resume}</p>
-              <h4>Portfolio: {props.currentUser.portfolio_url}</h4>
-              <p>Artifacts will go under resume as well</p>
-            </div>
-          </div>  
-      </div>
+        </section>
       </>}
     
     {showEditForm && <>
-    <div className="profile-form-div">
-        <Title>Edit Profile</Title>
-        <EditForm onSubmit={handleSubmit}>
-        <Label>
-            <div>
-                <Title className="bold">First Name</Title>    
-                <div className='tooltip2'>
-                    <Input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
+    <div className="profile-main-div2">
+      <div className="profile-second-main2">
+        <h3 className="profile-make2">Edit Profile</h3>
+        <form className="profile-main-form2" onSubmit={handleSubmit}>
+          <div className="profile-form-inputs2">
+                <div>
+                    <h3 className="bold">First Name</h3>    
+                    <div className='tooltip2'>
+                        <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
+                    </div>
                 </div>
-            </div>
-            <div>
-                <Title className="bold">Last Name</Title>
-                <Input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
-            </div>
-        </Label>
-
-        <Label>
-            <div>
-                <Title className="bold">Education</Title>
-                <Input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education !== null ? props.currentUser.education : ''} />
-            </div>
-            <div>
-                <Title className="bold">New password</Title>
-                <Input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
-            </div>
-        </Label>
-
-        <PasswordDiv>
-            <div>
-                <Title>Re-enter password to save changes:</Title>
-                <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
-            </div>
-        </PasswordDiv> 
-            {/* <br /><br /> */}
-            <button className="button" type="submit" onClick={handleSubmit}>Submit Changes</button>
-        </EditForm>
+                <div>
+                    <h3 className="bold">Last Name</h3>
+                    <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
+                </div>
+                <div>
+                    <h3 className="bold">Education</h3>
+                    <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education' } />
+                </div>
+                <div>
+                    <h3 className="bold">New password</h3>
+                    <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
+                </div>
+                <div>
+                    <h3>Re-enter password to save changes:</h3>
+                    <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
+                </div>
+              <button className="button" type="submit" onClick={handleSubmit}>Submit Changes</button>
+              <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
+          </div>
+          {/* <br /><br /> */}
+        </form>
+      </div>
     </div>
     </>}
     </div>
@@ -202,46 +184,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { updateUser })(Profile);
 
-
-// #region Styled components
-const StyledLoader = styled(LoadingOverlay)`
-    width:100%;
-    z-index: 2;
-`;
-
-const PasswordDiv = styled.div `
-    margin-top: 50px;
-    font-style: italic;
-    color: #BF0033;
-`;
-
-//here and down are edit form edits 
-const EditForm = styled.form`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-`
-
-// position: relative;
-const Label = styled.label`
-display: flex;
-border: 1px solid black;
-justify-content: space-evenly;
-margin: 0 auto;
-align-items: center;
-max-width: 100%;
-min-width: 100%;
-width: 100%;
-`
-
-const Input = styled.input `
-    @media (max-width: 1450px) {
-        width:100%;
-    }
-`
-
-const Title = styled.h3`
-text-align: center;
-`
-//#endregion

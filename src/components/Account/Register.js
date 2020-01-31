@@ -73,7 +73,7 @@ const Register = (props) => {
                         <label>Last Name   </label>
                             <input type="text" name="last_name" value={newUser.last_name} onChange={handleChange} />
                         <label>Enter Email    </label>
-                            <input type="text" name="email" value={newUser.email} onChange={handleChange} />
+                            <input type="email" name="email" value={newUser.email} onChange={handleChange} />
                         <label>Create Password  </label>
                             <input type="password" name="password" value={newUser.password} onChange={handleChange} />
                         {/* <label>Select User Type</label>

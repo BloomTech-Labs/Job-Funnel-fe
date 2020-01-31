@@ -20,7 +20,14 @@ const Login = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if(user.email && user.password){
+
+    if (!user.email && !user.password) {
+        return alert('Please enter an email and password')
+    } else if(!user.email) {
+        return alert('Please enter an email.')
+    } else if(!user.password){
+        return alert('Please enter a password.')
+    } else {
         setLoading(true);
         axios.post('https://quickhire.herokuapp.com/api/auth/login', user)
             .then( res => {
@@ -30,18 +37,12 @@ const Login = (props) => {
                 props.history.push('/Dashboard')
                 setLoading(false);
             })
-            .catch(error => {
-                console.error(error)
+            .catch(err => {
+                console.error('login.js login error: ', err)
                 setLoading(false);
-                alert('please enter a valid username and password')
-            })
-    } else if(user.email && !user.password){
-        return alert('Please enter a password.')
-    } else if(!user.email && user.password) {
-        return alert('Please enter an email.')
-    } else {
-        return alert('Please enter an email and password')
-    }
+                alert(err.response.data.message)
+        })
+    } 
   }
 
     return (
@@ -53,7 +54,7 @@ const Login = (props) => {
                     <form className="main-form" onSubmit={handleSubmit}>
                         <div className="form-inputs">
                             <label>Email</label>
-                            <input type="text" name="email" value={user.email} onChange={handleChange} />
+                            <input type="email" name="email" value={user.email} onChange={handleChange} />
                             <label>Password</label>
                             <input type="password" name="password" value={user.password} onChange={handleChange} />
                         </div>

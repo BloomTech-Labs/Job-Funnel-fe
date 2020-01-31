@@ -22,15 +22,8 @@ export const Filters = () => {
         senior: false, contract: false, remote: false, });
 
     const handleToggle = e => {
-        // console.log('e.target', e.target)
-        // console.log("handle Toggle log", e.target.name, e.target.value);
-        // if(e.target.name === "intern"){
-        //     setToggles({...toggles, intern: !toggles.intern})
-        // }
         setToggles({...toggles, [e.target.name]: !e.target.value});
-        // console.log('toggles', toggles);
     };
-
 
     return (
         <div className="filter-container">

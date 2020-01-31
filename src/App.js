@@ -12,16 +12,12 @@ import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
 
-
-
-
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
 
 function App(props) {
   const [loading, setLoading] = useState(true);
-
-  console.log('app.js props.currentuser', props.currentUser);
+  // console.log('app.js props.currentuser', props.currentUser);
 
   useEffect(() => {
     //if currentUser is null, load data from server if you have a token. 
@@ -37,10 +33,8 @@ function App(props) {
   }, [props.currentUser])
 
   return (
-
     <div>
       <Header/>
-      {/* header goes here so loading spinner doesn't show on top of it */}
       <StyledLoader active={loading} spinner text='Loading...'>
         <Route exact path='/' component={Login} />
         <Route exact path='/Login' component={Login} />

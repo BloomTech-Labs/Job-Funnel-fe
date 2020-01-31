@@ -9,7 +9,6 @@ export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
     useEffect(() => {
         setLoading(true);
         axiosWithAuth().get('/debug/job_listings')
@@ -28,9 +27,9 @@ export default function SuggestedJobs() {
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="suggested-jobs-container">
                 <div className="card-container">
-                    {jobs.map((user, index) => {
+                    {jobs.map((job, index) => {
                         return (
-                            <JobCard key={index} title={user.title} /> // pay_exact={user.pay_exact} 
+                            <JobCard key={index} title={job.title} company={job.company} location={job.location}  /> // pay_exact={user.pay_exact} 
                         )
                     })}
                 </div>

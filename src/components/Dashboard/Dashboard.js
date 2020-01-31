@@ -12,11 +12,11 @@ function Dashboard() {
     return (
         <>
             <div style={{display: 'flex'}}>
-                <div className="left-nav">
+                <div className="dashboard-SideBar">
                     <SearchBar />
                     <Filters />
                 </div>
-                <div style={{display: 'flex', flexWrap: 'wrap', width: '80%'}}>
+                <div style={{display: 'flex', flexWrap: 'wrap', width: '80%', }}>
                     <DashboardNav />
                     <SuggestedJobs />
                 </div>
@@ -26,7 +26,7 @@ function Dashboard() {
 }
 
 const mapStateToProps = state => {
-    console.log('mapstatetoprops: ', state);
+    // console.log('mapstatetoprops: ', state);
     return {
         currentUser: state.AppReducer.currentUser,
     }

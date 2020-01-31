@@ -1,5 +1,6 @@
 header {
     // border:1px solid red;
+    // border-bottom: 1px solid #AC2A38;
     position: sticky;
     background-color: #ffffff;
     width: 100%;
@@ -8,7 +9,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 9;
-    // border-bottom: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230, 230, 230);
 
     a{
         text-decoration: none;
@@ -17,7 +18,7 @@ header {
         // border:1px solid red;
         margin: 0 0 0 30px;
         font-size: 25px;
-        color: #AC2A38;
+        color: @quickhire-red;
     }
 
     nav {
@@ -32,15 +33,16 @@ header {
 
         button{
             // margin-left: 4rem;
-            color: #3062A9;
+            color: @quickhire-red;
             width: 100px;
             height: 35px;
-            border: 1px solid #3062A9;
+            border: 1px solid @quickhire-red;
+            border-radius: 3px;
             &:hover{
-                background: #3062A9;
+                background: @quickhire-red;
+                border-radius: 5px;
                 color: #ffffff;
             }
-            
         }
     }
 }
