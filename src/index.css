@@ -482,22 +482,72 @@ ul {
   background: #fff;
   color: #3073AB;
 }
-.container-profile {
-  border: 1px solid red;
-  height: 100vh;
+.container-profile .back-button {
+  background: #3073AB;
+}
+.container-profile .back-button button {
+  background: #3073AB;
+  color: #fff;
+  padding: 0.5%;
+}
+.container-profile .back-button button:hover {
+  background: #fff;
+  color: #3073AB;
 }
 .container-profile .image-container {
   background: #3073AB;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   height: 40vh;
+  padding-bottom: 3%;
 }
 .container-profile .image-container .profile-image1 {
   height: 150px;
-  width: 200px;
+  width: 180px;
   border-radius: 50%;
+}
+.container-profile .image-container h3 {
+  padding-top: 1%;
+}
+.container-profile .image-container button {
+  width: 10%;
+  height: 10%;
+  background: #3073AB;
+  border: 1px solid #D3D3D3;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+.container-profile .image-container button:hover {
+  background: #fff;
+  color: #3073AB;
+}
+.container-profile .profile-body-container {
+  display: flex;
+  flex-direction: column;
+}
+.container-profile .profile-body-container .about-container {
+  border: 1px solid orange;
+}
+.container-profile .profile-body-container .container-one {
+  border: 1px solid purple;
+}
+.container-profile .profile-body-container .container-two {
+  border: 1px solid green;
+}
+.container-profile .about-me {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4%;
+}
+.container-profile .about-me p {
+  width: 40%;
 }
 .main-div2 {
   height: 90vh;
