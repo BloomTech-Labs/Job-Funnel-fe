@@ -1,25 +1,17 @@
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
 
-
-@import "variables";
-@import "reset";
+@import "./Global/reset.less";
+@import "./Global/variables.less";
 // @import "mixins";
 
 // @import "./css/normalize.css";
-// @import "global";
-// @import "buttons";
-// @import "cards";
 // @import "header";
-// @import "footer";
-// @import "./ComponentStyles/SideBarNav.less";
-// @import "home";
-// @import "credits";
-// @import "ticket.less";
-// @import "debugging.less";
-// @import "imageModal.less";
+@import "./ComponentStyles/Footer.less";
 @import "./ComponentStyles/Dashboard.less";
-@import "./ComponentStyles/Profile.less";
-@import "./ComponentStyles/LoginForm.less";
+@import "./ComponentStyles/Account/Login.less";
+@import "./ComponentStyles/Account/Profile.less";
+@import "./ComponentStyles/Account/Register.less";
+@import "./ComponentStyles/Account/TopNav.less";
 
-//less-watch-compiler src/LESS src index.less
+// less-watch-compiler src/LESS src index.less
