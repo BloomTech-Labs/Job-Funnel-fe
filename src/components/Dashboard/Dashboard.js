@@ -16,7 +16,7 @@ function Dashboard() {
                     <SearchBar />
                     <Filters />
                 </div>
-                <div style={{display: 'flex', flexWrap: 'wrap', width: '80%', }}>
+                <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', }}>
                     <DashboardNav />
                     <SuggestedJobs />
                 </div>

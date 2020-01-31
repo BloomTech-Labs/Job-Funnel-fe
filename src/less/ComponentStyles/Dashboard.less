@@ -83,6 +83,7 @@ input:checked + .slider:before {
   border-right: 0.5px solid #D5D5D5;
   width: 20%;
   min-width: 250px;
+  max-width: 265px;
   max-height: 100%;
 }
 
@@ -124,28 +125,34 @@ input:checked + .slider:before {
 /* #endregion */
 
 .dashboardNav {
-  width: 40%;
-  margin: 0 0 0 0;
+  width: 60%;
+  min-width: 315px;
+  max-width: 500px;
+  margin: 30px 0 30px 30px;
   nav{
-    // border:1px solid red;
+    border: 1px solid @quickhire-red;
     display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: @quickhire-red;
     border-radius: 8px;
     width: 100%;
     height: 40px;
     button{
-      .button(@border: none, @borderHover: none, @background: #ffffff, @backgroundHover: #BCCCEA, 
-      @fontColor: black, @fontColorHover: white, @width: 34%, @borderRadius: 10px, @margin: 0 60px,);
+      border: 1px solid black;
+      .button(@border: none, @borderHover: none, @background: #ffffff, @backgroundHover: @quickhire-red, 
+      @fontColor: @quickhire-red, @fontColorHover: white, @width: 25%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
     }
   }
 }
 
 .card-container {
+  // border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100%;
+  width: 98%;
+  margin: 0 auto;
 }
 
 .jobCard {
@@ -153,6 +160,7 @@ input:checked + .slider:before {
   background-color: #fafafa;
   width: 28%;
   min-width: 250px;
+  max-width: 300px;
   max-height: 300px;
   margin-bottom: 20px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
@@ -166,7 +174,8 @@ input:checked + .slider:before {
   display: flex;
   width: 18%;
   height: 16%;
-  margin: 8% 0 10% 10%;
+  margin: 8%;
+  // margin: 8% 0 10% 10%;
   img {
     width: 50px;
     height: 50px;
@@ -174,7 +183,7 @@ input:checked + .slider:before {
 }
 
 .card-text {
-  margin-left: 10%;
+  margin-left: 8%;
   p {
     margin-bottom: 5%;
     span {
@@ -182,22 +191,11 @@ input:checked + .slider:before {
     }
   }
 }
-.match {
-  margin: 4% 5% 4% 10%;
-}
-.right-side {
-  margin-left: 310%;
-  font-size: 1.2rem;
-  margin-top: -28%;
-  &:hover {
-    cursor: pointer;
-  }
-}
 
-// .save-btn {
-//   .button(@background: #ffffff, @backgroundHover: #3062A9, @width: 34%, );
-// }
-.save-btn .apply-btn {
+.jobButtons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px 0;
   button{
       // margin-left: 4rem;
       color: @quickhire-red;
@@ -210,21 +208,5 @@ input:checked + .slider:before {
           border-radius: 5px;
           color: #ffffff;
       }
-  }
-}
-
-
-
-button{
-  // margin-left: 4rem;
-  color: @quickhire-red;
-  width: 100px;
-  height: 35px;
-  border: 1px solid @quickhire-red;
-  border-radius: 3px;
-  &:hover{
-      background: @quickhire-red;
-      border-radius: 5px;
-      color: #ffffff;
   }
 }

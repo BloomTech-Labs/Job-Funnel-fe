@@ -13,7 +13,7 @@ export default function SuggestedJobs() {
         setLoading(true);
         axiosWithAuth().get('/debug/job_listings')
         .then(response => {
-            console.log('get all jobs response: ', response);
+            // console.log('get all jobs response: ', response);
             setJobs(response.data);
             setLoading(false);
         })
@@ -25,14 +25,13 @@ export default function SuggestedJobs() {
 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
-            <div className="suggested-jobs-container">
-                <div className="card-container">
-                    {jobs.map((job, index) => {
-                        return (
-                            <JobCard key={index} title={job.title} company={job.company} location={job.location}  /> // pay_exact={user.pay_exact} 
-                        )
-                    })}
-                </div>
+            <div className="card-container">
+                {jobs.map((job, index) => {
+                    // console.log(job);
+                    return (
+                        <JobCard key={index} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> // pay_exact={user.pay_exact} 
+                    )
+                })}
             </div>
         </StyledLoader>
     )
