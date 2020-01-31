@@ -89,6 +89,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'roboto';
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -126,6 +127,43 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+header {
+  position: sticky;
+  background-color: #ffffff;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+}
+header a {
+  text-decoration: none;
+}
+header h1 {
+  margin: 0 0 0 30px;
+  font-size: 25px;
+  color: #AC2A38;
+}
+header nav {
+  width: 20%;
+  min-width: 200px;
+  height: 100%;
+  margin: 0 30px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header nav button {
+  color: #3062A9;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #3062A9;
+}
+header nav button:hover {
+  background: #3062A9;
+  color: #ffffff;
+}
 footer {
   display: flex;
   background: #eeebeb;
@@ -160,6 +198,7 @@ nav a {
   padding: 5%;
   color: black;
 }
+/* #region sliders and filters*/
 .switch {
   position: relative;
   display: inline-block;
@@ -212,6 +251,40 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.switch {
+  font-size: 0.9rem;
+  width: 15%;
+  height: 15%;
+  padding-left: 5%;
+  padding-top: 4%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+.slider-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+}
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 8px;
+  width: 80%;
+  min-width: 160px;
+  margin: 15% auto 0 auto;
+  padding: 2%;
+}
+/* #endregion */
+body {
+  background: linear-gradient(0deg, #FAF5F5, #FAF5F5);
+}
 .search {
   display: flex;
   justify-content: center;
@@ -225,9 +298,6 @@ input:checked + .slider:before {
   width: 200px;
   text-align: center;
 }
-body {
-  background: linear-gradient(0deg, #FAF5F5, #FAF5F5);
-}
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -238,7 +308,6 @@ body {
 }
 .top-nav h1 {
   margin-left: 4%;
-  font-family: 'roboto';
   font-size: 1.6rem;
 }
 .profile-image {
@@ -255,68 +324,20 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #5B6577;
-  font-family: 'roboto';
-  width: 60%;
-  max-height: 100%;
-}
-.container {
-  display: flex;
-}
-.container .left-nav {
-  display: flex;
-  flex-direction: column;
-  background-color: #5B6577;
   border-right: 0.5px solid #D5D5D5;
-  font-family: 'roboto';
   width: 20%;
   max-height: 100%;
-}
-.container .card-items {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
 }
 .top-list {
   list-style: none;
   display: flex;
   flex-direction: row;
-  font-family: 'roboto';
   background-color: #ffffff;
+  border-radius: 8px;
   width: 800px;
   height: 60px;
   max-height: 60%;
-  margin-left: 9.2%;
-  border-radius: 8px;
-  margin-bottom: 5%;
-  margin-top: 1.8%;
-}
-.top-list .top-nav-btn {
-  border: none;
-  background-color: #ffffff;
-  width: 18%;
-  font-family: 'roboto';
-  font-size: 1.2rem;
-  margin-left: 2%;
-}
-.top-list .top-nav-btn:hover {
-  background: #BCCCEA;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-}
-.top-list .top-nav-btn2 {
-  border: none;
-  background-color: #ffffff;
-  width: 18%;
-  font-family: 'roboto';
-  font-size: 1.2rem;
-  margin-left: 20%;
-}
-.top-list .top-nav-btn2:hover {
-  background: #BCCCEA;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
+  margin: 1.8% 0 5% 9.2%;
 }
 .suggested-jobs-container {
   width: 100%;
@@ -324,21 +345,19 @@ body {
 .suggested-jobs-container .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
 }
 .suggested-jobs-container .card-container .card {
   border: 1px solid #E5E4E4;
-  width: 20%;
-  height: 300px;
-  max-height: 100%;
+  width: 28%;
+  max-height: 300px;
   background-color: #fafafa;
-  font-family: 'roboto';
-  margin-left: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
   box-shadow: 0px 3px 34px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 }
-.suggested-jobs-container .card-container .card .h3 {
+.suggested-jobs-container .card-container .card h3 {
   font-size: 1.3rem;
   margin-bottom: 5%;
 }
@@ -377,70 +396,53 @@ body {
 .suggested-jobs-container .card-container .card .right-side:hover {
   cursor: pointer;
 }
-.suggested-jobs-container .card-container .card .save-btn {
+.top-nav-btn {
+  border: none;
+  background-color: #ffffff;
+  color: black;
   width: 34%;
-  height: 11%;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin: 0 60px;
+  padding: 1.5%;
+}
+.top-nav-btn:hover {
+  border: none;
+  background: #BCCCEA;
+  color: white;
+  cursor: pointer;
+}
+.save-btn {
+  border: 1px solid #3062A9;
   background-color: #ffffff;
   color: #3062A9;
+  width: 34%;
   border-radius: 6px;
-  margin-left: 10%;
-  margin-top: 8%;
-  margin-right: 12%;
+  font-size: 1.2rem;
+  margin: 0 0 0 0;
+  padding: 1.5%;
 }
-.suggested-jobs-container .card-container .card .save-btn:hover {
+.save-btn:hover {
+  border: 1px solid #ffffff;
+  background: #3062A9;
+  color: #ffffff;
   cursor: pointer;
 }
-.suggested-jobs-container .card-container .card .apply-btn {
-  width: 34%;
-  height: 11%;
+.apply-btn {
+  border: 1px solid #ffffff;
   background-color: #3062A9;
   color: #ffffff;
+  width: 34%;
   border-radius: 6px;
-  margin-top: 8%;
+  font-size: 1.2rem;
+  margin: 0 0 0 0;
+  padding: 1.5%;
 }
-.suggested-jobs-container .card-container .card .apply-btn:hover {
+.apply-btn:hover {
+  border: 1px solid #3062A9;
+  background: #ffffff;
+  color: #3062A9;
   cursor: pointer;
-}
-.filter-container {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
-}
-.filter-list1 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-top: 35%;
-  margin-left: 10%;
-  background-color: white;
-  border-radius: 8px;
-  padding: 2%;
-}
-.filter-list2 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-top: 25%;
-  margin-left: 10%;
-  background-color: white;
-  border-radius: 8px;
-  padding: 2%;
-}
-.switch {
-  font-size: 0.9rem;
-  font-family: 'roboto';
-  width: 15%;
-  height: 15%;
-  padding-left: 5%;
-  padding-top: 4%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4%;
-}
-.slider-div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 .main-div {
   height: 90vh;
@@ -498,18 +500,6 @@ body {
   background: #fff;
   color: #3073AB;
 }
-.container-profile .back-button {
-  background: #3073AB;
-}
-.container-profile .back-button button {
-  background: #3073AB;
-  color: #fff;
-  padding: 0.5%;
-}
-.container-profile .back-button button:hover {
-  background: #fff;
-  color: #3073AB;
-}
 .container-profile .image-container {
   background: #3073AB;
   color: #fff;
@@ -517,7 +507,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 40vh;
+  height: 45vh;
   padding-bottom: 3%;
 }
 .container-profile .image-container .profile-image1 {
@@ -546,24 +536,23 @@ body {
   flex-direction: column;
 }
 .container-profile .profile-body-container .about-container {
-  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container-profile .profile-body-container .container-one {
-  border: 1px solid purple;
-}
-.container-profile .profile-body-container .container-two {
-  border: 1px solid green;
-}
-.container-profile .about-me {
-  width: 100%;
+.container-profile .profile-body-container .about-container .about-me {
+  background: #fff;
+  padding: 1%;
+  width: 50%;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 4%;
+  box-shadow: 4px 2.5px 2.5px black;
+  margin: 1%;
 }
-.container-profile .about-me p {
-  width: 40%;
+.container-profile .profile-body-container .about-container .about-me p {
+  width: 70%;
 }
 .main-div2 {
   height: 90vh;
@@ -633,26 +622,3 @@ body {
     width: 473px;
     height: 432px; */
 /* } */
-.top {
-  background: #fff;
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 2%;
-  padding-left: 2%;
-}
-.top .title {
-  color: #AC2A38;
-  font-size: 25px;
-}
-.top button {
-  color: #3062A9;
-  width: 100px;
-  height: 35px;
-  border: 1px solid #3062A9;
-}
-.top button:hover {
-  background: #3073AB;
-  color: #fff;
-}

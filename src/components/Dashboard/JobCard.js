@@ -1,7 +1,7 @@
 import React from 'react';
 
-function DashboardCards(props) {
-    console.log(props, "Props stuff")
+function JobCard(props) {
+    // console.log(props, "Props stuff")
     return (
         <div className="card">
             <h4 className="match">Your Skills match 6/7</h4>
@@ -20,4 +20,4 @@ function DashboardCards(props) {
     )
 }
 
-export default DashboardCards;
+export default JobCard;

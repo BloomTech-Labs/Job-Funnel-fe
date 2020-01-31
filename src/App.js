@@ -9,6 +9,7 @@ import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
 import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
+import Header from './components/Header.js'
 import Footer from './components/Footer';
 
 
@@ -36,17 +37,18 @@ function App(props) {
   }, [props.currentUser])
 
   return (
+
     <div>
+      <Header/>
       {/* header goes here so loading spinner doesn't show on top of it */}
       <StyledLoader active={loading} spinner text='Loading...'>
         <Route exact path='/' component={Login} />
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
-
-        <Route path='/Profile' component={Profile} />
+        <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
       </StyledLoader>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
