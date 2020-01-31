@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import ModalBase from '../modals/Modal-Base';
+
 
 
 function Profile(props) {
@@ -9,7 +9,6 @@ function Profile(props) {
     return (
         <div className="main">
             <div className="profile-container">
-            <ModalBase openModal={props.openModal} closeModal={props.closeModal} nextModal={props.nextModal}/>
                 <div className="profile-header">
                     <div className="profile-summary">
                         <div className="image-name-title">

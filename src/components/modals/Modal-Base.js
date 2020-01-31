@@ -41,7 +41,7 @@ const Div = styled.div`
 
 
 // // CONNECT MODAL TO ROOT FOR FULL USAGE THROUGHOUT APPLICATION
-Modal.setAppElement(document.getElementById('root'));
+Modal.setAppElement(document.getElementsByClassName('container'));
 
 
 function ModalBase(props){
@@ -93,20 +93,18 @@ function ModalBase(props){
     }
 
     return(
-        <div>
-            <div>
-                <button onClick={openModal}>UPDATE</button>
-                <Modal isOpen={modalOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal}
-                style={customStyles} contentLabel="Test Modal">
-                    <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
-                    <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal}/>
-                    <Button className="submit-modal-button" onClick={skipModal}>Skip</Button>
-                    <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
-                    <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
-                    <Button className="submit-modal-button" onClick={prevModal}>Submit All</Button>
-                    <Button onClick={closeModal} className="modal-button">Close Modal</Button>
-                </Modal>
-            </div>
+        <div style={{zIndex: 20, display: 'absolute'}}>
+            <button onClick={openModal}>UPDATE</button>
+            <Modal isOpen={modalOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal}
+            style={customStyles} contentLabel="Test Modal">
+                <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
+                <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal}/>
+                <Button className="submit-modal-button" onClick={skipModal}>Skip</Button>
+                <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
+                <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
+                <Button className="submit-modal-button" onClick={submitModal}>Submit All</Button>
+                <Button onClick={closeModal} className="modal-button">Close Modal</Button>
+            </Modal>
         </div>
     )
 }

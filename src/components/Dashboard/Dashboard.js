@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DashboardCards from "./DashboardCards";
 import { connect } from 'react-redux';
 import { SearchBar, Filters } from "./SearchBar&Filters";
@@ -8,6 +8,17 @@ import SuggestedJobs from "./SuggestedJobs.js";
 import ModalBase from '../modals/Modal-Base';
 
 function Dashboard(props) {
+    const user = props.currentUser;
+    
+
+    useEffect(() => {
+        if(user.resume === null){
+            console.log('this is checking for education')
+            return <ModalBase />
+        }
+    })
+
+
     return (
         <>
             <ModalBase/>
