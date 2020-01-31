@@ -8,7 +8,7 @@ export const SearchBar = () => {
     };
 
     return (
-        <div classname="search-bars">
+        <div className="search-bars">
             <form className="search">
                 <input
                     name="textSearch"
@@ -69,13 +69,6 @@ export const Filters = () => {
                     <input name="junior" type="checkbox" onClick={handleToggle} value={toggles.junior} />
                     <span className="slider round"></span>
                     </label>
-                </div>
-                <div class="slider-div">
-                    <p className="junior">Junior Position</p>
-                    <label className="switch">
-                    <input name="junior" type="checkbox" onClick={handleToggle} value={toggles.junior} />
-                    <span className="slider round"></span>
-                </label>
                 </div>
                 <div class="slider-div"> 
                     <p className="mid">Mid-level Position</p>
