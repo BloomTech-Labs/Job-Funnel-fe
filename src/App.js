@@ -17,6 +17,7 @@ import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
 function App(props) {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState('css/index.css');
   // console.log('app.js props.currentuser', props.currentUser);
 
   useEffect(() => {
@@ -32,9 +33,18 @@ function App(props) {
       }
   }, [props.currentUser])
 
+  useEffect(() => {
+    
+  }, [theme])
+
+  const changeTheme = (e) => {
+    setTheme(e.target.value);
+  }
+
   return (
     <div>
-      <Header/>
+      <link rel="stylesheet" type="text/css" href={theme}/>
+      <Header changeTheme={changeTheme}/>
       <StyledLoader active={loading} spinner text='Loading...'>
         <Route exact path='/' component={Login} />
         <Route exact path='/Login' component={Login} />
