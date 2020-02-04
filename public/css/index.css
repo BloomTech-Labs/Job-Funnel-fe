@@ -595,6 +595,14 @@ input:checked + .slider:before {
   width: 50%;
   margin: 0.5%;
   padding: 2%;
+  background: #ffffff;
+}
+@media (max-width: 500px) {
+  .profileCard {
+    text-align: center;
+    width: 75%;
+    margin: 2%;
+  }
 }
 .profileCard h3 {
   width: 100%;

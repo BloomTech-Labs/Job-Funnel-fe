@@ -1,3 +1,4 @@
+  
 .container-profile { // BOTH EDIT AND PROFILE
     // border: 1px solid black;
     // background: #3073AB;
@@ -90,6 +91,7 @@
     // border: 1px solid green;
     .flex(@border: 1px solid #d1d5da, @flexDirection: column, 
     @justifyContent: center, @width: 50%, @margin: .5%, @padding: 2%);
+    background: #ffffff;
     // border: 1px solid #d1d5da;
     // display: flex;
     // flex-direction: column;
@@ -99,6 +101,11 @@
     // width: 50%;
     // margin: 0.5%;
     // padding: 2%;
+    @media @mobile {
+        text-align: center;
+        width: 75%;
+        margin: 2%;
+    }
 
     h3 {
         width: 100%;
