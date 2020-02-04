@@ -23,11 +23,15 @@ You can find the deployed project at [QuickHire.dev](https://quickhire.dev)
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/dorhqi4o/job-funnel)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/Job-Funnel-20ba287fac1c403c92a8ebb8766821a0)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+[UX Design files](https://www.figma.com/file/zljtkyosMyzAa1UMpcAIEd/Quick-Hire%2F-Judy)
+
+[Backend Documentation](https://github.com/Lambda-School-Labs/Job-Funnel-be)
+
+[Data Science Repo](https://github.com/Lambda-School-Labs/Job-Funnel-ds-API)
 
 🚫 Replace lorem ipsum with a description of your project
 
@@ -110,15 +114,6 @@ In order for the app to function correctly, the user must set up their own envir
 🚫These are just examples, replace them with the specifics for your app
 
     *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
 
 # 5️⃣ Content Licenses
 
@@ -181,7 +176,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 ### Attribution
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
-
-## Documentation
-
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
