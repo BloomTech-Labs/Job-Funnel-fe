@@ -34,10 +34,10 @@ const Register = (props) => {
         event.preventDefault();
         if (validateInputs(newUser) && isValidPassword(newUser.password)) {
             setLoading(true);
-            axios.post('https://quick-hire.herokuapp.com/api/auth/register', newUser)
+            axios.post('https://quickhire.herokuapp.com/api/auth/register', newUser)
             .then(res => {
                 console.log('res from post', res.data)
-                axios.post("https://quick-hire.herokuapp.com/api/auth/login", {
+                axios.post("https://quickhire.herokuapp.com/api/auth/login", {
                     email: newUser.email,
                     password: newUser.password
                 })
