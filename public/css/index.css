@@ -503,36 +503,42 @@ input:checked + .slider:before {
   color: #3073AB;
 }
 .container-profile {
+  background: #3073AB;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
 .profile-section {
-  background: #F5F5F5;
+  background: #ffffff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 80%;
   margin: 0;
   padding: 0;
 }
 .profileNameDiv {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 0 0 10px;
 }
-.profileNameDiv h3 {
+.profileNameDiv .user-name {
+  text-align: center;
+}
+.profileNameDiv .user-name h3 {
   text-transform: capitalize;
+  text-align: center;
 }
-.profileNameDiv p {
+.profileNameDiv .user-name p {
   font-style: italic;
 }
 .profileNameDiv button {
-  width: 50%;
+  width: 25%;
   height: 50%;
+  padding: 1%;
   background: #3073AB;
   border: 1px solid #D3D3D3;
   color: #ffffff;
@@ -545,12 +551,12 @@ input:checked + .slider:before {
   color: #3073AB;
 }
 .profileCard {
+  border: 1px solid #d1d5da;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  border: 1px solid #d1d5da;
   width: 50%;
   margin: 0.5%;
   padding: 2%;
