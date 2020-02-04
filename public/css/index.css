@@ -527,105 +527,18 @@ input:checked + .slider:before {
   padding: 2%;
   width: 50%;
 }
-.image-container img {
-  height: 100%;
-  width: 25%;
-  margin: 2%;
-}
-.image-container div {
+.profileCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.image-container div h3 {
-  text-transform: capitalize;
-}
-.image-container div p {
-  font-style: italic;
-}
-.image-container div button {
-  width: 50%;
-  height: 50%;
-  background: #3073AB;
-  border: 1px solid #D3D3D3;
-  color: #ffffff;
-  font-size: 1rem;
-  border-radius: 8px;
-  margin-top: 5%;
-}
-.image-container div button:hover {
-  background: #ffffff;
-  color: #3073AB;
-}
-.about-me {
-  background: #ffffff;
-  border: 1px solid #d1d5da;
-  display: flex;
-  margin: 0.5%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  width: 50%;
-}
-.about-me h3 {
-  width: 100%;
-}
-.education {
   background: #ffffff;
   border: 1px solid #d1d5da;
   width: 50%;
-  padding: 2%;
-  margin: 0.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.education h3 {
-  width: 100%;
-}
-.user-skills {
-  background: #ffffff;
-  border: 1px solid #d1d5da;
-  width: 50%;
-  padding: 2%;
-  margin: 0.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.user-skills h3 {
-  width: 100%;
-}
-.artifacts {
-  background: #ffffff;
-  border: 1px solid #d1d5da;
-  width: 50%;
-  padding: 2%;
-  margin: 0.5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.artifacts h3 {
-  width: 100%;
-}
-.job-pref {
-  border: 1px solid #d1d5da;
-  background: #ffffff;
-  width: 50%;
   margin: 0.5%;
   padding: 2%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.job-pref h3 {
+.profileCard h3 {
   width: 100%;
 }
 .profile-main-div2 {

@@ -120,43 +120,35 @@ const deleteProfilePic = () => {
       {!showEditForm && <>
         <section className='profile-section'>
           <div className="image-container">
-            {/* <img className="profile-image1" src={url} /> */}
             <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
-            <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
-            {/* <h4>{props.currentUser.email}</h4> */}
-            <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
+            <div style={{border: "1px solid red"}}>
+              <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
+              {/* <h4>{props.currentUser.email}</h4> */}
+              <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
+            </div>
           </div>
-          
-          <div className="profile-info">
-              <div>
-                <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
-                <p>{props.currentUser.email}</p>
-                <button onClick={() => setShowEditForm(!showEditForm)}>edit</button>
-              </div>
+          <div className="profileCard">
+            <h3>About</h3>
+            <p>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
           </div>
-
-              <div className="about-me">
-                <h3>About</h3>
-                <p>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
-              </div>
-              <div className = "education">
-                <h3>Education</h3>
-                <p> - {props.currentUser.education} Lambda School</p>
-              </div>
-              <div className="user-skills">
-                <h3>Skills</h3>
-                <p>This is where the skills would be listed</p>          
-              </div>
-              <div className="job-pref">
-                <h3>Job Preferences</h3>
-                <p>This is where the job preferences will go</p>
-              </div>
-              <div className="artifacts">
-                <h3>Artifacts</h3>
-                <h4>Github: {props.currentUser.github_url}</h4>
-                <p>Resume: {props.currentUser.resume}</p>
-                <h4>Portfolio: {props.currentUser.portfolio_url}</h4>
-              </div>
+          <div className="profileCard">
+            <h3>Education</h3>
+            <p> - {props.currentUser.education} Lambda School</p>
+          </div>
+          <div className="profileCard">
+            <h3>Skills</h3>
+            <p>This is where the skills would be listed</p>          
+          </div>
+          <div className="profileCard">
+            <h3>Job Preferences</h3>
+            <p>This is where the job preferences will go</p>
+          </div>
+          <div className="profileCard">
+            <h3>Artifacts</h3>
+            <h4>Github: {props.currentUser.github_url}</h4>
+            <p>Resume: {props.currentUser.resume}</p>
+            <h4>Portfolio: {props.currentUser.portfolio_url}</h4>
+          </div>
         </section>
       </>}
     
