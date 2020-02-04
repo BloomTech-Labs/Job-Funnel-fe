@@ -35,10 +35,6 @@ function App(props) {
       }
   }, [props.currentUser])
 
-  useEffect(() => {
-    
-  }, [theme])
-
   const changeTheme = (e) => {
     setTheme(e.target.value);
   }

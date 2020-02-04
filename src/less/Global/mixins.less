@@ -20,3 +20,18 @@
     cursor: pointer;
   }
 }
+
+.flex(@border: 1px solid black, @background: @quickhire-main, @color: black, @display: flex, @flexDirection: row, @flexWrap: wrap, 
+@justifyContent: space-evenly, @alignItems: center, @width: 100%, @margin: 0, @padding: 0, ){
+  border: @border;
+  background: @background;
+  color: @color;
+  display: @display;
+  flex-direction: @flexDirection;
+  flex-wrap: @flexWrap;
+  justify-content: @justifyContent;
+  align-items: @alignItems;
+  width: @width;
+  margin: @margin;
+  padding: @padding;
+}

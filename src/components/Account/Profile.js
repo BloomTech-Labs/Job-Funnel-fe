@@ -116,11 +116,11 @@ const deleteProfilePic = () => {
     <div className="container-profile">
       {!showEditForm && <>
         <section className='profile-section'>
-          <div className="profileCard" style={{flexDirection: "row", justifyContent: "flex-start"}}>
+          <div className="profile-top" >
             <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
             <div className="profileNameDiv">
-              <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
-              {/* <h4>{props.currentUser.email}</h4> */}
+                <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
+                <h4>{props.currentUser.email}</h4>
               <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
             </div>
           </div>
