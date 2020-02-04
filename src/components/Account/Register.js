@@ -48,13 +48,15 @@ const Register = (props) => {
                     setLoading(false);
                 })
                 .catch(err => {
-                    console.err(err.response.data.message);
+                    console.log(err.response.data.message);
                     setLoading(false);
                     alert(err.response.data.message);
                 })
             })
             .catch(err => {
                 console.log(err.response.data.message);
+                setLoading(false);
+                alert(err.response.data.message);
             })
         }
     }
