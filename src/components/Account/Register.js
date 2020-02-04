@@ -91,7 +91,6 @@ const Register = (props) => {
                 </div>
             </div>
             </>
-
         </StyledLoader>
     )
 }
@@ -100,15 +99,11 @@ const mapStateToProps = state => {
     // console.log('mapstatetoprops: ', state);
     return {
     //   currentUser: state.AppReducer.currentUser,
-
     };
   };
   
-  export default connect(mapStateToProps, {login})(Register);
-  //setting
-
-
-
+export default connect(mapStateToProps, {login})(Register);
+  
 
 const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;

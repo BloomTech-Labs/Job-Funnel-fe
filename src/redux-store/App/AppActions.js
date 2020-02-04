@@ -65,7 +65,7 @@ export const adminUpdateUser = (id, userObj) => dispatch => {
     // return null;
 }
 export const updateProfilePicture = (formData, setPictureLoading) => dispatch => {
-    console.log('updateProfilePicture firing');
+    console.log('updateProfilePicture firing', formData);
     axiosWithAuth().put('/users/user/picture', formData)
     .then(res =>{
         console.log('updateProfilePicture res: ', res);
@@ -82,7 +82,7 @@ export const deleteProfilePicture = (setPictureLoading) => dispatch => {
     axiosWithAuth().delete('/users/user/picture')
     .then(res =>{
         console.log('deleteProfilePicture res: ', res);
-        dispatch({ type: SET_CURRENT_USER, payload: {profile_picture: ''} });
+        dispatch({ type: SET_CURRENT_USER, payload: {profile_img: ''} });
         setPictureLoading(false);
     })
     .catch(err => { console.log('deleteProfilePicture CATCH ERROR: ', err.response.data.message) 

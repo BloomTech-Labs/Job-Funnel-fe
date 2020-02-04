@@ -12,9 +12,6 @@ function Profile(props) {
   // #region Local State
   const [loading, setLoading] = useState(true);
   const [pictureLoading, setPictureLoading] = useState(false);
-  const [emailAvailable, setEmailAvailable] = useState(true);
-  const [emailInvalid, setEmailInvalid] = useState(false);
-  const [editImage, setEditImage] = useState([]);
 
   const [showEditForm, setShowEditForm] = useState(false);
   const [editFirstName, setEditFirstName] = useState('');
@@ -24,8 +21,6 @@ function Profile(props) {
   const [editBio, setEditBio] = useState('');
   const [editEducation, setEditEducation] = useState('');
   const [enterPasswordField, setEnterPasswordField] = useState(false)
-
-  const url = "https://www.rollingstone.com/wp-content/uploads/2019/12/5879708cW.jpg?resize=900,600&w=450";
   // #endregion
 
   useEffect(()=>{
@@ -98,9 +93,11 @@ function Profile(props) {
   }
 
   const changeProfilePic = (picture) => {
+    console.log(picture)
     if(picture){
-      const formData = new FormData();
+      let formData = new FormData();
       formData.append('image', picture);
+      console.log('function formdata', formData);
       // console.log(picture);
       // console.log(formData);
       setPictureLoading(true);
@@ -119,9 +116,9 @@ const deleteProfilePic = () => {
     <div className="container-profile">
       {!showEditForm && <>
         <section className='profile-section'>
-          <div className="image-container">
+          <div className="profileCard" style={{flexDirection: "row", justifyContent: "flex-start"}}>
             <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
-            <div style={{border: "1px solid red"}}>
+            <div className="profileNameDiv">
               <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
               {/* <h4>{props.currentUser.email}</h4> */}
               <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
