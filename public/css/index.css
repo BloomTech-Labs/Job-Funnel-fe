@@ -523,16 +523,24 @@ input:checked + .slider:before {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-.profileNameDiv .user-name {
   text-align: center;
 }
-.profileNameDiv .user-name h3 {
+@media (max-width: 500px) {
+  .profileNameDiv {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2.5%;
+  }
+}
+.profileNameDiv h3 {
   text-transform: capitalize;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-.profileNameDiv .user-name p {
+.profileNameDiv p {
   font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 .profileNameDiv button {
   width: 25%;
@@ -549,13 +557,41 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-.profileCard {
-  border: 1px solid #d1d5da;
+@media (max-width: 500px) {
+  .profileNameDiv button {
+    height: 100%;
+    width: 50%;
+    padding: 3%;
+  }
+}
+.profile-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #ffffff;
+  width: 50%;
+  margin: 0.5%;
+  padding: 2%;
+}
+.profile-top h3 {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .profile-top {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.profileCard {
+  border: 1px solid #d1d5da;
+  background: #AC2A38;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   margin: 0.5%;
   padding: 2%;
@@ -611,7 +647,7 @@ input:checked + .slider:before {
   height: 25px;
   background: #FFFFFF;
   border: 1px solid #D3D3D3;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .profile-form-inputs2 label {
   color: rgba(0, 0, 0, 0.54);

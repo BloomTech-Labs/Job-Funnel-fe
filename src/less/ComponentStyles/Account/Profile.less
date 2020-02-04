@@ -1,6 +1,5 @@
 .container-profile { // BOTH EDIT AND PROFILE
     // border: 1px solid black;
-    // border: 1px solid green;
     // background: #3073AB;
     display: flex;
     flex-flow: column wrap;
@@ -26,21 +25,25 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    // padding: 2%;
-
-    .user-name {
-
     text-align: center;
+
+    @media @mobile {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 2.5%;
+    }
 
     h3 {
         text-transform: capitalize;
-        text-align: center;
+        margin: 0;
+        padding: 0;
     }
     p {
         font-style: italic;
+        margin: 0;
+        padding: 0;
     }
-    }
-
+    
     button {
         width: 25%;
         height: 50%;
@@ -55,20 +58,47 @@
             background: #ffffff;
             color: #3073AB;
         }
+        @media @mobile {
+            height: 100%;
+            width: 50%;
+            padding: 3%;
+        }
     }
 }
 
-.profileCard {
+.profile-top {
     // border: 1px solid green;
-    border: 1px solid #d1d5da;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background: #ffffff;
     width: 50%;
     margin: 0.5%;
     padding: 2%;
+    h3 {
+        width: 100%;
+    }
+    @media @mobile {
+        flex-direction: column;
+        width: 100%;
+    }
+
+}
+
+.profileCard {
+    // border: 1px solid green;
+    .flex(@border: 1px solid #d1d5da, @flexDirection: column, 
+    @justifyContent: center, @width: 50%, @margin: .5%, @padding: 2%);
+    // border: 1px solid #d1d5da;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // background: #ffffff;
+    // width: 50%;
+    // margin: 0.5%;
+    // padding: 2%;
 
     h3 {
         width: 100%;
@@ -132,7 +162,7 @@
         height: 25px;
         background: #FFFFFF;
         border: 1px solid #D3D3D3;
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     label {
         color: rgba(0, 0, 0, 0.54);
