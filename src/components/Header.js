@@ -21,15 +21,6 @@ function Header(props) {
     <>
     <header>
         <Link to='/'><h1>QuickHire</h1></Link>
-            <select  name="theme_switcher" onChange={props.changeTheme}>
-                <option selected="selected" value={'css/index.css'}>index</option>
-                <option value={"css/red.css"}>red</option>
-                <option value={"css/darkred.css"}>dark red</option>
-                <option value={"css/blue.css"}>blue</option>
-                <option value={"css/darkblue.css"}>dark blue</option>
-                <option value={"css/green.css"}>green</option>
-                <option value={"css/darkgreen.css"}>dark green</option>
-            </select>
         {(()=>{ //immediately invoked function to allow javascript inside JSX. syntax: {(()=>{})()}
             if (location.pathname === '/dashboard' || location.pathname === '/Dashboard'){
                 return (
