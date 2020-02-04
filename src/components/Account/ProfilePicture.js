@@ -6,29 +6,23 @@ import styled from 'styled-components';
 
 export default function ProfilePicture(props) {
     return (
-        <div style={{border: "1px solid red"}}>
+        <div>
+            <ImageInput type='file' onChange={(e)=>{props.changeProfilePic(e.target.files[0])}} id='imageInput'/>
             <StyledLoader active={props.pictureLoading} spinner text='Uploading...'> 
                 <label htmlFor='imageInput'>
-                    {props.currentUser.profile_img 
-                    ? ( <ProfileFilter>
-                            <div className='editPicture'>
-                                Edit
-                                <FontAwesomeIcon icon={faCamera} className='fa-1x'/>
-                            </div>
-                            <ProfileImg  edit={true} style={{backgroundImage: `url('${props.currentUser.profile_img}')`}}/>
-                        </ProfileFilter>) 
-                    : ( <ProfileFilter>
-                            <div className='editPicture'>
-                                Edit
-                                <FontAwesomeIcon icon={faCamera} className='fa-1x'/>
-                            </div>
-                            <DefaultProfile edit={true} icon={faUserCircle}/>
-                        </ProfileFilter>)}
+                    <ProfileFilter>
+                        <div className='editPicture'>
+                            Edit
+                            <FontAwesomeIcon icon={faCamera} className='fa-1x'/>
+                        </div>
+                        {props.currentUser.profile_img 
+                            ? ( <ProfileImg style={{backgroundImage: `url('${props.currentUser.profile_img}')`}}/> ) 
+                            : ( <DefaultProfile icon={faUserCircle}/> )}
+                    </ProfileFilter>
                 </label>
-                <ImageInput type='file' onChange={(e)=>{props.changeProfilePic(e.target.files[0])}} id='imageInput'/>
             </StyledLoader>
             <SideContent>
-                {!props.currentUser.profile_img && <RemoveBtn onClick={props.deleteProfilePic}>Remove Photo</RemoveBtn>}
+                {props.currentUser.profile_img && <RemoveBtn onClick={props.deleteProfilePic}>Remove Photo</RemoveBtn>}
             </SideContent>
         </div >
     )
@@ -39,7 +33,6 @@ const StyledLoader = styled(LoadingOverlay)`
     width:100%;
     z-index: 2;
 `;
-
 const ImageInput = styled.input `
     opacity: 0;
     position: absolute;
@@ -47,7 +40,6 @@ const ImageInput = styled.input `
     width: 1px;
     height: 1px;
 `;
-
 const ProfileFilter = styled.div `
     font-family: 'Patua One', sans-serif;
     width: 150px;
@@ -68,7 +60,7 @@ const SideContent = styled.div `
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
-`
+`;
 const DefaultProfile = styled(FontAwesomeIcon) `
     position: absolute;
     width: 150px !important;
@@ -82,9 +74,12 @@ const DefaultProfile = styled(FontAwesomeIcon) `
 `;
 const ProfileImg = styled.div`
     position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
     &:hover {
         cursor: pointer;
@@ -97,5 +92,5 @@ const RemoveBtn = styled.h3 `
     margin-bottom: 0;
     cursor: pointer;
     font-size: 1.5rem;
-`
+`;
 // #endregion

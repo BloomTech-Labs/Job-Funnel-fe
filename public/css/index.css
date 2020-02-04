@@ -517,15 +517,32 @@ input:checked + .slider:before {
   margin: 0;
   padding: 0;
 }
-.image-container {
-  background: #ffffff;
-  border: 1px solid #d1d5da;
+.profileNameDiv {
   display: flex;
-  margin: 0.5%;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2%;
+  margin: 0 0 0 10px;
+}
+.profileNameDiv h3 {
+  text-transform: capitalize;
+}
+.profileNameDiv p {
+  font-style: italic;
+}
+.profileNameDiv button {
   width: 50%;
+  height: 50%;
+  background: #3073AB;
+  border: 1px solid #D3D3D3;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 5%;
+}
+.profileNameDiv button:hover {
+  background: #ffffff;
+  color: #3073AB;
 }
 .profileCard {
   display: flex;
