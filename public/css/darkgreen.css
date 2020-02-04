@@ -144,7 +144,7 @@ header a {
 header h1 {
   margin: 0 0 0 30px;
   font-size: 25px;
-  color: #AC2A38;
+  color: darkgreen;
 }
 header nav {
   width: 20%;
@@ -156,14 +156,14 @@ header nav {
   align-items: center;
 }
 header nav button {
-  color: #AC2A38;
+  color: darkgreen;
   width: 100px;
   height: 35px;
-  border: 1px solid #AC2A38;
+  border: 1px solid darkgreen;
   border-radius: 3px;
 }
 header nav button:hover {
-  background: #AC2A38;
+  background: darkgreen;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -238,10 +238,10 @@ nav a {
   transition: 0.4s;
 }
 input:checked + .slider {
-  background-color: #AC2A38;
+  background-color: darkgreen;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #AC2A38;
+  box-shadow: 0 0 1px darkgreen;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(25px);
@@ -275,7 +275,7 @@ input:checked + .slider:before {
 .dashboard-SideBar {
   display: flex;
   flex-direction: column;
-  background-color: #AC2A38;
+  background-color: darkgreen;
   border-right: 0.5px solid #D5D5D5;
   width: 20%;
   min-width: 250px;
@@ -321,7 +321,7 @@ input:checked + .slider:before {
   margin: 30px 0 30px 30px;
 }
 .dashboardNav nav {
-  border: 1px solid #AC2A38;
+  border: 1px solid darkgreen;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -333,7 +333,7 @@ input:checked + .slider:before {
   border: 1px solid black;
   border: none;
   background-color: #ffffff;
-  color: #AC2A38;
+  color: darkgreen;
   width: 25%;
   height: 35px;
   border-radius: 8px;
@@ -344,7 +344,7 @@ input:checked + .slider:before {
 .dashboardNav nav button:hover {
   border: none;
   border-radius: 6px;
-  background: #AC2A38;
+  background: darkgreen;
   color: white;
   cursor: pointer;
 }
@@ -356,7 +356,7 @@ input:checked + .slider:before {
   margin: 0 auto;
 }
 .jobCard {
-  border: 1px solid #AC2A38;
+  border: 1px solid darkgreen;
   background-color: #fafafa;
   width: 28%;
   min-width: 250px;
@@ -394,14 +394,14 @@ input:checked + .slider:before {
   margin: 15px 0;
 }
 .jobButtons button {
-  color: #AC2A38;
+  color: darkgreen;
   width: 100px;
   height: 35px;
-  border: 1px solid #AC2A38;
+  border: 1px solid darkgreen;
   border-radius: 3px;
 }
 .jobButtons button:hover {
-  background: #AC2A38;
+  background: darkgreen;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -460,6 +460,76 @@ input:checked + .slider:before {
 .main-div .second-main button:hover {
   background: #fff;
   color: #3073AB;
+}
+.container-profile {
+  background: #ffffff;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.profile-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.image-container {
+  padding: 2%;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image-container h3 {
+  margin-top: 10%;
+}
+.image-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.image-container button {
+  width: 30%;
+  height: 60%;
+  background: #3073AB;
+  border: 1px solid #D3D3D3;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+.image-container button:hover {
+  background: #ffffff;
+  color: #3073AB;
+}
+.profile-info {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  height: 100%;
+  color: white;
+  background: darkgreen;
+  margin: 0;
+  padding: 0;
+}
+.profile-info div {
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: black;
+  width: 30%;
+  height: 45vh;
+  text-align: center;
+  line-height: 2;
+  margin: 30px 0 0 0;
+}
+.profile-info h3 {
+  margin: 0;
+  padding: 0;
 }
 .profile-main-div2 {
   height: 100vh;
