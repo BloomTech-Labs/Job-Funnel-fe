@@ -11,8 +11,10 @@ import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
+import LandingPage from './components/Account/LandingPage';
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
+
 
 
 function App(props) {
@@ -45,8 +47,8 @@ function App(props) {
     <div>
       <link rel="stylesheet" type="text/css" href={theme}/>
       <Header changeTheme={changeTheme}/>
+      <Route exact path='/' component={LandingPage} />
       <StyledLoader active={loading} spinner text='Loading...'>
-        <Route exact path='/' component={Login} />
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
         <PrivateRoute path='/Profile' component={Profile} />
