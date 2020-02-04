@@ -64,47 +64,31 @@ export const adminUpdateUser = (id, userObj) => dispatch => {
     //     alert(err.response.data.message); });
     // return null;
 }
-export const addProfilePicture = (formData, setPictureLoading) => dispatch => {
-    // // console.log('addProfilePicture firing');
-    // axiosWithAuth().post('/users/user/picture', formData)
-    // .then(res =>{
-    //     console.log('addProfilePicture res: ', res);
-    //     dispatch({ type: SET_CURRENT_USER, payload: res.data });
-    //     dispatch({ type: SET_OTHER_USER, payload: res.data });
-    //     setPictureLoading(false);
-    // })
-    // .catch(err => { console.log('addProfilePicture CATCH ERROR: ', err.response.data.message) 
-    //     alert(err.response.data.message); 
-    //     setPictureLoading(false);});
-    // return null;
-}
 export const updateProfilePicture = (formData, setPictureLoading) => dispatch => {
-    // // console.log('updateProfilePicture firing');
-    // axiosWithAuth().put('/users/user/picture', formData)
-    // .then(res =>{
-    //     console.log('updateProfilePicture res: ', res);
-    //     dispatch({ type: SET_CURRENT_USER, payload: res.data });
-    //     dispatch({ type: SET_OTHER_USER, payload: res.data });
-    //     setPictureLoading(false);
-    // })
-    // .catch(err => { console.log('updateProfilePicture CATCH ERROR: ', err.response.data.message) 
-    //     alert(err.response.data.message); 
-    //     setPictureLoading(false);} );
-    // return null;
+    console.log('updateProfilePicture firing');
+    axiosWithAuth().put('/users/user/picture', formData)
+    .then(res =>{
+        console.log('updateProfilePicture res: ', res);
+        dispatch({ type: SET_CURRENT_USER, payload: res.data });
+        setPictureLoading(false);
+    })
+    .catch(err => { console.log('updateProfilePicture CATCH ERROR: ', err.response.data.message) 
+        alert(err.response.data.message); 
+        setPictureLoading(false);} );
+    return null;
 }
 export const deleteProfilePicture = (setPictureLoading) => dispatch => {
-    // console.log('deleteProfilePicture firing');
-    // axiosWithAuth().delete('/users/user/picture')
-    // .then(res =>{
-    //     console.log('deleteProfilePicture res: ', res);
-    //     dispatch({ type: SET_CURRENT_USER, payload: {profile_picture: ''} });
-    //     dispatch({ type: SET_OTHER_USER, payload: {profile_picture: ''} });
-    //     setPictureLoading(false);
-    // })
-    // .catch(err => { console.log('deleteProfilePicture CATCH ERROR: ', err.response.data.message) 
-    //     alert(err.response.data.message); 
-    //     setPictureLoading(false);});
-    // return null;
+    console.log('deleteProfilePicture firing');
+    axiosWithAuth().delete('/users/user/picture')
+    .then(res =>{
+        console.log('deleteProfilePicture res: ', res);
+        dispatch({ type: SET_CURRENT_USER, payload: {profile_picture: ''} });
+        setPictureLoading(false);
+    })
+    .catch(err => { console.log('deleteProfilePicture CATCH ERROR: ', err.response.data.message) 
+        alert(err.response.data.message); 
+        setPictureLoading(false);});
+    return null;
 }
 export const adminAddProfilePicture = (id, formData, setPictureLoading) => dispatch => {
     // console.log('adminAddProfilePicture firing');
