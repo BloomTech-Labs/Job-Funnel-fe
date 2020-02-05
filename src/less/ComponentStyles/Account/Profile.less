@@ -1,7 +1,5 @@
   
 .container-profile { // BOTH EDIT AND PROFILE
-    // border: 1px solid black;
-    // background: #3073AB;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -9,7 +7,7 @@
 }
 
 .profile-section {
-    background: #ffffff;
+    background: @quickhire-background;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -52,15 +50,15 @@
         width: 25%;
         height: 50%;
         padding: 1%;
-        background: #3073AB;
-        border: 1px solid #D3D3D3;
-        color: #ffffff;
+        background: @profile-button-background;
+        border: 1px solid @button-border;
+        color: @profile-button-text;
         font-size: 1rem;
         border-radius: 8px;
         margin-top: 5%;
         &:hover {
-            background: #ffffff;
-            color: #3073AB;
+            background: @profile-button-hover;
+            color: @profile-button-text-hover;
         }
         @media @mobile {
             height: 100%;
@@ -80,7 +78,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
+    background: @quickhire-background;
     width: 50%;
     margin: 2% 0.5% 0.5% 0.5%;
     padding: 2%;
@@ -103,9 +101,10 @@
 
 .profileCard {
 
-    .flex(@border: 1px solid #d1d5da, @flexDirection: column, 
+    .flex(@border: 1px solid @card-border, @flexDirection: column, 
     @justifyContent: center, @width: 50%, @margin: .5%, @padding: 2%);
-    background: #ffffff;
+
+    background: @quickhire-background;
     @media @mobile {
         text-align: center;
         width: 75%;
@@ -137,7 +136,7 @@
 .profile-main-div2 {
     height: 100vh;
     display: flex;
-    background: #fff;
+    background: @quickhire-background;
     justify-content: center;
     align-items: center;
 
@@ -151,15 +150,15 @@
         button {
             width: 387px;
             height: 48px;
-            background: #3073AB;
-            border: 1px solid #D3D3D3;
-            color: #ffffff;
+            background: @profile-button-background;
+            border: 1px solid @button-border;
+            color: @profile-button-text;
             font-size: 1rem;
             border-radius: 8px;
             margin-top: 5%;
             &:hover {
-                background: #ffffff;
-                color: #3073AB;
+                background: @profile-button-hover;
+                color: @profile-button-text-hover;
             }
         }
     }
@@ -187,12 +186,12 @@
     input {
         width: 387px;
         height: 25px;
-        background: #FFFFFF;
-        border: 1px solid #D3D3D3;
+        background: @quickhire-background;
+        border: 1px solid @button-border;
         font-size: 1.25rem;
     }
     label {
-        color: rgba(0, 0, 0, 0.54);
+        color: @input-labels;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;

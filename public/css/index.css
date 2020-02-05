@@ -644,7 +644,7 @@ input:checked + .slider:before {
 .profile-main-div2 {
   height: 100vh;
   display: flex;
-  background: #fff;
+  background: #ffffff;
   justify-content: center;
   align-items: center;
 }
@@ -687,12 +687,12 @@ input:checked + .slider:before {
 .profile-form-inputs2 input {
   width: 387px;
   height: 25px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #D3D3D3;
   font-size: 1.25rem;
 }
 .profile-form-inputs2 label {
-  color: rgba(0, 0, 0, 0.54);
+  color: black;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
