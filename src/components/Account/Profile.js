@@ -145,7 +145,7 @@ function Profile(props) {
           </section>
         </>}
         {showEditForm && <>
-          <div className="profile-main-div2">
+          <section className="profile-main-div2">
             <div className="profile-second-main2">
               <h3 className="profile-make2">Edit Profile</h3>
               <form className="profile-main-form2" onSubmit={handleSubmit}>
@@ -178,7 +178,7 @@ function Profile(props) {
                 {/* <br /><br /> */}
               </form>
             </div>
-          </div>
+          </section>
         </>}
       </div>
     </StyledLoader>

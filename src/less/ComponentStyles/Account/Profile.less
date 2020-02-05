@@ -8,7 +8,9 @@
 
 .profile-section {
     background: @quickhire-background;
+    border: 1px solid red;
     display: flex;
+    flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -74,6 +76,7 @@
 }
 
 .profile-top {
+    border: 1px solid orange;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -102,7 +105,7 @@
 .profileCard {
 
     .flex(@border: 1px solid @card-border, @flexDirection: column, 
-    @justifyContent: center, @width: 50%, @margin: .5%, @padding: 2%);
+    @justifyContent: flex-start, @width: 50%, @margin: .5%, @padding: 2%);
 
     background: @quickhire-background;
     @media @mobile {
@@ -117,12 +120,16 @@
     }
 
     h3 {
+
+        font-size: 1.5rem;
         width: 100%;
+        border: 1px solid green;
     }
 
     p {
         text-align: left;
         width: 100%;
+        border: 1px solid pink;
 
         @media @mobile {
             text-align: center;
