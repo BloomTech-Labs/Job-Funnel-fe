@@ -395,7 +395,7 @@ input:checked + .slider:before {
 }
 .dashboardNav nav button {
   border: 1px solid black;
-  border: none;
+  border: #AC2A38;
   background-color: #ffffff;
   color: #AC2A38;
   width: 25%;
@@ -406,11 +406,14 @@ input:checked + .slider:before {
   padding: 0;
 }
 .dashboardNav nav button:hover {
-  border: none;
+  border: #ffffff;
   border-radius: 6px;
   background: #AC2A38;
   color: white;
   cursor: pointer;
+}
+.dashboardNav nav a {
+  text-decoration: none;
 }
 .card-container {
   display: flex;

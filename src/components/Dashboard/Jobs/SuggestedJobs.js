@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import axiosWithAuth from '../../utils/axiosWithAuth.js';
+import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 import JobCard from './JobCard.js';
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
+
 
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);

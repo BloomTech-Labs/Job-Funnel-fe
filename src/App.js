@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import { Route,useLocation } from "react-router-dom";
-import PrivateRoute from "./utils/PrivateRoute"
+import PrivateRoute from "./utils/PrivateRoute.js"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
@@ -16,12 +16,12 @@ import LandingPage from './components/Account/LandingPage';
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
 
-
 function App(props) {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('css/index.css');
   const location = useLocation();
   // console.log('app.js props.currentuser', props.currentUser);
+  // console.log('location: ', location)
 
   useEffect(() => {
     //if currentUser is null, load data from server if you have a token. 
@@ -39,7 +39,7 @@ function App(props) {
   const changeTheme = (e) => {
     setTheme(e.target.value);
   }
-console.log('location',location)
+  
   return (
     <div>
       <link rel="stylesheet" type="text/css" href={theme}/>

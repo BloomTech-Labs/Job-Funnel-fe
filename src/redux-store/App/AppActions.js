@@ -65,7 +65,7 @@ export const adminUpdateUser = (id, userObj) => dispatch => {
     // return null;
 }
 export const updateProfilePicture = (formData, setPictureLoading) => dispatch => {
-    console.log('updateProfilePicture firing', formData);
+    // console.log('updateProfilePicture firing', formData);
     axiosWithAuth().put('/users/user/picture', formData)
     .then(res =>{
         console.log('updateProfilePicture res: ', res);
