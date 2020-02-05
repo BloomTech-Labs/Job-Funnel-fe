@@ -102,10 +102,10 @@ function Profile(props) {
     }
   }
 
-const deleteProfilePic = () => {
-    //add loading
-        props.deleteProfilePicture(setPictureLoading);
-}
+  const deleteProfilePic = () => {
+    setPictureLoading(true);
+    props.deleteProfilePicture(setPictureLoading);
+  }
 // #endregion
 
 
