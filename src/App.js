@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
-import { Route } from "react-router-dom";
+import { Route,useLocation } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
@@ -20,6 +20,7 @@ import { getCurrentUser, } from './redux-store/App/AppActions.js';
 function App(props) {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('css/index.css');
+  const location = useLocation();
   // console.log('app.js props.currentuser', props.currentUser);
 
   useEffect(() => {
@@ -38,18 +39,18 @@ function App(props) {
   const changeTheme = (e) => {
     setTheme(e.target.value);
   }
-
+console.log('location',location)
   return (
     <div>
       <link rel="stylesheet" type="text/css" href={theme}/>
       <Header changeTheme={changeTheme}/>
       <Route exact path='/' component={LandingPage} />
-      <StyledLoader active={loading} spinner text='Loading...'>
+      {location.pathname !== '/' && <StyledLoader active={loading} spinner text='Loading...'>
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-      </StyledLoader>
+      </StyledLoader>}
       <Footer />
     </div>
   );

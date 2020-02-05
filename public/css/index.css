@@ -209,35 +209,58 @@ nav a {
   color: black;
 }
 .landing-page {
-  border: salmon dashed 1px;
-  display: flex;
-  margin: auto;
-  margin: 2%;
   width: 90%;
-  height: 90%;
+  height: 90vh;
 }
 .landing-page h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.25rem;
-  padding: 0.2rem;
+  padding: 2%;
+}
+.landing-page .p-div {
+  font-size: large;
+  padding-top: 5%;
+}
+.landing-page .p-div .p-1 {
+  padding-left: 10%;
+}
+.landing-page .p-div .p-2 {
+  padding-left: 7%;
+}
+.landing-page .p-div .p-3 {
+  padding-left: 4%;
 }
 .landing-page .img-div {
   display: flex;
+  width: 49%;
   justify-content: flex-end;
 }
 .landing-page .img-div img {
-  margin: 0.2rem;
-  max-width: 32%;
-  max-height: 32% ;
+  max-width: 100%;
 }
-.landing-page button {
+.landing-page .bottom-content {
+  display: flex;
+}
+.landing-page .bottom-content a {
+  width: 40%;
+  height: 30%;
+}
+.landing-page .button-div {
+  display: flex;
+  width: 49%;
+  align-items: center;
+  justify-content: center;
+}
+.landing-page .button-div button {
+  width: 100%;
+  height: 50%;
+  text-decoration: none;
+  font-size: medium;
   color: #AC2A38;
-  width: 15%;
-  height: 35px;
   border: 1px solid #AC2A38;
   border-radius: 3px;
 }
-.landing-page button:hover {
+.landing-page .button-div button:hover {
   background: #AC2A38;
   border-radius: 5px;
   color: #ffffff;
