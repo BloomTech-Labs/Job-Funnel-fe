@@ -97,9 +97,6 @@ function Profile(props) {
     if(picture){
       let formData = new FormData();
       formData.append('image', picture);
-      console.log('function formdata', formData);
-      // console.log(picture);
-      // console.log(formData);
       setPictureLoading(true);
       props.updateProfilePicture(formData, setPictureLoading);
     }
