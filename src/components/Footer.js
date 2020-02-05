@@ -8,9 +8,10 @@ const Year = new Date();
 const Footer = () => {
   return (
       <footer>
-          <p>Copyright {Year.getFullYear()} Quickhire.dev • <Link to="/credits">Credits</Link></p>
+          <p> • Copyright {Year.getFullYear()} QuickHire • </p>
       </footer>
   );
 };
+//add a link to team in footer if we want it
 
 export default Footer;
