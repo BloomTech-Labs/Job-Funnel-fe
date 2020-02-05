@@ -130,7 +130,7 @@ const deleteProfilePic = () => {
           </div>
           <div className="profileCard">
             <h3>Education</h3>
-            <p> - {props.currentUser.education} Lambda School</p>
+            <p> - {props.currentUser.education} </p>
           </div>
           <div className="profileCard">
             <h3>Skills</h3>
@@ -152,18 +152,25 @@ const deleteProfilePic = () => {
     {showEditForm && <>
       <div className="profile-main-div2">
         <div className="profile-second-main2">
-          <h3 className="profile-make2">Edit Profile</h3>
+          <section className="profile-section">
+            <div className="profile-top" >
+              <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
+              <div className="profileNameDiv">
+                  <h3>Edit Profile</h3>
+              </div>
+            </div>
+          </section>
           <form className="profile-main-form2" onSubmit={handleSubmit}>
             <div className="profile-form-inputs2">
-                  <div>
-                      <h3 className="bold">First Name</h3>    
-                      <div className='tooltip2'>
+                  <div className="profile-form-edit-name">
+                      <div>
+                          <h3 className="bold">First Name</h3>    
                           <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
                       </div>
-                  </div>
-                  <div>
-                      <h3 className="bold">Last Name</h3>
-                      <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
+                      <div>
+                          <h3 className="bold">Last Name</h3>
+                          <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
+                      </div>
                   </div>
                   <div>
                       <h3 className="bold">Education</h3>

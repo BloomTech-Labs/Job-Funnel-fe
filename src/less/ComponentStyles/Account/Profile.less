@@ -1,204 +1,209 @@
-  
-.container-profile { // BOTH EDIT AND PROFILE
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+.container-profile {
+	// BOTH EDIT AND PROFILE
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .profile-section {
-    background: @quickhire-background;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+	background: @quickhire-background;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-.profileNameDiv{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+.profileNameDiv {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
 
-    @media @mobile {
-        width: 100%;
-        max-width: 100%;
-        margin-top: 2.5%;
-    }
+	@media @mobile {
+		width: 100%;
+		max-width: 100%;
+		margin-top: 2.5%;
+	}
 
-    @media @tablet {
-        width: 50%;
-        margin-top: 2%;
-    }
+	@media @tablet {
+		width: 50%;
+		margin-top: 2%;
+	}
 
-    h3 {
-        text-transform: capitalize;
-        margin: 0;
-        padding: 0;
-    }
-    p {
-        font-style: italic;
-        margin: 0;
-        padding: 0;
-    }
-    
-    button {
-        width: 25%;
-        height: 50%;
-        padding: 1%;
-        background: @profile-button-background;
-        border: 1px solid @button-border;
-        color: @profile-button-text;
-        font-size: 1rem;
-        border-radius: 8px;
-        margin-top: 5%;
-        &:hover {
-            background: @profile-button-hover;
-            color: @profile-button-text-hover;
-        }
-        @media @mobile {
-            height: 100%;
-            width: 50%;
-            padding: 3%;
-        }
-        @media @tablet {
-            height: 5%;
-            width: 50%;
-            padding: 2%;
-        }
-    }
+	h3 {
+		text-transform: capitalize;
+		margin: 0;
+		padding: 0;
+	}
+	p {
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+	}
+
+	button {
+		width: 25%;
+		height: 50%;
+		padding: 1%;
+		background: @profile-button-background;
+		border: 1px solid @button-border;
+		color: @profile-button-text;
+		font-size: 1rem;
+		border-radius: 8px;
+		margin-top: 5%;
+		&:hover {
+			background: @profile-button-hover;
+			color: @profile-button-text-hover;
+		}
+		@media @mobile {
+			height: 100%;
+			width: 50%;
+			padding: 3%;
+		}
+		@media @tablet {
+			height: 5%;
+			width: 50%;
+			padding: 2%;
+		}
+	}
 }
 
 .profile-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: @quickhire-background;
-    width: 50%;
-    margin: 2% 0.5% 0.5% 0.5%;
-    padding: 2%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: @quickhire-background;
+	width: 50%;
+	margin: 2% 0.5% 0.5% 0.5%;
+	padding: 2%;
 
-    h3 {
-        width: 100%;
-    }
+	h3 {
+		width: 100%;
+	}
 
-    @media @mobile {
-        flex-direction: column;
-        width: 100%;
-    }
+	@media @mobile {
+		flex-direction: column;
+		width: 100%;
+	}
 
-    @media @tablet {
-        flex-direction: column;
-        width: 100%;
-    }
-
+	@media @tablet {
+		flex-direction: column;
+		width: 100%;
+	}
 }
 
 .profileCard {
-
-    .flex(@border: 1px solid @card-border, @flexDirection: column, 
+	.flex(@border: 1px solid @card-border, @flexDirection: column, 
     @justifyContent: center, @width: 50%, @margin: .5%, @padding: 2%);
 
-    background: @quickhire-background;
-    @media @mobile {
-        text-align: center;
-        width: 75%;
-        margin: 2%;
-    }
+	background: @quickhire-background;
+	@media @mobile {
+		text-align: center;
+		width: 75%;
+		margin: 2%;
+	}
 
-    @media @tablet {
-        width: 70%;
-        margin: 1% 0 1% 0;
-    }
+	@media @tablet {
+		width: 70%;
+		margin: 1% 0 1% 0;
+	}
 
-    h3 {
-        width: 100%;
-    }
+	h3 {
+		width: 100%;
+	}
 
-    p {
-        text-align: left;
-        width: 100%;
+	p {
+		text-align: left;
+		width: 100%;
 
-        @media @mobile {
-            text-align: center;
-        }
-
-    }
+		@media @mobile {
+			text-align: center;
+		}
+	}
 }
 
-
-// EDIT PROFILE STYLE 
+// EDIT PROFILE STYLE
 .profile-main-div2 {
-    height: 100vh;
-    display: flex;
-    background: @quickhire-background;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-    .profile-second-main2 {
-        
-        .profile-make2 {
-            text-align: center;
-            padding: 2%;   
-        }
-
-        button {
-            width: 387px;
-            height: 48px;
-            background: @profile-button-background;
-            border: 1px solid @button-border;
-            color: @profile-button-text;
-            font-size: 1rem;
-            border-radius: 8px;
-            margin-top: 5%;
-            &:hover {
-                background: @profile-button-hover;
-                color: @profile-button-text-hover;
-            }
-        }
-    }
+.profile-second-main2 {
+	.profile-make2 {
+		text-align: center;
+		padding: 2%;
+		width: 100%;
+	}
+	button {
+		width: 387px;
+		height: 48px;
+		background: @profile-button-background;
+		border: 1px solid @button-border;
+		color: @profile-button-text;
+		font-size: 1rem;
+		border-radius: 8px;
+		margin-top: 5%;
+		&:hover {
+			background: @profile-button-hover;
+			color: @profile-button-text-hover;
+		}
+	}
 }
 
 .profile-main-form2 {
-    border: 1px solid #D6D6D6;
-    padding: 2%;
-    background: #F9F9F9;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 473px;
+	padding: 2%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 800px;
 }
 
-.profile-form-inputs2  {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: 600px;
+.profile-form-inputs2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 550px;
+	width: 100%;
 
-    input {
-        width: 387px;
-        height: 25px;
-        background: @quickhire-background;
-        border: 1px solid @button-border;
-        font-size: 1.25rem;
-    }
-    label {
-        color: @input-labels;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        padding: 1%;
-        margin-top: 2%;
-    }
-    button {
-        margin-bottom: 4%;
-    }
+	.profile-form-edit-name {
+		display: flex;
+		flex-flow: row;
+		div {
+			display: flex;
+			flex-direction: column;
+			border: none;
+		}
+	}
+
+	div {
+		.flex(@border: 1px solid @card-border, @background: @quickhire-background, @flexDirection: column, @flexWrap: wrap, 
+        @justifyContent: space-evenly, @alignItems: center, @width: 100%, @margin: 1%, @padding: 0);
+		h3 {
+			margin-top: 2%;
+		}
+	}
+
+	input {
+		width: 60%;
+		height: 30px;
+		padding-left: 2%;
+		background: @quickhire-background;
+		border: 1px solid black;
+		font-size: 1.25rem;
+		margin-bottom: 3%;
+		text-transform: capitalize;
+	}
+	button {
+		margin-bottom: 2%;
+	}
 }

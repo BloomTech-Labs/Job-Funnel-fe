@@ -665,17 +665,16 @@ input:checked + .slider:before {
   }
 }
 .profile-main-div2 {
-  height: 100vh;
   display: flex;
-  background: #ffffff;
   justify-content: center;
   align-items: center;
 }
-.profile-main-div2 .profile-second-main2 .profile-make2 {
+.profile-second-main2 .profile-make2 {
   text-align: center;
   padding: 2%;
+  width: 100%;
 }
-.profile-main-div2 .profile-second-main2 button {
+.profile-second-main2 button {
   width: 387px;
   height: 48px;
   background: #3073AB;
@@ -685,45 +684,64 @@ input:checked + .slider:before {
   border-radius: 8px;
   margin-top: 5%;
 }
-.profile-main-div2 .profile-second-main2 button:hover {
+.profile-second-main2 button:hover {
   background: #ffffff;
   color: #3073AB;
 }
 .profile-main-form2 {
-  border: 1px solid #D6D6D6;
   padding: 2%;
-  background: #F9F9F9;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 473px;
+  width: 800px;
 }
 .profile-form-inputs2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  min-height: 600px;
+  align-items: center;
+  min-height: 550px;
+  width: 100%;
 }
-.profile-form-inputs2 input {
-  width: 387px;
-  height: 25px;
+.profile-form-inputs2 .profile-form-edit-name {
+  display: flex;
+  flex-flow: row;
+}
+.profile-form-inputs2 .profile-form-edit-name div {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.profile-form-inputs2 div {
+  border: 1px solid #d1d5da;
   background: #ffffff;
-  border: 1px solid #D3D3D3;
-  font-size: 1.25rem;
-}
-.profile-form-inputs2 label {
   color: black;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  padding: 0;
+}
+.profile-form-inputs2 div h3 {
   margin-top: 2%;
 }
+.profile-form-inputs2 input {
+  width: 60%;
+  height: 30px;
+  padding-left: 2%;
+  background: #ffffff;
+  border: 1px solid black;
+  font-size: 1.25rem;
+  margin-bottom: 3%;
+  text-transform: capitalize;
+}
 .profile-form-inputs2 button {
-  margin-bottom: 4%;
+  margin-bottom: 2%;
 }
 .main-div2 {
   height: 90vh;
