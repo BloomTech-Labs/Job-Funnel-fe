@@ -532,6 +532,12 @@ input:checked + .slider:before {
     margin-top: 2.5%;
   }
 }
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileNameDiv {
+    width: 50%;
+    margin-top: 2%;
+  }
+}
 .profileNameDiv h3 {
   text-transform: capitalize;
   margin: 0;
@@ -564,6 +570,13 @@ input:checked + .slider:before {
     padding: 3%;
   }
 }
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileNameDiv button {
+    height: 5%;
+    width: 50%;
+    padding: 2%;
+  }
+}
 .profile-top {
   display: flex;
   flex-direction: row;
@@ -571,13 +584,19 @@ input:checked + .slider:before {
   align-items: center;
   background: #ffffff;
   width: 50%;
-  margin: 0.5%;
+  margin: 2% 0.5% 0.5% 0.5%;
   padding: 2%;
 }
 .profile-top h3 {
   width: 100%;
 }
 @media (max-width: 500px) {
+  .profile-top {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
   .profile-top {
     flex-direction: column;
     width: 100%;
@@ -604,8 +623,23 @@ input:checked + .slider:before {
     margin: 2%;
   }
 }
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileCard {
+    width: 70%;
+    margin: 1% 0 1% 0;
+  }
+}
 .profileCard h3 {
   width: 100%;
+}
+.profileCard p {
+  text-align: left;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .profileCard p {
+    text-align: justify;
+  }
 }
 .profile-main-div2 {
   height: 100vh;
