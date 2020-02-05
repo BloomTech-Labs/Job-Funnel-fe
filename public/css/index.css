@@ -638,7 +638,7 @@ input:checked + .slider:before {
 }
 @media (max-width: 500px) {
   .profileCard p {
-    text-align: justify;
+    text-align: center;
   }
 }
 .profile-main-div2 {
