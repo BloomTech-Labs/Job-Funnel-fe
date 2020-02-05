@@ -153,6 +153,9 @@ h2 {
 h3 {
   font-size: 2rem;
 }
+h4 {
+  font-size: 1.75;
+}
 p {
   font-size: 1.6rem;
 }
@@ -614,7 +617,6 @@ input:checked + .slider:before {
 }
 .profile-section {
   background: #ffffff;
-  border: 1px solid red;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -656,8 +658,8 @@ input:checked + .slider:before {
 }
 .profileNameDiv button {
   width: 25%;
-  height: 50%;
-  padding: 1%;
+  height: 75%;
+  padding: 2%;
   background: #3073AB;
   border: 1px solid #D3D3D3;
   color: #ffffff;
@@ -684,7 +686,6 @@ input:checked + .slider:before {
   }
 }
 .profile-top {
-  border: 1px solid orange;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -696,6 +697,9 @@ input:checked + .slider:before {
 }
 .profile-top h3 {
   width: 100%;
+}
+.profile-top h4 {
+  font-size: 1.5rem;
 }
 @media (max-width: 500px) {
   .profile-top {
@@ -716,16 +720,15 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 50%;
-  margin: 0.5%;
+  margin: 0.5% 0 0 0.5%;
   padding: 2%;
   background: #ffffff;
 }
 @media (max-width: 500px) {
   .profileCard {
-    text-align: center;
     width: 75%;
     margin: 2%;
   }
@@ -733,17 +736,20 @@ input:checked + .slider:before {
 @media (min-width: 500px) and (max-width: 800px) {
   .profileCard {
     width: 70%;
-    margin: 1% 0 1% 0;
   }
 }
 .profileCard h3 {
   width: 100%;
-  border: 1px solid green;
+  margin: 1%;
+}
+@media (max-width: 500px) {
+  .profileCard h3 {
+    text-align: center;
+  }
 }
 .profileCard p {
   text-align: left;
   width: 100%;
-  border: 1px solid pink;
 }
 @media (max-width: 500px) {
   .profileCard p {

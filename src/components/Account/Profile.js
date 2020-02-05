@@ -122,7 +122,7 @@ function Profile(props) {
             </div>
             <div className="profileCard">
               <h3>About</h3>
-              <p>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
+              <p style={{textAlign: "justify"}}>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
             </div>
             <div className="profileCard">
               <h3>Education</h3>
@@ -136,8 +136,8 @@ function Profile(props) {
               <h3>Job Preferences</h3>
               <p>This is where the job preferences will go</p>
             </div>
-            <div className="profileCard">
-              <h3>Artifacts</h3>
+            <div className="profileCard" style={{marginBottom: "2%"}}>
+              <h3>Profile Links</h3>
               <p>Github: {props.currentUser.github_url}</p>
               <p>Resume: {props.currentUser.resume}</p>
               <p>Portfolio: {props.currentUser.portfolio_url}</p>
