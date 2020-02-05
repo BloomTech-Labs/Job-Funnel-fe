@@ -209,35 +209,58 @@ nav a {
   color: black;
 }
 .landing-page {
-  border: salmon dashed 1px;
-  display: flex;
-  margin: auto;
-  margin: 2%;
   width: 90%;
-  height: 90%;
+  height: 90vh;
 }
 .landing-page h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3.25rem;
-  padding: 0.2rem;
+  padding: 2%;
+}
+.landing-page .p-div {
+  font-size: large;
+  padding-top: 5%;
+}
+.landing-page .p-div .p-1 {
+  padding-left: 10%;
+}
+.landing-page .p-div .p-2 {
+  padding-left: 7%;
+}
+.landing-page .p-div .p-3 {
+  padding-left: 4%;
 }
 .landing-page .img-div {
   display: flex;
+  width: 49%;
   justify-content: flex-end;
 }
 .landing-page .img-div img {
-  margin: 0.2rem;
-  max-width: 32%;
-  max-height: 32% ;
+  max-width: 100%;
 }
-.landing-page button {
+.landing-page .bottom-content {
+  display: flex;
+}
+.landing-page .bottom-content a {
+  width: 40%;
+  height: 30%;
+}
+.landing-page .button-div {
+  display: flex;
+  width: 49%;
+  align-items: center;
+  justify-content: center;
+}
+.landing-page .button-div button {
+  width: 100%;
+  height: 50%;
+  text-decoration: none;
+  font-size: medium;
   color: #AC2A38;
-  width: 15%;
-  height: 35px;
   border: 1px solid #AC2A38;
   border-radius: 3px;
 }
-.landing-page button:hover {
+.landing-page .button-div button:hover {
   background: #AC2A38;
   border-radius: 5px;
   color: #ffffff;
@@ -509,7 +532,7 @@ input:checked + .slider:before {
   align-items: center;
 }
 .profile-section {
-  background: #F5F5F5;
+  background: #ffffff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -519,20 +542,33 @@ input:checked + .slider:before {
 }
 .profileNameDiv {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 0 0 10px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .profileNameDiv {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2.5%;
+  }
 }
 .profileNameDiv h3 {
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
 }
 .profileNameDiv p {
   font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 .profileNameDiv button {
-  width: 50%;
+  width: 25%;
   height: 50%;
+  padding: 1%;
   background: #3073AB;
   border: 1px solid #D3D3D3;
   color: #ffffff;
@@ -544,13 +580,41 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-.profileCard {
+@media (max-width: 500px) {
+  .profileNameDiv button {
+    height: 100%;
+    width: 50%;
+    padding: 3%;
+  }
+}
+.profile-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #ffffff;
+  width: 50%;
+  margin: 0.5%;
+  padding: 2%;
+}
+.profile-top h3 {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .profile-top {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.profileCard {
   border: 1px solid #d1d5da;
+  background: #AC2A38;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   margin: 0.5%;
   padding: 2%;
@@ -606,7 +670,7 @@ input:checked + .slider:before {
   height: 25px;
   background: #FFFFFF;
   border: 1px solid #D3D3D3;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .profile-form-inputs2 label {
   color: rgba(0, 0, 0, 0.54);

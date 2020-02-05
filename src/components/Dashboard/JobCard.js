@@ -6,7 +6,7 @@ function JobCard(props) {
         <div className="jobCard">
             <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
                 <h4>Your Skills match 6/7</h4>
-                <p onClick={''}>...</p>
+                {/* <p onClick={''}>...</p> */}
             </div>
             <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
