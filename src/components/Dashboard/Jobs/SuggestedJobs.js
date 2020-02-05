@@ -5,6 +5,7 @@ import JobCard from './JobCard.js';
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
+
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);

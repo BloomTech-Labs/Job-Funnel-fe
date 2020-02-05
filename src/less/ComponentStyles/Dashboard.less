@@ -140,8 +140,11 @@ input:checked + .slider:before {
     height: 40px;
     button{
       border: 1px solid black;
-      .button(@border: none, @borderHover: none, @background: #ffffff, @backgroundHover: @quickhire-main, 
+      .button(@border: @quickhire-main, @borderHover: #ffffff, @background: #ffffff, @backgroundHover: @quickhire-main, 
       @fontColor: @quickhire-main, @fontColorHover: white, @width: 25%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
+    }
+    a{
+      text-decoration: none;
     }
   }
 }

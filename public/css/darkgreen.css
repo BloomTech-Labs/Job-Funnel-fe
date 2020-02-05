@@ -331,7 +331,7 @@ input:checked + .slider:before {
 }
 .dashboardNav nav button {
   border: 1px solid black;
-  border: none;
+  border: darkgreen;
   background-color: #ffffff;
   color: darkgreen;
   width: 25%;
@@ -342,11 +342,14 @@ input:checked + .slider:before {
   padding: 0;
 }
 .dashboardNav nav button:hover {
-  border: none;
+  border: #ffffff;
   border-radius: 6px;
   background: darkgreen;
   color: white;
   cursor: pointer;
+}
+.dashboardNav nav a {
+  text-decoration: none;
 }
 .card-container {
   display: flex;
@@ -468,7 +471,7 @@ input:checked + .slider:before {
   align-items: center;
 }
 .profile-section {
-  background: #F5F5F5;
+  background: #ffffff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -478,20 +481,39 @@ input:checked + .slider:before {
 }
 .profileNameDiv {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 0 0 10px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .profileNameDiv {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2.5%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileNameDiv {
+    width: 50%;
+    margin-top: 2%;
+  }
 }
 .profileNameDiv h3 {
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
 }
 .profileNameDiv p {
   font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 .profileNameDiv button {
-  width: 50%;
+  width: 25%;
   height: 50%;
+  padding: 1%;
   background: #3073AB;
   border: 1px solid #D3D3D3;
   color: #ffffff;
@@ -503,24 +525,88 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-.profileCard {
+@media (max-width: 500px) {
+  .profileNameDiv button {
+    height: 100%;
+    width: 50%;
+    padding: 3%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileNameDiv button {
+    height: 5%;
+    width: 50%;
+    padding: 2%;
+  }
+}
+.profile-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #ffffff;
+  width: 50%;
+  margin: 2% 0.5% 0.5% 0.5%;
+  padding: 2%;
+}
+.profile-top h3 {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .profile-top {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .profile-top {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.profileCard {
   border: 1px solid #d1d5da;
+  background: darkgreen;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   margin: 0.5%;
   padding: 2%;
+  background: #ffffff;
+}
+@media (max-width: 500px) {
+  .profileCard {
+    text-align: center;
+    width: 75%;
+    margin: 2%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .profileCard {
+    width: 70%;
+    margin: 1% 0 1% 0;
+  }
 }
 .profileCard h3 {
   width: 100%;
 }
+.profileCard p {
+  text-align: left;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .profileCard p {
+    text-align: center;
+  }
+}
 .profile-main-div2 {
   height: 100vh;
   display: flex;
-  background: #fff;
+  background: #ffffff;
   justify-content: center;
   align-items: center;
 }
@@ -563,12 +649,12 @@ input:checked + .slider:before {
 .profile-form-inputs2 input {
   width: 387px;
   height: 25px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #D3D3D3;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .profile-form-inputs2 label {
-  color: rgba(0, 0, 0, 0.54);
+  color: black;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
