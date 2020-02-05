@@ -142,9 +142,9 @@ const deleteProfilePic = () => {
           </div>
           <div className="profileCard">
             <h3>Artifacts</h3>
-            <h4>Github: {props.currentUser.github_url}</h4>
+            <p>Github: {props.currentUser.github_url}</p>
             <p>Resume: {props.currentUser.resume}</p>
-            <h4>Portfolio: {props.currentUser.portfolio_url}</h4>
+            <p>Portfolio: {props.currentUser.portfolio_url}</p>
           </div>
         </section>
       </>}
