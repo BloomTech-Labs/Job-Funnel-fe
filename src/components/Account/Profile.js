@@ -7,6 +7,9 @@ import { validateInputs, isValidPassword } from '../../utils/AppUtils.js'
 import { updateUser, deleteProfilePicture, updateProfilePicture } from '../../redux-store/App/AppActions.js';
 import ProfilePicture from "./ProfilePicture.js"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faTwitter, faFacebook } from '@fortawesome/free-brands-svg-icons'
+
 
 function Profile(props) {
   // #region Local State
@@ -18,18 +21,18 @@ function Profile(props) {
   const [editLastName, setEditLastName] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
-  const [editBio, setEditBio] = useState('');
+  const [editAbout, setEditAbout] = useState('');
   const [editEducation, setEditEducation] = useState('');
   const [enterPasswordField, setEnterPasswordField] = useState(false)
   // #endregion
 
   useEffect(()=>{
-    if(editFirstName || editLastName || editBio || editEducation || newPassword){
+    if(editFirstName || editLastName || editAbout || editEducation || newPassword){
         setEnterPasswordField(true)
     }else{
         setEnterPasswordField(false)
     }
-    },[editFirstName, editLastName, editBio, editEducation, newPassword])
+    },[editFirstName, editLastName, editAbout, editEducation, newPassword])
 
 // #region functions
   const handleChange = e => {
@@ -44,6 +47,9 @@ function Profile(props) {
       }
       else if (e.target.name === 'education'){
           setEditEducation(e.target.value);
+      }
+      else if (e.target.name === 'about'){
+          setEditAbout(e.target.value);
       }
       else if (e.target.name === 'newPassword'){
           setNewPassword(e.target.value);
@@ -60,6 +66,7 @@ function Profile(props) {
     setEditLastName('');
     setNewPassword('');
     setCurrentPassword('');
+    setEditAbout('');
   };
 
   const handleSubmit = e => {
@@ -74,6 +81,9 @@ function Profile(props) {
     }
     if (editEducation){
         userObj = {...userObj, education: editEducation}
+    }
+    if (editAbout){
+        userObj = {...userObj, about: editAbout}
     }
     if (newPassword){
         userObj = {...userObj, newPassword: newPassword}
@@ -122,7 +132,7 @@ function Profile(props) {
             </div>
             <div className="profileCard">
               <h3>About</h3>
-              <p>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
+              <p style={{textAlign: "justify"}}>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
             </div>
             <div className="profileCard">
               <h3>Education</h3>
@@ -136,50 +146,62 @@ function Profile(props) {
               <h3>Job Preferences</h3>
               <p>This is where the job preferences will go</p>
             </div>
-            <div className="profileCard">
-              <h3>Artifacts</h3>
+            <div className="profileCard" style={{marginBottom: "2%"}}>
+              <h3>Profile Links</h3>
               <p>Github: {props.currentUser.github_url}</p>
               <p>Resume: {props.currentUser.resume}</p>
               <p>Portfolio: {props.currentUser.portfolio_url}</p>
             </div>
           </section>
         </>}
-        {showEditForm && <>
-          <div className="profile-main-div2">
-            <div className="profile-second-main2">
-              <h3 className="profile-make2">Edit Profile</h3>
-              <form className="profile-main-form2" onSubmit={handleSubmit}>
-                <div className="profile-form-inputs2">
-                      <div>
-                          <h3 className="bold">First Name</h3>    
-                          <div className='tooltip2'>
-                              <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
-                          </div>
-                      </div>
-                      <div>
-                          <h3 className="bold">Last Name</h3>
-                          <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
-                      </div>
-                      <div>
-                          <h3 className="bold">Education</h3>
-                          <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education' } />
-                      </div>
-                      <div>
-                          <h3 className="bold">New password</h3>
-                          <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
-                      </div>
-                      <div>
-                          <h3>Re-enter password to save changes:</h3>
-                          <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
-                      </div>
-                    <button className="button" type="submit" onClick={handleSubmit}>Submit Changes</button>
-                    <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
-                </div>
-                {/* <br /><br /> */}
-              </form>
-            </div>
+
+      {showEditForm && <>
+        <div className="profile-main-div2">
+          <div className="profile-second-main2">
+            <section className="profile-section">
+              <div className="edit-profile-top" >
+                  <h3>Update Profile</h3>
+                  <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
+              </div>
+            </section>
+            <form className="profile-main-form2" onSubmit={handleSubmit}>
+              <div className="profile-form-inputs2">
+                    <div className="profile-form-edit-name">
+                        <div>
+                            <h3>First Name</h3>    
+                            <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
+                        </div>
+                        <div>
+                            <h3>Last Name</h3>
+                            <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>About</h3>
+                        <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself' } />
+                    </div>
+                    <div>
+                        <h3>Education</h3>
+                        <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education' } />
+                    </div>
+                    <div>
+                        <h3>New password</h3>
+                        <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
+                    </div>
+                    <div>
+                        <h3 style={{color: 'red'}}>Re-Enter Password to Save Changes</h3>
+                        <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
+                    </div>
+              </div>
+              <div className="edit-profile-btns">
+                  <button type="submit" onClick={handleSubmit}>Submit Changes</button>
+                  <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
+              </div>
+              {/* <br /><br /> */}
+            </form>
           </div>
-        </>}
+        </div>
+      </>}
       </div>
     </StyledLoader>
   );
