@@ -424,36 +424,59 @@ input:checked + .slider:before {
   max-width: 265px;
   max-height: 100%;
 }
-.search {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 10% auto 0 auto;
+.dashboard-SideBar ul {
+  color: white;
+  text-align: center;
+  margin-top: 44%;
 }
-.search input {
-  border: 2px solid black;
-  border-radius: 8px;
-  width: 80%;
-  min-width: 160px;
+.dashboard-SideBar ul li {
+  margin-bottom: 16%;
+  font-size: 1.2rem;
+}
+.dashboard-SideBar ul li:hover {
+  cursor: pointer;
+  color: black;
+}
+.filter-class {
+  display: flex;
+  margin: 0 0 30px 30px;
+  width: 98%;
+}
+.filter-class .search-bar input {
+  width: 298px;
   height: 30px;
   text-align: center;
-  padding: 2%;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
 }
-.filter-container {
-  display: flex;
-  flex-direction: column;
-  height: 20%;
+.filter-class .job-select {
+  width: 100%;
+  min-width: 298px;
+  height: 35px;
+  margin-right: 1.6%;
+  margin-left: 2%;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
 }
-.filter-list {
-  border: 2px solid black;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: white;
-  border-radius: 8px;
-  width: 80%;
-  min-width: 160px;
-  margin: 15% auto 0 auto;
-  padding: 2%;
+.filter-class .experience-select {
+  width: 100%;
+  min-width: 298px;
+  height: 35px;
+  margin-right: 2%;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class button {
+  height: 35px;
+  max-width: 100%;
+  width: 160px;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class button:hover {
+  cursor: pointer;
+  background-color: #AC2A38;
+  color: white;
 }
 /* #endregion */
 .dashboardNav {
