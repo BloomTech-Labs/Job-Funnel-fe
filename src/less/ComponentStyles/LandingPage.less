@@ -2,11 +2,14 @@
   //   border: salmon dashed 1px;
 
   width: 90%;
-  height: 90vh;
+  height: 100vh;
   h1 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.25rem;
     padding: 2%;
+    @media @mobile{
+      padding-left:2%;
+    }
   }
 
   .p-div {
@@ -24,13 +27,13 @@
     @media @mobile {
       font-size: unset;
       .p-1 {
-        padding-left: unset;
+        padding-left: 4%;
       }
       .p-2 {
-        padding-left: unset;
+        padding-left: 4%;
       }
       .p-3 {
-        padding-left: unset;
+        padding-left: 4%;
       }
     }
   }
