@@ -6,6 +6,7 @@ import JobDetails from "./Jobs/JobDetails.js";
 import SavedJobs from "./Jobs/SavedJobs.js";
 import SuggestedJobs from "./Jobs/SuggestedJobs.js";
 import ViewedJobs from "./Jobs/ViewedJobs.js";
+import Filter from "./Filter";
 
 
 export default function Dashboard() {
@@ -17,7 +18,10 @@ export default function Dashboard() {
             <SideBar />
 
             <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', }}>
-                <DashboardNav />
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <DashboardNav/>
+                <Filter/>
+                </div>
                 <Route exact path='/Dashboard' component={SuggestedJobs} />
                 <Route exact path='/Dashboard/Job/:id' render={props => <JobDetails {...props} />} />
                 <Route exact path='/Dashboard/Saved' component={SavedJobs} />

@@ -1,13 +1,15 @@
 import React from 'react'
-import { SearchBar, Filters } from "./SearchBar&Filters";
 
 
 export default function SideBar() {
 
     return (
         <div className="dashboard-SideBar">
-            <SearchBar />
-            <Filters />
+            <ul>
+                <li>Find a Job</li>
+                <li>Company Reviews</li>
+                <li>Find Salaries</li>
+            </ul>
         </div>
     )
 }
