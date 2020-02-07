@@ -119,6 +119,15 @@ function Profile(props) {
 
   return (
     <StyledLoader active={loading} spinner text='Loading...'>
+      <select  name="theme_switcher" onChange={props.changeTheme}>
+                <option selected="selected" value={'css/index.css'}>index</option>
+                <option value={"css/red.css"}>red</option>
+                <option value={"css/darkred.css"}>dark red</option>
+                <option value={"css/blue.css"}>blue</option>
+                <option value={"css/darkblue.css"}>dark blue</option>
+                <option value={"css/green.css"}>green</option>
+                <option value={"css/darkgreen.css"}>dark green</option>
+            </select>
       <div className="container-profile">
         {!showEditForm && <>
           <section className='profile-section'>
@@ -177,7 +186,7 @@ function Profile(props) {
                         </div>
                     </div>
                     <div>
-                        <h3>About</h3>
+                        <h3 style={{marginTop: "1%"}}>About</h3>
                         <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself' } />
                     </div>
                     <div>
@@ -192,11 +201,12 @@ function Profile(props) {
                         <h3 style={{color: 'red'}}>Re-Enter Password to Save Changes</h3>
                         <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
                     </div>
-              </div>
-              <div className="edit-profile-btns">
-                  <button type="submit" onClick={handleSubmit}>Submit Changes</button>
-                  <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
-              </div>
+                    <div className="edit-profile-btns">
+                      <button type="submit" onClick={handleSubmit}>Submit Changes</button>
+                      <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
+                  </div>
+                  </div>
+
               {/* <br /><br /> */}
             </form>
           </div>

@@ -162,17 +162,22 @@
 }
 
 .profile-main-form2 {
-	padding: 2%;
+
 	box-sizing: border-box;
-	display: flex;
+    display: flex;
+    margin: 4% 0 4% 0;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-    width: 800px;
+    width: 750px;
 
     @media @mobile {
         flex-direction: column;
         width: 500px;
+    }
+
+    @media @tablet {
+        width: 480px;
     }
 }
 
@@ -183,14 +188,13 @@
     align-items: center;
     margin-top: 2%;
     width: 80%;
-    // border: 1px solid green;
 
 }
 
 .profile-form-inputs2 {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	// justify-content: space-evenly;
 	align-items: center;
 	min-height: 550px;
     width: 100%;
@@ -199,27 +203,48 @@
     @media @mobile {
         width: 80%;
         max-width: 100%;
+        // justify-content: none;
     }
-    
+    // edit profile starts here///////
 
 	.profile-form-edit-name {
 		display: flex;
-		flex-flow: row;
+        flex-flow: row;
+        margin-top: 3%;
+        width: 60%;
+        // border: 1px solid blue;
+            @media @mobile {
+                flex-direction: column;
+            }
+            
 		div {
 			display: flex;
 			flex-direction: column;
-			border: none;
+            border: none;
+            // border: 1px solid green;
+            
+            // h3 {
+            //     border: 1px solid blue;
+            // }
+            
+            input {
+                border: 1px solid black;
+                width: 100%;
+                @media @mobile {
+                    width: 100%;
+                }
+            }
         }
 
-        @media @mobile {
-            flex-direction: column;
-        }
 	}            ///  @border: 1px solid @card-border
 	div {
 		.flex(@border: none, @background: @quickhire-background, @flexDirection: column, @flexWrap: wrap, 
-        @justifyContent: space-evenly, @alignItems: center, @width: 100%, @margin: 1%, @padding: 0);
+        @justifyContent: none, @alignItems: center, @width: 100%, @margin: 1%, @padding: 0);
 		h3 {
-			margin-top: 2%;
+            // border: 1px solid red;
+            @media @mobile {
+                font-size: 1.8rem;
+            }
         }
 	}
 
@@ -249,8 +274,10 @@
 
 .edit-profile-btns {
     display: flex;
+    border: 1px solid red;
     width: 800px;
     justify-content: space-evenly;
+    
 
     @media @mobile {
         flex-direction: column;
@@ -259,18 +286,23 @@
     
     button {
         width: 40%;
-        height: 48px;
+        height: 4rem;
         background: @profile-button-background;
         color: @profile-button-text;
         font-size: 1rem;
         border-radius: 8px;
-        margin-top: 5%;
+        margin: 2%;
         &:hover {
             background: @profile-button-hover;
             color: @profile-button-text-hover;
         }
+
+        @media @mobile {
+            width: 50%;
+        }
     }
 }
+    // edit profile ends here///////
 
 
 
