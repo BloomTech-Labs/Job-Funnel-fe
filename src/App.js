@@ -45,12 +45,12 @@ function App(props) {
       <link rel="stylesheet" type="text/css" href={theme}/>
       <Header changeTheme={changeTheme}/>
       <Route exact path='/' component={LandingPage} />
-      {location.pathname !== '/' && <StyledLoader active={loading} spinner text='Loading...'>
+      {/* {location.pathname !== '/' && <StyledLoader active={loading} spinner text='Loading...'> */}
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-      </StyledLoader>}
+      {/* </StyledLoader>} */}
       <Footer />
     </div>
   );

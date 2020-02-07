@@ -10,15 +10,32 @@ header {
     align-items: center;
     z-index: 9;
     border-bottom: 1px solid rgb(230, 230, 230);
-
+    @media @tablet {
+        flex-direction: column;
+        justify-content: center;
+        height:30vh
+    }
+    
+    @media @mobile {
+        width:28%;
+    }
     a{
         text-decoration: none;
     }
     h1{
         // border:1px solid red;
+        font-family: 'Franklin Gothic Medium', Arial, sans-serif;
         margin: 0 0 0 30px;
         font-size: 25px;
         color: @quickhire-main;
+            @media @tablet {
+                margin: unset;
+            }
+            @media @mobile {
+                margin: unset;
+        }
+        
+        
     }
 
     nav {
@@ -33,6 +50,8 @@ header {
         @media @tablet {
             flex-direction: column;
             justify-content: center;
+            margin: unset;
+            width: 100%;
         }
         
         @media @mobile {
@@ -50,6 +69,13 @@ header {
                 background: @quickhire-main;
                 border-radius: 5px;
                 color: #ffffff;
+            }@media @tablet {
+                width:60%
+            
+            }
+            
+            @media @mobile {
+                margin:unset;
             }
         }
     }
