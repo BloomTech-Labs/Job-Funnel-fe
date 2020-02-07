@@ -1,4 +1,6 @@
 node_modules/
+src/index.css
+
 # Logs
 logs
 *.log

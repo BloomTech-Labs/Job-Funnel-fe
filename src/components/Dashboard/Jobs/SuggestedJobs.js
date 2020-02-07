@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import axiosWithAuth from '../../utils/axiosWithAuth.js';
+import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 import JobCard from './JobCard.js';
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
+
 
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
@@ -26,7 +27,7 @@ export default function SuggestedJobs() {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="card-container">
-                {jobs.map((job, index) => {
+                {jobs.splice(0,20).map((job, index) => {
                     // console.log(job);
                     return (
                         <JobCard key={index} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> // pay_exact={user.pay_exact} 
