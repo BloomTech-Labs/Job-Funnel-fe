@@ -180,7 +180,7 @@ header {
   header {
     flex-direction: column;
     justify-content: center;
-    height: 30vh;
+    height: 13vh;
   }
 }
 @media (max-width: 500px) {
@@ -190,6 +190,16 @@ header {
 }
 header a {
   text-decoration: none;
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  header a {
+    flex-direction: column;
+    justify-content: center;
+    margin: unset;
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
 }
 header h1 {
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
@@ -208,8 +218,7 @@ header h1 {
   }
 }
 header nav {
-  width: 22%;
-  min-width: 200px;
+  width: 16%;
   height: 100%;
   margin: 0 30px 0 0;
   display: flex;
@@ -221,7 +230,7 @@ header nav {
     flex-direction: column;
     justify-content: center;
     margin: unset;
-    width: 100%;
+    width: 80%;
   }
 }
 @media (max-width: 500px) {
@@ -244,7 +253,11 @@ header nav button:hover {
 }
 @media (min-width: 500px) and (max-width: 800px) {
   header nav button {
-    width: 60%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 1%;
   }
 }
 @media (max-width: 500px) {

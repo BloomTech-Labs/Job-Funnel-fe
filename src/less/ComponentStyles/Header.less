@@ -13,7 +13,7 @@ header {
     @media @tablet {
         flex-direction: column;
         justify-content: center;
-        height:30vh
+        height:13vh
     }
     
     @media @mobile {
@@ -21,6 +21,14 @@ header {
     }
     a{
         text-decoration: none;
+        @media @tablet {
+            flex-direction: column;
+            justify-content: center;
+            margin: unset;
+            align-items: center;
+            display: flex;
+            width: 100%;
+        }
     }
     h1{
         // border:1px solid red;
@@ -40,8 +48,8 @@ header {
 
     nav {
         // border:1px solid green;
-        width: 22%;
-        min-width: 200px;
+        width: 16%;
+        // min-width: 200px;
         height: 100%;
         margin: 0 30px 0 0;
         display: flex;
@@ -51,7 +59,7 @@ header {
             flex-direction: column;
             justify-content: center;
             margin: unset;
-            width: 100%;
+            width: 80%;
         }
         
         @media @mobile {
@@ -70,7 +78,11 @@ header {
                 border-radius: 5px;
                 color: #ffffff;
             }@media @tablet {
-                width:60%
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                padding-bottom: 1%;
             
             }
             

@@ -3,8 +3,10 @@ import React from 'react'
 
 export default function JobDetails() {
     return (
-        <div>
-            <h1>JobDetails</h1>
-        </div>
+        <section className="JD-section">
+            <div>
+<h1>Hi</h1>
+            </div>
+        </section>
     )
 }
