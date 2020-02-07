@@ -672,7 +672,7 @@ input:checked + .slider:before {
   }
 }
 .profileCard div {
-  border: 2px solid black;
+  border: 2px solid #d1d5da;
   border-radius: 8px;
   background-color: #f8f8f8;
   color: black;
@@ -777,7 +777,7 @@ input:checked + .slider:before {
   border: none;
 }
 .profile-form-inputs2 .profile-form-edit-name div input {
-  border: 1px solid grey;
+  border: 1px solid #d1d5da;
   width: 100%;
 }
 @media (max-width: 500px) {
@@ -808,7 +808,7 @@ input:checked + .slider:before {
   height: 25px;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid grey;
+  border: 1px solid #d1d5da;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
@@ -819,7 +819,7 @@ input:checked + .slider:before {
   height: 70%;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid grey;
+  border: 1px solid #d1d5da;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
