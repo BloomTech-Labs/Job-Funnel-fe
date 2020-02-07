@@ -1,7 +1,3 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/dc6f8a667c4203e01e0e/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/Job-Funnel-fe/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/dc6f8a667c4203e01e0e/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/Job-Funnel-fe/test_coverage)
-
 # QuickHire
 
 You can find the deployed project at [QuickHire.dev](https://quickhire.dev)

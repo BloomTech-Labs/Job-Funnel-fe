@@ -7,11 +7,11 @@ import LoadingOverlay from "react-loading-overlay";
 
 import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
-import LandingPage from "./components/Account/LandingPage.js"
 import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
+import LandingPage from './components/Account/LandingPage';
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
@@ -73,4 +73,3 @@ const StyledLoader = styled(LoadingOverlay)`
     width:100%;
     z-index: 2;
 `;
-
