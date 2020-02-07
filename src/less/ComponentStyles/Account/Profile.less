@@ -110,6 +110,7 @@
     @justifyContent: space-between, @alignItems: center, @width: 50%, @margin: .5% 0 .5% 0, @padding: 2%);
 
     background: @quickhire-background;
+    border-radius: 5px;
 
     @media @mobile {
         width: 75%;
@@ -173,7 +174,8 @@
 
     @media @mobile {
         flex-direction: column;
-        width: 500px;
+        width: 400px;
+        min-width: 350px;
     }
 
     @media @tablet {
@@ -199,6 +201,8 @@
 	min-height: 550px;
     width: 100%;
     border: 1px solid @card-border;
+    border-radius: 5px;
+
 
     @media @mobile {
         width: 80%;
@@ -274,7 +278,6 @@
 
 .edit-profile-btns {
     display: flex;
-    border: 1px solid red;
     width: 800px;
     justify-content: space-evenly;
     

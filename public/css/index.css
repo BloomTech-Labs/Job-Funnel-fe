@@ -801,6 +801,7 @@ input:checked + .slider:before {
   margin: 0.5% 0 0.5% 0;
   padding: 2%;
   background: #ffffff;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .profileCard {
@@ -859,7 +860,8 @@ input:checked + .slider:before {
 @media (max-width: 500px) {
   .profile-main-form2 {
     flex-direction: column;
-    width: 500px;
+    width: 400px;
+    min-width: 350px;
   }
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -882,6 +884,7 @@ input:checked + .slider:before {
   min-height: 550px;
   width: 100%;
   border: 1px solid #d1d5da;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .profile-form-inputs2 {
@@ -955,7 +958,6 @@ input:checked + .slider:before {
 }
 .edit-profile-btns {
   display: flex;
-  border: 1px solid red;
   width: 800px;
   justify-content: space-evenly;
 }

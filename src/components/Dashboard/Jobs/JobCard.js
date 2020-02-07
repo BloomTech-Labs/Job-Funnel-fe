@@ -18,7 +18,7 @@ function JobCard(props) {
             </div>
             <div className='jobButtons' >
                 <button>Save</button>
-                <button>Apply</button>
+                <button>View</button>
             </div>
         </div>
     )
