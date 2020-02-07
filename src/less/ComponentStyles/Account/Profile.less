@@ -13,7 +13,6 @@
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	height: 100vh;
 	margin: 0;
 	padding: 0;
 }
@@ -155,13 +154,11 @@
 	justify-content: center;
 	align-items: center;
 	// border: 1px solid red;
-
 	@media @mobile {
 		width: 80%;
 		max-width: 100%;
 	}
 }
-
 .profile-second-main2 {
 	.profile-make2 {
 		text-align: center;
@@ -169,7 +166,6 @@
 		width: 100%;
 	}
 }
-
 .profile-main-form2 {
 	box-sizing: border-box;
 	display: flex;
@@ -178,17 +174,15 @@
 	align-items: center;
 	justify-content: space-around;
 	width: 750px;
-
 	@media @mobile {
 		flex-direction: column;
-		width: 500px;
+		width: 400px;
+		min-width: 350px;
 	}
-
 	@media @tablet {
 		width: 480px;
 	}
 }
-
 .edit-profile-top {
 	display: flex;
 	flex-direction: column;
@@ -197,7 +191,6 @@
 	margin-top: 2%;
 	width: 80%;
 }
-
 .profile-form-inputs2 {
 	display: flex;
 	flex-direction: column;
@@ -206,14 +199,13 @@
 	min-height: 550px;
 	width: 100%;
 	border: 1px solid @card-border;
-
+	border-radius: 5px;
 	@media @mobile {
 		width: 80%;
 		max-width: 100%;
 		// justify-content: none;
 	}
 	// edit profile starts here///////
-
 	.profile-form-edit-name {
 		display: flex;
 		flex-flow: row;
@@ -223,14 +215,16 @@
 		@media @mobile {
 			flex-direction: column;
 		}
-
 		div {
 			display: flex;
 			flex-direction: column;
 			border: none;
-
+			// border: 1px solid green;
+			// h3 {
+			//     border: 1px solid blue;
+			// }
 			input {
-				border: 1px solid @quickhire-main;
+				border: 1px solid @edit-profile-input;
 				width: 100%;
 				@media @mobile {
 					width: 100%;
@@ -248,42 +242,36 @@
 			}
 		}
 	}
-
 	input {
 		width: 60%;
 		height: 25px;
 		padding-left: 2%;
 		background: @quickhire-background;
-		border: 1px solid @quickhire-main;
+		border: 1px solid @edit-profile-input;
 		font-size: 1.25rem;
 		margin-bottom: 3%;
 		text-transform: capitalize;
 	}
-
 	textarea {
 		min-width: 60%;
 		max-width: 100%;
 		height: 70%;
 		padding-left: 2%;
 		background: @quickhire-background;
-		border: 1px solid @quickhire-main;
+		border: 1px solid @edit-profile-input;
 		font-size: 1.25rem;
 		margin-bottom: 3%;
 		text-transform: capitalize;
 	}
 }
-
 .edit-profile-btns {
 	display: flex;
-	border: 1px solid @quickhire-main;
 	width: 800px;
 	justify-content: space-evenly;
-
 	@media @mobile {
 		flex-direction: column;
 		align-items: center;
 	}
-
 	button {
 		width: 40%;
 		height: 4rem;
@@ -296,10 +284,8 @@
 			background: @profile-button-hover;
 			color: @profile-button-text-hover;
 		}
-
 		@media @mobile {
 			width: 50%;
 		}
 	}
 }
-// edit profile ends here///////

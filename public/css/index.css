@@ -555,7 +555,6 @@ input:checked + .slider:before {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -729,7 +728,8 @@ input:checked + .slider:before {
 @media (max-width: 500px) {
   .profile-main-form2 {
     flex-direction: column;
-    width: 500px;
+    width: 400px;
+    min-width: 350px;
   }
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -752,6 +752,7 @@ input:checked + .slider:before {
   min-height: 550px;
   width: 100%;
   border: 1px solid #d1d5da;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .profile-form-inputs2 {
@@ -776,7 +777,7 @@ input:checked + .slider:before {
   border: none;
 }
 .profile-form-inputs2 .profile-form-edit-name div input {
-  border: 1px solid #AC2A38;
+  border: 1px solid grey;
   width: 100%;
 }
 @media (max-width: 500px) {
@@ -807,7 +808,7 @@ input:checked + .slider:before {
   height: 25px;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid #AC2A38;
+  border: 1px solid grey;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
@@ -818,14 +819,13 @@ input:checked + .slider:before {
   height: 70%;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid #AC2A38;
+  border: 1px solid grey;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
 }
 .edit-profile-btns {
   display: flex;
-  border: 1px solid #AC2A38;
   width: 800px;
   justify-content: space-evenly;
 }
