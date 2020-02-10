@@ -6,6 +6,8 @@
   height: 100vh;
   @media @tablet{
     width: 100%;
+  } @media @mobile{
+    width: 100%;
   }
   h1 {
     font-family: "Montserrat", sans-serif;
@@ -15,7 +17,6 @@
       padding-left:2%;
     }
   }
-
   .p-div {
     font-size: large;
     padding-top: 5%;
@@ -41,7 +42,6 @@
       }
     }
   }
-
   .bottom-content {
     display: flex;
     @media @tablet {
@@ -116,7 +116,9 @@
       justify-content: center;
     }
     @media @tablet {
+      flex-direction: column;
       width: 100%;
+      justify-content: center;
     }
   }
 }
