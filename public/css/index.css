@@ -628,6 +628,29 @@ input:checked + .slider:before {
   border-radius: 5px;
   color: #ffffff;
 }
+.job-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.job-details-container .deets-apply-button button {
+  border: 1px solid black;
+  border: #AC2A38;
+  background-color: #AC2A38;
+  color: #ffffff;
+  width: 25%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  padding: 0;
+}
+.job-details-container .deets-apply-button button:hover {
+  border: #ffffff;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #AC2A38;
+  cursor: pointer;
+}
 .main-div {
   height: 90vh;
   display: flex;
