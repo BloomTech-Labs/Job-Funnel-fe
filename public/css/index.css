@@ -470,7 +470,6 @@ input:checked + .slider:before {
 /* #endregion */
 /* #region sidebar */
 .dashboard-SideBar {
-  display: flex;
   flex-direction: column;
   background-color: #AC2A38;
   border-right: 0.5px solid #D5D5D5;
@@ -478,6 +477,12 @@ input:checked + .slider:before {
   min-width: 250px;
   max-width: 265px;
   max-height: 100%;
+  display: none;
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .dashboard-SideBar {
+    display: none;
+  }
 }
 .dashboard-SideBar ul {
   color: white;
@@ -494,30 +499,28 @@ input:checked + .slider:before {
 }
 .filter-class {
   display: flex;
-  margin: 0 0 30px 30px;
+  margin: 0 0 30px 130px;
   width: 98%;
 }
-.filter-class .search-bar input {
-  width: 298px;
-  height: 30px;
+.filter-class .search-bar {
+  width: 180px;
+  height: 35px;
   text-align: center;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
 .filter-class .job-select {
-  width: 100%;
-  min-width: 298px;
+  width: 180px;
   height: 35px;
-  margin-right: 1.6%;
-  margin-left: 2%;
+  margin-right: 2.5%;
+  margin-left: 2.3%;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
 .filter-class .experience-select {
-  width: 100%;
-  min-width: 298px;
+  width: 180px;
   height: 35px;
-  margin-right: 2%;
+  margin-right: 2.3%;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
@@ -533,12 +536,64 @@ input:checked + .slider:before {
   background-color: #AC2A38;
   color: white;
 }
+@media (max-width: 1000px) {
+  .filter-class {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 106%;
+  }
+  .filter-class .search-bar {
+    width: 300px;
+    margin-bottom: 2%;
+  }
+  .filter-class .job-select {
+    width: 300px;
+    margin-bottom: 2%;
+  }
+  .filter-class .experience-select {
+    width: 300px;
+    margin-bottom: 2%;
+    margin-left: 8px;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .filter-class {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-left: 97%;
+  }
+  .filter-class .search-bar {
+    margin-bottom: 2%;
+  }
+  .filter-class .job-select {
+    margin-bottom: 3%;
+  }
+  .filter-class .experience-select {
+    margin-bottom: 3%;
+    margin-left: 2%;
+  }
+  .filter-class button {
+    margin-left: 2%;
+  }
+}
+@media (max-width: 500px) {
+  .filter-class {
+    margin-left: 52%;
+  }
+  .filter-class .job-select {
+    margin-bottom: 4%;
+  }
+  .filter-class .experience-select {
+    margin-bottom: 4%;
+  }
+}
 /* #endregion */
 .dashboardNav {
   width: 60%;
   min-width: 315px;
   max-width: 500px;
-  margin: 30px 0 30px 30px;
+  margin: 30px 0 30px 130px;
 }
 .dashboardNav nav {
   border: 1px solid #AC2A38;
@@ -571,45 +626,79 @@ input:checked + .slider:before {
 .dashboardNav nav a {
   text-decoration: none;
 }
+@media (max-width: 1000px) {
+  .dashboardNav {
+    margin-left: 105%;
+  }
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .dashboardNav {
+    margin-left: 72%;
+    margin-bottom: 3%;
+  }
+}
+@media (max-width: 500px) {
+  .dashboardNav {
+    margin-left: 27%;
+  }
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 98%;
-  margin: 0 auto;
+  width: 96%;
+  margin-left: 1.8%;
 }
-.jobCard {
+.card-container .jobCard {
   border: 1px solid #AC2A38;
   background-color: #fafafa;
   width: 28%;
   min-width: 250px;
-  max-width: 300px;
+  max-width: 340px;
   max-height: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-left: 1.4%;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
 }
-.jobCard h3 {
+.card-container .jobCard h3 {
   font-size: 1.3rem;
 }
-.card-image {
+.card-container .card-image {
   display: flex;
   width: 18%;
   height: 16%;
   margin: 8%;
 }
-.card-image img {
+.card-container .card-image img {
   width: 50px;
   height: 50px;
 }
-.card-text {
+.card-container .card-text {
   margin-left: 8%;
 }
-.card-text p {
+.card-container .card-text p {
   margin-bottom: 5%;
 }
-.card-text p span {
+.card-container .card-text p span {
   color: #646464;
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .card-container {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .card-container .jobCard {
+    width: 300px;
+  }
+}
+@media (max-width: 500px) {
+  .card-container {
+    width: 100%;
+  }
+  .card-container .jobCard {
+    width: 320px;
+  }
 }
 .jobButtons {
   display: flex;
@@ -627,6 +716,7 @@ input:checked + .slider:before {
   background: #AC2A38;
   border-radius: 5px;
   color: #ffffff;
+  cursor: pointer;
 }
 .main-div {
   height: 90vh;
