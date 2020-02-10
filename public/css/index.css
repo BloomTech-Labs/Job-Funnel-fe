@@ -802,7 +802,7 @@ input:checked + .slider:before {
   }
 }
 .profileCard {
-  border: 1px solid #d1d5da;
+  border: 1px solid #D3D3D3;
   background: #AC2A38;
   color: black;
   display: flex;
@@ -814,6 +814,7 @@ input:checked + .slider:before {
   margin: 0.5% 0 0.5% 0;
   padding: 2%;
   background: #ffffff;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .profileCard {
@@ -825,6 +826,17 @@ input:checked + .slider:before {
   .profileCard {
     width: 70%;
   }
+}
+.profileCard div {
+  border: 2px solid #D3D3D3;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: black;
+  width: 30%;
+  height: 45vh;
+  text-align: center;
+  line-height: 2;
+  margin: 30px 0 0 0;
 }
 .profileCard h3 {
   width: 100%;
@@ -872,7 +884,8 @@ input:checked + .slider:before {
 @media (max-width: 500px) {
   .profile-main-form2 {
     flex-direction: column;
-    width: 500px;
+    width: 400px;
+    min-width: 350px;
   }
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -895,6 +908,7 @@ input:checked + .slider:before {
   min-height: 550px;
   width: 100%;
   border: 1px solid #d1d5da;
+  border-radius: 5px;
 }
 @media (max-width: 500px) {
   .profile-form-inputs2 {
@@ -919,7 +933,7 @@ input:checked + .slider:before {
   border: none;
 }
 .profile-form-inputs2 .profile-form-edit-name div input {
-  border: 1px solid black;
+  border: 1px solid #D3D3D3;
   width: 100%;
 }
 @media (max-width: 500px) {
@@ -928,7 +942,7 @@ input:checked + .slider:before {
   }
 }
 .profile-form-inputs2 div {
-  border: none;
+  border: #D3D3D3;
   background: #ffffff;
   color: black;
   display: flex;
@@ -950,7 +964,7 @@ input:checked + .slider:before {
   height: 25px;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid black;
+  border: 1px solid #D3D3D3;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
@@ -961,14 +975,13 @@ input:checked + .slider:before {
   height: 70%;
   padding-left: 2%;
   background: #ffffff;
-  border: 1px solid black;
+  border: 1px solid #D3D3D3;
   font-size: 1.25rem;
   margin-bottom: 3%;
   text-transform: capitalize;
 }
 .edit-profile-btns {
   display: flex;
-  border: 1px solid red;
   width: 800px;
   justify-content: space-evenly;
 }
