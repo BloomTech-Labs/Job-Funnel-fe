@@ -12,6 +12,7 @@ import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
 import LandingPage from './components/Account/LandingPage';
+import JobDetails from "./components/Dashboard/Jobs/JobDetails"
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
@@ -46,12 +47,11 @@ function App(props) {
       <link rel="stylesheet" type="text/css" href={theme}/>
       <Header changeTheme={changeTheme}/>
       <Route exact path='/' component={LandingPage} />
-      {/* {location.pathname !== '/' && <StyledLoader active={loading} spinner text='Loading...'> */}
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-      {/* </StyledLoader>} */}
+        <PrivateRoute path='/JobDetails' component={JobDetails}/>
       <Footer />
     </div>
   );
