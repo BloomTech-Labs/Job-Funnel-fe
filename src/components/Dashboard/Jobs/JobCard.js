@@ -1,12 +1,16 @@
 import React from 'react';
+import JobDetails from './JobDetails';
+
+import {Link} from "react-router-dom";
 
 function JobCard(props) {
-    // console.log(props, "Props stuff")
+    //  console.log(props, "props.match.params error")
+
+
     return (
         <div className="jobCard">
             <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
                 <h4>Your Skills match 6/7</h4>
-                <p onClick={''}>...</p>
             </div>
             <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
@@ -18,10 +22,13 @@ function JobCard(props) {
             </div>
             <div className='jobButtons' >
                 <button>Save</button>
-                <button>Apply</button>
+                <Link to={`/Dashboard/Job/${props.id}`}>
+                <button>View</button>
+                </Link>
             </div>
         </div>
     )
 }
 
 export default JobCard;
+

@@ -1,9 +1,8 @@
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-@import "./Global/reset.less";
-@import "./Global/variables.less";
+@import "../Global/reset.less";
+@import "../Global/variables.less";
 @import "./Global/global.less";
 
 // #region colors
@@ -11,8 +10,6 @@
 @quickhire-secondary: #ffffff;
 // Standard Colors
 @quickhire-background: #ffffff;
-@quickhire-footer: #AC2A38;
-@footer-text: #ffffff;
 @navigation-button: #ffffff;
 @navigation-text: #AC2A38;
 @card-button: white;
@@ -27,8 +24,6 @@
 @profile-button-text: #ffffff;
 @card-border: #d1d5da;
 @button-border:#D3D3D3;
-@edit-profile-input: #D3D3D3;
-@profile-border: #D3D3D3;
 // Hover Colors
 @profile-button-hover: #ffffff;
 @profile-button-text-hover: #3073AB;
@@ -40,16 +35,15 @@
 @header-text-hover: white;
 // #endregion
 
-@import "./Global/mixins.less";
+@import "../Global/mixins.less";
 
-@import "./ComponentStyles/Header.less";
-@import "./ComponentStyles/Footer.less";
-@import "./ComponentStyles/LandingPage.less";
+@import "../ComponentStyles/Header.less";
+@import "../ComponentStyles/Footer.less";
 
-@import "./ComponentStyles/Dashboard.less";
+@import "../ComponentStyles/Dashboard.less";
 
-@import "./ComponentStyles/Account/Login.less";
-@import "./ComponentStyles/Account/Profile.less";
-@import "./ComponentStyles/Account/Register.less";
+@import "../ComponentStyles/Account/Login.less";
+@import "../ComponentStyles/Account/Profile.less";
+@import "../ComponentStyles/Account/Register.less";
 
-// less-watch-compiler src/less public/css index.less
+// less-watch-compiler src/less src index.less
