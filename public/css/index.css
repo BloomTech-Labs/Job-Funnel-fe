@@ -180,12 +180,14 @@ header {
   header {
     flex-direction: column;
     justify-content: center;
-    height: 13vh;
+    height: 17vh;
   }
 }
 @media (max-width: 500px) {
   header {
-    width: 28%;
+    flex-direction: column;
+    justify-content: center;
+    height: 25vh;
   }
 }
 header a {
@@ -199,10 +201,22 @@ header a {
     align-items: center;
     display: flex;
     width: 100%;
+    padding-bottom: 1.5%;
+  }
+}
+@media (max-width: 500px) {
+  header a {
+    flex-direction: column;
+    justify-content: center;
+    margin: unset;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding-bottom: 1.5%;
   }
 }
 header h1 {
-  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", Arial, sans-serif;
   margin: 0 0 0 30px;
   font-size: 25px;
   color: #AC2A38;
@@ -218,8 +232,9 @@ header h1 {
   }
 }
 header nav {
-  width: 16%;
+  width: 12.5vw;
   height: 100%;
+  min-width: 220px;
   margin: 0 30px 0 0;
   display: flex;
   justify-content: space-between;
@@ -231,11 +246,16 @@ header nav {
     justify-content: center;
     margin: unset;
     width: 80%;
+    min-width: unset;
   }
 }
 @media (max-width: 500px) {
   header nav {
-    width: 28%;
+    flex-direction: column;
+    justify-content: center;
+    margin: unset;
+    width: 80%;
+    min-width: unset;
   }
 }
 header nav button {
@@ -262,7 +282,11 @@ header nav button:hover {
 }
 @media (max-width: 500px) {
   header nav button {
-    margin: unset;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-bottom: 1%;
   }
 }
 footer {
@@ -278,7 +302,16 @@ footer {
 }
 .landing-page {
   width: 90%;
-  height: 100vh;
+}
+@media (min-width: 500px) and (max-width: 800px) {
+  .landing-page {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .landing-page {
+    width: 100%;
+  }
 }
 .landing-page h1 {
   font-family: "Montserrat", sans-serif;
@@ -404,11 +437,14 @@ footer {
   .landing-page .img-div {
     flex-direction: column;
     width: 100%;
+    justify-content: center;
   }
 }
 @media (min-width: 500px) and (max-width: 800px) {
   .landing-page .img-div {
+    flex-direction: column;
     width: 100%;
+    justify-content: center;
   }
 }
 /* #region sliders and filters*/

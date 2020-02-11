@@ -1,94 +1,113 @@
 header {
+  // border:1px solid red;
+  // border-bottom: 1px solid #AC2A38;
+  position: sticky;
+  background-color: #ffffff;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  @media @tablet {
+    flex-direction: column;
+    justify-content: center;
+    height: 17vh;
+  }
+  @media @mobile {
+    flex-direction: column;
+    justify-content: center;
+    height: 25vh;
+  }
+
+  a {
+    text-decoration: none;
+    @media @tablet {
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      padding-bottom: 1.5%;
+    }
+    @media @mobile {
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      padding-bottom: 1.5%;
+    }
+  }
+  h1 {
     // border:1px solid red;
-    // border-bottom: 1px solid #AC2A38;
-    position: sticky;
-    background-color: #ffffff;
-    width: 100%;
-    height: 75px;
+    font-family: "Franklin Gothic Medium", Arial, sans-serif;
+    margin: 0 0 0 30px;
+    font-size: 25px;
+    color: @quickhire-main;
+    @media @tablet {
+      margin: unset;
+    }
+    @media @mobile {
+      margin: unset;
+    }
+  }
+
+  nav {
+    width: 12.5vw;
+    height: 100%;
+    min-width: 220px;
+    margin: 0 30px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 9;
-    border-bottom: 1px solid rgb(230, 230, 230);
     @media @tablet {
-        flex-direction: column;
-        justify-content: center;
-        height:13vh
-    }
-    
-    @media @mobile {
-        width:28%;
-    }
-    a{
-        text-decoration: none;
-        @media @tablet {
-            flex-direction: column;
-            justify-content: center;
-            margin: unset;
-            align-items: center;
-            display: flex;
-            width: 100%;
-        }
-    }
-    h1{
-        // border:1px solid red;
-        font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-        margin: 0 0 0 30px;
-        font-size: 25px;
-        color: @quickhire-main;
-            @media @tablet {
-                margin: unset;
-            }
-            @media @mobile {
-                margin: unset;
-        }
-        
-        
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      width: 80%;
+      min-width: unset;
     }
 
-    nav {
-        // border:1px solid green;
-        width: 16%;
-        // min-width: 200px;
-        height: 100%;
-        margin: 0 30px 0 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @media @tablet {
-            flex-direction: column;
-            justify-content: center;
-            margin: unset;
-            width: 80%;
-        }
-        
-        @media @mobile {
-            width:28%;
-        }
-        button{
-            // margin-left: 4rem;
-            color: @quickhire-main;
-            width: 100px;
-            height: 35px;
-            border: 1px solid @quickhire-main;
-            border-radius: 3px;
-            padding:1%;
-            &:hover{
-                background: @quickhire-main;
-                border-radius: 5px;
-                color: #ffffff;
-            }@media @tablet {
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-                padding-bottom: 1%;
-            
-            }
-            
-            @media @mobile {
-                margin:unset;
-            }
-        }
+    @media @mobile {
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      width: 80%;
+      min-width: unset;
+
     }
+    button {
+      // margin-left: 4rem;
+      color: @quickhire-main;
+      width: 100px;
+      height: 35px;
+      border: 1px solid @quickhire-main;
+      border-radius: 3px;
+      padding: 1%;
+      &:hover {
+        background: @quickhire-main;
+        border-radius: 5px;
+        color: #ffffff;
+      }
+      @media @tablet {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 1%;
+      }
+
+      @media @mobile {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 1%;
+      }
+    }
+  }
 }
