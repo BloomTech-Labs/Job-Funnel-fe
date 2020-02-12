@@ -5,14 +5,10 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 import {Link} from "react-router-dom";
 
 function JobCard(props) {
-    //  console.log("do i have props.match.params.id??", props)
     console.log('job id?', props)
-    //  console.log('please tell me its not this easy', props.currentuser.id)
 
     const user_id = sessionStorage.getItem('id');
     const job_id = props.id;
-
-    // console.log('user id', user_id);
     
     const [saved, setSaved] = useState({
         user_id: user_id,
@@ -26,10 +22,9 @@ function JobCard(props) {
         console.log('saved ', saved)
         axiosWithAuth().post('/saved/', saved)
         .then(response => {
-            // console.log('handle save job response', response.data)
-            // console.log('response id', response.data.id)
+            console.log('handle save job response', response.data)
             setSaved({...saved})
-            // console.log('saved', saved)
+            console.log('saved', saved)
             
         })
         .catch(error => {
