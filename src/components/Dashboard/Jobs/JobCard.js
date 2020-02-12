@@ -2,12 +2,13 @@ import React, {useState, useEffect} from 'react';
 import JobDetails from './JobDetails';
 import axiosWithAuth from "../../../utils/axiosWithAuth"
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux"
 
 function JobCard(props) {
     console.log('job id?', props)
 
-    const user_id = sessionStorage.getItem('id');
+    const user_id = props.currentUser.id
     const job_id = props.id;
     
     const [saved, setSaved] = useState({
@@ -33,7 +34,6 @@ function JobCard(props) {
 
     }
 
-
     return (
         <div className="jobCard">
             <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
@@ -50,12 +50,20 @@ function JobCard(props) {
             <div className='jobButtons' >
                 <button onClick={handleSave}>Save</button>
                 <Link to={`/Dashboard/Job/${props.id}`}>
-                <button>View</button>
+                    <button>View</button>
                 </Link>
             </div>
         </div>
     )
 }
 
-export default JobCard;
+
+const mapStateToProps = state => {
+    return {
+        currentUser: state.AppReducer.currentUser,
+    }
+  }
+  
+  export default connect(mapStateToProps, {})(JobCard)
+
 
