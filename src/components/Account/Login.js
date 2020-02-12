@@ -33,6 +33,7 @@ const Login = (props) => {
             .then( res => {
                 console.log('res from post', res.data)
                 sessionStorage.setItem('token', res.data.token)
+                sessionStorage.setItem('id', res.data.user.id)
                 props.login(res.data.user);
                 props.history.push('/Dashboard')
                 setLoading(false);

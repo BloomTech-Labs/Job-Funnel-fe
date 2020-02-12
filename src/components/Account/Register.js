@@ -43,6 +43,7 @@ const Register = (props) => {
                 })
                 .then(res => {
                     sessionStorage.setItem('token', res.data.token)
+                    sessionStorage.setItem('id', res.data.user.id)
                     props.login(res.data.user);
                     props.history.push('/Dashboard')
                     setLoading(false);
