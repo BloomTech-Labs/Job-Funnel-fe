@@ -32,7 +32,7 @@ export default function JobDetails(props) {
         </div>
         
         <div className="desc-div" >
-        <h2 className="job-description" >{details.description}</h2>
+        <p className="job-description" >{details.description}</p>
         </div>
         </div>
     )
