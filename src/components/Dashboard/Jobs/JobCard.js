@@ -31,27 +31,3 @@ function JobCard(jobs) {
 }
 
 export default JobCard;
-
-
-// import React from 'react';
-
-// const JobCard = ({ jobs, loading }) => {
-//     if(loading) {
-//         return <h2>Loading...</h2>
-//     }
-
-//     return (
-//         <div className="jobCard">
-//             {jobs.map(job => (
-//                 <div key={job.id}
-//                     id={job.id} 
-//                     title={job.title} 
-//                     company={job.companyName} 
-//                     location={`${job.city}, ${job.stateOrProvince}`} />
-//             ))}
-//         </div>
-//     )
-// }
-
-// export default JobCard;
-
