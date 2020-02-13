@@ -14,8 +14,8 @@ const Filter = () => {
     return (
         <div className="filter-class">
             <form onSubmit={event => handleSubmit(event)}>
-                <label className="search-bar">
-                    <input
+                <label>
+                    <input className="search-bar"
                         type="text"
                         name="search"
                         placeholder="Search for Jobs"

@@ -3,7 +3,7 @@ import JobDetails from './JobDetails';
 
 import {Link} from "react-router-dom";
 
-function JobCard(props) {
+function JobCard(jobs) {
     //  console.log(props, "props.match.params error")
 
 
@@ -16,13 +16,13 @@ function JobCard(props) {
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
             </div>
             <div className="card-text">
-                <h3>{props.title}</h3>
-                <p>{props.company}</p>
-                <span>📍 {props.location}</span>
+                <h3>{jobs.title}</h3>
+                <p>{jobs.company}</p>
+                <span>📍 {jobs.location}</span>
             </div>
             <div className='jobButtons' >
                 <button>Save</button>
-                <Link to={`/Dashboard/Job/${props.id}`}>
+                <Link to={`/Dashboard/Job/${jobs.id}`}>
                 <button>View</button>
                 </Link>
             </div>
@@ -31,4 +31,3 @@ function JobCard(props) {
 }
 
 export default JobCard;
-
