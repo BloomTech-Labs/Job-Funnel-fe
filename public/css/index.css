@@ -633,7 +633,7 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 .job-details-container .deets-apply-button button {
-  border: 1px solid black;
+  justify-content: right;
   border: #AC2A38;
   background-color: #AC2A38;
   color: #ffffff;
@@ -650,6 +650,19 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #AC2A38;
   cursor: pointer;
+}
+.job-details-container .deets-div {
+  display: flex;
+  flex-direction: column;
+}
+.job-details-container .deets-div h2 {
+  padding: 2%;
+}
+.job-details-container .deets-div p {
+  padding: 2%;
+}
+.job-details-container .desc-div p {
+  padding: 2%;
 }
 .main-div {
   height: 90vh;
