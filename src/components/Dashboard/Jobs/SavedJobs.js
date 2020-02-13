@@ -4,7 +4,6 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
 
-
     function SavedJobs(props) {
     const [save, setSave] = useState([])
 
@@ -21,25 +20,23 @@ import { connect } from "react-redux"
         console.error(error)
     })
  }, [])
-
+ 
     return (
         <div>
             {save.map(e => {
                 return (
                     <div key={id}>
                         <h3>{e.companyName}</h3>
-                        <p>{e.description}</p>
-                        <p>{e.city}</p>
-                        <p>{e.stateOrProvince}</p>
-                        <p>{e.country}</p>
-                        <p>{e.testexternal_url}</p>
+                        <h3>📍{e.city} {e.stateOrProvince}, {e.country}</h3>
+                        <p> Overview: {e.description.slice(0,300)}...</p>
+                        {/* <p>{e.testexternal_url}</p> */}
+                        <button>More Info</button>
                     </div>
                 )
             })}
         </div>
     )
 }
-
 
 const mapStateToProps = state => {
     return {

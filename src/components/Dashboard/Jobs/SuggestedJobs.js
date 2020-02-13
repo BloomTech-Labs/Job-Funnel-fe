@@ -10,6 +10,7 @@ export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
+
     useEffect(() => {
         setLoading(true);
         axiosWithAuth().get('/debug/job_listings')
