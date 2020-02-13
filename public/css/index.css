@@ -628,7 +628,7 @@ input:checked + .slider:before {
 }
 @media (min-width: 520px) and (max-width: 600px) {
   .filter-class {
-    margin-left: 47%;
+    margin-left: 32.5%;
   }
   .filter-class .job-select {
     margin-top: 2%;
@@ -694,7 +694,7 @@ input:checked + .slider:before {
 }
 @media (min-width: 520px) and (max-width: 600px) {
   .dashboardNav {
-    margin-left: 46%;
+    margin-left: 31%;
     margin-bottom: 4%;
   }
 }
