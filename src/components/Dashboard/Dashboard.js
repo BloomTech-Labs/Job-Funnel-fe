@@ -20,7 +20,7 @@ export default function Dashboard() {
             <div style={{display: 'flex', flexWrap: 'wrap', width: '100%', }}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                 <DashboardNav/>
-                <Filter/>
+                {(location.pathname === "/Dashboard" ? <Filter/> : null)}
                 </div>
                 <Route exact path='/Dashboard' component={SuggestedJobs} />
                 <Route exact path='/Dashboard/Saved' component={SavedJobs} />
