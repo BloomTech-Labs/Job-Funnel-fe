@@ -65,7 +65,8 @@ console.log('location', location.pathname)
                         <Link to ="/Register"> <button>Register</button> </Link>
                     </nav>
                     )
-            }else if (location.pathname === '/register' || location.pathname === '/Register') {
+            }
+          else if (location.pathname === '/register' || location.pathname === '/Register') {
                 return (
                     <nav>
                         <Link to ="/Login"> <button>Login</button> </Link>
