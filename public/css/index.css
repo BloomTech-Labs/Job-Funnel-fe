@@ -386,6 +386,9 @@ header nav button:hover {
 .dark-mode .about-container h3 {
   color: white;
 }
+.dark-mode .job-details-container p {
+  color: white;
+}
 .navbar {
   display: flex;
   flex-direction: column;
@@ -959,13 +962,15 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 .job-details-container .deets-apply-button {
-  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2%;
 }
 .job-details-container .deets-apply-button button {
-  border: black;
+  border: 1px solid black;
   background-color: #AC2A38;
   color: #ffffff;
-  width: 100%;
+  width: 10%;
   height: 35px;
   border-radius: 8px;
   font-size: 1.2rem;
@@ -973,7 +978,7 @@ input:checked + .slider:before {
   padding: 0;
 }
 .job-details-container .deets-apply-button button:hover {
-  border: #AC2A38;
+  border: 1px solid #AC2A38;
   border-radius: 6px;
   background: #ffffff;
   color: #AC2A38;

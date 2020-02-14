@@ -57,7 +57,7 @@ console.log('location', location.pathname)
                     <button onClick={logOut}> Sign Out </button>
                 </nav>
                 )
-            } 
+            }
 
           else  if (location.pathname === '/login' || location.pathname === '/Login'){
                 return (
