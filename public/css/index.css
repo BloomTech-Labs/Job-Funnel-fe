@@ -380,6 +380,12 @@ header nav button:hover {
 .dark-mode .landing-page p {
   color: white;
 }
+.dark-mode .about-container p {
+  color: white;
+}
+.dark-mode .about-container h3 {
+  color: white;
+}
 .navbar {
   display: flex;
   flex-direction: column;
@@ -541,6 +547,61 @@ footer {
     flex-direction: column;
     width: 100%;
     justify-content: center;
+  }
+}
+.about-container {
+  margin-bottom: 5%;
+}
+.about-container h1 {
+  text-align: center;
+  margin-top: 2%;
+}
+.about-container p {
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+}
+.about-container .image-container {
+  width: 220px;
+  margin-bottom: -5px;
+}
+.about-container .image-container .team-image {
+  width: 100%;
+}
+.about-container .team-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #AC2A38;
+  margin-bottom: 2%;
+}
+.about-container .team-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.about-container .team-info h3 {
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+.about-container .icons {
+  margin: 10px auto;
+}
+.about-container .twitter {
+  width: 20px;
+  margin-right: 10px;
+}
+.about-container .github {
+  width: 20px;
+  margin-right: 10px;
+}
+.about-container .linked {
+  width: 20px;
+}
+@media (max-width: 1000px) {
+  .about-container .team-card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
   }
 }
 /* #region sliders and filters*/
