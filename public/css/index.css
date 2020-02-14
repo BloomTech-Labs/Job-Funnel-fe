@@ -176,14 +176,14 @@ header {
   z-index: 9;
   border-bottom: 1px solid #e6e6e6;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   header {
     flex-direction: column;
     justify-content: center;
     height: 17vh;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   header {
     flex-direction: column;
     justify-content: center;
@@ -193,7 +193,7 @@ header {
 header a {
   text-decoration: none;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   header a {
     flex-direction: column;
     justify-content: center;
@@ -204,7 +204,7 @@ header a {
     padding-bottom: 1.5%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   header a {
     flex-direction: column;
     justify-content: center;
@@ -221,12 +221,12 @@ header h1 {
   font-size: 25px;
   color: #AC2A38;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   header h1 {
     margin: unset;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   header h1 {
     margin: unset;
   }
@@ -240,7 +240,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   header nav {
     flex-direction: column;
     justify-content: center;
@@ -249,7 +249,7 @@ header nav {
     min-width: unset;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   header nav {
     flex-direction: column;
     justify-content: center;
@@ -271,7 +271,7 @@ header nav button:hover {
   border-radius: 5px;
   color: #ffffff;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   header nav button {
     width: 100%;
     justify-content: center;
@@ -280,7 +280,7 @@ header nav button:hover {
     padding-bottom: 1%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   header nav button {
     width: 100%;
     justify-content: center;
@@ -303,12 +303,12 @@ footer {
 .landing-page {
   width: 90%;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page {
     width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page {
     width: 100%;
   }
@@ -318,7 +318,7 @@ footer {
   font-size: 3.25rem;
   padding: 2%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page h1 {
     padding-left: 2%;
   }
@@ -336,7 +336,7 @@ footer {
 .landing-page .p-div .p-3 {
   padding-left: 4%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .p-div {
     font-size: unset;
   }
@@ -353,13 +353,13 @@ footer {
 .landing-page .bottom-content {
   display: flex;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page .bottom-content {
     flex-direction: column;
     width: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .bottom-content {
     flex-direction: column;
     width: 100%;
@@ -375,14 +375,14 @@ footer {
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page .bottom-content .button-div {
     width: 100%;
     height: 15vh;
     padding-top: 4%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .bottom-content .button-div {
     width: 100%;
     height: 15vh;
@@ -403,23 +403,23 @@ footer {
   border-radius: 5px;
   color: #ffffff;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page .bottom-content .button-div button {
     height: 100%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .bottom-content .button-div button {
     height: 100%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page .bottom-content .button-div button a {
     height: 35%;
     width: 60%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .bottom-content .button-div button a {
     height: 35%;
     width: 60%;
@@ -433,14 +433,14 @@ footer {
 .landing-page .img-div img {
   max-width: 100%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .landing-page .img-div {
     flex-direction: column;
     width: 100%;
     justify-content: center;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .landing-page .img-div {
     flex-direction: column;
     width: 100%;
@@ -540,7 +540,7 @@ input:checked + .slider:before {
   max-height: 100%;
   display: none;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .dashboard-SideBar {
     display: none;
   }
@@ -560,7 +560,7 @@ input:checked + .slider:before {
 }
 .filter-class {
   display: flex;
-  margin: 0 0 30px 130px;
+  margin: 0 0 30px 19%;
   width: 98%;
 }
 .filter-class .search-bar {
@@ -599,6 +599,7 @@ input:checked + .slider:before {
 }
 @media (max-width: 1000px) {
   .filter-class {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 106%;
@@ -617,15 +618,14 @@ input:checked + .slider:before {
     margin-left: 8px;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .filter-class {
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    margin-left: 97%;
+    margin-left: 71%;
   }
   .filter-class .search-bar {
-    margin-bottom: 2%;
+    margin-bottom: 4%;
   }
   .filter-class .job-select {
     margin-bottom: 3%;
@@ -638,15 +638,21 @@ input:checked + .slider:before {
     margin-left: 2%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .filter-class {
-    margin-left: 52%;
+    margin-left: 51%;
   }
   .filter-class .job-select {
+    margin-top: 2%;
     margin-bottom: 4%;
   }
   .filter-class .experience-select {
     margin-bottom: 4%;
+  }
+}
+@media (max-width: 519px) {
+  .filter-class {
+    margin-left: 27%;
   }
 }
 /* #endregion */
@@ -692,15 +698,22 @@ input:checked + .slider:before {
     margin-left: 105%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .dashboardNav {
-    margin-left: 72%;
+    margin-left: 70%;
     margin-bottom: 3%;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .dashboardNav {
-    margin-left: 27%;
+    margin-left: 50%;
+    margin-bottom: 4%;
+  }
+}
+@media (max-width: 519px) {
+  .dashboardNav {
+    margin-left: 26%;
+    margin-bottom: 2%;
   }
 }
 .card-container {
@@ -744,7 +757,7 @@ input:checked + .slider:before {
 .card-container .card-text p span {
   color: #646464;
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .card-container {
     width: 100%;
     margin-left: 0px;
@@ -753,10 +766,15 @@ input:checked + .slider:before {
     width: 300px;
   }
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .card-container {
     width: 100%;
   }
+  .card-container .jobCard {
+    width: 320px;
+  }
+}
+@media (max-width: 519px) {
   .card-container .jobCard {
     width: 320px;
   }
@@ -859,14 +877,14 @@ input:checked + .slider:before {
   align-items: center;
   text-align: center;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profileNameDiv {
     width: 100%;
     max-width: 100%;
     margin-top: 2.5%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .profileNameDiv {
     width: 50%;
     margin-top: 2%;
@@ -897,14 +915,14 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profileNameDiv button {
     height: 100%;
     width: 50%;
     padding: 3%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .profileNameDiv button {
     height: 5%;
     width: 50%;
@@ -927,13 +945,13 @@ input:checked + .slider:before {
 .profile-top h4 {
   font-size: 1.5rem;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-top {
     flex-direction: column;
     width: 100%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .profile-top {
     flex-direction: column;
     width: 100%;
@@ -954,13 +972,13 @@ input:checked + .slider:before {
   background: #ffffff;
   border-radius: 5px;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profileCard {
     width: 75%;
     margin: 2%;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .profileCard {
     width: 70%;
   }
@@ -980,7 +998,7 @@ input:checked + .slider:before {
   width: 100%;
   margin: 1%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profileCard h3 {
     text-align: center;
   }
@@ -989,7 +1007,7 @@ input:checked + .slider:before {
   text-align: left;
   width: 100%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profileCard p {
     text-align: center;
   }
@@ -999,7 +1017,7 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-main-div2 {
     width: 80%;
     max-width: 100%;
@@ -1019,14 +1037,14 @@ input:checked + .slider:before {
   justify-content: space-around;
   width: 750px;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-main-form2 {
     flex-direction: column;
     width: 400px;
     min-width: 350px;
   }
 }
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 651px) and (max-width: 800px) {
   .profile-main-form2 {
     width: 480px;
   }
@@ -1048,7 +1066,7 @@ input:checked + .slider:before {
   border: 1px solid #d1d5da;
   border-radius: 5px;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-form-inputs2 {
     width: 80%;
     max-width: 100%;
@@ -1060,7 +1078,7 @@ input:checked + .slider:before {
   margin-top: 3%;
   width: 60%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-form-inputs2 .profile-form-edit-name {
     flex-direction: column;
   }
@@ -1074,7 +1092,7 @@ input:checked + .slider:before {
   border: 1px solid #D3D3D3;
   width: 100%;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-form-inputs2 .profile-form-edit-name div input {
     width: 100%;
   }
@@ -1092,7 +1110,7 @@ input:checked + .slider:before {
   margin: 1%;
   padding: 0;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .profile-form-inputs2 div h3 {
     font-size: 1.8rem;
   }
@@ -1123,7 +1141,7 @@ input:checked + .slider:before {
   width: 800px;
   justify-content: space-evenly;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .edit-profile-btns {
     flex-direction: column;
     align-items: center;
@@ -1142,7 +1160,7 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-@media (max-width: 500px) {
+@media (min-width: 520px) and (max-width: 650px) {
   .edit-profile-btns button {
     width: 50%;
   }

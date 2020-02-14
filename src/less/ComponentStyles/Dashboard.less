@@ -111,7 +111,7 @@ input:checked + .slider:before {
 
 .filter-class {
   display: flex;
-  margin: 0 0 30px 130px;
+  margin: 0 0 30px 19%;
   width: 98%;
 
 
@@ -157,9 +157,11 @@ input:checked + .slider:before {
   }
 
   @media @desktop-1000 {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 106%;
+    
 
     .search-bar {
       width: 300px;
@@ -181,11 +183,10 @@ input:checked + .slider:before {
   @media @tablet {
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    margin-left: 97%;
+    margin-left: 71%;
 
     .search-bar {
-      margin-bottom: 2%;
+      margin-bottom: 4%;
     }
 
     .job-select {
@@ -203,15 +204,20 @@ input:checked + .slider:before {
   }
 
   @media @mobile {
-    margin-left: 52%;
+    margin-left: 51%;
 
     .job-select {
+      margin-top: 2%;
       margin-bottom: 4%;
     }
 
     .experience-select {
       margin-bottom: 4%;
     }
+  }
+
+  @media @mobile2 {
+    margin-left: 27%;
   }
 }
 
@@ -247,12 +253,17 @@ input:checked + .slider:before {
   }
 
   @media @tablet {
-    margin-left: 72%;
+    margin-left: 70%;
     margin-bottom: 3%;
   }
 
   @media @mobile {
-    margin-left: 27%;
+    margin-left: 50%;
+    margin-bottom: 4%;
+  }
+  @media @mobile2 {
+    margin-left: 26%;
+    margin-bottom: 2%;
   }
 }
 
@@ -315,6 +326,12 @@ input:checked + .slider:before {
     width: 100%;
     // margin-left: 2%;
 
+    .jobCard {
+      width: 320px;
+    }
+  }
+
+  @media @mobile2 {
     .jobCard {
       width: 320px;
     }
