@@ -4,10 +4,8 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 
-
 function JobCard(props) {
     console.log('job id?', props)
-
 
     const user_id = props.currentUser.id
     const job_id = props.id;
@@ -59,18 +57,15 @@ function JobCard(props) {
                 <p>{props.company}</p>
                 <span>📍 {props.location}</span>
             </div>
-
             <div className='jobButtons' > 
                 {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave}>Unsave</button> )}
                 <Link to={`/Dashboard/Job/${props.id}`}>
                     <button>View</button>
-
                 </Link>
             </div>
         </div>
     )
 }
-
 
 
 const mapStateToProps = state => {
@@ -80,6 +75,5 @@ const mapStateToProps = state => {
   }
   
   export default connect(mapStateToProps, {})(JobCard)
-
 
 
