@@ -97,7 +97,7 @@ function AboutUs() {
                             sit amet dignissim lorem dolor id ante.
                         </p>
                         <div className="icons">
-                            <a href="#"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/mdegregori1"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/mauricio-degregori/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
