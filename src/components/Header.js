@@ -1,4 +1,5 @@
 import React,{ useState } from 'react';
+import DarkMode from './DarkMode/DarkMode-Toggle';
 import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
@@ -72,6 +73,7 @@ console.log('location', location.pathname)
                 )
             }
         })()}
+        <DarkMode/>
     </header>
     </>
   );
