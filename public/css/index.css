@@ -447,6 +447,18 @@ footer {
     justify-content: center;
   }
 }
+.saved-jobs-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-saved-jobs {
+  border: 1px solid red;
+  width: 25%;
+  height: 35rem;
+  padding: 2%;
+}
 /* #region sliders and filters*/
 .switch {
   position: relative;

@@ -17,15 +17,15 @@ import { connect } from "react-redux"
         console.log('save?', save)
     })
     .catch(error => {
-        console.error(error)
+        console.error(error.message)
     })
  }, [])
  
     return (
-        <div>
+        <div className="saved-jobs-main">
             {save.map(e => {
                 return (
-                    <div key={id}>
+                    <div key={id}  className="card-saved-jobs">
                         <h3>{e.companyName}</h3>
                         <h3>📍{e.city} {e.stateOrProvince}, {e.country}</h3>
                         <p> Overview: {e.description.slice(0,300)}...</p>
