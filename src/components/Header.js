@@ -1,4 +1,5 @@
 import React,{ useState } from 'react';
+import DarkMode from './DarkMode/DarkMode-Toggle';
 import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
@@ -64,7 +65,8 @@ console.log('location', location.pathname)
                         <Link to ="/Register"> <button>Register</button> </Link>
                     </nav>
                     )
-            }else if (location.pathname === '/register' || location.pathname === '/Register') {
+            }
+          else if (location.pathname === '/register' || location.pathname === '/Register') {
                 return (
                     <nav>
                         <Link to ="/Login"> <button>Login</button> </Link>
@@ -72,6 +74,7 @@ console.log('location', location.pathname)
                 )
             }
         })()}
+        <DarkMode/>
     </header>
     </>
   );
