@@ -12,7 +12,7 @@ import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
 import LandingPage from './components/Account/LandingPage';
-import JobDetails from "./components/Dashboard/Jobs/JobDetails"
+import JobDetails from "./components/Dashboard/Jobs/JobDetails";
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
@@ -51,7 +51,7 @@ function App(props) {
         <Route exact path='/Register' component={Register} />
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-        <PrivateRoute path='/JobDetails' component={JobDetails}/>
+        <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
       <Footer />
     </div>
   );
