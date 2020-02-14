@@ -12,12 +12,8 @@ import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
 import LandingPage from './components/Account/LandingPage';
-<<<<<<< HEAD
-import JobDetails from "./components/Dashboard/Jobs/JobDetails";
-=======
 import JobDetails from "./components/Dashboard/Jobs/JobDetails"
 import AboutUs from './components/AboutUs';
->>>>>>> 6b39465d1f93e85039cae657643242b2396eaea9
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
