@@ -43,7 +43,7 @@ function AboutUs() {
                             sit amet dignissim lorem dolor id ante.
                         </p>
                         <div className="icons">
-                            <a href="#"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="https://www.facebook.com/austin.hadden.184?ref=bookmarks"><img className="twitter" src="https://img.icons8.com/android/2x/facebook-new.png"/></a>
                             <a href="https://github.com/AustinHadden"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/austin-hadden-b077a9194/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
@@ -61,7 +61,7 @@ function AboutUs() {
                             sit amet dignissim lorem dolor id ante.
                         </p>
                         <div className="icons">
-                            <a href="#"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="https://twitter.com/AdamL_Reynolds"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/A-Lawrence-Reynolds"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/reynolds-adam/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
@@ -79,7 +79,7 @@ function AboutUs() {
                             sit amet dignissim lorem dolor id ante.
                         </p>
                         <div className="icons">
-                            <a href="#"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="http://twitter.com/Anthony6069"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/hillan1152"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/anthony-hill02/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
