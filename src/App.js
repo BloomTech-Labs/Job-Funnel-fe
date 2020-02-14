@@ -53,7 +53,7 @@ function App(props) {
         <Route exact path='/About' component={AboutUs}/>
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-        <PrivateRoute path='/JobDetails' component={JobDetails}/>
+        <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
       <Footer />
     </div>
   );

@@ -954,6 +954,45 @@ input:checked + .slider:before {
   color: #ffffff;
   cursor: pointer;
 }
+.job-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.job-details-container .deets-apply-button {
+  width: 10%;
+}
+.job-details-container .deets-apply-button button {
+  border: black;
+  background-color: #AC2A38;
+  color: #ffffff;
+  width: 100%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  padding: 0;
+}
+.job-details-container .deets-apply-button button:hover {
+  border: #AC2A38;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #AC2A38;
+  cursor: pointer;
+}
+.job-details-container .deets-div {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+}
+.job-details-container .deets-div h2 {
+  padding: 0.5% 2%;
+}
+.job-details-container .deets-div p {
+  padding: 0.5% 2%;
+}
+.job-details-container .desc-div p {
+  padding: 2%;
+}
 .main-div {
   height: 90vh;
   display: flex;

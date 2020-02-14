@@ -1,0 +1,28 @@
+
+.job-details-container {
+    display: flex;
+    flex-direction: column;
+    .deets-apply-button {
+        width: 10%;
+        button{
+            .button(@border: black, @borderHover: @quickhire-main, @background: @quickhire-main, @backgroundHover: #ffffff, 
+            @fontColor: #ffffff, @fontColorHover: @quickhire-main, @width: 100%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
+          }
+    }
+    .deets-div {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid gray;
+        h2 {
+            padding: .5% 2%;
+        }
+        p {
+            padding: .5% 2%;
+        }
+    }
+    .desc-div {
+        p {
+            padding: 2%;
+        }
+    }
+}
