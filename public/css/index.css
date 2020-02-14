@@ -1454,7 +1454,6 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 }
 @media (max-width: 350px) {
   .main-div2 {
@@ -1467,7 +1466,6 @@ input:checked + .slider:before {
   }
 }
 .main-div2 .second-main2 {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1487,7 +1485,6 @@ input:checked + .slider:before {
 .main-div2 .second-main2 .make2 {
   text-align: center;
   padding: 2%;
-  border: 1px solid blue;
 }
 .main-div2 .second-main2 button {
   width: 387px;
@@ -1523,7 +1520,6 @@ input:checked + .slider:before {
   justify-content: space-around;
   width: 50rem;
   height: 50rem;
-  border: 1px solid red;
 }
 @media (max-width: 650px) {
   .main-div2 .second-main2 .main-form2 {
@@ -1542,7 +1538,6 @@ input:checked + .slider:before {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  border: 1px solid green;
 }
 @media (max-width: 350px) {
   .main-div2 .second-main2 .main-form2 .form-inputs2 {
@@ -1591,13 +1586,11 @@ input:checked + .slider:before {
   .main-div2 .second-main2 .main-form2 .form-inputs2 label {
     text-align: center;
     width: 100%;
-    border: 1px solid red;
   }
 }
 @media (max-width: 350px) {
   .main-div2 .second-main2 .main-form2 .form-inputs2 label {
     text-align: center;
     width: 100%;
-    border: 1px solid red;
   }
 }
