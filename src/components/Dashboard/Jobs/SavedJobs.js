@@ -4,16 +4,18 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
     function SavedJobs(props) {
-
+        
+    console.log('what do we have here', props)
     const [save, setSave] = useState([])
     const [loading, setLoading] = useState(false);
 
     const id = props.currentUser.id
 
-    // console.log('is this the error here', id)
+    
 
  useEffect(() => {
     setLoading(true);
@@ -28,17 +30,40 @@ import LoadingOverlay from "react-loading-overlay";
         setLoading(false);
     })
  }, [id])
- 
+
+console.log('i dont understand', save)
+//  const handleDelete = () => {
+//      setLoading(true)
+//      axiosWithAuth().delete(`/saved/${props.match.params.id}`)
+//         .then(res => {
+//                 console.log('erased job from saved table?', res.data)
+//                 setLoading(false)
+//                 setSave({...save})
+//             })
+//             .catch(error => {
+//                 console.error(error)
+//                  setLoading(false)
+//             })
+//  }
+    if(save.length < 1){
+        return (
+            <div className="empty-jobs">
+                <h1>Nothing here yet...Save a job in <Link to ="/Dashboard">Dashboard</Link> to continue!</h1>
+            </div>
+        )
+    }
+    console.log('WHAT', save)
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
                 {save.map(e => {
                     return (
-                        <div key={id}  className="card-saved-jobs">
+                        <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
                             <h3>📍{e.city} {e.stateOrProvince}, {e.country}</h3>
                             <p> Overview: {e.description.slice(0,300)}...</p>
                             {/* <p>{e.testexternal_url}</p> */}
+                            <button>Unsave</button>
                             <button>More Info</button>
                         </div>
                     )
@@ -60,3 +85,4 @@ const mapStateToProps = state => {
     width:100%;
     z-index: 2;
 `;
+
