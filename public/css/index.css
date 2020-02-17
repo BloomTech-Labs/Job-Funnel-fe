@@ -563,10 +563,68 @@ footer {
   flex-wrap: wrap;
 }
 .card-saved-jobs {
-  border: 1px solid red;
-  width: 25%;
-  height: 35rem;
+  border: 1px solid #AC2A38;
+  background-color: #fafafa;
   padding: 2%;
+  width: 30%;
+  height: 50vh;
+  margin: 2%;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+@media (max-width: 1000px) {
+  .card-saved-jobs {
+    padding: 2%;
+    width: 40%;
+    height: 50vh;
+    margin: 2%;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+}
+@media (max-width: 650px) {
+  .card-saved-jobs {
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .card-saved-jobs {
+    width: 100%;
+  }
+}
+.card-saved-jobs h3 {
+  font-size: 2.25rem;
+  text-align: center;
+  width: 100%;
+}
+.card-saved-jobs h5 {
+  font-size: 1.5rem;
+}
+.card-saved-jobs p {
+  padding: 2%;
+  width: 100%;
+  height: 60%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.card-saved-jobs .saved-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-saved-jobs .saved-buttons button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
+}
+.card-saved-jobs .saved-buttons button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
 }
 .about-container {
   margin-bottom: 5%;

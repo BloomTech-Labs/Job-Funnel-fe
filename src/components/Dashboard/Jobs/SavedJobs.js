@@ -52,7 +52,6 @@ console.log('i dont understand', save)
             </div>
         )
     }
-    console.log('WHAT', save)
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
@@ -60,11 +59,13 @@ console.log('i dont understand', save)
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
-                            <h3>📍{e.city} {e.stateOrProvince}, {e.country}</h3>
-                            <p> Overview: {e.description.slice(0,300)}...</p>
+                            <h5>📍{e.city} {e.stateOrProvince}, {e.country}</h5>
+                            <p> Overview <br></br>{e.description.slice(0,250)}...</p>
                             {/* <p>{e.testexternal_url}</p> */}
-                            <button>Unsave</button>
-                            <button>More Info</button>
+                            <div className="saved-buttons">
+                                <button>Unsave</button>
+                                <button>More Info</button>
+                            </div>
                         </div>
                     )
                 })}
