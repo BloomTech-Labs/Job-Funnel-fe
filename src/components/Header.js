@@ -73,6 +73,14 @@ console.log('location', location.pathname)
                     </nav>
                 )
             }
+          else if (location.pathname === '/about' || location.pathname === '/About') {
+            return (
+                <nav>
+                    <Link to ="/Login"> <button>Login</button> </Link>
+                    <Link to ="/Dashboard"> <button>Dashboard</button> </Link>
+                </nav>
+            )
+          }
         })()}
         <DarkMode/>
     </header>

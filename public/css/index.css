@@ -249,7 +249,7 @@ header h1 {
   }
 }
 header nav {
-  width: 12.5vw;
+  width: 10.5vw;
   height: 100%;
   min-width: 220px;
   margin: 0 30px 0 0;
@@ -386,6 +386,21 @@ header nav button:hover {
 .dark-mode .about-container h3 {
   color: white;
 }
+.dark-mode .edit-profile-top h3 {
+  color: white;
+}
+.dark-mode .profile-form-edit-name h3 {
+  color: white;
+}
+.dark-mode .profile-form-edit-name div {
+  background-color: #313843;
+}
+.dark-mode .profile-form-inputs2 h3 {
+  color: white;
+}
+.dark-mode .flex {
+  background-color: #313843;
+}
 .navbar {
   display: flex;
   flex-direction: column;
@@ -401,6 +416,9 @@ footer {
   align-items: center;
   text-align: center;
   height: 125px;
+}
+footer h4 {
+  font-size: 1.6rem;
 }
 .landing-page {
   width: 90%;
@@ -633,6 +651,10 @@ footer {
   text-align: center;
   margin-top: 2%;
 }
+.about-container h2 {
+  text-align: center;
+  margin-top: 2%;
+}
 .about-container p {
   text-align: center;
   margin: 0 auto;
@@ -644,12 +666,31 @@ footer {
 }
 .about-container .image-container .team-image {
   width: 100%;
+  border-radius: 6px;
+}
+.about-container .team {
+  display: flex;
+  flex-wrap: wrap;
 }
 .about-container .team-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 1px solid #AC2A38;
-  margin-bottom: 2%;
+  border-radius: 6px;
+  margin: 2% auto;
+  width: 694px;
+  height: 394px;
+  padding-top: 10px;
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .about-container .team-card {
+    height: 420px;
+  }
+}
+@media (max-width: 650px) {
+  .about-container .team-card {
+    height: 430px;
+  }
 }
 .about-container .team-info {
   display: flex;
@@ -1308,7 +1349,6 @@ input:checked + .slider:before {
 }
 .profileCard {
   border: 1px solid #D3D3D3;
-  background: #AC2A38;
   color: black;
   display: flex;
   flex-direction: column;
@@ -1448,7 +1488,6 @@ input:checked + .slider:before {
 }
 .profile-form-inputs2 div {
   border: #D3D3D3;
-  background: #ffffff;
   color: black;
   display: flex;
   flex-direction: column;
@@ -1468,7 +1507,6 @@ input:checked + .slider:before {
   width: 60%;
   height: 25px;
   padding-left: 2%;
-  background: #ffffff;
   border: 1px solid #D3D3D3;
   font-size: 1.25rem;
   margin-bottom: 3%;
