@@ -960,6 +960,7 @@ input:checked + .slider:before {
 .job-details-container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 .job-details-container .deets-apply-button {
   display: flex;
@@ -983,6 +984,21 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #AC2A38;
   cursor: pointer;
+}
+@media (min-width: 520px) and (max-width: 650px) {
+  .job-details-container .deets-apply-button button {
+    width: 25%;
+  }
+}
+@media (max-width: 519px) {
+  .job-details-container .deets-apply-button button {
+    width: 40%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .job-details-container .deets-apply-button button {
+    width: 300%;
+  }
 }
 .job-details-container .deets-div {
   display: flex;
