@@ -9,7 +9,7 @@ import LoadingOverlay from "react-loading-overlay";
 
     function SavedJobs(props) {
         
-    console.log('what do we have here', props)
+    console.log('props in savedjobs', props)
     const [save, setSave] = useState([])
     const [loading, setLoading] = useState(false);
 
@@ -31,20 +31,27 @@ import LoadingOverlay from "react-loading-overlay";
     })
  }, [id])
 
-console.log('i dont understand', save)
-//  const handleDelete = () => {
-//      setLoading(true)
-//      axiosWithAuth().delete(`/saved/${props.match.params.id}`)
-//         .then(res => {
-//                 console.log('erased job from saved table?', res.data)
-//                 setLoading(false)
-//                 setSave({...save})
-//             })
-//             .catch(error => {
-//                 console.error(error)
-//                  setLoading(false)
-//             })
-//  }
+console.log('job id should be in here', save)
+
+ const handleDelete = (job_id) => {
+     setLoading(true)
+     axiosWithAuth().delete(`/saved/${job_id}`)
+        .then(res => {
+                let SavedCopy = save.filter((e)=> e.job_id !== job_id)
+                console.log('erased job from saved table', res.data)
+                setLoading(false)
+                setSave(SavedCopy)
+            })
+            .catch(error => {
+                console.error(error)
+                 setLoading(false)
+            })
+ }
+
+ const JobDetails = (job_id) => {
+     props.history.push(`/Dashboard/Job/${job_id}`)
+ }
+
     if(save.length < 1){
         return (
             <div className="empty-jobs">
@@ -52,19 +59,19 @@ console.log('i dont understand', save)
             </div>
         )
     }
+    // console.log('render save', save)
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-                {save.map(e => {
+                {save.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
                             <h5>📍{e.city} {e.stateOrProvince}, {e.country}</h5>
                             <p> Overview <br></br>{e.description.slice(0,250)}...</p>
-                            {/* <p>{e.testexternal_url}</p> */}
                             <div className="saved-buttons">
-                                <button>Unsave</button>
-                                <button>More Info</button>
+                                <button onClick={()=> handleDelete(e.job_id)}>Unsave</button>
+                                <button onClick={()=> JobDetails(e.job_id) }>More Info</button>
                             </div>
                         </div>
                     )
