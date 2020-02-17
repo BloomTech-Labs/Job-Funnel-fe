@@ -230,6 +230,7 @@ header a {
     align-items: center;
     display: flex;
     width: 100%;
+    padding-bottom: 1.5%;
   }
 }
 header h1 {
@@ -681,109 +682,11 @@ footer {
     padding-top: 1%;
   }
 }
-/* #region sliders and filters*/
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #cccccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  bottom: -1px;
-  border: 1px solid #3073AB;
-  background-color: #fff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-input:checked + .slider {
-  background-color: #AC2A38;
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px #AC2A38;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(25px);
-  -ms-transform: translateX(25px);
-  transform: translateX(25px);
-}
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-.slider.round:before {
-  border-radius: 50%;
-}
-.switch {
-  font-size: 0.9rem;
-  width: 15%;
-  height: 15%;
-  padding-left: 5%;
-  padding-top: 4%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4%;
-}
-.slider-div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-/* #endregion */
-/* #region sidebar */
-.dashboard-SideBar {
-  flex-direction: column;
-  background-color: #AC2A38;
-  border-right: 0.5px solid #D5D5D5;
-  width: 20%;
-  min-width: 250px;
-  max-width: 265px;
-  max-height: 100%;
-  display: none;
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .dashboard-SideBar {
-    display: none;
-  }
-}
-.dashboard-SideBar ul {
-  color: white;
-  text-align: center;
-  margin-top: 44%;
-}
-.dashboard-SideBar ul li {
-  margin-bottom: 16%;
-  font-size: 1.2rem;
-}
-.dashboard-SideBar ul li:hover {
-  cursor: pointer;
-  color: black;
-}
 .filter-class {
   display: flex;
-  margin: 0 0 30px 19%;
-  width: 98%;
+  width: 45%;
+  justify-content: space-between;
+  min-width: 750px;
 }
 .filter-class .search-bar {
   width: 180px;
@@ -795,15 +698,12 @@ input:checked + .slider:before {
 .filter-class .job-select {
   width: 180px;
   height: 35px;
-  margin-right: 2.5%;
-  margin-left: 2.3%;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
 .filter-class .experience-select {
   width: 180px;
   height: 35px;
-  margin-right: 2.3%;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
@@ -823,72 +723,46 @@ input:checked + .slider:before {
   .filter-class {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 106%;
   }
   .filter-class .search-bar {
     width: 300px;
-    margin-bottom: 2%;
   }
   .filter-class .job-select {
     width: 300px;
-    margin-bottom: 2%;
   }
   .filter-class .experience-select {
     width: 300px;
-    margin-bottom: 2%;
-    margin-left: 8px;
   }
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .filter-class {
     flex-direction: column;
-    align-items: center;
-    margin-left: 71%;
-  }
-  .filter-class .search-bar {
-    margin-bottom: 4%;
-  }
-  .filter-class .job-select {
-    margin-bottom: 3%;
-  }
-  .filter-class .experience-select {
-    margin-bottom: 3%;
-    margin-left: 2%;
-  }
-  .filter-class button {
-    margin-left: 2%;
+    min-width: unset;
   }
 }
 @media (max-width: 650px) {
   .filter-class {
-    margin-left: 51%;
-  }
-  .filter-class .job-select {
-    margin-top: 2%;
-    margin-bottom: 4%;
-  }
-  .filter-class .experience-select {
-    margin-bottom: 4%;
+    min-width: unset;
   }
 }
 @media (max-width: 350px) {
   .filter-class {
-    margin-left: 27%;
+    min-width: unset;
   }
 }
-/* #endregion */
 .dashboardNav {
+  display: flex;
+  width: 100%;
   width: 60%;
   min-width: 315px;
   max-width: 500px;
-  margin: 30px 0 30px 130px;
 }
 .dashboardNav nav {
   border: 1px solid #AC2A38;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2%;
   border-radius: 8px;
   width: 100%;
   height: 40px;
@@ -898,12 +772,12 @@ input:checked + .slider:before {
   border: #AC2A38;
   background-color: #ffffff;
   color: #AC2A38;
-  width: 25%;
+  width: unset;
   height: 35px;
   border-radius: 8px;
   font-size: 1.2rem;
   margin: 0 2px;
-  padding: 0;
+  padding: 5%;
 }
 .dashboardNav nav button:hover {
   border: #ffffff;
@@ -916,34 +790,19 @@ input:checked + .slider:before {
   text-decoration: none;
 }
 @media (max-width: 1000px) {
-  .dashboardNav {
-    margin-left: 105%;
-  }
 }
 @media (min-width: 651px) and (max-width: 800px) {
-  .dashboardNav {
-    margin-left: 70%;
-    margin-bottom: 3%;
-  }
 }
-@media (max-width: 650px) {
-  .dashboardNav {
-    margin-left: 50%;
-    margin-bottom: 4%;
-  }
+@media (min-width: 520px) and (max-width: 650px) {
 }
-@media (max-width: 350px) {
-  .dashboardNav {
-    margin-left: 26%;
-    margin-bottom: 2%;
-  }
+@media (max-width: 519px) {
+
 }
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 96%;
-  margin-left: 1.8%;
+  padding-top: 2%;
 }
 .card-container .jobCard {
   border: 1px solid #AC2A38;
@@ -953,7 +812,6 @@ input:checked + .slider:before {
   max-width: 340px;
   max-height: 300px;
   margin-bottom: 30px;
-  margin-left: 1.4%;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
 }
@@ -1018,6 +876,13 @@ input:checked + .slider:before {
   border-radius: 5px;
   color: #ffffff;
   cursor: pointer;
+}
+.dashboard-nav {
+  padding-left: 3.3%;
+  padding-bottom: 1.5%;
+}
+.dashboard-nav div {
+  padding-top: 1.5%;
 }
 .job-details-container {
   display: flex;
