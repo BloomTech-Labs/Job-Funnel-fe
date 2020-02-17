@@ -10,7 +10,7 @@ const toggleDarkMode = () => {
 };
 return (
     <nav className="navbar">
-        <h4>Dark Mode!</h4>
+        <h4>Dark Mode</h4>
     <div className="dark-mode__toggle" onClick={() => toggleDarkMode()}>
         <div className={darkMode ? "toggle toggled" : "toggle"} />
     </div>
