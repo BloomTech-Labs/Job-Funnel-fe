@@ -11,7 +11,7 @@ export default function JobDetails(props) {
     useEffect(()=> {
         axiosWithAuth().get(`/jobs/${props.match.params.id}`)
             .then(response => {
-                console.log('job details axios response', response.data);
+                // console.log('job details axios response', response.data);
                 setDetails(response.data);
             })
             .catch(err => console.error(err))

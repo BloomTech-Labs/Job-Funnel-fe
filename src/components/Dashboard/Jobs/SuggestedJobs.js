@@ -27,7 +27,7 @@ export default function SuggestedJobs() {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="card-container">
-                {jobs.splice(0,20).map((job, index) => {
+                {jobs.map((job, index) => {
                     // console.log(job);
                     return (
                         <JobCard key={index} id={job.id} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> // pay_exact={user.pay_exact} 
