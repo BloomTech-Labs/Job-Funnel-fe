@@ -47,7 +47,8 @@ export default function SuggestedJobs() {
                 {jobs.map((job, index) => {
                     // console.log(job);
                     return (
-                        <JobCard key={index} id={job.id} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> // pay_exact={user.pay_exact} 
+                        <JobCard key={index} id={job.id} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> 
+                        // pay_exact={user.pay_exact}
                     )
                 })}
             </div>

@@ -21,7 +21,7 @@ console.log('location', location.pathname)
   return (
     <>
     <header>
-        <Link to='/'><h1>QuickHire</h1></Link>
+        <Link to='/Dashboard'><h1>QuickHire</h1></Link>
             {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>
                 <option value={"css/red.css"}>red</option>
