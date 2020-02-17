@@ -183,14 +183,14 @@ header {
     height: 18vh;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   header {
     flex-direction: column;
     justify-content: center;
     height: 25vh;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   header {
     flex-direction: column;
     justify-content: center;
@@ -211,7 +211,7 @@ header a {
     padding-bottom: 1.5%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   header a {
     flex-direction: column;
     justify-content: center;
@@ -222,7 +222,7 @@ header a {
     padding-bottom: 1.5%;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   header a {
     flex-direction: column;
     justify-content: center;
@@ -243,7 +243,7 @@ header h1 {
     margin: unset;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   header h1 {
     margin: unset;
   }
@@ -266,7 +266,7 @@ header nav {
     min-width: unset;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   header nav {
     flex-direction: column;
     justify-content: center;
@@ -275,7 +275,7 @@ header nav {
     min-width: unset;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   header nav {
     flex-direction: column;
     justify-content: center;
@@ -306,7 +306,7 @@ header nav button:hover {
     padding-bottom: 1%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   header nav button {
     width: 100%;
     justify-content: center;
@@ -315,7 +315,7 @@ header nav button:hover {
     padding-bottom: 1%;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   header nav button {
     width: 100%;
     justify-content: center;
@@ -410,7 +410,7 @@ footer {
     width: 100%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page {
     width: 100%;
   }
@@ -420,7 +420,7 @@ footer {
   font-size: 3.25rem;
   padding: 2%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page h1 {
     padding-left: 2%;
   }
@@ -438,7 +438,7 @@ footer {
 .landing-page .p-div .p-3 {
   padding-left: 4%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .p-div {
     font-size: unset;
   }
@@ -461,7 +461,7 @@ footer {
     width: 100%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .bottom-content {
     flex-direction: column;
     width: 100%;
@@ -484,7 +484,7 @@ footer {
     padding-top: 4%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .bottom-content .button-div {
     width: 100%;
     height: 15vh;
@@ -510,7 +510,7 @@ footer {
     height: 100%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .bottom-content .button-div button {
     height: 100%;
   }
@@ -521,7 +521,7 @@ footer {
     width: 60%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .bottom-content .button-div button a {
     height: 35%;
     width: 60%;
@@ -535,7 +535,7 @@ footer {
 .landing-page .img-div img {
   max-width: 100%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .landing-page .img-div {
     flex-direction: column;
     width: 100%;
@@ -549,6 +549,13 @@ footer {
     justify-content: center;
   }
 }
+.empty-jobs {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .saved-jobs-main {
   display: flex;
   justify-content: center;
@@ -556,10 +563,68 @@ footer {
   flex-wrap: wrap;
 }
 .card-saved-jobs {
-  border: 1px solid red;
-  width: 25%;
-  height: 35rem;
+  border: 1px solid #AC2A38;
+  background-color: #fafafa;
   padding: 2%;
+  width: 30%;
+  height: 50vh;
+  margin: 2%;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+@media (max-width: 1000px) {
+  .card-saved-jobs {
+    padding: 2%;
+    width: 40%;
+    height: 50vh;
+    margin: 2%;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+}
+@media (max-width: 650px) {
+  .card-saved-jobs {
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .card-saved-jobs {
+    width: 100%;
+  }
+}
+.card-saved-jobs h3 {
+  font-size: 2.25rem;
+  text-align: center;
+  width: 100%;
+}
+.card-saved-jobs h5 {
+  font-size: 1.5rem;
+}
+.card-saved-jobs p {
+  padding: 2%;
+  width: 100%;
+  height: 60%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.card-saved-jobs .saved-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card-saved-jobs .saved-buttons button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
+}
+.card-saved-jobs .saved-buttons button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
 }
 .about-container {
   margin-bottom: 5%;
@@ -795,7 +860,7 @@ input:checked + .slider:before {
     margin-left: 2%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .filter-class {
     margin-left: 51%;
   }
@@ -807,7 +872,7 @@ input:checked + .slider:before {
     margin-bottom: 4%;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   .filter-class {
     margin-left: 27%;
   }
@@ -861,13 +926,13 @@ input:checked + .slider:before {
     margin-bottom: 3%;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .dashboardNav {
     margin-left: 50%;
     margin-bottom: 4%;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   .dashboardNav {
     margin-left: 26%;
     margin-bottom: 2%;
@@ -923,7 +988,7 @@ input:checked + .slider:before {
     width: 300px;
   }
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .card-container {
     width: 100%;
   }
@@ -931,7 +996,7 @@ input:checked + .slider:before {
     width: 320px;
   }
 }
-@media (max-width: 519px) {
+@media (max-width: 350px) {
   .card-container .jobCard {
     width: 320px;
   }
@@ -994,10 +1059,37 @@ input:checked + .slider:before {
   padding: 2%;
 }
 .main-div {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 350px) {
+  .main-div {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 650px) {
+  .main-div {
+    align-items: flex-start;
+  }
+}
+.main-div .second-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 350px) {
+  .main-div .second-main {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 650px) {
+  .main-div .second-main {
+    margin-top: 20%;
+  }
 }
 .main-div .second-main .make {
   text-align: center;
@@ -1010,9 +1102,23 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 473px;
-  height: 360px;
+  justify-content: space-evenly;
+  width: 50rem;
+  height: 45rem;
+}
+@media (max-width: 650px) {
+  .main-div .second-main .main-form {
+    width: 33rem;
+    height: 40rem;
+    justify-content: center;
+  }
+}
+@media (max-width: 350px) {
+  .main-div .second-main .main-form {
+    width: 30rem;
+    height: 40rem;
+    justify-content: center;
+  }
 }
 .main-div .second-main .main-form .form-inputs {
   display: flex;
@@ -1021,19 +1127,56 @@ input:checked + .slider:before {
   align-items: flex-start;
   height: 20vh;
 }
+@media (max-width: 350px) {
+  .main-div .second-main .main-form .form-inputs {
+    max-width: 30rem;
+    max-height: 50rem;
+    padding: 2%;
+  }
+}
+@media (max-width: 650px) {
+  .main-div .second-main .main-form .form-inputs {
+    max-width: 30rem;
+    max-height: 50rem;
+    padding: 2%;
+  }
+}
 .main-div .second-main .main-form .form-inputs input {
   width: 387px;
   height: 18%;
   background: #FFFFFF;
   border: 1px solid #D3D3D3;
   font-size: 20px;
-  /* border: 1px solid green; */
+}
+@media (max-width: 350px) {
+  .main-div .second-main .main-form .form-inputs input {
+    max-width: 25rem;
+    max-height: 45rem;
+  }
+}
+@media (max-width: 650px) {
+  .main-div .second-main .main-form .form-inputs input {
+    max-width: 25rem;
+    max-height: 45rem;
+  }
 }
 .main-div .second-main .main-form .form-inputs label {
   color: rgba(0, 0, 0, 0.54);
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
+}
+@media (max-width: 650px) {
+  .main-div .second-main .main-form .form-inputs label {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .main-div .second-main .main-form .form-inputs label {
+    text-align: center;
+    width: 100%;
+  }
 }
 .main-div .second-main button {
   width: 387px;
@@ -1043,6 +1186,18 @@ input:checked + .slider:before {
   color: #fff;
   font-size: 1rem;
   border-radius: 8px;
+}
+@media (max-width: 350px) {
+  .main-div .second-main button {
+    width: 20rem;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 650px) {
+  .main-div .second-main button {
+    width: 20rem;
+    margin-top: 10%;
+  }
 }
 .main-div .second-main button:hover {
   background: #fff;
@@ -1071,7 +1226,7 @@ input:checked + .slider:before {
   align-items: center;
   text-align: center;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profileNameDiv {
     width: 100%;
     max-width: 100%;
@@ -1109,7 +1264,7 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profileNameDiv button {
     height: 100%;
     width: 50%;
@@ -1139,7 +1294,7 @@ input:checked + .slider:before {
 .profile-top h4 {
   font-size: 1.5rem;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-top {
     flex-direction: column;
     width: 100%;
@@ -1166,7 +1321,7 @@ input:checked + .slider:before {
   background: #ffffff;
   border-radius: 5px;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profileCard {
     width: 75%;
     margin: 2%;
@@ -1192,7 +1347,7 @@ input:checked + .slider:before {
   width: 100%;
   margin: 1%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profileCard h3 {
     text-align: center;
   }
@@ -1201,7 +1356,7 @@ input:checked + .slider:before {
   text-align: left;
   width: 100%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profileCard p {
     text-align: center;
   }
@@ -1211,7 +1366,7 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-main-div2 {
     width: 80%;
     max-width: 100%;
@@ -1231,7 +1386,7 @@ input:checked + .slider:before {
   justify-content: space-around;
   width: 750px;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-main-form2 {
     flex-direction: column;
     width: 400px;
@@ -1260,7 +1415,7 @@ input:checked + .slider:before {
   border: 1px solid #d1d5da;
   border-radius: 5px;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-form-inputs2 {
     width: 80%;
     max-width: 100%;
@@ -1272,7 +1427,7 @@ input:checked + .slider:before {
   margin-top: 3%;
   width: 60%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-form-inputs2 .profile-form-edit-name {
     flex-direction: column;
   }
@@ -1286,7 +1441,7 @@ input:checked + .slider:before {
   border: 1px solid #D3D3D3;
   width: 100%;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-form-inputs2 .profile-form-edit-name div input {
     width: 100%;
   }
@@ -1304,7 +1459,7 @@ input:checked + .slider:before {
   margin: 1%;
   padding: 0;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .profile-form-inputs2 div h3 {
     font-size: 1.8rem;
   }
@@ -1335,7 +1490,7 @@ input:checked + .slider:before {
   width: 800px;
   justify-content: space-evenly;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .edit-profile-btns {
     flex-direction: column;
     align-items: center;
@@ -1354,16 +1509,43 @@ input:checked + .slider:before {
   background: #ffffff;
   color: #3073AB;
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
   .edit-profile-btns button {
     width: 50%;
   }
 }
 .main-div2 {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 350px) {
+  .main-div2 {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 650px) {
+  .main-div2 {
+    align-items: flex-start;
+  }
+}
+.main-div2 .second-main2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 350px) {
+  .main-div2 .second-main2 {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 650px) {
+  .main-div2 .second-main2 {
+    margin-top: 20%;
+  }
 }
 .main-div2 .second-main2 .make2 {
   text-align: center;
@@ -1379,6 +1561,16 @@ input:checked + .slider:before {
   border-radius: 8px;
   margin-top: 5%;
 }
+@media (max-width: 350px) {
+  .main-div2 .second-main2 button {
+    width: 20rem;
+  }
+}
+@media (max-width: 650px) {
+  .main-div2 .second-main2 button {
+    width: 20rem;
+  }
+}
 .main-div2 .second-main2 button:hover {
   background: #fff;
   color: #3073AB;
@@ -1391,16 +1583,40 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 473px;
-  height: 432px;
+  width: 50rem;
+  height: 50rem;
+}
+@media (max-width: 650px) {
+  .main-div2 .second-main2 .main-form2 {
+    width: 33rem;
+    height: 50rem;
+  }
+}
+@media (max-width: 350px) {
+  .main-div2 .second-main2 .main-form2 {
+    width: 30rem;
+    height: 50rem;
+  }
 }
 .main-div2 .second-main2 .main-form2 .form-inputs2 {
-  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 25vh;
+}
+@media (max-width: 350px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 {
+    max-width: 30rem;
+    max-height: 50rem;
+    padding: 2%;
+  }
+}
+@media (max-width: 650px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 {
+    max-width: 30rem;
+    max-height: 50rem;
+    padding: 2%;
+  }
 }
 .main-div2 .second-main2 .main-form2 .form-inputs2 input {
   width: 387px;
@@ -1411,6 +1627,18 @@ input:checked + .slider:before {
   margin-top: 0.5%;
   margin-bottom: 0.5%;
 }
+@media (max-width: 350px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 input {
+    max-width: 25rem;
+    max-height: 45rem;
+  }
+}
+@media (max-width: 650px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 input {
+    max-width: 25rem;
+    max-height: 45rem;
+  }
+}
 .main-div2 .second-main2 .main-form2 .form-inputs2 label {
   color: rgba(0, 0, 0, 0.54);
   font-style: normal;
@@ -1419,10 +1647,15 @@ input:checked + .slider:before {
   padding: 1%;
   margin-top: 2%;
 }
-/* .main-div .second-main { */
-/* border: 1px solid red; */
-/* background: #F9F9F9;
-    box-sizing: border-box;
-    width: 473px;
-    height: 432px; */
-/* } */
+@media (max-width: 650px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 label {
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .main-div2 .second-main2 .main-form2 .form-inputs2 label {
+    text-align: center;
+    width: 100%;
+  }
+}
