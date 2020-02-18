@@ -65,7 +65,7 @@ console.log('location', location.pathname)
                     <SimpleMenu logout={logOut}/>
                 </nav>
                 )
-            } 
+            }
 
           else  if (location.pathname === '/login' || location.pathname === '/Login'){
                 return (
