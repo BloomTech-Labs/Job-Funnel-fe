@@ -7,6 +7,7 @@ const Year = new Date();
 const Footer = () => {
   return (
       <footer>
+          <Link to ='/about'><h4>-- About Us --</h4></Link>
           <p> • Copyright {Year.getFullYear()} QuickHire • </p>
       </footer>
   );
