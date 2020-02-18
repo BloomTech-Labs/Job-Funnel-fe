@@ -34,27 +34,30 @@ const Register = (props) => {
         event.preventDefault();
         if (validateInputs(newUser) && isValidPassword(newUser.password)) {
             setLoading(true);
-            axios.post('https://quickhire.herokuapp.com/api/auth/register', newUser)
+            axios.post('https://quick-hire.herokuapp.com/api/auth/register', newUser)
             .then(res => {
                 console.log('res from post', res.data)
-                axios.post("https://quickhire.herokuapp.com/api/auth/login", {
+                axios.post("https://quick-hire.herokuapp.com/api/auth/login", {
                     email: newUser.email,
                     password: newUser.password
                 })
                 .then(res => {
                     sessionStorage.setItem('token', res.data.token)
+                    // sessionStorage.setItem('id', res.data.user.id)
                     props.login(res.data.user);
                     props.history.push('/Dashboard')
                     setLoading(false);
                 })
                 .catch(err => {
-                    console.err(err.response.data.message);
+                    console.log(err.response.data.message);
                     setLoading(false);
                     alert(err.response.data.message);
                 })
             })
             .catch(err => {
                 console.log(err.response.data.message);
+                setLoading(false);
+                alert(err.response.data.message);
             })
         }
     }
@@ -89,7 +92,6 @@ const Register = (props) => {
                 </div>
             </div>
             </>
-
         </StyledLoader>
     )
 }
@@ -98,15 +100,11 @@ const mapStateToProps = state => {
     // console.log('mapstatetoprops: ', state);
     return {
     //   currentUser: state.AppReducer.currentUser,
-
     };
   };
   
-  export default connect(mapStateToProps, {login})(Register);
-  //setting
-
-
-
+export default connect(mapStateToProps, {login})(Register);
+  
 
 const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;

@@ -1,17 +1,67 @@
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 @import "./Global/reset.less";
 @import "./Global/variables.less";
+@import "./Global/global.less";
+
+// #region colors
+@quickhire-main: #AC2A38;
+@quickhire-secondary: #ffffff;
+// Standard Colors
+@quickhire-background: #ffffff;
+@quickhire-footer: #AC2A38;
+@footer-text: #ffffff;
+@navigation-button: #ffffff;
+@navigation-text: #AC2A38;
+@card-button: white;
+@card-button-text: black;
+@input-labels: black;
+@header-button: white;
+@header-text: #AC2A38;
+@header-logo: #AC2A38;
+@card-border: #AC2A38;
+@side-navigation-background: #AC2A38;
+@profile-button-background: #3073AB;
+@profile-button-text: #ffffff;
+@card-border: #d1d5da;
+@button-border:#D3D3D3;
+@edit-profile-input: #D3D3D3;
+@profile-border: #D3D3D3;
+// Hover Colors
+@profile-button-hover: #ffffff;
+@profile-button-text-hover: #3073AB;
+@navigation-button-hover: #AC2A38;
+@navigation-text-hover: white;
+@card-button-hover: #AC2A38;
+@card-button-text-hover: white;
+@header-button-hover: #AC2A38;
+@header-text-hover: white;
+// #endregion
+
+//Dark Mode Colors
+@darkmode-background: #313843;
+@darkmode-text: white;
+@darkmode-card-text: black;
+
 @import "./Global/mixins.less";
 
 @import "./ComponentStyles/Header.less";
 @import "./ComponentStyles/Footer.less";
+@import "./ComponentStyles/LandingPage.less";
+@import "./ComponentStyles/SavedJobs.less";
+@import "./ComponentStyles/AboutUs.less";
+
 
 @import "./ComponentStyles/Dashboard.less";
+@import "./ComponentStyles/JobDetails.less";
 
 @import "./ComponentStyles/Account/Login.less";
 @import "./ComponentStyles/Account/Profile.less";
 @import "./ComponentStyles/Account/Register.less";
 
-// less-watch-compiler src/LESS src index.less
+
+
+
+// less-watch-compiler src/less public/css index.less

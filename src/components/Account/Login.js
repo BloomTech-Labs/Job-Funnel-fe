@@ -29,10 +29,11 @@ const Login = (props) => {
         return alert('Please enter a password.')
     } else {
         setLoading(true);
-        axios.post('https://quickhire.herokuapp.com/api/auth/login', user)
+        axios.post('https://quick-hire.herokuapp.com/api/auth/login', user)
             .then( res => {
                 console.log('res from post', res.data)
                 sessionStorage.setItem('token', res.data.token)
+                // sessionStorage.setItem('id', res.data.user.id)
                 props.login(res.data.user);
                 props.history.push('/Dashboard')
                 setLoading(false);

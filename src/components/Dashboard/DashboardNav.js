@@ -1,12 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function DashboardNav() {
     return (
         <div className="dashboardNav">
             <nav>
-                <button className="top-nav-btn">Applied</button>
-                <button className="top-nav-btn">Skipped</button>
-                <button className="top-nav-btn">Saved</button>
+                <Link to='/Dashboard/Saved'>
+                    <button className="dashboard-nav">Saved Jobs</button>
+                </Link>
+                <Link to='/Dashboard'>
+                    <button className="dashboard-nav">Dashboard</button>
+                </Link>
+                <Link to='/Dashboard/Viewed'>
+                    <button className="dashboard-nav">History</button>
+                </Link>
             </nav>
         </div>
     )

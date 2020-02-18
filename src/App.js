@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
-import { Route } from "react-router-dom";
-import PrivateRoute from "./utils/PrivateRoute"
+import { Route,useLocation } from "react-router-dom";
+import PrivateRoute from "./utils/PrivateRoute.js"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
@@ -11,13 +11,19 @@ import Register from "./components/Account/Register.js"
 import Dashboard from "../src/components/Dashboard/Dashboard"
 import Header from './components/Header.js'
 import Footer from './components/Footer';
+import LandingPage from './components/Account/LandingPage';
+import JobDetails from "./components/Dashboard/Jobs/JobDetails"
+import AboutUs from './components/AboutUs';
 
 import { getCurrentUser, } from './redux-store/App/AppActions.js';
 
 
 function App(props) {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState('css/index.css');
+  const location = useLocation();
   // console.log('app.js props.currentuser', props.currentUser);
+  // console.log('location: ', location)
 
   useEffect(() => {
     //if currentUser is null, load data from server if you have a token. 
@@ -32,16 +38,22 @@ function App(props) {
       }
   }, [props.currentUser])
 
+  const changeTheme = (e) => {
+    setTheme(e.target.value);
+  }
+  
+  
   return (
     <div>
-      <Header/>
-      <StyledLoader active={loading} spinner text='Loading...'>
-        <Route exact path='/' component={Login} />
+      <link rel="stylesheet" type="text/css" href={theme}/>
+      <Header changeTheme={changeTheme}/>
+      <Route exact path='/' component={LandingPage} />
         <Route exact path='/Login' component={Login} />
         <Route exact path='/Register' component={Register} />
+        <Route exact path='/About' component={AboutUs}/>
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
-      </StyledLoader>
+        <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
       <Footer />
     </div>
   );
@@ -64,4 +76,3 @@ const StyledLoader = styled(LoadingOverlay)`
     width:100%;
     z-index: 2;
 `;
-
