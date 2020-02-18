@@ -112,9 +112,10 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Logan Keith</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, 
-                            velit et commodo tempor, sapien erat fermentum magna, 
-                            sit amet dignissim lorem dolor id ante.
+                        <p>Logan lives in Hillsboro, OR. He has a background in operations and system administration, 
+                            and has an avid interest in decentralized communications, social networks, and storage. 
+                            Logan is currently enrolled in Lambda School's Data Science track, with a focus on generative 
+                            algorithms and data pipeline tooling.
                         </p>
                         <div className="icons">
                             <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
