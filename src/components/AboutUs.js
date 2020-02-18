@@ -127,12 +127,13 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Pierre Nelson</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, 
-                            velit et commodo tempor, sapien erat fermentum magna, 
-                            sit amet dignissim lorem dolor id ante.
+                        <p>Pierre is resides in Atlanta, GA. He started his journey in Data Science 
+                            a little over a year ago. Pierre is currently a Team Lead for two part
+                            time Data Science cohorts at Lambda School and will be graduating in 
+                            April 2020.
                         </p>
                         <div className="icons">
-                            <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="https://twitter.com/pnelsondata"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/alxanderpierre"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/pierre-nelson-26838a148/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
