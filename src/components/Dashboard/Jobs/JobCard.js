@@ -7,7 +7,7 @@ import { connect } from "react-redux"
 import SavedJobs from "./SavedJobs.js"
 
 function JobCard(props) {
-    console.log('job id?', props)
+    // console.log('job id?', props)
 
     const user_id = props.currentUser.id
     const job_id = props.id;
