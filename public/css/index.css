@@ -985,7 +985,6 @@ footer h4 {
 .job-details-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 .job-details-container .deets-apply-button {
   display: flex;
@@ -1035,6 +1034,10 @@ footer h4 {
 }
 .job-details-container .deets-div p {
   padding: 0.5% 2%;
+}
+.job-details-container .deets-div a {
+  padding: 0.5% 2%;
+  font-size: 1.6rem;
 }
 .job-details-container .desc-div p {
   padding: 2%;
