@@ -1,6 +1,5 @@
 header {
-  // border:1px solid red;
-  // border-bottom: 1px solid #AC2A38;
+
   position: sticky;
   background-color: #ffffff;
   width: 100%;
@@ -148,15 +147,15 @@ header {
   background: papayawhip;
   border-radius: 50px;
   border: 1px solid black;
-  height: 20px;
+  height: 30px;
   position: relative;
   width: 40px;
 }
 
 .toggle {
-  background: #f68819;
+  background: @quickhire-main;
   border-radius: 50px;
-  height: 18px;
+  height: 12px;
   left: 0;
   position: absolute;
   transition: 0.2s;
@@ -227,4 +226,73 @@ header {
   display: flex;
   flex-direction: column;
   height: 40px;
+}
+
+.dark-container {
+  width: 100px;
+  height: 35px;
+  border-radius: 3px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+// MUI styling
+.m-ui-container {
+  @media @tablet {
+    width: 100%;
+  }
+
+  @media @mobile {
+    width: 100%;
+  }
+
+  @media @mobile2 {
+    width: 100%;
+    
+  }
+  .drop-down-btn {
+    color: @quickhire-main;
+    width: 100px;
+    height: 35px;
+    border: 1px solid @quickhire-main;
+    border-radius: 3px;
+    padding: 1%;
+    text-transform: capitalize;
+
+    @media @tablet {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding-bottom: 1%;
+    }
+    @media @mobile {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding-bottom: 1%;
+
+    }
+    @media @mobile2 {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      padding-bottom: 1%;
+    }
+    
+    &:hover {
+      background: @quickhire-main;
+      border-radius: 5px;
+      color: #ffffff;
+    }
+  }
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
 }
