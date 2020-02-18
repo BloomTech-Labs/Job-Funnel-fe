@@ -2,6 +2,16 @@
 .job-details-container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    @media @mobile {
+        height: unset;
+    }
+    @media @mobile2 {
+        height: unset;
+    }
+    @media @tablet {
+        height: unset;
+    }
     .deets-apply-button {
         display: flex;
         justify-content: flex-end;
