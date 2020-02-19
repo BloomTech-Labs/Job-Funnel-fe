@@ -13,9 +13,14 @@ header {
   @media @tablet {
     flex-direction: column;
     justify-content: center;
-    height: 17vh;
+    height: 18vh;
   }
   @media @mobile {
+    flex-direction: column;
+    justify-content: center;
+    height: 25vh;
+  }
+  @media @mobile2 {
     flex-direction: column;
     justify-content: center;
     height: 25vh;
@@ -33,6 +38,15 @@ header {
       padding-bottom: 1.5%;
     }
     @media @mobile {
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      padding-bottom: 1.5%;
+    }
+    @media @mobile2 {
       flex-direction: column;
       justify-content: center;
       margin: unset;
@@ -80,6 +94,14 @@ header {
       min-width: unset;
 
     }
+
+    @media @mobile2 {
+      flex-direction: column;
+      justify-content: center;
+      margin: unset;
+      width: 80%;
+      min-width: unset;
+    }
     button {
       // margin-left: 4rem;
       color: @quickhire-main;
@@ -108,6 +130,101 @@ header {
         display: flex;
         padding-bottom: 1%;
       }
+
+      @media @mobile2 {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding-bottom: 1%;
+      }
     }
   }
+}
+
+// --------------- DarkMode Toggle ------------------------------
+
+.dark-mode__toggle {
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
+
+.toggle {
+  background: #f68819;
+  border-radius: 50px;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: @darkmode-background;
+
+  .header {
+    background-color: @darkmode-background;
+    border: none;
+  }
+  
+  p {
+    color: @darkmode-card-text;
+  }
+
+  h3 {
+    color: @darkmode-card-text;
+  }
+
+  h4 { 
+    color: @darkmode-card-text;
+  }
+
+  span {
+    color: @darkmode-card-text;
+  }
+
+  .dashboardNav nav {
+    border: 1px solid @darkmode-background;
+  }
+
+  .container-profile {
+    color: @darkmode-background;
+  }
+
+  .profile-top {
+    border: 1px solid @quickhire-main;
+    border-radius: 6px;
+  }
+
+  .profileCard {
+    border: 1px solid @quickhire-main;
+  }
+
+  .landing-page p {
+    color: @darkmode-text;
+  }
+
+  .about-container p {
+    color: @darkmode-text;
+  }
+
+  .about-container h3 {
+    color: @darkmode-text;
+  }
+
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
 }

@@ -20,7 +20,7 @@ export default function JobDetails(props) {
     const postedDate = Date(details.post_date_utc)
 
     return (
-        <>
+        <div className="job-details-container">
         <div className="deets-apply-button">
             <button>Apply to Job</button>
         </div>
@@ -32,9 +32,9 @@ export default function JobDetails(props) {
         </div>
         
         <div className="desc-div" >
-        <h2 className="job-description" >{details.description}</h2>
+        <p className="job-description" >{details.description}</p>
         </div>
-        </>
+        </div>
     )
 }
 

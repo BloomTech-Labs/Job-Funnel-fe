@@ -22,6 +22,17 @@
   <meta name="theme-color" content="" />
   <meta name="description" content="QuickHire " />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <base href="/" />
+  <style type="text/css">
+    .hidden {display:none;}
+  </style>
+  <script type="text/javascript" src="/scripts/jquery.js"></script>
+  <script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {    // EDIT: From Adam Zerner's comment below: Rather use load: $(window).on('load', function () {...});
+      $('html').show();  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+   </script>
   <title>QuickHire</title>
 </head>
 
