@@ -29,6 +29,7 @@ export default function JobDetails(props) {
             <p className="company-name">{details.companyName}</p>
             <p className="job-location">{details.city} {details.stateOrProvince}</p>
             <p className="job-posting-date">{postedDate}</p>
+            <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
         </div>
         
         <div className="desc-div" >

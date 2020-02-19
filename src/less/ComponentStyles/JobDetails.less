@@ -2,13 +2,34 @@
 .job-details-container {
     display: flex;
     flex-direction: column;
-    .deets-apply-button {
-        width: 10%;
-        button{
-            .button(@border: black, @borderHover: @quickhire-main, @background: @quickhire-main, @backgroundHover: #ffffff, 
-            @fontColor: #ffffff, @fontColorHover: @quickhire-main, @width: 100%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
-          }
+    height: 100vh;
+    @media @mobile {
+        height: unset;
     }
+    @media @mobile2 {
+        height: unset;
+    }
+    @media @tablet {
+        height: unset;
+    }
+    .deets-apply-button {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2%;
+        button{
+            .button(@border: 1px solid black, @borderHover: 1px solid @quickhire-main, @background: @quickhire-main, @backgroundHover: #ffffff, 
+            @fontColor: #ffffff, @fontColorHover: @quickhire-main, @width: 10%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
+            @media @mobile {
+                width: 25%;
+            }
+            @media @mobile2 {
+                width: 40%;
+            }
+            @media @tablet {
+                width: 300%;
+            }
+    }
+}
     .deets-div {
         display: flex;
         flex-direction: column;
@@ -18,6 +39,10 @@
         }
         p {
             padding: .5% 2%;
+        }
+        a {
+            padding: .5% 2%;
+            font-size: 1.6rem;
         }
     }
     .desc-div {
