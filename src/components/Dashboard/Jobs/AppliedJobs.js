@@ -15,7 +15,6 @@ import LoadingOverlay from "react-loading-overlay";
     const id = props.currentUser.id
 
     
-
  useEffect(() => {
     setLoading(true);
     axiosWithAuth().get(`/saved/${id}`)
@@ -42,7 +41,7 @@ import LoadingOverlay from "react-loading-overlay";
     if(apply.length < 1){
         return (
             <div className="empty-jobs">
-                <h1>Nothing here yet...Save a job in <Link to ="/Dashboard">Dashboard</Link> to continue!</h1>
+                <h1>Nothing here yet...Click "Apply Now" in <Link to ="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
             </div>
         )
     }
