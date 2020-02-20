@@ -4,18 +4,25 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../redux-store/App/AppActions.js';
-// import logo from '../../images/logo.png';
+import SimpleMenu  from "./DropDown"
+
+
 
 function Header(props) {
     const location = useLocation();
     const history = useHistory();
-    // console.log('pathname', location.pathname);
 
     const logOut = () => {
         sessionStorage.removeItem('token');
         props.logout();
-        history.push('/');
+        history.push('/Login');
     }
+
+    // const DropDown = () => {
+    //     props.history.push('/')
+    // }
+
+
 
 console.log('location', location.pathname)
   return (
@@ -42,11 +49,12 @@ console.log('location', location.pathname)
                 )
             }
 
-          else  if (location.pathname === '/dashboard' || location.pathname === '/Dashboard'){
+          else  if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved'){
                 return (
                 <nav>
                     <Link to ="/Profile"> <button>My Profile</button> </Link>
-                    <button onClick={logOut}> Sign Out </button>
+                    {/* <button onClick={logOut}> Sign Out </button> */}
+                    <SimpleMenu logout={logOut}/>
                 </nav>
                 )
             } 
@@ -54,10 +62,10 @@ console.log('location', location.pathname)
                 return (
                 <nav>
                     <Link to ="/Dashboard"> <button>Back to Dashboard</button> </Link>
-                    <button onClick={logOut}> Sign Out </button>
+                    <SimpleMenu logout={logOut}/>
                 </nav>
                 )
-            } 
+            }
 
           else  if (location.pathname === '/login' || location.pathname === '/Login'){
                 return (
@@ -73,8 +81,15 @@ console.log('location', location.pathname)
                     </nav>
                 )
             }
+          else if (location.pathname === '/about' || location.pathname === '/About') {
+            return (
+                <nav>
+                    <Link to ="/Login"> <button>Login</button> </Link>
+                    <Link to ="/Dashboard"> <button>Dashboard</button> </Link>
+                </nav>
+            )
+          }
         })()}
-        <DarkMode/>
     </header>
     </>
   );

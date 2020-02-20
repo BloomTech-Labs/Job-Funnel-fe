@@ -6,6 +6,11 @@
         margin-top: 2%;
     }
 
+    h2 { 
+        text-align: center;
+        margin-top: 2%;
+    }
+
     p {
         text-align: center;
         margin: 0 auto;
@@ -18,14 +23,32 @@
 
         .team-image {
             width: 100%;
+            border-radius: 6px;
         }
+    }
+
+    .team {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .team-card {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        border: 1px solid @quickhire-main;
-        margin-bottom: 2%;
+        border-radius: 6px;
+        margin: 4% auto;
+        width: 694px;
+        height: 394px;
+        padding-top: 10px;
+
+        @media @tablet {
+            height: 420px;
+        }
+
+        @media @mobile {
+            height: 430px;
+        }
     }
 
     .team-info {

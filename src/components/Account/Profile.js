@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
+
 import { validateInputs, isValidPassword } from '../../utils/AppUtils.js'
 import { updateUser, deleteProfilePicture, updateProfilePicture } from '../../redux-store/App/AppActions.js';
 import ProfilePicture from "./ProfilePicture.js"
@@ -141,11 +142,11 @@ function Profile(props) {
             </div>
             <div className="profileCard">
               <h3>About</h3>
-              <p style={{textAlign: "justify"}}>{props.currentUser.about} Quisque eget laoreet ex, quis lacinia massa. Nam mauris dui, consectetur in ipsum quis, cursus tempor felis. Aliquam eget ex tincidunt, molestie mi et, pellentesque ipsum. Nullam a suscipit justo. Curabitur sollicitudin nunc tellus, eget iaculis velit fringilla eget. Quisque sit amet maximus tortor. Cras elit dui, mattis vitae velit sit amet, suscipit aliquam nulla. </p>
+              <p style={{textAlign: "justify"}}>{props.currentUser.about}</p>
             </div>
             <div className="profileCard">
               <h3>Education</h3>
-              <p> - {props.currentUser.education} Lambda School</p>
+              <p> - {props.currentUser.education}</p>
             </div>
             <div className="profileCard">
               <h3>Skills</h3>
