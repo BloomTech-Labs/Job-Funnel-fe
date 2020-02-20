@@ -30,22 +30,33 @@ import LoadingOverlay from "react-loading-overlay";
     })
  }, [id])
 
-
-
-
-
  const JobDetails = (job_id) => {
      props.history.push(`/Dashboard/Job/${job_id}`)
  }
 
+ const handleDelete = (job_id) => {
+    setLoading(true)
+    axiosWithAuth().delete(`/saved/${job_id}`)
+       .then(res => {
+               let AppliedCopy = apply.filter((e)=> e.job_id !== job_id)
+               console.log('erased job from saved table', res.data)
+               setLoading(false)
+               setApply(AppliedCopy)
+           })
+           .catch(error => {
+               console.error(error)
+                setLoading(false)
+           })
+}
+
+
     if(apply.length < 1){
         return (
             <div className="empty-jobs">
-                <h1>Nothing here yet...Click "Apply Now" in <Link to ="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
+                <h1>Click "Saved as Applied" in <Link to ="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
             </div>
         )
     }
-    // console.log('render save', save)
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
@@ -56,7 +67,7 @@ import LoadingOverlay from "react-loading-overlay";
                             <h5>📍{e.city} {e.stateOrProvince}, {e.country}</h5>
                             <p> Overview <br></br>{e.description.slice(0,250)}...</p>
                             <div className="saved-buttons">
-                                {/* <button onClick={()=> handleDelete(e.job_id)}>Unsave</button> */}
+                                <button onClick={()=> handleDelete(e.job_id)}>Erase from Applied</button>
                                 <button onClick={()=> JobDetails(e.job_id) }>More Info</button>
                             </div>
                         </div>

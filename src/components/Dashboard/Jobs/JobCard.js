@@ -4,18 +4,13 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 
-
-import SavedJobs from "./SavedJobs.js"
-
 function JobCard(props) {
-    // console.log('job id?', props)
 
     //variables
     const user_id = props.currentUser.id
     const job_id = props.id;
 
     const [toggle, setToggle] = useState(false)
-    // const [display, setShit] = useState(false)
     
     //state for saved status
     const [saved, setSaved] = useState({
@@ -71,7 +66,7 @@ function JobCard(props) {
     return (
         <div className="jobCard">
             <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
-                <button onClick={handleApply}>Applied</button>
+                <button onClick={handleApply}>Save as Applied</button>
             </div>
             <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
