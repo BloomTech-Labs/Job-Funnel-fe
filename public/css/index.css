@@ -292,6 +292,7 @@ header nav button {
   border: 1px solid #AC2A38;
   border-radius: 3px;
   padding: 1%;
+  background-color: whitesmoke;
 }
 header nav button:hover {
   background: #AC2A38;
@@ -362,7 +363,7 @@ header nav button:hover {
 .dark-mode h4 {
   color: black;
 }
-.dark-mode span {
+.dark-mode .card-text span {
   color: black;
 }
 .dark-mode .dashboardNav nav {
@@ -388,6 +389,12 @@ header nav button:hover {
   color: white;
 }
 .dark-mode .job-details-container p {
+  color: white;
+}
+.dark-mode .edit-profile-top h3 {
+  color: white;
+}
+.dark-mode .profile-form-inputs2 h3 {
   color: white;
 }
 .navbar {
@@ -422,6 +429,7 @@ header nav button:hover {
 }
 .m-ui-container .drop-down-btn {
   color: #AC2A38;
+  background-color: whitesmoke;
   width: 100px;
   height: 35px;
   border: 1px solid #AC2A38;
@@ -678,6 +686,7 @@ footer h4 {
 }
 .card-saved-jobs h5 {
   font-size: 1.5rem;
+  color: black;
 }
 .card-saved-jobs p {
   padding: 2%;
@@ -739,7 +748,7 @@ footer h4 {
   margin: 4% auto;
   width: 694px;
   height: 394px;
-  padding-top: 10px;
+  margin-bottom: 10%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .about-container .team-card {
@@ -749,6 +758,7 @@ footer h4 {
 @media (max-width: 650px) {
   .about-container .team-card {
     height: 430px;
+    margin-bottom: 40%;
   }
 }
 .about-container .team-info {
@@ -868,15 +878,16 @@ footer h4 {
 }
 .dashboardNav nav button {
   border: 1px solid black;
+  width: 100px;
   border: #AC2A38;
   background-color: #ffffff;
   color: #AC2A38;
-  width: unset;
+  width: ;
   height: 35px;
   border-radius: 8px;
   font-size: 1.2rem;
   margin: 0 2px;
-  padding: 5%;
+  padding: 1.5%;
 }
 .dashboardNav nav button:hover {
   border: #ffffff;
@@ -985,6 +996,22 @@ footer h4 {
 .job-details-container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+@media (max-width: 650px) {
+  .job-details-container {
+    height: unset;
+  }
+}
+@media (max-width: 350px) {
+  .job-details-container {
+    height: unset;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .job-details-container {
+    height: unset;
+  }
 }
 .job-details-container .deets-apply-button {
   display: flex;
