@@ -65,8 +65,8 @@ function JobCard(props) {
 
     return (
         <div className="jobCard">
-            <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
-                <button onClick={handleApply}>Save as Applied</button>
+            <div className='jobButtons-top'> 
+            <button onClick={handleApply}>Save as Applied</button>
             </div>
             <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
@@ -77,7 +77,7 @@ function JobCard(props) {
                 <span>📍 {props.location}</span>
             </div>
             <div className='jobButtons' > 
-                {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave}>Unsave</button> )}
+                {(toggle === false ? <button onClick={handleSave}>Save</button> : null )}
                 <Link to={`/Dashboard/Job/${props.id}`}>
                     <button>View</button>
                 </Link>
