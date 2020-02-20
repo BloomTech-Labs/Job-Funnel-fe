@@ -13,7 +13,7 @@ const LandingPage = () => {
                     <h1 >Welcome to your Quickhire Community</h1>
                 </div>
                 <div className='p-div' >
-                    <p className='p-1'>You just finish your Bootcamp ans want to find a job</p>
+                    <p className='p-1'>You just finish your Bootcamp and want to find a job</p>
                     <p className='p-2'> Join us in Quickhire and we will help you </p>
                     <p className='p-3'> find the tech job that best matches you</p>
                 </div>

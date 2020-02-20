@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 import JobCard from './JobCard.js';
+import Filter from "../Filter";
+
+import {useLocation} from "react-router-dom"
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
@@ -11,6 +14,7 @@ export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
     const [offset, setOffset] = useState(0);
+    const location = useLocation();
 
 
     useEffect(() => {
@@ -43,6 +47,9 @@ export default function SuggestedJobs() {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <InfiniteScroll dataLength={jobs.length} next={getMoreJobs} hasMore={true}>
+         <div>
+           {(location.pathname === "/Dashboard" ? <Filter/> : null)}
+         </div>
             <div className="card-container">
                 {jobs.map((job, index) => {
                     // console.log(job);

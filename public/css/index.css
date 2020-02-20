@@ -793,10 +793,9 @@ footer {
 }
 @media (min-width: 651px) and (max-width: 800px) {
 }
-@media (min-width: 520px) and (max-width: 650px) {
+@media (max-width: 650px) {
 }
-@media (max-width: 519px) {
-
+@media (max-width: 350px) {
 }
 .card-container {
   display: flex;
