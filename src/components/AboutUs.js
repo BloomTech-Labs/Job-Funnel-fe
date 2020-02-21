@@ -129,13 +129,30 @@ function AboutUs() {
                         <h3>Pierre Nelson</h3>
                         <p>Pierre is resides in Atlanta, GA. He started his journey in Data Science 
                             a little over a year ago. Pierre is currently a Team Lead for two part
-                            time Data Science cohorts at Lambda School and will be graduating in 
-                            April 2020.
+                            time Data Science cohorts at Lambda School.
                         </p>
                         <div className="icons">
                             <a href="https://twitter.com/pnelsondata"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/alxanderpierre"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/pierre-nelson-26838a148/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="team-card">
+                    <div className="image-container">
+                        <img className="team-image" src="https://ca.slack-edge.com/T4JUEB3ME-UJRSD5X6H-c2998ebc2ac3-512"/>
+                    </div>
+                    <div className="team-info">
+                        <h3>Baisal Ergeshev</h3>
+                        <p>Baisal lives in Brooklyn, NY. He was majoring in Computer Science in Brooklyn 
+                            college and last year, he decided to enroll at Lambda School to get a Data 
+                            Science degree and will be graduating this current year 2020. 
+                            He is highly interested in Machine Learning and hopes to develop his 
+                            skills throughout his learning.
+                        </p>
+                        <div className="icons">
+                            <a href="https://github.com/Baisal89"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                         </div>
                     </div>
                 </div>

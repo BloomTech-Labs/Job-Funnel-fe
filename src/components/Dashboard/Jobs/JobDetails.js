@@ -52,8 +52,10 @@ useEffect(()=> {
     }
 
 
+    //Gives the posted date
     const postedDate = Date(details.post_date_utc)
 
+    //Styling for the Job Details Component Page
     return (
         <div className="job-details-container">
         <div className="deets-apply-button">
