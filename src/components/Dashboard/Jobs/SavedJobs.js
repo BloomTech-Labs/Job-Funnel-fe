@@ -59,7 +59,7 @@ import LoadingOverlay from "react-loading-overlay";
             </div>
         )
     }
-    // console.log('render save', save)
+
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">

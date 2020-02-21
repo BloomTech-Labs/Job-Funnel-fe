@@ -11,6 +11,7 @@ function JobCard(props) {
     const job_id = props.id;
 
     const [toggle, setToggle] = useState(false)
+    const [applytoggle, setApplytoggle] = useState(false)
     
     //state for saved status
     const [saved, setSaved] = useState({
@@ -31,7 +32,7 @@ function JobCard(props) {
             .then(res => {
                 console.log('handle save job response', res.data)
                 setApplied({...applied})
-                setToggle(true)
+                setApplytoggle(true)
             })
             .catch(error => {
                 console.error(error)
@@ -59,6 +60,26 @@ function JobCard(props) {
             .catch(error => {
                 console.error(error)
             })
+        } else if (applytoggle === false) {
+            axiosWithAuth().post('/saved/', applied)
+            .then(res => {
+                console.log('handle save job response', res.data)
+                setApplied({...applied})
+                setApplytoggle(true)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+        } else if(applytoggle === true ) {
+            axiosWithAuth().delete(`/saved/${job_id}`)
+            .then(res => {
+                console.log('erased job from saved table?', res.data)
+                setApplytoggle(false)
+                setApplied({...applied})
+            })
+            .catch(error => {
+                console.error(error)
+            })
         }
         
     }
@@ -66,7 +87,7 @@ function JobCard(props) {
     return (
         <div className="jobCard">
             <div className='jobButtons-top'> 
-            <button onClick={handleApply}>Save as Applied</button>
+            {(applytoggle === false ? <button onClick={handleApply}>Save as Applied</button> : <p style={{textAlign: 'center'}}>Saved as applied!👍🏼 </p> )}
             </div>
             <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
@@ -77,7 +98,7 @@ function JobCard(props) {
                 <span>📍 {props.location}</span>
             </div>
             <div className='jobButtons' > 
-                {(toggle === false ? <button onClick={handleSave}>Save</button> : null )}
+                {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick ={handleSave} style={{color: 'white', backgroundColor: 'green'}}>Unsave</button> )}
                 <Link to={`/Dashboard/Job/${props.id}`}>
                     <button>View</button>
                 </Link>
