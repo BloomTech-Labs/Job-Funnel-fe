@@ -158,34 +158,34 @@
     flex-direction: column;
     min-width: unset;
 
-    .search-bar {
-      // padding-top: 1%;
-    }
+    // .search-bar {
+    //   // padding-top: 1%;
+    // }
 
-    .job-select {
-      // padding-top: 1%;
-    }
+    // .job-select {
+    //   // padding-top: 1%;
+    // }
 
-    .experience-select {
-      // padding-top: 1%;
-    }
+    // .experience-select {
+    //   // padding-top: 1%;
+    // }
 
-    button {
-      // margin-left: 2%;
-    }
+    // button {
+    //   // margin-left: 2%;
+    // }
   }
 
-  @media @mobile {
-    min-width: unset;
+  // @media @mobile {
+  //   min-width: unset;
 
-    .job-select {
-      // padding-top: 1%;
-    }
+  //   .job-select {
+  //     // padding-top: 1%;
+  //   }
 
-    .experience-select {
-      // padding-top: 1%;
-    }
-  }
+  //   .experience-select {
+  //     // padding-top: 1%;
+  //   }
+  // }
 
   @media @mobile2 {
     min-width: unset;
@@ -349,6 +349,25 @@
   margin: 15px 0;
   button {
     // margin-left: 4rem;
+    color: @quickhire-main;
+    width: 100px;
+    height: 35px;
+    border: 1px solid @quickhire-main;
+    border-radius: 3px;
+    &:hover {
+      background: @quickhire-main;
+      border-radius: 5px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+}
+
+.jobButtons-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+  button {
     color: @quickhire-main;
     width: 100px;
     height: 35px;
