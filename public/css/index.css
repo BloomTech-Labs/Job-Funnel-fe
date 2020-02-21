@@ -678,6 +678,7 @@ footer h4 {
 }
 .card-saved-jobs h5 {
   font-size: 1.5rem;
+  color: black;
 }
 .card-saved-jobs p {
   padding: 2%;
@@ -839,11 +840,6 @@ footer h4 {
     min-width: unset;
   }
 }
-@media (max-width: 650px) {
-  .filter-class {
-    min-width: unset;
-  }
-}
 @media (max-width: 350px) {
   .filter-class {
     min-width: unset;
@@ -970,6 +966,24 @@ footer h4 {
   border-radius: 3px;
 }
 .jobButtons button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.jobButtons-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+}
+.jobButtons-top button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
+}
+.jobButtons-top button:hover {
   background: #AC2A38;
   border-radius: 5px;
   color: #ffffff;
