@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
+//Component that makes up the Saved Jobs page on site
     function SavedJobs(props) {
         
     console.log('props in savedjobs', props)
@@ -16,7 +17,7 @@ import LoadingOverlay from "react-loading-overlay";
     const id = props.currentUser.id
 
     
-
+//axiosWithAuth is getting the saved id's that are made on the SuggestedJobs component whenever you click the save button
  useEffect(() => {
     setLoading(true);
     axiosWithAuth().get(`/saved/${id}`)
@@ -33,6 +34,7 @@ import LoadingOverlay from "react-loading-overlay";
 
 console.log('job id should be in here', save)
 
+//deletes the selected saved job
  const handleDelete = (job_id) => {
      setLoading(true)
      axiosWithAuth().delete(`/saved/${job_id}`)
@@ -48,6 +50,7 @@ console.log('job id should be in here', save)
             })
  }
 
+ //pushes saved jobs to here, and also returns nothing is available if you haven't saved any jobs, with a link back to the dashboard.
  const JobDetails = (job_id) => {
      props.history.push(`/Dashboard/Job/${job_id}`)
  }
@@ -60,6 +63,7 @@ console.log('job id should be in here', save)
         )
     }
     // console.log('render save', save)
+    //stylings for the suggestedJob card
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">

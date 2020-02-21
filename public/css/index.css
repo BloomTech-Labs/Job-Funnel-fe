@@ -927,6 +927,21 @@ footer h4 {
 .card-container .jobCard h3 {
   font-size: 1.3rem;
 }
+.card-container .jobCard .company-name {
+  background-color: #AC2A38;
+  width: 100%;
+  max-height: 40px;
+  text-align: center;
+  color: white;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.card-container .jobCard .job-desc {
+  width: 260px;
+  text-align: center;
+  margin: 10px auto;
+  height: 100px;
+}
 .card-container .card-image {
   display: flex;
   width: 18%;
@@ -938,6 +953,7 @@ footer h4 {
   height: 50px;
 }
 .card-container .card-text {
+  display: flex;
   margin-left: 8%;
 }
 .card-container .card-text p {
@@ -945,6 +961,12 @@ footer h4 {
 }
 .card-container .card-text p span {
   color: #646464;
+}
+.card-container .card-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .card-container {

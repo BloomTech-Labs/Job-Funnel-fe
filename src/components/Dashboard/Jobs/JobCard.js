@@ -6,6 +6,8 @@ import { connect } from "react-redux"
 
 import SavedJobs from "./SavedJobs.js"
 
+
+//Job Card is the actual display of the card component. 
 function JobCard(props) {
     // console.log('job id?', props)
 
@@ -18,6 +20,7 @@ function JobCard(props) {
         status: "saved"
     })
 
+    //Toggles the cards "save" feature on and off. When saved, it sends to the Saved Jobs component.
     const [toggle, setToggle] = useState(false)
 
     const handleSave = () => {
@@ -46,19 +49,22 @@ function JobCard(props) {
         
     }
 
+    //the card display/stylings
     return (
         <div className="jobCard">
-            <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 15px', }}> 
-                <h4>Your Skills match 6/7</h4>
-            </div>
-            <div className="card-image">
-                <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
+            <div style={{display: 'flex', justifyContent: 'space-between' }}> 
+                <p className="company-name">{props.company}</p>
             </div>
             <div className="card-text">
-                <h3>{props.title}</h3>
-                <p>{props.company}</p>
-                <span>📍 {props.location}</span>
+                <div className="card-image">
+                    <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
+                </div>
+                <div className="card-info">
+                    <h3>{props.title.slice(0, 30)}..</h3>
+                    <span>📍 {props.location}</span>
+                </div>
             </div>
+                <p className="job-desc">{props.description.slice(0, 100)}...</p>
             <div className='jobButtons' > 
                 {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave}>Unsave</button> )}
                 <Link to={`/Dashboard/Job/${props.id}`}>
