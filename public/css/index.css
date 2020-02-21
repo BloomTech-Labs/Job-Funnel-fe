@@ -796,6 +796,7 @@ footer h4 {
   width: 45%;
   justify-content: space-between;
   min-width: 750px;
+  padding-left: 3.3%;
 }
 .filter-class .search-bar {
   width: 180px;
@@ -805,13 +806,25 @@ footer h4 {
   border: 1px solid #AC2A38;
 }
 .filter-class .job-select {
-  width: 180px;
+  width: 133px;
   height: 35px;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
 .filter-class .experience-select {
-  width: 180px;
+  width: 133px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class .job-state {
+  width: 133px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class .job-city {
+  width: 133px;
   height: 35px;
   border-radius: 6px;
   border: 1px solid #AC2A38;
@@ -893,14 +906,6 @@ footer h4 {
 }
 .dashboardNav nav a {
   text-decoration: none;
-}
-@media (max-width: 1000px) {
-}
-@media (min-width: 651px) and (max-width: 800px) {
-}
-@media (max-width: 650px) {
-}
-@media (max-width: 350px) {
 }
 .card-container {
   display: flex;
