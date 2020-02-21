@@ -4,6 +4,7 @@ import { faUserCircle, faCamera } from "@fortawesome/free-solid-svg-icons";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
+//Cloudinary Stuff - allows users to add profile pictures to their profiles
 export default function ProfilePicture(props) {
     return (
         <div>

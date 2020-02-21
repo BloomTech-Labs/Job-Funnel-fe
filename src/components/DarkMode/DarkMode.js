@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocalStorage } from "./LocalStorage";
 
+///Dark mode, adds a class that targets the body in order to use the LESS stylings for the darkmode
 export function useDarkMode() {
   const [value, setValue] = useLocalStorage("darkMode");
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDarkMode } from "./DarkMode";
   
+//Our darkmode function, allows the entire site to have access to darkmode
 const DarkMode = () => {
 const [darkMode, setDarkMode] = useDarkMode(false);
 

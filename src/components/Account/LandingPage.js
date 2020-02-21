@@ -4,7 +4,7 @@ import logo from '../../images/logo.jpg'
 
 
 
-
+//QuickHire homepage - will render when you first visit site
 const LandingPage = () => {
     return (
         <section className='animated zoomInUp fast landing-page'>
@@ -18,7 +18,7 @@ const LandingPage = () => {
                     <p className='p-3'> find the tech job that best matches you</p>
                 </div>
 
-
+                
                 <div className='bottom-content'>
                     <div className='animated pulse delay-2s slow button-div'><Link to="/Register"> <button >Join Now!</button></Link></div>
                     <div className='img-div'><img src={logo} /></div>

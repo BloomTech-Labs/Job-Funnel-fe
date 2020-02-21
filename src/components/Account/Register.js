@@ -7,7 +7,7 @@ import LoadingOverlay from "react-loading-overlay";
 
 import { login } from "../../redux-store/App/AppActions" 
 
-
+//Register function that allows users to register new accounts. Does a POST request to backend in order to store the new data. Also pushes user to Dashboard on signup
 const Register = (props) => {
     // #region localstate
     const [loading, setLoading] = useState(false);

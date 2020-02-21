@@ -22,13 +22,8 @@ function App(props) {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState('css/index.css');
   const location = useLocation();
-  // console.log('app.js props.currentuser', props.currentUser);
-  // console.log('location: ', location)
 
   useEffect(() => {
-    //if currentUser is null, load data from server if you have a token. 
-    //otherwise if you don't have a token you will be unable to access private routes and will be redirected to login page if you try.
-    // login failed is there to prevent it from infinitely trying to connect to the server if the server is down or something.
       if (!props.loginFailed && !props.currentUser && sessionStorage.getItem('token')){
         props.getCurrentUser();
         setLoading(false);
