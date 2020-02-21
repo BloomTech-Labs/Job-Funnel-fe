@@ -10,7 +10,7 @@ import { connect } from "react-redux"
     const job_id = props.match.params.id;
 
    const [details, setDetails] = useState({});
-//    const [applytoggle, setApplytoggle] = useState(false)
+   const [applytoggle, setApplytoggle] = useState(false)
    const [applied, setApplied] = useState({
     user_id: user_id,
     job_id: job_id,
@@ -28,42 +28,28 @@ useEffect(()=> {
 }, []);
 
  const handleApply = () => {
-            axiosWithAuth().post('/saved/', applied)
-            .then(res => {
-                console.log('handle save job response', res.data)
-                setApplied({...applied})
-            })
-            .catch(error => {
-                console.error(error)
-            })
+    if(applytoggle === false){
+        axiosWithAuth().post('/saved/', applied)
+        .then(res => {
+            console.log('handle save job response', res.data)
+            setApplied({...applied})
+            setApplytoggle(!applytoggle)
+        })
+        .catch(error => {
+            console.error(error)
+        })
+    } else {
+        axiosWithAuth().delete(`/saved/${job_id}`)
+                .then(res => {
+                    console.log('erased job from saved table?', res.data)
+                    setApplytoggle(false)
+                    setApplied({...applied})
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+            }
     }
-
-
-    // const handleSave = () => {
-    //     if (applytoggle === false) {
-    //         axiosWithAuth().post('/saved/', applied)
-    //         .then(res => {
-    //             console.log('handle save job response', res.data)
-    //             setApplied({...applied})
-    //             setApplytoggle(true)
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-    //     } else if(applytoggle === true ) {
-    //         axiosWithAuth().delete(`/saved/${job_id}`)
-    //         .then(res => {
-    //             console.log('erased job from saved table?', res.data)
-    //             setApplytoggle(false)
-    //             setApplied({...applied})
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-    //     }
-        
-    // }
-
 
 
     const postedDate = Date(details.post_date_utc)
@@ -72,7 +58,7 @@ useEffect(()=> {
         <div className="job-details-container">
         <div className="deets-apply-button">
             <button>Apply to Job</button>
-            <button onClick={handleApply}>Applied</button>
+            {(applytoggle === false ? <button onClick={handleApply}> Save as Applied</button> : <button onClick={handleApply}>Remove from Applied</button> )}
         </div>
         <div className="deets-div">
             <h2>{details.title}</h2>

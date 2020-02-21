@@ -49,7 +49,6 @@ import LoadingOverlay from "react-loading-overlay";
            })
 }
 
-
     if(apply.length < 1){
         return (
             <div className="empty-jobs">

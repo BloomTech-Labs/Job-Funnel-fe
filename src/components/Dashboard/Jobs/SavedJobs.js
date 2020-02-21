@@ -15,8 +15,6 @@ import LoadingOverlay from "react-loading-overlay";
 
     const id = props.currentUser.id
 
-    
-
  useEffect(() => {
     setLoading(true);
     axiosWithAuth().get(`/saved/${id}`)
