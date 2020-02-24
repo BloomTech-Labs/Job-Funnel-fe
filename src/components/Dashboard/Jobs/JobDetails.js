@@ -9,13 +9,15 @@ import { connect } from "react-redux"
     const user_id = props.currentUser.id
     const job_id = props.match.params.id;
 
-   const [details, setDetails] = useState({});
-   const [applytoggle, setApplytoggle] = useState(false)
-   const [applied, setApplied] = useState({
-    user_id: user_id,
-    job_id: job_id,
-    status: "applied"
-})
+    const [details, setDetails] = useState({});
+    const [description, setDescription] =useState({})
+    const [applytoggle, setApplytoggle] = useState(false)
+    const [applied, setApplied] = useState({
+        user_id: user_id,
+        job_id: job_id,
+        status: "applied"
+    }) 
+
 
 
 useEffect(()=> {
@@ -23,6 +25,7 @@ useEffect(()=> {
         .then(response => {
             console.log('job details axios response', response.data);
             setDetails(response.data);
+            setDescription(response.data.description)
         })
         .catch(err => console.error(err))
 }, []);
@@ -57,7 +60,7 @@ useEffect(()=> {
 
     //Styling for the Job Details Component Page
     return (
-        <div className="job-details-container">
+        <div className= {(description.length < 2000 ?"job-details-container-2" : "job-details-container")}>
         <div className="deets-apply-button">
             <button>Apply to Job</button>
             {(applytoggle === false ? <button onClick={handleApply}> Save as Applied</button> : <button onClick={handleApply}>Remove from Applied</button> )}
@@ -69,7 +72,6 @@ useEffect(()=> {
             <p className="job-posting-date">{postedDate}</p>
             <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
         </div>
-        
         <div className="desc-div" >
         <p className="job-description" >{details.description}</p>
         </div>

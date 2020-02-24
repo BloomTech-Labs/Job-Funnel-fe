@@ -61,6 +61,7 @@ const SideContent = styled.div `
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 `;
 const DefaultProfile = styled(FontAwesomeIcon) `
     position: absolute;
