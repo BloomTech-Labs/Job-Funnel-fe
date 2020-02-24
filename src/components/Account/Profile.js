@@ -16,32 +16,36 @@ function Profile(props) {
   // #region Local State
   const [loading, setLoading] = useState(false);
   const [pictureLoading, setPictureLoading] = useState(false);
-
+  
   const [showEditForm, setShowEditForm] = useState(false);
   const [editFirstName, setEditFirstName] = useState('');
   const [editLastName, setEditLastName] = useState('');
-  const [newPassword, setNewPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [editAbout, setEditAbout] = useState('');
   const [editEducation, setEditEducation] = useState('');
+  const [editSkills, setEditSkills] = useState('');
+  const [editPortfolio, setEditPortfolio] = useState('');
+  const [editLinkedin, setEditLinkedin] = useState('');
+  const [editGithub, setEditGithub] = useState('');
+  const [editResume, setEditResume] = useState('');
   const [enterPasswordField, setEnterPasswordField] = useState(false)
+  const [newPassword, setNewPassword] = useState('');
   // #endregion
 
   useEffect(()=>{
-    if(editFirstName || editLastName || editAbout || editEducation || newPassword){
+    if(editFirstName || editLastName || editAbout || editEducation || editSkills || editPortfolio || editLinkedin || editResume || editGithub  || newPassword){
         setEnterPasswordField(true)
     }else{
         setEnterPasswordField(false)
     }
-    },[editFirstName, editLastName, editAbout, editEducation, newPassword])
+    },[editFirstName, editLastName, editAbout, editEducation, newPassword, editSkills, editPortfolio, editLinkedin, editGithub, editResume])
 
 // #region functions
+
+  // HANDLES CHANGES FOR EDIT PROFILE
   const handleChange = e => {
-      // if (e.target.email === 'email'){
-      //   // INSERT VALIDATION FOR EMAIL
-      // }
       if (e.target.name === 'first_name'){
-        setEditFirstName(e.target.value);
+          setEditFirstName(e.target.value);
       }
       else if (e.target.name === 'last_name'){
           setEditLastName(e.target.value);
@@ -52,6 +56,21 @@ function Profile(props) {
       else if (e.target.name === 'about'){
           setEditAbout(e.target.value);
       }
+      else if (e.target.name === 'skills'){
+          setEditSkills(e.target.value);
+      }
+      else if (e.target.name === 'portfolio'){
+          setEditPortfolio(e.target.value);
+      }
+      else if (e.target.name === 'linkedin'){
+          setEditLinkedin(e.target.value);
+      }
+      else if (e.target.name === 'github'){
+          setEditGithub(e.target.value);
+      }
+      else if (e.target.name === 'resume'){
+          setEditResume(e.target.value);
+      }
       else if (e.target.name === 'newPassword'){
           setNewPassword(e.target.value);
       }
@@ -60,6 +79,7 @@ function Profile(props) {
       }
   };
 
+  // WILL BE USED TO RESET ALL INPUTS AFTER HANDLE SUBMIT
   const resetInputs = () => {
     setLoading(false);
     setShowEditForm(false);
@@ -68,8 +88,15 @@ function Profile(props) {
     setNewPassword('');
     setCurrentPassword('');
     setEditAbout('');
+    setEditLinkedin('');
+    setEditResume('');
+    setEditSkills('');
+    setEditGithub('');
+    setEditPortfolio('');
   };
 
+  // USED TO SUBMIT INFORMATION ON EDIT PROFILE.
+  // WILL BUILD INTO AN OBJ (USEROBJ), CHECK FOR PASSWORD CONFIRMATION, AND REPLACE DATA IN PROFILE. 
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -85,6 +112,21 @@ function Profile(props) {
     }
     if (editAbout){
         userObj = {...userObj, about: editAbout}
+    }
+    if (editSkills){
+        userObj = {...userObj, skills: editSkills}
+    }
+    if (editLinkedin){
+        userObj = {...userObj, linkedin_url: editLinkedin}
+    }
+    if (editPortfolio){
+        userObj = {...userObj, portfolio_url: editPortfolio}
+    }
+    if (editGithub){
+        userObj = {...userObj, github_url: editGithub}
+    }
+    if (editResume){
+        userObj = {...userObj, resume: editResume}
     }
     if (newPassword){
         userObj = {...userObj, newPassword: newPassword}
@@ -102,7 +144,7 @@ function Profile(props) {
   }
 
   const changeProfilePic = (picture) => {
-    console.log(picture)
+    console.log("This is for changing profile pic", picture)
     if(picture){
       let formData = new FormData();
       formData.append('image', picture);
@@ -120,15 +162,6 @@ function Profile(props) {
 
   return (
     <StyledLoader active={loading} spinner text='Loading...'>
-      {/* <select  name="theme_switcher" onChange={props.changeTheme}>
-                <option selected="selected" value={'css/index.css'}>index</option>
-                <option value={"css/red.css"}>red</option>
-                <option value={"css/darkred.css"}>dark red</option>
-                <option value={"css/blue.css"}>blue</option>
-                <option value={"css/darkblue.css"}>dark blue</option>
-                <option value={"css/green.css"}>green</option>
-                <option value={"css/darkgreen.css"}>dark green</option>
-            </select> */}
       <div className="container-profile">
         {!showEditForm && <>
           <section className='profile-section'>
@@ -146,11 +179,11 @@ function Profile(props) {
             </div>
             <div className="profileCard">
               <h3>Education</h3>
-              <p> - {props.currentUser.education}</p>
+              <p>{props.currentUser.education}</p>
             </div>
             <div className="profileCard">
               <h3>Skills</h3>
-              <p>This is where the skills would be listed</p>          
+              <p>{props.currentUser.skills}</p>          
             </div>
             <div className="profileCard">
               <h3>Job Preferences</h3>
@@ -195,6 +228,26 @@ function Profile(props) {
                         <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education' } />
                     </div>
                     <div>
+                        <h3>Skills</h3>
+                        <input className="text-input" name="skills" type="text" onChange={handleChange} placeholder={props.currentUser.skills ? props.currentUser.skills : 'Skills' } />
+                    </div>
+                    <div>
+                        <h3>Github</h3>
+                        <input className="text-input" name="github" type="text" onChange={handleChange} placeholder={props.currentUser.github_url ? props.currentUser.github_url : 'Enter Github URL' } />
+                    </div>
+                    <div>
+                        <h3>Portfolio</h3>
+                        <input className="text-input" name="portfolio" type="text" onChange={handleChange} placeholder={props.currentUser.portfolio_url ? props.currentUser.portfolio_url : 'Enter Portfolio' } />
+                    </div>
+                    <div>
+                        <h3>Linkedin</h3>
+                        <input className="text-input" name="linkedin" type="text" onChange={handleChange} placeholder={props.currentUser.linkedin_url ? props.currentUser.linkedin_url : 'Enter Linkedin URL ' } />
+                    </div>
+                    <div>
+                        <h3>Upload Resume</h3>
+                        <input className="text-input" name="resume" type="text" onChange={handleChange} placeholder={props.currentUser.resume ? props.currentUser.resume : 'Upload Resume Here' } />
+                    </div>
+                    <div>
                         <h3>New password</h3>
                         <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
                     </div>
@@ -219,9 +272,10 @@ function Profile(props) {
 }
 
 const mapStateToProps = state => {
-  // console.log('mapstatetoprops: ', state);
+  console.log('Profile MSTP: ', state);
   return {
     currentUser: state.AppReducer.currentUser,
+    // skills: state.AppReducer.skills
   };
 };
 
