@@ -11,6 +11,7 @@ import LoadingOverlay from "react-loading-overlay";
         
     const [apply, setApply] = useState([])
     const [loading, setLoading] = useState(false);
+    const [note, setNote] = useState("")
 
     const id = props.currentUser.id
 

@@ -996,10 +996,81 @@ footer h4 {
 .dashboard-nav div {
   padding-top: 1.5%;
 }
+.job-details-container-2 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 650px) {
+  .job-details-container-2 {
+    height: unset;
+  }
+}
+.job-details-container-2 .deets-apply-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2%;
+}
+.job-details-container-2 .deets-apply-button button {
+  border: 1px solid black;
+  background-color: #AC2A38;
+  color: #ffffff;
+  width: 10%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  padding: 0;
+}
+.job-details-container-2 .deets-apply-button button:hover {
+  border: 1px solid #AC2A38;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #AC2A38;
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 25%;
+  }
+}
+@media (max-width: 350px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 40%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 300%;
+  }
+}
+.job-details-container-2 .deets-div {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+}
+.job-details-container-2 .deets-div h2 {
+  padding: 0.5% 2%;
+}
+.job-details-container-2 .deets-div p {
+  padding: 0.5% 2%;
+}
+.job-details-container-2 .desc-div p {
+  padding: 2%;
+}
 .job-details-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+}
+@media (max-width: 650px) {
+  .job-details-container {
+    height: unset;
+  }
+}
+@media (max-width: 350px) {
+  .job-details-container {
+    height: unset;
+  }
 }
 .job-details-container .deets-apply-button {
   display: flex;
