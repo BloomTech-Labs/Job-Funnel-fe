@@ -55,8 +55,10 @@ useEffect(()=> {
     }
 
 
+    //Gives the posted date
     const postedDate = Date(details.post_date_utc)
 
+    //Styling for the Job Details Component Page
     return (
         <div className= {(description.length < 2000 ?"job-details-container-2" : "job-details-container")}>
         <div className="deets-apply-button">
@@ -68,6 +70,7 @@ useEffect(()=> {
             <p className="company-name">{details.companyName}</p>
             <p className="job-location">{details.city} {details.stateOrProvince}</p>
             <p className="job-posting-date">{postedDate}</p>
+            <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
         </div>
         <div className="desc-div" >
         <p className="job-description" >{details.description}</p>

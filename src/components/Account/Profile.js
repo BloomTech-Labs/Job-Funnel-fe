@@ -100,7 +100,8 @@ function Profile(props) {
       resetInputs();
      }
   }
-
+  
+//Cloudinary to upload profile pictures to the profile page
   const changeProfilePic = (picture) => {
     console.log(picture)
     if(picture){
@@ -111,6 +112,7 @@ function Profile(props) {
     }
   }
 
+//Delete profile pic
   const deleteProfilePic = () => {
     setPictureLoading(true);
     props.deleteProfilePicture(setPictureLoading);
@@ -129,6 +131,8 @@ function Profile(props) {
                 <option value={"css/green.css"}>green</option>
                 <option value={"css/darkgreen.css"}>dark green</option>
             </select> */}
+            
+      {/* Profile Page info, takes in props in order to fill in the information that you used while signing up, it also allows the data to be passed into it from where you edit the profile form.       */}
       <div className="container-profile">
         {!showEditForm && <>
           <section className='profile-section'>
@@ -165,6 +169,7 @@ function Profile(props) {
           </section>
         </>}
 
+{/* This is the edit form information, this is what you're messing with whenever you click edit profile on the profile page. */}
       {showEditForm && <>
         <div className="profile-main-div2">
           <div className="profile-second-main2">

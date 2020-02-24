@@ -84,19 +84,28 @@ function JobCard(props) {
         
     }
 
+    //the card display/stylings
     return (
         <div className="jobCard">
-            <div className='jobButtons-top'> 
+            <div style={{display: 'flex', justifyContent: 'space-between' }}> 
+                <p className="company-name">{props.company}</p>
+            </div>
+            {/* <div className='jobButtons-top'> 
             {(applytoggle === false ? <button onClick={handleApply}>Save as Applied</button> : <p style={{textAlign: 'center'}}>Saved as applied!👍🏼 </p> )}
-            </div>
-            <div className="card-image">
+            </div> */}
+            {/* <div className="card-image">
                 <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
-            </div>
+            </div> */}
             <div className="card-text">
-                <h3>{props.title}</h3>
-                <p>{props.company}</p>
-                <span>📍 {props.location}</span>
+                <div className="card-image">
+                    <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
+                </div>
+                <div className="card-info">
+                    <h3>{props.title.slice(0, 30)}..</h3>
+                    <span>📍 {props.location}</span>
+                </div>
             </div>
+                <p className="job-desc">{props.description.slice(0, 100)}...</p>
             <div className='jobButtons' > 
                 {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick ={handleSave} style={{color: 'white', backgroundColor: 'green'}}>Unsave</button> )}
                 <Link to={`/Dashboard/Job/${props.id}`}>

@@ -6,7 +6,7 @@ import LoadingOverlay from "react-loading-overlay";
 
 import { login } from "../../redux-store/App/AppActions" 
 
-
+//Login function for website, uses an POST request in order to send data to backend to login users.
 const Login = (props) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({
@@ -20,7 +20,7 @@ const Login = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
+//If statement won't let user login without meeting all of the listed conditions, email and password, without one or the other, you can't login.
     if (!user.email && !user.password) {
         return alert('Please enter an email and password')
     } else if(!user.email) {

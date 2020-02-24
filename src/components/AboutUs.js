@@ -56,9 +56,8 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Adam Reynolds</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, 
-                            velit et commodo tempor, sapien erat fermentum magna, 
-                            sit amet dignissim lorem dolor id ante.
+                        <p>Adam joined Lambda in August of 2019 in Web24, 
+                            he has a great interest in software and web development.
                         </p>
                         <div className="icons">
                             <a href="https://twitter.com/AdamL_Reynolds"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
@@ -112,13 +111,10 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Logan Keith</h3>
-                        <p>Logan lives in Hillsboro, OR. He has a background in operations and system administration, 
-                            and has an avid interest in decentralized communications, social networks, and storage. 
-                            Logan is currently enrolled in Lambda School's Data Science track, with a focus on generative 
-                            algorithms and data pipeline tooling.
+                        <p>Logan lives in Hillsboro, OR. He has a background in operations and system administration. 
+                            Logan is currently enrolled in Lambda School's Data Science track.
                         </p>
                         <div className="icons">
-                            <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/lrizika"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                             <a href="https://www.linkedin.com/in/logan-k-3802b0195/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
@@ -131,14 +127,32 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Pierre Nelson</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, 
-                            velit et commodo tempor, sapien erat fermentum magna, 
-                            sit amet dignissim lorem dolor id ante.
+                        <p>Pierre is resides in Atlanta, GA. He started his journey in Data Science 
+                            a little over a year ago. Pierre is currently a Team Lead for two part
+                            time Data Science cohorts at Lambda School.
                         </p>
                         <div className="icons">
-                            <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="https://twitter.com/pnelsondata"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
                             <a href="https://github.com/alxanderpierre"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
-                            <a href="https://www.linkedin.com/in/mauricio-degregori/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
+                            <a href="https://www.linkedin.com/in/pierre-nelson-26838a148/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="team-card">
+                    <div className="image-container">
+                        <img className="team-image" src="https://ca.slack-edge.com/T4JUEB3ME-UJRSD5X6H-c2998ebc2ac3-512"/>
+                    </div>
+                    <div className="team-info">
+                        <h3>Baisal Ergeshev</h3>
+                        <p>Baisal lives in Brooklyn, NY. He was majoring in Computer Science in Brooklyn 
+                            college and last year, he decided to enroll at Lambda School to get a Data 
+                            Science degree and will be graduating this current year 2020. 
+                            He is highly interested in Machine Learning and hopes to develop his 
+                            skills throughout his learning.
+                        </p>
+                        <div className="icons">
+                            <a href="https://github.com/Baisal89"><img className="github" src="https://img.icons8.com/metro/2x/github.png"/></a>
                         </div>
                     </div>
                 </div>
@@ -153,14 +167,14 @@ function AboutUs() {
                     </div>
                     <div className="team-info">
                         <h3>Judy Ghashim</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie, 
-                            velit et commodo tempor, sapien erat fermentum magna, 
-                            sit amet dignissim lorem dolor id ante.
+                        <p>I'm a bilingual UX\UI design. "Now, as you graduate to begin anew, 
+                            I wish that for you, ‘Stay hungry, stay foolish" Steve Jobs. 
+                            So I will never stop learning.
                         </p>
                         <div className="icons">
-                            <a href="http://twitter.com/degregori_pe"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
-                            <a href="https://github.com/lrizika"><img className="github" src="https://img.icons8.com/dusk/2x/dribbble.png"/></a>
-                            <a href="https://www.linkedin.com/in/logan-k-3802b0195/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
+                            <a href="https://twitter.com/judygh1"><img className="twitter" src="https://img.icons8.com/android/2x/twitter.png"/></a>
+                            <a href="https://dribbble.com/Judygh"><img className="github" src="https://img.icons8.com/dusk/2x/dribbble.png"/></a>
+                            <a href="https://www.linkedin.com/in/judyghashim/"><img className="linked" src="https://img.icons8.com/android/2x/linkedin.png"/></a>
                         </div>
                     </div>
                 </div>

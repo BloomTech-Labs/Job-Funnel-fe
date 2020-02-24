@@ -1,10 +1,105 @@
+// .dash {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .left-nav-container {
+//   width: 20%;
+//   background-color: @quickhire-main;
+//   height: 100%;
+//   border-right: 1px solid black;
+//   border-bottom: 1px solid black;
+//   position: fixed;
+//   z-index: 1;
+//   top: 0;
+//   left: 0;
+//   padding: 20px;
+//   margin-top: 3%;
+
+//   @media @tablet {
+//     display: none;
+//   }
+
+//   @media @mobile {
+//     display: none;
+//   }
+
+//   @media @mobile2 {
+//     display: none;
+//   }
+// }
+
+// .left-nav-container {
+
+//   h1 {
+//     padding-top: 20%;
+//     font-size: 3.4rem;
+//     color: white;
+//     text-align: center;
+//   }
+
+//   .filter-class-left {
+//     display: flex;
+//     text-align: center;
+//     flex-direction: column;
+//     // margin: 0 0 30px 19%;
+//     width: 100%;
+//     margin-top: 4%;
+//     justify-content: space-between;
+//     // min-width: 750px;
+//     // margin-left: 7%;
+  
+//     .search-bar-left {
+//       width: 240px;
+//       height: 40px;
+//       margin-bottom: 4%;
+//       text-align: center;
+//       border-radius: 6px;
+//       border: 1px solid black;
+//     }
+  
+//     .job-select-left {
+//       width: 240px;
+//       height: 40px;
+//       margin-bottom: 4%;
+//       border-radius: 6px;
+//       border: 1px solid black;
+//     }
+  
+//     .experience-select-left {
+//       width: 240px;
+//       height: 40px;
+//       border-radius: 6px;
+//       margin-bottom: 4%;
+//       border: 1px solid black;
+//     }
+  
+//     .button-left {
+//       height: 35px;
+//       max-width: 100%;
+//       width: 240px;
+//       border-radius: 6px;
+//       border: 1px solid black;
+//       background-color: #0D55A9;
+//       color: white;
+  
+//       &:hover {
+//         cursor: pointer;
+//         background-color: @quickhire-main;
+//         color: white;
+//       }
+//     }
+//   }
+
+// }
+
 .filter-class {
   display: flex;
-  // margin: 0 0 30px 19%;
+
   width: 45%;
   justify-content: space-between;
   min-width: 750px;
-
+padding-left: 3.3%;
   .search-bar {
     width: 180px;
     height: 35px;
@@ -14,14 +109,26 @@
   }
 
   .job-select {
-    width: 180px;
+    width: 133px;
     height: 35px;
     border-radius: 6px;
     border: 1px solid @quickhire-main;
   }
 
   .experience-select {
-    width: 180px;
+    width: 133px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid @quickhire-main;
+  }
+  .job-state {
+    width: 133px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid @quickhire-main;
+  }
+  .job-city {
+    width: 133px;
     height: 35px;
     border-radius: 6px;
     border: 1px solid @quickhire-main;
@@ -44,7 +151,7 @@
   @media @desktop-1000 {
     display: flex;
     flex-direction: column;
-    // align-items: center;
+
 
     .search-bar {
       width: 300px;
@@ -63,25 +170,29 @@
     flex-direction: column;
     min-width: unset;
 
-    // .search-bar {
-    //   // padding-top: 1%;
-    // }
 
-    // .job-select {
-    //   // padding-top: 1%;
-    // }
+    .search-bar {
+      // padding-top: 1%;
+    }
 
-    // .experience-select {
-    //   // padding-top: 1%;
-    // }
+    .job-select {
+      // padding-top: 1%;
+    }
+
+    .experience-select {
+      // padding-top: 1%;
+    }
 
     // button {
     //   // margin-left: 2%;
     // }
   }
 
-  // @media @mobile {
-  //   min-width: unset;
+  @media @mobile {
+    min-width: unset;
+
+
+  }
 
   //   .job-select {
   //     // padding-top: 1%;
@@ -91,7 +202,6 @@
   //     // padding-top: 1%;
   //   }
   // }
-
   @media @mobile2 {
     min-width: unset;
   }
@@ -116,6 +226,7 @@
     height: 40px;
     button {
       border: 1px solid black;
+      width: 100px;
       .button(
         @border: @quickhire-main,
         @borderHover: #ffffff,
@@ -126,8 +237,7 @@
         @height: 35px,
         @borderRadius: 8px,
         @margin: 0 2px,
-        @padding: 5%,
-        @width:unset
+        // @padding: 5%,
       );
     }
     a {
@@ -135,27 +245,10 @@
     }
   }
 
-  @media @desktop-1000 {
-    // margin-left: 105%;
-  }
-
-  @media @tablet {
-    // margin-left: 70%;
-    // margin-bottom: 3%;
-  }
-
-  @media @mobile {
-    // margin-left: 50%;
-    // margin-bottom: 4%;
-  }
-  @media @mobile2 {
-    // margin-left: 26%;
-    // margin-bottom: 2%;
-  }
 }
 
 .card-container {
-  // border: 2px solid black;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -171,8 +264,25 @@
     margin-bottom: 30px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
+
     h3 {
       font-size: 1.3rem;
+    }
+    .company-name {
+      background-color: @quickhire-main;
+      width: 100%;
+      max-height: 40px;
+      text-align: center;
+      color: white;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    .job-desc {
+      width: 260px;
+      text-align: center;
+      margin: 10px auto;
+      height: 100px;
     }
   }
 
@@ -181,7 +291,7 @@
     width: 18%;
     height: 16%;
     margin: 8%;
-    // margin: 8% 0 10% 10%;
+
     img {
       width: 50px;
       height: 50px;
@@ -189,6 +299,7 @@
   }
 
   .card-text {
+    display: flex;
     margin-left: 8%;
     p {
       margin-bottom: 5%;
@@ -196,6 +307,13 @@
         color: #646464;
       }
     }
+  }
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15%;
   }
 
   @media @tablet {
@@ -209,7 +327,7 @@
 
   @media @mobile {
     width: 100%;
-    // margin-left: 2%;
+
 
     .jobCard {
       width: 320px;
@@ -228,7 +346,7 @@
   justify-content: space-evenly;
   margin: 15px 0;
   button {
-    // margin-left: 4rem;
+
     color: @quickhire-main;
     width: 100px;
     height: 35px;
