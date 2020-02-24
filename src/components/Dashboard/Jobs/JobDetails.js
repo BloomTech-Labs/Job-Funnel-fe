@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import axiosWithAuth from "../../../utils/axiosWithAuth.js"
 import { connect } from "react-redux"
@@ -73,7 +74,7 @@ useEffect(()=> {
             <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
         </div>
         <div className="desc-div" >
-        <p className="job-description" >{details.description}</p>
+        <p className="job-description" ><ReactMarkdown source={details.description} /></p>
         </div>
         </div>
     )
