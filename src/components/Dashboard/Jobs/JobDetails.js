@@ -31,6 +31,7 @@ function JobDetails(props) {
             .catch(err => console.error(err))
     }, []);
 
+   
     // posts the jobs that you save to the save component page so that you can view all the jobs you save.
     const handleApply = () => {
         if (applytoggle === false) {
@@ -59,8 +60,14 @@ function JobDetails(props) {
 
 
     //Gives the posted date
-    const postedDate = Date(details.post_date_utc)
-
+    let date = new Date(details.post_date_utc);
+    console.log('date', date)
+    
+    let dateMonth = (date.getUTCMonth()+ 1)
+    let dateDay= date.getDate()
+    let dateYear = date.getFullYear()
+    
+   
     //Styling for the Job Details Component Page
     return (
         <div className={(description.length < 2000 ? "job-details-container-2" : "job-details-container")}>
@@ -71,8 +78,8 @@ function JobDetails(props) {
             <div className="deets-div">
                 <h2>{details.title}</h2>
                 <p className="company-name">{details.companyName}</p>
-                <p className="job-location">{details.city} {details.stateOrProvince}</p>
-                <p className="job-posting-date">{postedDate}</p>
+                <p className="job-location">{details.city}, {details.stateOrProvince}</p>
+                <p className="job-posting-date">{dateMonth}-{dateDay}-{dateYear}</p>
                 <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
             </div>
             <div className="desc-div" >
