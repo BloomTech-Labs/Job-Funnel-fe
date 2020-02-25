@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 // import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 import JobCard from './JobCard.js';
 import Filter from "../Filter";
 import searchAPI from '../../../utils/searchAPI';
-import {useLocation} from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
@@ -44,90 +44,90 @@ export default function SuggestedJobs() {
     //     });
     // };
     // import React, {useState,useEffect} from 'react';
-   
-    
-    // const Filter = () => {
-        let queryDelay;
-        const [search, setSearch] = useState("");
-    
-        const handleInputChange = changeEvent => {
-            const searchQuery = changeEvent.target.value;
-            const searchInputName = changeEvent.target.name;
-            
-            clearTimeout(queryDelay);
-            queryDelay = setTimeout(() => {
-                setSearch({...search, [searchInputName]: searchQuery });
-            }, 175);
-        };
-    
-        const onSelectChange = (selectEvent) => {
-            const selectValue = selectEvent.target.value;
-            const selectInputName = selectEvent.target.name;
-            setSearch({...search, [selectInputName]: selectValue ? selectValue : undefined });
-            console.log('set value', selectValue)
-        }
-    
-        useEffect(() => {
 
-            searchAPI().get('/search', {
-                 params: search,
-            }).then((response) => {
-                setJobs(response.data.responses);
-                console.log({response})
-            })
-        }, [search.search, search.jobType, search.experience])
-    
-        // return (
-            // <div className="filter-class">
-            //     <div>
-            //         <label>
-            //             <input className="search-bar"
-            //                 type="text"
-            //                 name="search"
-            //                 placeholder="Search for Jobs"
-            //                 tabIndex="0"
-            //                 onChange={handleInputChange}/>
-            //         </label>
-            //     </div>
-            //     <div>
-            //         <select className="job-select" onChange={onSelectChange} name="jobType">
-            //             <option value={''}>Job Type</option>
-            //             <option value={"Full Time"}>Full Time</option>
-            //             <option value={"Part Time"}>Part Time</option>
-            //             <option value={"Contract"}>Contract</option>
-            //         </select>
-            //         </div>
-            //         <div>
-            //         <select className="experience-select" onChange={onSelectChange} name="experience">
-            //             <option value={''}>Experience</option>
-            //             <option value={"Junior Position"}>Junior</option>
-            //             <option value={"Mid-Level Position"}>Mid-Level</option>
-            //             <option value={"Senior Position"}>Senior</option>
-            //         </select>
-            //         </div>
-            //         <div>
-               
-            //     </div>
-            // </div>
-        // )
+
+    // const Filter = () => {
+    let queryDelay;
+    const [search, setSearch] = useState("");
+
+    const handleInputChange = changeEvent => {
+        const searchQuery = changeEvent.target.value;
+        const searchInputName = changeEvent.target.name;
+
+        clearTimeout(queryDelay);
+        queryDelay = setTimeout(() => {
+            setSearch({ ...search, [searchInputName]: searchQuery });
+        }, 175);
+    };
+
+    const onSelectChange = (selectEvent) => {
+        const selectValue = selectEvent.target.value;
+        const selectInputName = selectEvent.target.name;
+        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : undefined });
+        console.log('set value', selectValue)
+    }
+
+    useEffect(() => {
+
+        searchAPI().get('/search', {
+            params: search,
+        }).then((response) => {
+            setJobs(response.data.responses);
+            console.log({ response })
+        })
+    }, [search.search, search.jobType, search.experience])
+
+    // return (
+    // <div className="filter-class">
+    //     <div>
+    //         <label>
+    //             <input className="search-bar"
+    //                 type="text"
+    //                 name="search"
+    //                 placeholder="Search for Jobs"
+    //                 tabIndex="0"
+    //                 onChange={handleInputChange}/>
+    //         </label>
+    //     </div>
+    //     <div>
+    //         <select className="job-select" onChange={onSelectChange} name="jobType">
+    //             <option value={''}>Job Type</option>
+    //             <option value={"Full Time"}>Full Time</option>
+    //             <option value={"Part Time"}>Part Time</option>
+    //             <option value={"Contract"}>Contract</option>
+    //         </select>
+    //         </div>
+    //         <div>
+    //         <select className="experience-select" onChange={onSelectChange} name="experience">
+    //             <option value={''}>Experience</option>
+    //             <option value={"Junior Position"}>Junior</option>
+    //             <option value={"Mid-Level Position"}>Mid-Level</option>
+    //             <option value={"Senior Position"}>Senior</option>
+    //         </select>
+    //         </div>
+    //         <div>
+
+    //     </div>
+    // </div>
+    // )
     // }
-    
+
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             {/* <InfiniteScroll dataLength={jobs.length} next={getMoreJobs} hasMore={true}> */}
-         
 
-           <div className="filter-class">
+
+            <div className="filter-class">
                 <div>
                     <label>
                         {/* <input className="search-bar" */}
-                            {/* // value={search}
+                        {/* // value={search}
                             // type="text"
                             // name="search"
                             // placeholder="Search for Jobs"
                             // tabIndex="0"
                             // onChange={handleInputChange}/> */}
-                            <select className="job-select" onChange={onSelectChange} name="title">
+                        <select className="job-select" onChange={onSelectChange} name="title">
                             <option value={''}>Job Type</option>
                             <option value={"java"}>java</option>
                             <option value={"python"}>python</option>
@@ -143,9 +143,9 @@ export default function SuggestedJobs() {
                             <option value={"frontend"}>Front-end</option>
                             <option value={"data science"}>Data Science</option>
 
-                        </select> 
+                        </select>
                     </label>
-                    {console.log('search value',search.value)}
+                    {console.log('search value', search.value)}
                 </div>
                 <div>
                     <select className="job-city" onChange={onSelectChange} name="city">
@@ -166,8 +166,8 @@ export default function SuggestedJobs() {
 
 
                     </select>
-                    </div>
-                    <div>
+                </div>
+                <div>
                     <select className="job-state" onChange={onSelectChange} name="state_province">
                         <option value={''}>State</option>
                         <option value={"AL"}>AL</option>
@@ -220,27 +220,27 @@ export default function SuggestedJobs() {
                         <option value={"WV"}>WV</option>
                         <option value={"WI"}>WI</option>
                         <option value={"WY"}>WY</option>
-                    
+
                     </select>
-                    </div>
-                    <div>
+                </div>
+                <div>
                     <select className="experience-select" onChange={onSelectChange} name="experience">
                         <option value={''}>Experience</option>
                         <option value={"Junior Position"}>Junior</option>
                         <option value={"Mid-Level Position"}>Mid-Level</option>
                         <option value={"Senior Position"}>Senior</option>
                     </select>
-                    </div>
-                    <div>
-               
+                </div>
+                <div>
+
                 </div>
             </div>
-         
+
             <div className="card-container">
                 {jobs.map((job, index) => {
                     // console.log(job);
                     return (
-                        <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.companyName} location={`${job.location_city}, ${job.location_state_province}`} /> 
+                        <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.companyName} location={`${job.location_city}, ${job.location_state_province}`} />
 
                         // pay_exact={user.pay_exact}
                     )
