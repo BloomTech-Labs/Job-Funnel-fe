@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
+// dashboard navigation at the top of the dashboard that allows you to go between the dashboard, saved, and applied pages
 function DashboardNav() {
     return (
         <div className="dashboardNav">
