@@ -4,7 +4,7 @@
 // //This component is the left side navigation on the desktop display site. 
 // const Leftnav = () => {
 //     const [search, setSearch] = useState({search: ""});
-    
+
 //     const handleChange = event => {
 //         setSearch({...search, [event.target.name]: event.target.value });
 //     };
@@ -51,7 +51,7 @@
 //             </div>
 //         </div>
 //         </div>
-        
+
 //     )
 // }
 

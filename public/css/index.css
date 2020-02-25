@@ -1099,7 +1099,7 @@ footer h4 {
   padding: 0.5% 2%;
 }
 .job-details-container-2 .desc-div p {
-  padding: 2%;
+  padding: 0.5% 2%;
 }
 .job-details-container {
   display: flex;
@@ -1169,7 +1169,7 @@ footer h4 {
   font-size: 1.6rem;
 }
 .job-details-container .desc-div p {
-  padding: 2%;
+  padding: 0.5% 2%;
 }
 .main-div {
   height: 100vh;
