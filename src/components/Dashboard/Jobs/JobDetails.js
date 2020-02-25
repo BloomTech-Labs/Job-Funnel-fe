@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
+import styled from "styled-components";
+import LoadingOverlay from "react-loading-overlay";
 
 import axiosWithAuth from "../../../utils/axiosWithAuth.js"
 import { connect } from "react-redux"
@@ -11,6 +13,7 @@ function JobDetails(props) {
     const job_id = props.match.params.id;
 
     const [details, setDetails] = useState({});
+    const [loading, setLoading] = useState(false);
     const [description, setDescription] = useState({})
     const [applytoggle, setApplytoggle] = useState(false)
     const [applied, setApplied] = useState({
@@ -22,13 +25,16 @@ function JobDetails(props) {
 
     // gets the job details for each job
     useEffect(() => {
+        setLoading(true)
         axiosWithAuth().get(`/jobs/${job_id}`)
             .then(response => {
                 console.log('job details axios response', response.data);
                 setDetails(response.data);
                 setDescription(response.data.description)
+                setLoading(false)
             })
             .catch(err => console.error(err))
+            
     }, []);
 
    
@@ -70,22 +76,24 @@ function JobDetails(props) {
    
     //Styling for the Job Details Component Page
     return (
-        <div className={(description.length < 2000 ? "job-details-container-2" : "job-details-container")}>
-            <div className="deets-apply-button">
-                <button>Apply to Job</button>
-                {(applytoggle === false ? <button onClick={handleApply}> Save as Applied</button> : <button onClick={handleApply}>Remove from Applied</button>)}
+        <StyledLoader active={loading} spinner text='Job Details...'>
+            <div className={(description.length < 2000 ? "job-details-container-2" : "job-details-container")}>
+                <div className="deets-apply-button">
+                    <button>Apply to Job</button>
+                    {(applytoggle === false ? <button onClick={handleApply}> Save as Applied</button> : <button onClick={handleApply}>Remove from Applied</button>)}
+                </div>
+                <div className="deets-div">
+                    <h2>{details.title}</h2>
+                    <p className="company-name">{details.companyName}</p>
+                    <p className="job-location">{details.city}, {details.stateOrProvince}</p>
+                    <p className="job-posting-date">{dateMonth}-{dateDay}-{dateYear}</p>
+                    <a className="job-listing-link" href={details.testexternal_url}>Link to Application</a>
+                </div>
+                <div className="desc-div" >
+                    <p className="job-description" ><ReactMarkdown source={details.description} /></p>
+                </div>
             </div>
-            <div className="deets-div">
-                <h2>{details.title}</h2>
-                <p className="company-name">{details.companyName}</p>
-                <p className="job-location">{details.city}, {details.stateOrProvince}</p>
-                <p className="job-posting-date">{dateMonth}-{dateDay}-{dateYear}</p>
-                <a className="job-listing-link" href={details.testexternal_url}>Link to Application</a>
-            </div>
-            <div className="desc-div" >
-                <p className="job-description" ><ReactMarkdown source={details.description} /></p>
-            </div>
-        </div>
+        </StyledLoader>
     )
 }
 
@@ -96,4 +104,10 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {})(JobDetails)
+
+const StyledLoader = styled(LoadingOverlay)`
+    min-height: 100vh;
+    width:100%;
+    z-index: 2;
+`;
 
