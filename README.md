@@ -41,13 +41,13 @@ You can find the deployed project at [QuickHire.dev](https://quickhire.dev)
 
 Quickhire is a web application that streamlines the job search process by allowing users to search, store, and apply for jobs -- all in one place. It allows you, as a user, to login, search for jobs that you're interested in, save them, and apply to them. 
 
-Our mission is to simplify the job-search and hiring process by bringing both to the same place. Future releases will include a recruiter side of the app, which will allow for users of both kind to interact with one another --- whether it be through interviews, or any part of the job search process. 
+Our mission is to simplify the job-search and hiring process by bringing both to the same platform. Future releases will include a recruiter side of the app, which will allow for both kinds of users to interact with one another --- whether it be through initial contact, through an interview, or through any part of the job search process. 
 
 
 ### Key Features
 
--    As a user, you can search for jobs using custom search parameters
--    You can view descriptions of those jobs, and apply -> Application capabilities redirect to link on scraped website
+-    As a user, you can search for jobs using custom search filters
+-    You can view descriptions of those jobs, and apply -> Application capabilities redirect to link of third-party website
 -    If you've applied on the third-party site, you are able to mark that job as "applied", and visit it at any time
 -    The ability to save jobs that you want to revisit later
 -    Users are able to register/login to keep track of their saved data
@@ -55,7 +55,6 @@ Our mission is to simplify the job-search and hiring process by bringing both to
 ## Tech Stack
 
 ### Front end built using:
-
 
 #### React 
 
@@ -67,7 +66,7 @@ Our mission is to simplify the job-search and hiring process by bringing both to
 
 #### Styled-Components
 
-- While we mainly used less, styled-components allowed us to create functional styling, such as a page loader, quite easily within the component. 
+- While we mainly used less, styled-components allowed us to create functional styling, such as a page loader, quite easily within its respective components. 
 
 #### React Router
 
@@ -85,9 +84,6 @@ In order for the app to function correctly, the user must set up their own envir
 
     *  NODE_ENV - Set to "development" until ready for "production"
     *  JWT_SECRET - You can pick any secret for the .env file
-    *  CLOUDINARY_API_KEY - Required to be able to use cloudinary as we did 
-    *  CLOUDINARY_API_SECRET - Required to be able to use cloudinary as we did 
-    *  DATABASE_URL - Connect your created DB
 
 # Installation Instructions
 
