@@ -80,7 +80,7 @@ function JobDetails(props) {
                 <p className="company-name">{details.companyName}</p>
                 <p className="job-location">{details.city}, {details.stateOrProvince}</p>
                 <p className="job-posting-date">{dateMonth}-{dateDay}-{dateYear}</p>
-                <a className="job-listing-link" href={details.testexternal_url}>{details.testexternal_url}</a>
+                <a className="job-listing-link" href={details.testexternal_url}>Link to Application</a>
             </div>
             <div className="desc-div" >
                 <p className="job-description" ><ReactMarkdown source={details.description} /></p>
