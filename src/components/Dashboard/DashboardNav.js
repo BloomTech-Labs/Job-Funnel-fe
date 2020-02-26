@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function DashboardNav() {
     return (
-        <div className="dashboardNav">
+        <div className="dashboardNav animated flipInX ">
             <nav>
                 <Link to='/Dashboard'>
                     <button className="dashboard-nav">Dashboard</button>
