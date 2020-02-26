@@ -15,6 +15,7 @@ function AppliedJobs(props) {
     const [loading, setLoading] = useState(false);
     const [note, setNote] = useState("")
 
+
     const id = props.currentUser.id
 
     // get request in order to get the job by the saved id
@@ -26,6 +27,7 @@ function AppliedJobs(props) {
                 let AppliedCopy = res.data.filter((e) => e.status === "applied")
                 setApply(AppliedCopy)
                 setLoading(false);
+   
             })
             .catch(error => {
                 console.error(error.message)
@@ -52,14 +54,26 @@ function AppliedJobs(props) {
             })
     }
 
-    // message to show up if you currently have no jobs that you've saved as applied, so that you can return to dashboard.
-    if (apply.length < 1) {
+
+
+    
+    const delayRender = () => {
         return (
             <div className="empty-jobs">
                 <h1>Click "Saved as Applied" in <Link to="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
-            </div>
+             </div>
+
         )
-    }
+
+}
+
+    if(apply.length < 1 && loading === false) {
+        console.log('delay render func', delayRender)
+        setTimeout(()=> {
+            delayRender()
+        }, 100)
+    } 
+
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">

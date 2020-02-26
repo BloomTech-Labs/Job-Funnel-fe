@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
+
 //Component that makes up the Saved Jobs page on site
 function SavedJobs(props) {
 
@@ -55,13 +56,24 @@ function SavedJobs(props) {
         props.history.push(`/Dashboard/Job/${job_id}`)
     }
 
-    if (save.length < 1) {
-        return (
-            <div className="empty-jobs">
-                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!</h1>
-            </div>
-        )
+    
+    const delayRender = () => {
+            return (
+                <div className="empty-jobs">
+                    <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!</h1>
+                 </div>
+
+            )
+    
     }
+    
+    if(save.length < 1 && loading === false) {
+        console.log('delay render func', delayRender)
+        setTimeout(()=> {
+            delayRender()
+        }, 750)
+    }
+
     // console.log('render save', save)
     //stylings for the suggestedJob card
     return (
