@@ -1091,6 +1091,10 @@ footer h4 {
 .job-details-container-2 .deets-div p {
   padding: 0.5% 2%;
 }
+.job-details-container-2 .deets-div a {
+  padding: 0.5% 2%;
+  font-size: 1.6rem;
+}
 .job-details-container-2 .desc-div p {
   padding: 0.5% 2%;
 }
