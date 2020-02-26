@@ -36,23 +36,20 @@ export default function SuggestedJobs() {
     }
        const handleSubmit = event => {
             event.preventDefault();
+            setLoading(true)
             searchAPI().get('/search', {
             params: search,
         }).then((response) => {
             setJobs(response.data.responses);
+            setLoading(false)
             // console.log({ response })
             // console.log('ok', search)
 
         })}
-            
+    
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
-
-
-
             <div className="filter-class animated flipInX delay-1s">
-               
-                   
                     <div> <input className="search-bar"
                         type="text"
                         name="title"
@@ -86,21 +83,18 @@ export default function SuggestedJobs() {
                         onChange={onSelectChange} 
                         handleSubmit={onSelectChange}
                     /></div>
-                    <div ><button className='search-parent'  onClick={handleSubmit}>Submit</button></div>
-                      
-                
-               
+                    <button  onClick={handleSubmit}>Submit</button>
             </div>
-
             <div className="card-container">
-                {jobs.map((job, index) => {
+                {/* if cards are not loading AND the job obj is empty, then:  */}
+                {(loading === false && jobs.length <1 ? <div className='use-search' ><h2>Use the search above to find your next job!</h2></div> :  
+                jobs.map((job, index) => {
                     // console.log(job);
                     return (
+                        
                         <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.companyName} location={`${job.location_city}, ${job.location_state_province}`} />
-
-
                     )
-                })}
+                })) }  
             </div>
           
         </StyledLoader>
