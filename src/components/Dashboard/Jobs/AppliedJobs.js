@@ -56,30 +56,19 @@ function AppliedJobs(props) {
             })
     }
 
-
-
-    
-    const delayRender = () => {
+    if(loading === true ) {
         return (
-            <div className="empty-jobs">
-                <h1>Click "Saved as Applied" in <Link to="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
-             </div>
-
+            <StyledLoader active={loading} spinner text='Loading...'/>
         )
-
-}
-
-    if(apply.length < 1 && loading === false) {
-        console.log('delay render func', delayRender)
-        setTimeout(()=> {
-            delayRender()
-        }, 750)
     } 
-
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-                {apply.map((e) => {
+            {(apply.length < 1 ?  
+            <div className="empty-jobs">
+                <h1>Click "Saved as Applied" in <Link to="/Dashboard">Dashboard</Link> to save your applied jobs!
+                </h1>
+            </div> : apply.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
@@ -91,7 +80,7 @@ function AppliedJobs(props) {
                             </div>
                         </div>
                     )
-                })}
+                }))}
             </div>
         </StyledLoader>
     )

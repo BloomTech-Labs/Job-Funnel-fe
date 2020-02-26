@@ -59,29 +59,37 @@ function SavedJobs(props) {
     }
 
     
-    const delayRender = () => {
-            return (
-                <div className="empty-jobs">
-                    <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!</h1>
-                 </div>
+    // const delayRender = () => {
+    //         return (
+    //             <div className="empty-jobs">
+    //                 <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!</h1>
+    //              </div>
 
-            )
+    //         )
     
-    }
+    // }
     
-    if(save.length < 1 && loading === false) {
-        console.log('delay render func', delayRender)
-        setTimeout(()=> {
-            delayRender()
-        }, 750)
-    }
+    // if(save.length < 1 && loading === false) {
+    //     console.log('delay render func', delayRender)
+    //     setTimeout(()=> {
+    //         delayRender()
+    //     }, 750)
+    // }
 
-    // console.log('render save', save)
-    //stylings for the suggestedJob card
+    if(loading === true ) {
+        return (
+            <StyledLoader active={loading} spinner text='Loading...'/>
+        )
+    } 
+    
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-                {save.map((e) => {
+            {(save.length < 1 ?     
+            <div className="empty-jobs">
+                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!
+                </h1>
+             </div>: save.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
@@ -93,7 +101,8 @@ function SavedJobs(props) {
                             </div>
                         </div>
                     )
-                })}
+             
+                }))}
             </div>
         </StyledLoader>
     )
