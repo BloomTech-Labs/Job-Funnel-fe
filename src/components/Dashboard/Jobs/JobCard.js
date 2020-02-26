@@ -27,17 +27,6 @@ function JobCard(props) {
         status: "applied"
     })
 
-    const handleApply = () => {
-        axiosWithAuth().post('/saved/', applied)
-            .then(res => {
-                console.log('handle save job response', res.data)
-                setApplied({ ...applied })
-                setApplytoggle(true)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
 
     //handles save, sends the saved jobs to the saved endpoint.
     const handleSave = () => {
@@ -62,27 +51,7 @@ function JobCard(props) {
                 .catch(error => {
                     console.error(error)
                 })
-        } else if (applytoggle === false) {
-            axiosWithAuth().post('/saved/', applied)
-                .then(res => {
-                    console.log('handle save job response', res.data)
-                    setApplied({ ...applied })
-                    setApplytoggle(true)
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        } else if (applytoggle === true) {
-            axiosWithAuth().delete(`/saved/${job_id}`)
-                .then(res => {
-                    console.log('erased job from saved table?', res.data)
-                    setApplytoggle(false)
-                    setApplied({ ...applied })
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        }
+        } 
 
     }
 
@@ -92,12 +61,6 @@ function JobCard(props) {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <p className="company-name">{props.company}</p>
             </div>
-            {/* <div className='jobButtons-top'> 
-            {(applytoggle === false ? <button onClick={handleApply}>Save as Applied</button> : <p style={{textAlign: 'center'}}>Saved as applied!👍🏼 </p> )}
-            </div> */}
-            {/* <div className="card-image">
-                <img className="image" src="http://pngimg.com/uploads/microsoft/microsoft_PNG18.png"/>
-            </div> */}
             <div className="card-text">
                 <div className="card-image">
                     <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
