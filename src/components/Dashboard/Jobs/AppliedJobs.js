@@ -36,7 +36,9 @@ function AppliedJobs(props) {
     }, [id])
 
     const JobDetails = (job_id) => {
-        props.history.push(`/Dashboard/Job/${job_id}`)
+        setTimeout(() => {
+            props.history.push(`/Dashboard/Job/${job_id}`)
+        }, 100)  
     }
     // delete request to remove the jobs that you don't want on your applied jobs page.
     const handleDelete = (job_id) => {
@@ -71,7 +73,7 @@ function AppliedJobs(props) {
         console.log('delay render func', delayRender)
         setTimeout(()=> {
             delayRender()
-        }, 100)
+        }, 750)
     } 
 
     return (

@@ -53,7 +53,9 @@ function SavedJobs(props) {
 
     //pushes saved jobs to here, and also returns nothing is available if you haven't saved any jobs, with a link back to the dashboard.
     const JobDetails = (job_id) => {
-        props.history.push(`/Dashboard/Job/${job_id}`)
+        setTimeout(() => {
+            props.history.push(`/Dashboard/Job/${job_id}`)
+        }, 100)  
     }
 
     

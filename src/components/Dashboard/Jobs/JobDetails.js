@@ -75,6 +75,11 @@ function JobDetails(props) {
     
    
     //Styling for the Job Details Component Page
+    if(loading === true){
+        return (
+            <StyledLoader active={loading} spinner text='Job Details...'/>
+        )
+    }
     return (
         <StyledLoader active={loading} spinner text='Job Details...'>
             <div className={(description.length < 1000 ? "job-details-container-2" : "job-details-container")}>
