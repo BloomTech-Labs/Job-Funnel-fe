@@ -66,7 +66,7 @@ function AppliedJobs(props) {
             <div className="saved-jobs-main">
             {(apply.length < 1 ?  
             <div className="empty-jobs">
-                <h1>Click "Saved as Applied" in <Link to="/Dashboard">Dashboard</Link> to save your applied jobs!
+                <h1>Click "Saved as Applied" on any Job Detail page to save your applied jobs!
                 </h1>
             </div> : apply.map((e) => {
                     return (
