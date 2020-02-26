@@ -1,58 +1,102 @@
-import React, {useState, useEffect} from 'react'
-import axiosWithAuth from '../../../utils/axiosWithAuth.js';
+import React, { useState, useEffect } from 'react'
+
 import JobCard from './JobCard.js';
+
+import searchAPI from '../../../utils/searchAPI';
+import { useLocation } from "react-router-dom"
 
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
-import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [offset, setOffset] = useState(0);
+    // const [submit, setSubmit]= useState(false)
+
+    const location = useLocation();
 
 
-    useEffect(() => {
-        setLoading(true);
-        axiosWithAuth().get('/debug/job_listings')
-        .then(response => {
-            console.log('get all jobs response: ', response.data);
-            setJobs(response.data);
-            setLoading(false);
-        })
-        .catch(err => {
-            console.log("suggestedJobs get all jobs error:", err.response.data.message)
-            setLoading(false);
-        });
-    },[]);
+    
+    const [search, setSearch] = useState({
+        title: '',
+        city: '',
+        state_province: '',
+        experience: ''
+    });
 
-    const getMoreJobs = () => {
-        axiosWithAuth().get(`/debug/job_listings?offset=${offset}`)
-        .then(response => {
-            setJobs(jobs.concat(response.data))
-            console.log('get job results', offset)
-            setOffset(offset + 100)
-        })
-        .catch(err => {
-            console.log("suggestedJobs get all jobs error:", err.response.data.message)
-            setLoading(false);
-        });
-    };
 
+
+    const onSelectChange = e => {
+        const selectValue = e.target.value;
+        const selectInputName = e.target.name;
+        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : undefined });
+        console.log('set value', search)
+    }
+       const handleSubmit = event => {
+            event.preventDefault();
+            setLoading(true)
+            searchAPI().get('/search', {
+            params: search,
+        }).then((response) => {
+            setJobs(response.data.responses);
+            setLoading(false)
+            // console.log({ response })
+            // console.log('ok', search)
+
+        })}
+    
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
-            <InfiniteScroll dataLength={jobs.length} next={getMoreJobs} hasMore={true}>
+            <div className="filter-class animated flipInX delay-1s">
+                    <div> <input className="search-bar"
+                        type="text"
+                        name="title"
+                        placeholder="Key Words"
+                        tabIndex="0"
+                        onChange={onSelectChange}
+                        handleSubmit={onSelectChange}
+                    /></div>
+                    <div > <input className="search-bar"
+                        type="text"
+                        name="city"
+                        placeholder="Enter City"
+                        tabIndex="0"
+                        onChange={onSelectChange}
+                        handleSubmit={onSelectChange}
+                    /></div>
+                    <div ><input className="search-bar"
+                        type="text"
+                        name="state_province"
+                        placeholder="Enter State"
+                        tabIndex="0"
+                        onChange={onSelectChange}
+                        handleSubmit={onSelectChange}
+                    /></div>
+
+                    <div><input className="search-bar"
+                        type="text"
+                        name="experience"
+                        placeholder="Enter Experience"
+                        tabIndex="0"
+                        onChange={onSelectChange} 
+                        handleSubmit={onSelectChange}
+                    /></div>
+                    <button  onClick={handleSubmit}>Submit</button>
+            </div>
             <div className="card-container">
-                {jobs.map((job, index) => {
+                {/* if cards are not loading AND the job obj is empty, then:  */}
+                {(loading === false && jobs.length <1 ? <div className='use-search' ><h2>Use the search above to find your next job!</h2></div> :  
+                jobs.map((job, index) => {
                     // console.log(job);
                     return (
-                        <JobCard key={index} id={job.id} title={job.title} company={job.companyName} location={`${job.city}, ${job.stateOrProvince}`} /> 
-                        // pay_exact={user.pay_exact}
+                        
+                        <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.companyName} location={`${job.location_city}, ${job.location_state_province}`} />
                     )
-                })}
+                })) }  
             </div>
-            </InfiniteScroll>
+          
         </StyledLoader>
     )
 }

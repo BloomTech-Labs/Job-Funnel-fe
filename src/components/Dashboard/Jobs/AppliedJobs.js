@@ -4,29 +4,26 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
+// applied jobs component allows a spot for you to pretty much save jobs that you've applied for, it has it's own personal spot on the website, where you can view applied jobs and also remove them from the applied jobs list
+function AppliedJobs(props) {
 
-//Component that makes up the Saved Jobs page on site
-function SavedJobs(props) {
-
-    console.log('props in savedjobs', props)
-    const [save, setSave] = useState([])
+    const [apply, setApply] = useState([])
     const [loading, setLoading] = useState(false);
 
     const id = props.currentUser.id
 
-
-    //axiosWithAuth is getting the saved id's that are made on the SuggestedJobs component whenever you click the save button
+    // get request in order to get the job by the saved id
     useEffect(() => {
         setLoading(true);
         axiosWithAuth().get(`/saved/${id}`)
             .then(res => {
-                console.log('response from save jobs', res.data)
-                let SavedCopy = res.data.filter((e) => e.status === "saved")
-                setSave(SavedCopy)
+                console.log('response from applied jobs', res.data)
+                let AppliedCopy = res.data.filter((e) => e.status === "applied")
+                setApply(AppliedCopy)
                 setLoading(false);
+   
             })
             .catch(error => {
                 console.error(error.message)
@@ -34,28 +31,25 @@ function SavedJobs(props) {
             })
     }, [id])
 
-
-    //deletes the selected saved job
+    const JobDetails = (job_id) => {
+        setTimeout(() => {
+            props.history.push(`/Dashboard/Job/${job_id}`)
+        }, 100)  
+    }
+    // delete request to remove the jobs that you don't want on your applied jobs page.
     const handleDelete = (job_id) => {
         setLoading(true)
         axiosWithAuth().delete(`/saved/${job_id}`)
             .then(res => {
-                let SavedCopy = save.filter((e) => e.job_id !== job_id)
+                let AppliedCopy = apply.filter((e) => e.job_id !== job_id)
                 console.log('erased job from saved table', res.data)
                 setLoading(false)
-                setSave(SavedCopy)
+                setApply(AppliedCopy)
             })
             .catch(error => {
                 console.error(error)
                 setLoading(false)
             })
-    }
-
-    //pushes saved jobs to here, and also returns nothing is available if you haven't saved any jobs, with a link back to the dashboard.
-    const JobDetails = (job_id) => {
-        setTimeout(() => {
-            props.history.push(`/Dashboard/Job/${job_id}`)
-        }, 100)  
     }
 
     //if loading is happening, then only return loader
@@ -64,28 +58,27 @@ function SavedJobs(props) {
             <StyledLoader active={loading} spinner text='Loading...'/>
         )
     } 
-    // else, return this 
+     // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-            {(save.length < 1 ?     
-            //if object is empty, render empty message 
+            {(apply.length < 1 ? 
+            //if object is empty, render empty message  
             <div className="empty-jobs">
-                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!
+                <h1>Click "Saved as Applied" on any Job Detail page to save your applied jobs!
                 </h1>
-             </div>: save.map((e) => {
+            </div> : apply.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
                             <h5>📍{e.city} {e.stateOrProvince}, {e.country}</h5>
                             <p> Overview <br></br>{e.description.slice(0, 250)}...</p>
                             <div className="saved-buttons">
-                                <button onClick={() => handleDelete(e.job_id)}>Unsave</button>
+                                <button onClick={() => handleDelete(e.job_id)}>Erase from Applied</button>
                                 <button onClick={() => JobDetails(e.job_id)}>More Info</button>
                             </div>
                         </div>
                     )
-             
                 }))}
             </div>
         </StyledLoader>
@@ -97,11 +90,10 @@ const mapStateToProps = state => {
         currentUser: state.AppReducer.currentUser,
     }
 }
-export default connect(mapStateToProps, {})(SavedJobs)
+export default connect(mapStateToProps, {})(AppliedJobs)
 
 const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
     width:100%;
     z-index: 2;
 `;
-
