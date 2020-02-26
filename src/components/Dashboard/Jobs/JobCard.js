@@ -90,7 +90,7 @@ function JobCard(props) {
     return (
         <div className="jobCard">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className="company-name">{props.company}</p>
+                <p className="company-name">{props.company.slice(0, 30)}</p>
             </div>
             {/* <div className='jobButtons-top'> 
             {(applytoggle === false ? <button onClick={handleApply}>Save as Applied</button> : <p style={{textAlign: 'center'}}>Saved as applied!👍🏼 </p> )}
@@ -104,11 +104,10 @@ function JobCard(props) {
                 </div>
                 <div className="card-info">
                     {/* {slice the job titles so we only get 30 chars back} */}
-                    <h3>{props.title.slice(0, 30)}..</h3>
+                    <h3 className="title-text">{props.title.slice(0, 40)}..</h3>
                     <span>📍 {props.location}</span>
                 </div>
             </div>
-            <p className="job-desc">{props.description.slice(0, 100)}...</p>
             <div className='jobButtons' >
                 {/* buttons to save and unsave jobs, or view jobs description. */}
                 {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave} style={{ color: 'white', backgroundColor: 'green' }}>Unsave</button>)}
