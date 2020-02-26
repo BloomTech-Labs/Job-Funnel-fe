@@ -154,15 +154,15 @@ function Profile(props) {
               <h3>Education</h3>
               <p> - {props.currentUser.education}</p>
             </div>
-            <div className="profileCard">
+            {/* <div className="profileCard">
               <h3>Skills</h3>
               <p>This is where the skills would be listed</p>
             </div>
             <div className="profileCard">
               <h3>Job Preferences</h3>
               <p>This is where the job preferences will go</p>
-            </div>
-            <div className="profileCard" style={{ marginBottom: "2%" }}>
+            </div> */}
+            <div className="profileCard" style={{marginBottom: "2%"}}>
               <h3>Profile Links</h3>
               <p>Github: {props.currentUser.github_url}</p>
               <p>Resume: {props.currentUser.resume}</p>

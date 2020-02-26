@@ -794,7 +794,7 @@ footer h4 {
 }
 .filter-class {
   display: flex;
-  width: 45%;
+  width: 55%;
   justify-content: space-between;
   min-width: 750px;
   padding-left: 3.3%;
@@ -812,35 +812,25 @@ footer h4 {
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
-.filter-class .experience-select {
-  width: 133px;
-  height: 35px;
-  border-radius: 6px;
-  border: 1px solid #AC2A38;
-}
-.filter-class .job-state {
-  width: 133px;
-  height: 35px;
-  border-radius: 6px;
-  border: 1px solid #AC2A38;
-}
-.filter-class .job-city {
-  width: 133px;
-  height: 35px;
-  border-radius: 6px;
-  border: 1px solid #AC2A38;
-}
 .filter-class button {
+  background-color: #AC2A38;
+  color: #ffffff;
   height: 35px;
-  max-width: 100%;
-  width: 160px;
+  text-align: center;
   border-radius: 6px;
-  border: 1px solid #AC2A38;
+}
+@media (max-width: 1000px) {
+  .filter-class button {
+    margin-top: 4%;
+    width: 30rem;
+    border: 1px solid green;
+  }
 }
 .filter-class button:hover {
   cursor: pointer;
-  background-color: #AC2A38;
-  color: white;
+  border: 1px solid #AC2A38;
+  background-color: #ffffff;
+  color: #AC2A38;
 }
 @media (max-width: 1000px) {
   .filter-class {
@@ -849,6 +839,7 @@ footer h4 {
   }
   .filter-class .search-bar {
     width: 300px;
+    padding-top: 2%;
   }
   .filter-class .job-select {
     width: 300px;
@@ -862,16 +853,26 @@ footer h4 {
     flex-direction: column;
     min-width: unset;
   }
+  .filter-class .search-bar {
+    padding-top: 1%;
+  }
+  .filter-class .job-select {
+    padding-top: 1%;
+  }
+  .filter-class .experience-select {
+    padding-top: 1%;
+  }
 }
 @media (max-width: 650px) {
   .filter-class {
     min-width: unset;
   }
 }
+.filter-class .job-select {
+  padding-top: 1%;
+}
 @media (max-width: 350px) {
-  .filter-class {
-    min-width: unset;
-  }
+  min-width: unset;
 }
 .dashboardNav {
   display: flex;
@@ -917,7 +918,21 @@ footer h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
   padding-top: 2%;
+}
+.card-container .use-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25rem;
+  width: 70rem;
+}
+@media (max-width: 650px) {
+  .card-container .use-search h2 {
+    width: 24rem;
+    padding-top: 20%;
+  }
 }
 .card-container .jobCard {
   border: 1px solid #AC2A38;
@@ -1090,6 +1105,10 @@ footer h4 {
 }
 .job-details-container-2 .deets-div p {
   padding: 0.5% 2%;
+}
+.job-details-container-2 .deets-div a {
+  padding: 0.5% 2%;
+  font-size: 1.6rem;
 }
 .job-details-container-2 .desc-div p {
   padding: 0.5% 2%;

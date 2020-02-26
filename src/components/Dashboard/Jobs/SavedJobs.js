@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
+
 //Component that makes up the Saved Jobs page on site
 function SavedJobs(props) {
 
@@ -52,22 +53,27 @@ function SavedJobs(props) {
 
     //pushes saved jobs to here, and also returns nothing is available if you haven't saved any jobs, with a link back to the dashboard.
     const JobDetails = (job_id) => {
-        props.history.push(`/Dashboard/Job/${job_id}`)
+        setTimeout(() => {
+            props.history.push(`/Dashboard/Job/${job_id}`)
+        }, 100)  
     }
 
-    if (save.length < 1) {
+    //if loading is happening, then only return loader
+    if(loading === true ) {
         return (
-            <div className="empty-jobs">
-                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!</h1>
-            </div>
+            <StyledLoader active={loading} spinner text='Loading...'/>
         )
-    }
-    // console.log('render save', save)
-    //stylings for the suggestedJob card
+    } 
+    // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-                {save.map((e) => {
+            {(save.length < 1 ?     
+            //if object is empty, render empty message 
+            <div className="empty-jobs">
+                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!
+                </h1>
+             </div>: save.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
@@ -79,7 +85,8 @@ function SavedJobs(props) {
                             </div>
                         </div>
                     )
-                })}
+             
+                }))}
             </div>
         </StyledLoader>
     )

@@ -4,16 +4,13 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import LoadingOverlay from "react-loading-overlay";
 
-// applied jobs component allows a spot for you to pretty much save jobs that you've applied for, it has it's own personal spot on the website, where you can view applied jobs and also remove them from
-// the applied jobs list as well.
+// applied jobs component allows a spot for you to pretty much save jobs that you've applied for, it has it's own personal spot on the website, where you can view applied jobs and also remove them from the applied jobs list
 function AppliedJobs(props) {
 
     const [apply, setApply] = useState([])
     const [loading, setLoading] = useState(false);
-    const [note, setNote] = useState("")
 
     const id = props.currentUser.id
 
@@ -26,6 +23,7 @@ function AppliedJobs(props) {
                 let AppliedCopy = res.data.filter((e) => e.status === "applied")
                 setApply(AppliedCopy)
                 setLoading(false);
+   
             })
             .catch(error => {
                 console.error(error.message)
@@ -34,7 +32,9 @@ function AppliedJobs(props) {
     }, [id])
 
     const JobDetails = (job_id) => {
-        props.history.push(`/Dashboard/Job/${job_id}`)
+        setTimeout(() => {
+            props.history.push(`/Dashboard/Job/${job_id}`)
+        }, 100)  
     }
     // delete request to remove the jobs that you don't want on your applied jobs page.
     const handleDelete = (job_id) => {
@@ -52,18 +52,22 @@ function AppliedJobs(props) {
             })
     }
 
-    // message to show up if you currently have no jobs that you've saved as applied, so that you can return to dashboard.
-    if (apply.length < 1) {
+    //if loading is happening, then only return loader
+    if(loading === true ) {
         return (
-            <div className="empty-jobs">
-                <h1>Click "Saved as Applied" in <Link to="/Dashboard">Dashboard</Link> to save your applied jobs!</h1>
-            </div>
+            <StyledLoader active={loading} spinner text='Loading...'/>
         )
-    }
+    } 
+     // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <div className="saved-jobs-main">
-                {apply.map((e) => {
+            {(apply.length < 1 ? 
+            //if object is empty, render empty message  
+            <div className="empty-jobs">
+                <h1>Click "Saved as Applied" on any Job Detail page to save your applied jobs!
+                </h1>
+            </div> : apply.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
                             <h3>{e.companyName}</h3>
@@ -75,7 +79,7 @@ function AppliedJobs(props) {
                             </div>
                         </div>
                     )
-                })}
+                }))}
             </div>
         </StyledLoader>
     )

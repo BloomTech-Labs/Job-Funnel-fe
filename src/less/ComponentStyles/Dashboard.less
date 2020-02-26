@@ -1,105 +1,12 @@
-// .dash {
-//   display: flex;
-//   flex-direction: row;
-// }
 
-// .left-nav-container {
-//   width: 20%;
-//   background-color: @quickhire-main;
-//   height: 100%;
-//   border-right: 1px solid black;
-//   border-bottom: 1px solid black;
-//   position: fixed;
-//   z-index: 1;
-//   top: 0;
-//   left: 0;
-//   padding: 20px;
-//   margin-top: 3%;
-
-//   @media @tablet {
-//     display: none;
-//   }
-
-//   @media @mobile {
-//     display: none;
-//   }
-
-//   @media @mobile2 {
-//     display: none;
-//   }
-// }
-
-// .left-nav-container {
-
-//   h1 {
-//     padding-top: 20%;
-//     font-size: 3.4rem;
-//     color: white;
-//     text-align: center;
-//   }
-
-//   .filter-class-left {
-//     display: flex;
-//     text-align: center;
-//     flex-direction: column;
-//     // margin: 0 0 30px 19%;
-//     width: 100%;
-//     margin-top: 4%;
-//     justify-content: space-between;
-//     // min-width: 750px;
-//     // margin-left: 7%;
-  
-//     .search-bar-left {
-//       width: 240px;
-//       height: 40px;
-//       margin-bottom: 4%;
-//       text-align: center;
-//       border-radius: 6px;
-//       border: 1px solid black;
-//     }
-  
-//     .job-select-left {
-//       width: 240px;
-//       height: 40px;
-//       margin-bottom: 4%;
-//       border-radius: 6px;
-//       border: 1px solid black;
-//     }
-  
-//     .experience-select-left {
-//       width: 240px;
-//       height: 40px;
-//       border-radius: 6px;
-//       margin-bottom: 4%;
-//       border: 1px solid black;
-//     }
-  
-//     .button-left {
-//       height: 35px;
-//       max-width: 100%;
-//       width: 240px;
-//       border-radius: 6px;
-//       border: 1px solid black;
-//       background-color: #0D55A9;
-//       color: white;
-  
-//       &:hover {
-//         cursor: pointer;
-//         background-color: @quickhire-main;
-//         color: white;
-//       }
-//     }
-//   }
-
-// }
 
 .filter-class {
   display: flex;
 
-  width: 45%;
+  width: 55%;
   justify-content: space-between;
   min-width: 750px;
-padding-left: 3.3%;
+  padding-left: 3.3%;
   .search-bar {
     width: 180px;
     height: 35px;
@@ -114,37 +21,33 @@ padding-left: 3.3%;
     border-radius: 6px;
     border: 1px solid @quickhire-main;
   }
-
-  .experience-select {
-    width: 133px;
-    height: 35px;
-    border-radius: 6px;
-    border: 1px solid @quickhire-main;
-  }
-  .job-state {
-    width: 133px;
-    height: 35px;
-    border-radius: 6px;
-    border: 1px solid @quickhire-main;
-  }
-  .job-city {
-    width: 133px;
-    height: 35px;
-    border-radius: 6px;
-    border: 1px solid @quickhire-main;
-  }
+  
+  
+  
+  
 
   button {
     height: 35px;
-    max-width: 100%;
-    width: 160px;
+    // max-width: 100%;
+    background-color: @quickhire-main;
+    color: #ffffff;
+    height: 35px;
+    text-align: center;
     border-radius: 6px;
-    border: 1px solid @quickhire-main;
 
+    @media @desktop-1000 {
+      margin-top: 4%;
+      width: 30rem;
+      border: 1px solid green;
+    }
+  
+    
+    
     &:hover {
       cursor: pointer;
-      background-color: @quickhire-main;
-      color: white;
+      border: 1px solid @quickhire-main;
+      background-color: #ffffff;
+      color: @quickhire-main;
     }
   }
 
@@ -155,6 +58,7 @@ padding-left: 3.3%;
 
     .search-bar {
       width: 300px;
+      padding-top: 2%;
     }
 
     .job-select {
@@ -172,20 +76,18 @@ padding-left: 3.3%;
 
 
     .search-bar {
-      // padding-top: 1%;
+      padding-top: 1%;
     }
 
     .job-select {
-      // padding-top: 1%;
+      padding-top: 1%;
     }
 
     .experience-select {
-      // padding-top: 1%;
+      padding-top: 1%;
     }
 
-    // button {
-    //   // margin-left: 2%;
-    // }
+    
   }
 
   @media @mobile {
@@ -194,18 +96,18 @@ padding-left: 3.3%;
 
   }
 
-  //   .job-select {
-  //     // padding-top: 1%;
-  //   }
+    .job-select {
+      padding-top: 1%;
+    }
 
-  //   .experience-select {
-  //     // padding-top: 1%;
-  //   }
-  // }
+    // .experience-select {
+    //   // padding-top: 1%;
+    // }
+}
   @media @mobile2 {
     min-width: unset;
   }
-}
+
 
 .dashboardNav {
   display: flex;
@@ -247,12 +149,31 @@ padding-left: 3.3%;
 
 }
 
+
 .card-container {
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
   padding-top: 2%;
+
+    
+
+ .use-search {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 25rem;
+   width: 70rem;
+   h2{
+     @media @mobile{
+      width: 24rem;
+      padding-top: 20%;
+   }
+   }
+   
+ }
 
   .jobCard {
     border: 1px solid @quickhire-main;

@@ -66,7 +66,7 @@ Our mission is to simplify the job-search and hiring process by bringing both to
 #### Jest 
 - JavaScript testing library, that allowed us to simply and effectively test our code on the both the front and back-end. 
 
-#### Front end deployed to Heroku
+#### Front end deployed to Amplify
 
 
 # Environment Variables
