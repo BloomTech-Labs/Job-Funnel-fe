@@ -4,30 +4,28 @@ import DashboardNav from "./DashboardNav.js";
 
 import SavedJobs from "./Jobs/SavedJobs.js";
 import SuggestedJobs from "./Jobs/SuggestedJobs.js";
-
-import AppliedJobs from "./Jobs/AppliedJobs"
-
+import ViewedJobs from "./Jobs/ViewedJobs.js";
 
 
-// dashboard with all the routes to the suggested jobs, saved jobs, and applied jobs
+
+
 export default function Dashboard() {
-    const location = useLocation();
 
     return (
-        <>
+    <>
+        <div className="div1" style={{display: 'flex', flexDirection: 'column'  }}>
 
-            <div className="div1" style={{ display: 'flex', flexDirection: 'column' }}>
 
-
-                <div className="dashboard-nav" >
-                    <DashboardNav />
-
+            <div className="dashboard-nav" >
+                
+                <DashboardNav/>
+                
                 </div>
                 <Route exact path='/Dashboard' component={SuggestedJobs} />
                 <Route exact path='/Dashboard/Saved' component={SavedJobs} />
-                <Route exact path='/Dashboard/Applied' component={AppliedJobs} />
-
-            </div>
-        </>
+                <Route exact path='/Dashboard/Viewed' component={ViewedJobs} />
+            
+        </div>
+    </>
     )
 }
