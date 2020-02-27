@@ -292,6 +292,7 @@ header nav button {
   border: 1px solid #AC2A38;
   border-radius: 3px;
   padding: 1%;
+  background-color: whitesmoke;
 }
 header nav button:hover {
   background: #AC2A38;
@@ -362,7 +363,7 @@ header nav button:hover {
 .dark-mode h4 {
   color: black;
 }
-.dark-mode span {
+.dark-mode .card-text span {
   color: black;
 }
 .dark-mode .dashboardNav nav {
@@ -388,6 +389,12 @@ header nav button:hover {
   color: white;
 }
 .dark-mode .job-details-container p {
+  color: white;
+}
+.dark-mode .edit-profile-top h3 {
+  color: white;
+}
+.dark-mode .profile-form-inputs2 h3 {
   color: white;
 }
 .navbar {
@@ -422,6 +429,7 @@ header nav button:hover {
 }
 .m-ui-container .drop-down-btn {
   color: #AC2A38;
+  background-color: whitesmoke;
   width: 100px;
   height: 35px;
   border: 1px solid #AC2A38;
@@ -478,6 +486,7 @@ footer {
 }
 footer h4 {
   font-size: 1.6rem;
+  color: #fff;
 }
 .landing-page {
   width: 90%;
@@ -678,6 +687,7 @@ footer h4 {
 }
 .card-saved-jobs h5 {
   font-size: 1.5rem;
+  color: black;
 }
 .card-saved-jobs p {
   padding: 2%;
@@ -739,7 +749,7 @@ footer h4 {
   margin: 4% auto;
   width: 694px;
   height: 394px;
-  padding-top: 10px;
+  margin-bottom: 10%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .about-container .team-card {
@@ -749,6 +759,7 @@ footer h4 {
 @media (max-width: 650px) {
   .about-container .team-card {
     height: 430px;
+    margin-bottom: 40%;
   }
 }
 .about-container .team-info {
@@ -786,6 +797,7 @@ footer h4 {
   width: 45%;
   justify-content: space-between;
   min-width: 750px;
+  padding-left: 3.3%;
 }
 .filter-class .search-bar {
   width: 180px;
@@ -795,13 +807,25 @@ footer h4 {
   border: 1px solid #AC2A38;
 }
 .filter-class .job-select {
-  width: 180px;
+  width: 133px;
   height: 35px;
   border-radius: 6px;
   border: 1px solid #AC2A38;
 }
 .filter-class .experience-select {
-  width: 180px;
+  width: 133px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class .job-state {
+  width: 133px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #AC2A38;
+}
+.filter-class .job-city {
+  width: 133px;
   height: 35px;
   border-radius: 6px;
   border: 1px solid #AC2A38;
@@ -868,15 +892,16 @@ footer h4 {
 }
 .dashboardNav nav button {
   border: 1px solid black;
+  width: 100px;
   border: #AC2A38;
   background-color: #ffffff;
   color: #AC2A38;
-  width: unset;
+  width: ;
   height: 35px;
   border-radius: 8px;
   font-size: 1.2rem;
   margin: 0 2px;
-  padding: 5%;
+  padding: 1.5%;
 }
 .dashboardNav nav button:hover {
   border: #ffffff;
@@ -887,14 +912,6 @@ footer h4 {
 }
 .dashboardNav nav a {
   text-decoration: none;
-}
-@media (max-width: 1000px) {
-}
-@media (min-width: 651px) and (max-width: 800px) {
-}
-@media (max-width: 650px) {
-}
-@media (max-width: 350px) {
 }
 .card-container {
   display: flex;
@@ -916,6 +933,21 @@ footer h4 {
 .card-container .jobCard h3 {
   font-size: 1.3rem;
 }
+.card-container .jobCard .company-name {
+  background-color: #AC2A38;
+  width: 100%;
+  max-height: 40px;
+  text-align: center;
+  color: white;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.card-container .jobCard .job-desc {
+  width: 260px;
+  text-align: center;
+  margin: 10px auto;
+  height: 100px;
+}
 .card-container .card-image {
   display: flex;
   width: 18%;
@@ -927,6 +959,7 @@ footer h4 {
   height: 50px;
 }
 .card-container .card-text {
+  display: flex;
   margin-left: 8%;
 }
 .card-container .card-text p {
@@ -934,6 +967,12 @@ footer h4 {
 }
 .card-container .card-text p span {
   color: #646464;
+}
+.card-container .card-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .card-container {
@@ -975,6 +1014,24 @@ footer h4 {
   color: #ffffff;
   cursor: pointer;
 }
+.jobButtons-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+}
+.jobButtons-top button {
+  color: #AC2A38;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #AC2A38;
+  border-radius: 3px;
+}
+.jobButtons-top button:hover {
+  background: #AC2A38;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
 .dashboard-nav {
   padding-left: 3.3%;
   padding-bottom: 1.5%;
@@ -982,9 +1039,81 @@ footer h4 {
 .dashboard-nav div {
   padding-top: 1.5%;
 }
+.job-details-container-2 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 650px) {
+  .job-details-container-2 {
+    height: unset;
+  }
+}
+.job-details-container-2 .deets-apply-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2%;
+}
+.job-details-container-2 .deets-apply-button button {
+  border: 1px solid black;
+  background-color: #AC2A38;
+  color: #ffffff;
+  width: 10%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  padding: 0;
+}
+.job-details-container-2 .deets-apply-button button:hover {
+  border: 1px solid #AC2A38;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #AC2A38;
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 25%;
+  }
+}
+@media (max-width: 350px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 40%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .job-details-container-2 .deets-apply-button button {
+    width: 300%;
+  }
+}
+.job-details-container-2 .deets-div {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+}
+.job-details-container-2 .deets-div h2 {
+  padding: 0.5% 2%;
+}
+.job-details-container-2 .deets-div p {
+  padding: 0.5% 2%;
+}
+.job-details-container-2 .desc-div p {
+  padding: 2%;
+}
 .job-details-container {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 650px) {
+  .job-details-container {
+    height: unset;
+  }
+}
+@media (max-width: 350px) {
+  .job-details-container {
+    height: unset;
+  }
 }
 .job-details-container .deets-apply-button {
   display: flex;

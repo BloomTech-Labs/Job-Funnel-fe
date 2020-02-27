@@ -4,8 +4,9 @@ import DashboardNav from "./DashboardNav.js";
 
 import SavedJobs from "./Jobs/SavedJobs.js";
 import SuggestedJobs from "./Jobs/SuggestedJobs.js";
-import ViewedJobs from "./Jobs/ViewedJobs.js";
-import Filter from "./Filter";
+
+import AppliedJobs from "./Jobs/AppliedJobs"
+
 
 
 
@@ -14,17 +15,17 @@ export default function Dashboard() {
 
     return (
     <>
+        
         <div className="div1" style={{display: 'flex', flexDirection: 'column'  }}>
 
 
             <div className="dashboard-nav" >
-                
                 <DashboardNav/>
-                {(location.pathname === "/Dashboard" ? <Filter/> : null)}
+                
                 </div>
                 <Route exact path='/Dashboard' component={SuggestedJobs} />
                 <Route exact path='/Dashboard/Saved' component={SavedJobs} />
-                <Route exact path='/Dashboard/Viewed' component={ViewedJobs} />
+                <Route exact path='/Dashboard/Applied' component={AppliedJobs} />
             
         </div>
     </>

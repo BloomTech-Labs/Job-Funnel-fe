@@ -142,7 +142,8 @@ function Profile(props) {
       resetInputs();
      }
   }
-
+  
+//Cloudinary to upload profile pictures to the profile page
   const changeProfilePic = (picture) => {
     console.log("This is for changing profile pic", picture)
     if(picture){
@@ -153,6 +154,7 @@ function Profile(props) {
     }
   }
 
+//Delete profile pic
   const deleteProfilePic = () => {
     setPictureLoading(true);
     props.deleteProfilePicture(setPictureLoading);
@@ -168,7 +170,7 @@ function Profile(props) {
             <div className="profile-top" >
               <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
               <div className="profileNameDiv">
-                  <h3>{props.currentUser.first_name} {props.currentUser.last_name}</h3>
+                  <h3 data-testid="first-last">{props.currentUser.first_name} {props.currentUser.last_name}</h3>
                   <h4>{props.currentUser.email}</h4>
                 <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
               </div>
@@ -198,8 +200,9 @@ function Profile(props) {
           </section>
         </>}
 
+{/* This is the edit form information, this is what you're messing with whenever you click edit profile on the profile page. */}
       {showEditForm && <>
-        <div className="profile-main-div2">
+        <div className="profile-main-div2" data-testid="first-last">
           <div className="profile-second-main2">
             <section className="profile-section">
               <div className="edit-profile-top" >

@@ -4,6 +4,7 @@ import { faUserCircle, faCamera } from "@fortawesome/free-solid-svg-icons";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
+//Cloudinary Stuff - allows users to add profile pictures to their profiles
 export default function ProfilePicture(props) {
     return (
         <div>
@@ -60,6 +61,7 @@ const SideContent = styled.div `
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 `;
 const DefaultProfile = styled(FontAwesomeIcon) `
     position: absolute;

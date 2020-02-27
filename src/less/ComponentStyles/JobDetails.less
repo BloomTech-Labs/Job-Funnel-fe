@@ -1,15 +1,57 @@
 
+.job-details-container-2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    @media @mobile {
+        height: unset;
+      }
+      .deets-apply-button {
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 2%;
+          button{
+              .button(@border: 1px solid black, @borderHover: 1px solid @quickhire-main, @background: @quickhire-main, @backgroundHover: #ffffff, 
+              @fontColor: #ffffff, @fontColorHover: @quickhire-main, @width: 10%, @height: 35px, @borderRadius: 8px, @margin: 0 2px, @padding: 0);
+              @media @mobile {
+                  width: 25%;
+              }
+              @media @mobile2 {
+                  width: 40%;
+              }
+              @media @tablet {
+                  width: 300%;
+              }
+      }
+  }
+      .deets-div {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid gray;
+          h2 {
+              padding: .5% 2%;
+          }
+          p {
+              padding: .5% 2%;
+          }
+      }
+      .desc-div {
+          p {
+              padding: 2%;
+          }
+      }
+  
+}
+
 .job-details-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    
     @media @mobile {
-        height: unset;
+      height: unset;
     }
     @media @mobile2 {
-        height: unset;
-    }
-    @media @tablet {
         height: unset;
     }
     .deets-apply-button {
