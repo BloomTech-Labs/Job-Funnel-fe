@@ -947,6 +947,7 @@ footer h4 {
 }
 .card-container .jobCard h3 {
   font-size: 1.6rem;
+  height: 70px;
 }
 .card-container .jobCard .company-name {
   background-color: #AC2A38;
@@ -981,6 +982,7 @@ footer h4 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-top: 3%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .card-container {

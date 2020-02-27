@@ -51,7 +51,7 @@ function JobCard(props) {
                 .catch(error => {
                     console.error(error)
                 })
-        } 
+        }
 
     }
 
@@ -59,7 +59,7 @@ function JobCard(props) {
     return (
         <div className="jobCard">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className="company-name">{props.company.slice(0, 30)}</p>
+                <p className="company-name">{props.company}</p>
             </div>
             <div className="card-text">
                 <div className="card-image">
@@ -67,7 +67,7 @@ function JobCard(props) {
                 </div>
                 <div className="card-info">
                     {/* {slice the job titles so we only get 30 chars back} */}
-                    <h3 className="title-text">{props.title.slice(0, 40)}..</h3>
+                    <h3 className="title-text">{props.title}..</h3>
                     <span>📍 {props.location}</span>
                 </div>
             </div>
