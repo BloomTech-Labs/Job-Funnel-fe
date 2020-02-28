@@ -6,12 +6,14 @@ import { connect } from "react-redux"
 
 function JobCard(props) {
 
+
     //variables
     const user_id = props.currentUser.id
     const job_id = props.id;
 
     const [toggle, setToggle] = useState(false)
     const [applytoggle, setApplytoggle] = useState(false)
+    
 
     //state for saved status
     const [saved, setSaved] = useState({
@@ -58,8 +60,9 @@ function JobCard(props) {
     //the card display/stylings
     return (
         <div className="jobCard">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className="company-name">{props.company}</p>
+            <div>
+                {(props.company === "" ? <p className="company-name">Name Unavailable</p>
+                 : <p className="company-name">{props.company}</p>)}
             </div>
             <div className="card-text">
                 <div className="card-image">

@@ -93,7 +93,7 @@ export default function SuggestedJobs() {
             </div>
             <div className="card-container">
                 {/* if cards are not loading AND the job obj is empty, then:  */}
-                {(loading === false && jobs.length < 1 ? <div className='use-search animated slow delay-1s rotateInUpRight' ><h2>Use the search above to find your next job!</h2></div> :
+                {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
                     jobs.map((job, index) => {
                         // console.log(job);
                         return (
