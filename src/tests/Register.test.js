@@ -27,3 +27,54 @@ test('Check for labels on register form', ()=> {
     getByText(/enter email/i);
     getByText(/create password/i);
 } )
+
+const functions = {
+    userRegister: () => {
+        const user = {
+            first_name: 'Mauricio',
+            last_name: 'Degregori',
+            email: 'degregorimauricio@gmail.com',
+            password: 'password1',
+            user_type: "applicant"
+        }
+         return user;
+    }
+}
+
+test('adding register information', () => {
+    expect(functions.userRegister()).toEqual({
+        first_name: 'Mauricio',
+        last_name: 'Degregori',
+        email: 'degregorimauricio@gmail.com',
+        password: 'password1',
+        user_type: "applicant"
+    })
+})
+
+test('adding incorrect register information', () => {
+    expect(functions.userRegister()).toEqual(expect.not.objectContaining({
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        user_type: ''
+    }))
+})
+
+// imitates click event on submit 
+const submitAll = (callback, register) => {
+       if(register == 'clicked') {
+            callback(register)
+        }
+
+}
+
+describe('regiser button', () => {
+    test('function is called on button click', () => {
+        const event = jest.fn()
+        submitAll(event, 'clicked')
+        expect(event).toHaveBeenCalled();
+    })
+})
+
+

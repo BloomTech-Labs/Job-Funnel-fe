@@ -5,7 +5,7 @@ import { shallow, configure } from "enzyme";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import Adapter from 'enzyme-adapter-react-16';
-// import { shallow, configure } from 'enzyme';
+
 
 
 const mockStore = configureMockStore();
@@ -45,3 +45,47 @@ test("test if login titles render when added ", async () => {
     expect(password).toBeInTheDocument();
 
 });
+
+//mock data for incoming tests
+
+const functions = {
+    userLogin: () => {
+        const user = {
+            email: 'degregori@email.com',
+            password: 'password'
+        }
+         return user;
+    }
+}
+
+test('adding login information', () => {
+    expect(functions.userLogin()).toEqual({
+        email: 'degregori@email.com',
+        password: 'password'
+    })
+})
+
+test('adding incorrect login information', () => {
+    expect(functions.userLogin()).toEqual(expect.not.objectContaining({
+        email: 'degregori35@email.com',
+        password: 'wrong password'
+    }))
+})
+
+
+// imitates click event on submit 
+const submitAll = (callback, login) => {
+       if(login == 'clicked') {
+            callback(login)
+        }
+
+}
+
+describe('login button', () => {
+    test('function is called on button click', () => {
+        const event = jest.fn()
+        submitAll(event, 'clicked')
+        expect(event).toHaveBeenCalled();
+    })
+})
+
