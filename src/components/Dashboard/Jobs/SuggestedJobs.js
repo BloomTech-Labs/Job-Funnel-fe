@@ -54,7 +54,7 @@ export default function SuggestedJobs() {
     }
 
     return (
-        <StyledLoader active={loading} spinner text='Loading...'>
+            <>
             <div className="filter-class ">
                 <div className='search-div animated flipInX faster' > <input className="search-bar"
                     type="text"
@@ -91,19 +91,22 @@ export default function SuggestedJobs() {
                 /></div>
                 <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
             </div>
-            <div className="card-container">
-                {/* if cards are not loading AND the job obj is empty, then:  */}
-                {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
-                    jobs.map((job, index) => {
-                        // console.log(job);
-                        return (
+            <StyledLoader active={loading} spinner text='Loading...'>
+                <div className="card-container">
+                    {/* if cards are not loading AND the job obj is empty, then:  */}
+                    {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
+                        jobs.map((job, index) => {
+                            // console.log(job);
+                            return (
 
-                            <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
-                        )
-                    }))}
-            </div>
+                                <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
+                            )
+                        }))}
+                </div>
+            </StyledLoader>
+            </>
 
-        </StyledLoader>
+   
     )
 }
 
