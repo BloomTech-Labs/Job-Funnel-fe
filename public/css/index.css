@@ -954,12 +954,16 @@ footer h4 {
 .card-container .jobCard .company-name {
   background-color: #AC2A38;
   width: 100%;
-  max-height: 40px;
+  height: 4rem;
   text-align: center;
   color: white;
+  padding: 1%;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-container .jobCard .job-desc {
   width: 260px;
