@@ -67,11 +67,13 @@ function JobCard(props) {
             <div className="card-text">
                 <div className="card-image">
                     <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
+                    <div>📍{props.location}</div>
                 </div>
-                <div className="card-info">
-                    <h3 className="title-text">{props.title}</h3>
-                    <span>📍 {props.location}</span>
-                </div>
+
+            <div className="card-info">
+                <h3>{props.title}</h3>
+            </div>
+
             </div>
             <div className='jobButtons' >
                 {/* buttons to save and unsave jobs, or view jobs description. */}
