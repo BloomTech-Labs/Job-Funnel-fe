@@ -47,6 +47,10 @@ export default function SuggestedJobs() {
             // console.log('ok', search)
 
         })
+        .catch(err => {
+            console.log(err)
+            setLoading(false)
+        })
     }
 
     return (
