@@ -946,6 +946,16 @@ footer h4 {
   border-radius: 8px;
   margin: 0.2%;
 }
+@media (max-width: 650px) {
+  .card-container .jobCard {
+    margin: 3%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .card-container .jobCard {
+    margin: 1% 0.2% 1% 0.2%;
+  }
+}
 .card-container .jobCard .card-info {
   height: 5.5rem;
   display: flex;
