@@ -124,18 +124,9 @@ function Profile(props) {
 
   return (
     <StyledLoader active={loading} spinner text='Loading...'>
-      {/* <select  name="theme_switcher" onChange={props.changeTheme}>
-                <option selected="selected" value={'css/index.css'}>index</option>
-                <option value={"css/red.css"}>red</option>
-                <option value={"css/darkred.css"}>dark red</option>
-                <option value={"css/blue.css"}>blue</option>
-                <option value={"css/darkblue.css"}>dark blue</option>
-                <option value={"css/green.css"}>green</option>
-                <option value={"css/darkgreen.css"}>dark green</option>
-            </select> */}
-
+     
       {/* Profile Page info, takes in props in order to fill in the information that you used while signing up, it also allows the data to be passed into it from where you edit the profile form.       */}
-      <div className="container-profile">
+      <div className="container-profile animated fadeIn faster delay-1s ">
         {!showEditForm && <>
           <section className='profile-section'>
             <div className="profile-top" >
@@ -154,14 +145,6 @@ function Profile(props) {
               <h3>Education</h3>
               <p> - {props.currentUser.education}</p>
             </div>
-            {/* <div className="profileCard">
-              <h3>Skills</h3>
-              <p>This is where the skills would be listed</p>
-            </div>
-            <div className="profileCard">
-              <h3>Job Preferences</h3>
-              <p>This is where the job preferences will go</p>
-            </div> */}
             <div className="profileCard" style={{marginBottom: "2%"}}>
               <h3>Profile Links</h3>
               <p>Github: {props.currentUser.github_url}</p>
@@ -175,7 +158,7 @@ function Profile(props) {
         {showEditForm && <>
           <div className="profile-main-div2">
             <div className="profile-second-main2">
-              <section className="profile-section">
+              <section className="profile-section ">
                 <div className="edit-profile-top" >
                   <h3>Update Profile</h3>
                   <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
