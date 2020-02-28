@@ -101,17 +101,17 @@ function Profile(props) {
     e.preventDefault();
 
     let userObj = { password: currentPassword }
-    if (editFirstName){
-        userObj = {...userObj, first_name: editFirstName}
+    if (editFirstName) {
+      userObj = { ...userObj, first_name: editFirstName }
     }
-    if (editLastName){
-        userObj = {...userObj, last_name: editLastName}
+    if (editLastName) {
+      userObj = { ...userObj, last_name: editLastName }
     }
-    if (editEducation){
-        userObj = {...userObj, education: editEducation}
+    if (editEducation) {
+      userObj = { ...userObj, education: editEducation }
     }
-    if (editAbout){
-        userObj = {...userObj, about: editAbout}
+    if (editAbout) {
+      userObj = { ...userObj, about: editAbout }
     }
     if (editSkills){
         userObj = {...userObj, skills: editSkills}
@@ -131,22 +131,22 @@ function Profile(props) {
     if (newPassword){
         userObj = {...userObj, newPassword: newPassword}
     }
-    
-    if (currentPassword === ''){
-        alert('You must enter your current password to make changes.');
+
+    if (currentPassword === '') {
+      alert('You must enter your current password to make changes.');
     }
     else if (validateInputs(userObj) && (newPassword === '' || isValidPassword(newPassword))) {
       setLoading(true);
       props.updateUser(userObj, setLoading);
       setShowEditForm(showEditForm);
       resetInputs();
-     }
+    }
   }
-  
-//Cloudinary to upload profile pictures to the profile page
+
+  //Cloudinary to upload profile pictures to the profile page
   const changeProfilePic = (picture) => {
-    console.log("This is for changing profile pic", picture)
-    if(picture){
+    console.log(picture)
+    if (picture) {
       let formData = new FormData();
       formData.append('image', picture);
       setPictureLoading(true);
@@ -154,12 +154,12 @@ function Profile(props) {
     }
   }
 
-//Delete profile pic
+  //Delete profile pic
   const deleteProfilePic = () => {
     setPictureLoading(true);
     props.deleteProfilePicture(setPictureLoading);
   }
-// #endregion
+  // #endregion
 
 
   return (
@@ -177,20 +177,20 @@ function Profile(props) {
             </div>
             <div className="profileCard">
               <h3>About</h3>
-              <p style={{textAlign: "justify"}}>{props.currentUser.about}</p>
+              <p style={{ textAlign: "justify" }}>{props.currentUser.about}</p>
             </div>
             <div className="profileCard">
               <h3>Education</h3>
               <p>{props.currentUser.education}</p>
             </div>
-            <div className="profileCard">
+            {/* <div className="profileCard">
               <h3>Skills</h3>
-              <p>{props.currentUser.skills}</p>          
+              <p>This is where the skills would be listed</p>
             </div>
             <div className="profileCard">
               <h3>Job Preferences</h3>
               <p>This is where the job preferences will go</p>
-            </div>
+            </div> */}
             <div className="profileCard" style={{marginBottom: "2%"}}>
               <h3>Profile Links</h3>
               <p>Github: {props.currentUser.github_url}</p>
@@ -208,32 +208,15 @@ function Profile(props) {
               <div className="edit-profile-top" >
                   <h3>Update Profile</h3>
                   <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
-              </div>
-            </section>
-            <form className="profile-main-form2" onSubmit={handleSubmit}>
-              <div className="profile-form-inputs2">
-                    <div className="profile-form-edit-name">
-                        <div>
-                            <h3>First Name</h3>    
-                            <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} type="text"/> 
-                        </div>
-                        <div>
-                            <h3>Last Name</h3>
-                            <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name}/>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 style={{marginTop: "1%"}}>About</h3>
-                        <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself' } />
-                    </div>
-                    <div>
-                        <h3>Education</h3>
-                        <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education' } />
-                    </div>
-                    <div>
+                </div>
+              </section>
+              <form className="profile-main-form2" onSubmit={handleSubmit}>
+                <div className="profile-form-inputs2">
+                  <div className="profile-form-edit-name">
+                    {/* <div>
                         <h3>Skills</h3>
                         <input className="text-input" name="skills" type="text" onChange={handleChange} placeholder={props.currentUser.skills ? props.currentUser.skills : 'Skills' } />
-                    </div>
+                    </div> */}
                     <div>
                         <h3>Github</h3>
                         <input className="text-input" name="github" type="text" onChange={handleChange} placeholder={props.currentUser.github_url ? props.currentUser.github_url : 'Enter Github URL' } />
@@ -255,20 +238,37 @@ function Profile(props) {
                         <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
                     </div>
                     <div>
-                        <h3 style={{color: 'red'}}>Re-Enter Password to Save Changes</h3>
-                        <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
+                      <h3>Last Name</h3>
+                      <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name} />
                     </div>
-                    <div className="edit-profile-btns">
-                      <button type="submit" onClick={handleSubmit}>Submit Changes</button>
-                      <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
                   </div>
+                  <div>
+                    <h3 style={{ marginTop: "1%" }}>About</h3>
+                    <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself'} />
                   </div>
+                  <div>
+                    <h3>Education</h3>
+                    <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education'} />
+                  </div>
+                  <div>
+                    <h3>New password</h3>
+                    <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password' />
+                  </div>
+                  <div>
+                    <h3 style={{ color: 'red' }}>Re-Enter Password to Save Changes</h3>
+                    <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
+                  </div>
+                  <div className="edit-profile-btns">
+                    <button type="submit" onClick={handleSubmit}>Submit Changes</button>
+                    <button className="button" type="submit" onClick={() => setShowEditForm(!showEditForm)}>Cancel</button>
+                  </div>
+                </div>
 
-              {/* <br /><br /> */}
-            </form>
+                {/* <br /><br /> */}
+              </form>
+            </div>
           </div>
-        </div>
-      </>}
+        </>}
       </div>
     </StyledLoader>
   );

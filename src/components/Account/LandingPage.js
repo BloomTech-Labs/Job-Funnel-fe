@@ -20,7 +20,7 @@ const LandingPage = () => {
 
                 
                 <div className='bottom-content'>
-                    <div className='animated pulse delay-2s slow button-div'><Link to="/Register"> <button >Join Now!</button></Link></div>
+                    <div className='animated pulse delay-1s button-div'><Link to="/Register"> <button >Join Now!</button></Link></div>
                     <div className='img-div'><img src={logo} /></div>
                 </div>
 

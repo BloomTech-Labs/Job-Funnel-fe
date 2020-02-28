@@ -8,17 +8,17 @@ import styled from 'styled-components';
 export default function ProfilePicture(props) {
     return (
         <div>
-            <ImageInput type='file' onChange={(e)=>{props.changeProfilePic(e.target.files[0])}} id='imageInput'/>
-            <StyledLoader active={props.pictureLoading} spinner text='Uploading...'> 
+            <ImageInput type='file' onChange={(e) => { props.changeProfilePic(e.target.files[0]) }} id='imageInput' />
+            <StyledLoader active={props.pictureLoading} spinner text='Uploading...'>
                 <label htmlFor='imageInput'>
                     <ProfileFilter>
                         <div className='editPicture'>
                             Edit
-                            <FontAwesomeIcon icon={faCamera} className='fa-1x'/>
+                            <FontAwesomeIcon icon={faCamera} className='fa-1x' />
                         </div>
-                        {props.currentUser.profile_img 
-                            ? ( <ProfileImg style={{backgroundImage: `url('${props.currentUser.profile_img}')`}}/> ) 
-                            : ( <DefaultProfile icon={faUserCircle}/> )}
+                        {props.currentUser.profile_img
+                            ? (<ProfileImg style={{ backgroundImage: `url('${props.currentUser.profile_img}')` }} />)
+                            : (<DefaultProfile icon={faUserCircle} />)}
                     </ProfileFilter>
                 </label>
             </StyledLoader>
@@ -29,19 +29,19 @@ export default function ProfilePicture(props) {
     )
 }
 
-// #region Styled components
+// #region Styled components for profile picture editing
 const StyledLoader = styled(LoadingOverlay)`
     width:100%;
     z-index: 2;
 `;
-const ImageInput = styled.input `
+const ImageInput = styled.input`
     opacity: 0;
     position: absolute;
     pointer-events: none;
     width: 1px;
     height: 1px;
 `;
-const ProfileFilter = styled.div `
+const ProfileFilter = styled.div`
     font-family: 'Patua One', sans-serif;
     width: 150px;
     height: 150px;
@@ -56,14 +56,14 @@ const ProfileFilter = styled.div `
         font-size: 2rem;
     }
 `;
-const SideContent = styled.div `
+const SideContent = styled.div`
     display: flex;
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
 `;
-const DefaultProfile = styled(FontAwesomeIcon) `
+const DefaultProfile = styled(FontAwesomeIcon)`
     position: absolute;
     width: 150px !important;
     height: 150px;
@@ -88,7 +88,7 @@ const ProfileImg = styled.div`
         opacity: 0.2;
     }
 `;
-const RemoveBtn = styled.h3 `
+const RemoveBtn = styled.h3`
     font-style: italic;
     margin-top: 0;
     margin-bottom: 0;
