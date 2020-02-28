@@ -1,6 +1,5 @@
 .filter-class {
   display: flex;
-
   width: 55%;
   justify-content: space-between;
   min-width: 750px;
@@ -20,12 +19,8 @@
     border: 1px solid @quickhire-main;
   }
   
-  
-  
-
   button {
     height: 35px;
-    // max-width: 100%;
     background-color: @quickhire-main;
     color: #ffffff;
     height: 35px;
@@ -39,7 +34,6 @@
     }
   
     
-    
     &:hover {
       cursor: pointer;
       border: 1px solid @quickhire-main;
@@ -51,7 +45,6 @@
   @media @desktop-1000 {
     display: flex;
     flex-direction: column;
-
 
     .search-bar {
       width: 300px;
@@ -75,9 +68,6 @@
       padding-top: 1.5%;
     }
     
-    .search-bar {
-      
-    }
 
     .job-select {
       padding-top: 1%;
@@ -92,17 +82,12 @@
 
   @media @mobile {
     min-width: unset;
-
-
   }
 
     .job-select {
       padding-top: 1%;
     }
 
-    // .experience-select {
-    //   // padding-top: 1%;
-    // }
 }
   @media @mobile2 {
     min-width: unset;
@@ -111,8 +96,7 @@
 
 .dashboardNav {
   display: flex;
-
-  width: 100%;
+  // width: 100%;
   width: 60%;
   min-width: 315px;
   max-width: 500px;
@@ -151,35 +135,29 @@
 
 
 .card-container {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   padding-top: 2%;
 
-
-    
-
  .use-search {
- 
    display: flex;
    justify-content: center;
    align-items: center;
    height: 25rem;
    width: 90rem;
-   div{
-    
-   }
-   h2{ 
-     @media @tablet{
 
+   h2 { 
+     @media @tablet {
        width:50rem;
      }
-     @media @mobile{
+
+     @media @mobile {
       width: 24rem;
       padding-top: 20%;
-   }
+    }
+
    }
    
  }
@@ -189,26 +167,19 @@
     background-color: #fafafa;
     width: 35rem;
     height: 30rem;
-    // min-width: 250px;
-    // max-width: 340px;
-    // height: 300px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     margin: .20%;
-    // border: 1px solid orange;
 
     @media @mobile {
       margin: 3%;
     }
 
     @media @tablet {
-      // background: orange;
       margin: 1% .20% 1% .20%;
     }
 
     .card-info {
-
-      // border: 1px solid red;
       height: 5.5rem;
       display: flex;
       flex-direction: column;
@@ -218,7 +189,6 @@
 
       h3 {
         font-size: 1.4rem;
-        // border: 1px solid orange;
         text-align: center;
         width: 75%;
       }
@@ -234,7 +204,6 @@
       padding: 1%;
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
-      // border: 1px solid orange;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -243,7 +212,6 @@
     .job-desc {
       width: 260px;
       text-align: center;
-      // margin: 10px auto;
       height: 100px;
       border: 1px solid red;
     }
@@ -251,18 +219,12 @@
 
   .card-image {
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     align-items: center;
-    // width: 18%;
-    // margin: 10px auto;
-    // border: 1px solid green;
     margin: 1%;
     padding: 4%;
 
-
     div {
-      // border: 1px solid orange;
       width: 50%;
       display: flex;
       justify-content: center;
@@ -277,16 +239,14 @@
 
   .card-text {
     display: flex;
-    // margin-left: 8%;
     flex-direction: column;
     p {
-      // margin-bottom: 5%;
+
       span {
         color: #646464;
       }
     }
   }
-
 
 
   @media @tablet {
@@ -300,7 +260,6 @@
 
   @media @mobile {
     width: 100%;
-
 
     .jobCard {
       width: 320px;
@@ -317,11 +276,9 @@
 .jobButtons {
   display: flex;
   justify-content: space-evenly;
-  // border: 1px solid red;
   margin-top: 3%;
   padding: 2%;
   button {
-
     color: #ffffff;
     width: 100px;
     height: 35px;

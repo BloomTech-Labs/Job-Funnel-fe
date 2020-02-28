@@ -874,7 +874,6 @@ footer h4 {
 }
 .dashboardNav {
   display: flex;
-  width: 100%;
   width: 60%;
   min-width: 315px;
   max-width: 500px;
