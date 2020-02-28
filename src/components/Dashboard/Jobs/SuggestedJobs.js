@@ -85,7 +85,7 @@ export default function SuggestedJobs() {
                     onChange={onSelectChange}
                     handleSubmit={onSelectChange}
                 /></div>
-                <button onClick={handleSubmit}>Submit</button>
+                <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
             </div>
             <div className="card-container">
                 {/* if cards are not loading AND the job obj is empty, then:  */}
