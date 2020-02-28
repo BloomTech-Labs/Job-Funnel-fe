@@ -66,8 +66,7 @@ function JobCard(props) {
                     <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
                 </div>
                 <div className="card-info">
-                    {/* {slice the job titles so we only get 30 chars back} */}
-                    <h3 className="title-text">{props.title}..</h3>
+                    <h3 className="title-text">{props.title}</h3>
                     <span>📍 {props.location}</span>
                 </div>
             </div>
