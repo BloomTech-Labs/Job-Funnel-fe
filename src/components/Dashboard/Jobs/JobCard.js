@@ -6,12 +6,14 @@ import { connect } from "react-redux"
 
 function JobCard(props) {
 
+
     //variables
     const user_id = props.currentUser.id
     const job_id = props.id;
 
     const [toggle, setToggle] = useState(false)
     const [applytoggle, setApplytoggle] = useState(false)
+    
 
     //state for saved status
     const [saved, setSaved] = useState({
@@ -51,27 +53,28 @@ function JobCard(props) {
                 .catch(error => {
                     console.error(error)
                 })
-        } 
+        }
 
     }
 
     //the card display/stylings
     return (
         <div className="jobCard">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className="company-name">{props.company}</p>
+            <div>
+                {(props.company === "" ? <p className="company-name">Name Unavailable</p>
+                 : <p className="company-name">{props.company}</p>)}
             </div>
             <div className="card-text">
                 <div className="card-image">
                     <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
+                    <div>📍{props.location}</div>
                 </div>
-                <div className="card-info">
-                    {/* {slice the job titles so we only get 30 chars back} */}
-                    <h3>{props.title.slice(0, 30)}..</h3>
-                    <span>📍 {props.location}</span>
-                </div>
+
+            <div className="card-info">
+                <h3>{props.title}</h3>
             </div>
-            <p className="job-desc">{props.description.slice(0, 100)}...</p>
+
+            </div>
             <div className='jobButtons' >
                 {/* buttons to save and unsave jobs, or view jobs description. */}
                 {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave} style={{ color: 'white', backgroundColor: 'green' }}>Unsave</button>)}

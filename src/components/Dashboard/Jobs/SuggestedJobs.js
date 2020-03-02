@@ -18,7 +18,7 @@ export default function SuggestedJobs() {
     const location = useLocation();
 
 
-    
+
     const [search, setSearch] = useState({
         title: '',
         city: '',
@@ -34,70 +34,79 @@ export default function SuggestedJobs() {
         setSearch({ ...search, [selectInputName]: selectValue ? selectValue : undefined });
         console.log('set value', search)
     }
-       const handleSubmit = event => {
-            event.preventDefault();
-            setLoading(true)
-            searchAPI().get('/search', {
+    const handleSubmit = event => {
+        event.preventDefault();
+        setLoading(true)
+        searchAPI().get('/search', {
             params: search,
         }).then((response) => {
+            console.log(response)
             setJobs(response.data.responses);
             setLoading(false)
             // console.log({ response })
             // console.log('ok', search)
 
-        })}
-    
-    return (
-        <StyledLoader active={loading} spinner text='Loading...'>
-            <div className="filter-class animated flipInX delay-1s">
-                    <div> <input className="search-bar"
-                        type="text"
-                        name="title"
-                        placeholder="Key Words"
-                        tabIndex="0"
-                        onChange={onSelectChange}
-                        handleSubmit={onSelectChange}
-                    /></div>
-                    <div > <input className="search-bar"
-                        type="text"
-                        name="city"
-                        placeholder="Enter City"
-                        tabIndex="0"
-                        onChange={onSelectChange}
-                        handleSubmit={onSelectChange}
-                    /></div>
-                    <div ><input className="search-bar"
-                        type="text"
-                        name="state_province"
-                        placeholder="Enter State"
-                        tabIndex="0"
-                        onChange={onSelectChange}
-                        handleSubmit={onSelectChange}
-                    /></div>
+        })
+        .catch(err => {
+            console.log(err)
+            setLoading(false)
+        })
+    }
 
-                    <div><input className="search-bar"
-                        type="text"
-                        name="experience"
-                        placeholder="Enter Experience"
-                        tabIndex="0"
-                        onChange={onSelectChange} 
-                        handleSubmit={onSelectChange}
-                    /></div>
-                    <button  onClick={handleSubmit}>Submit</button>
+    return (
+            <>
+            <div className="filter-class ">
+                <div className='search-div animated flipInX faster' > <input className="search-bar"
+                    type="text"
+                    name="title"
+                    placeholder="Key Words"
+                    tabIndex="0"
+                    onChange={onSelectChange}
+                    handleSubmit={onSelectChange}
+                /></div>
+                <div className='search-div animated flipInX fast' > <input className="search-bar"
+                    type="text"
+                    name="city"
+                    placeholder="Enter City"
+                    tabIndex="0"
+                    onChange={onSelectChange}
+                    handleSubmit={onSelectChange}
+                /></div>
+                <div className='search-div animated flipInX  ' ><input className="search-bar"
+                    type="text"
+                    name="state_province"
+                    placeholder="Enter State"
+                    tabIndex="0"
+                    onChange={onSelectChange}
+                    handleSubmit={onSelectChange}
+                /></div>
+
+                <div className='search-div animated flipInX slow'><input className="search-bar"
+                    type="text"
+                    name="experience"
+                    placeholder="Enter Experience"
+                    tabIndex="0"
+                    onChange={onSelectChange}
+                    handleSubmit={onSelectChange}
+                /></div>
+                <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
             </div>
-            <div className="card-container">
-                {/* if cards are not loading AND the job obj is empty, then:  */}
-                {(loading === false && jobs.length <1 ? <div className='use-search' ><h2>Use the search above to find your next job!</h2></div> :  
-                jobs.map((job, index) => {
-                    // console.log(job);
-                    return (
-                        
-                        <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.companyName} location={`${job.location_city}, ${job.location_state_province}`} />
-                    )
-                })) }  
-            </div>
-          
-        </StyledLoader>
+            <StyledLoader active={loading} spinner text='Loading...'>
+                <div className="card-container">
+                    {/* if cards are not loading AND the job obj is empty, then:  */}
+                    {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
+                        jobs.map((job, index) => {
+                            // console.log(job);
+                            return (
+
+                                <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
+                            )
+                        }))}
+                </div>
+            </StyledLoader>
+            </>
+
+   
     )
 }
 

@@ -50,10 +50,10 @@ const Login = (props) => {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             <>
-                <div className="main-div">
+                <div className="main-div ">
                     <div className="second-main">
-                        <h3 className="make">Make the most of your professional life.</h3>
-                        <form className="main-form" onSubmit={handleSubmit}>
+                        <h3 className="make animated faster zoomInRight">Make the most of your professional life.</h3>
+                        <form className="main-form animated faster zoomInLeft" onSubmit={handleSubmit}>
                             <div className="form-inputs">
                                 <label>Email</label>
                                 <input type="email" name="email" value={user.email} onChange={handleChange} />

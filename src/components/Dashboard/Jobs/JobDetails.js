@@ -82,7 +82,7 @@ function JobDetails(props) {
     }
     return (
         <StyledLoader active={loading} spinner text='Job Details...'>
-            <div className={(description.length < 1000 ? "job-details-container-2" : "job-details-container")}>
+            <div className={(description.length < 750 ? "job-details-container-2" : "job-details-container")}>
                 <div className="deets-apply-button">
                     {/* <button>Apply to Job</button> */}
                     {(applytoggle === false ? <button onClick={handleApply}> Save as Applied</button> : <button onClick={handleApply}>Remove from Applied</button>)}
