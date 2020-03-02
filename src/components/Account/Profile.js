@@ -187,9 +187,9 @@ function Profile(props) {
             </div>
             <div className="profileCard" style={{marginBottom: "2%"}}>
               <h3>Profile Links</h3>
-              <p>Github: {props.currentUser.github_url}</p>
-              <p>Resume: {props.currentUser.resume}</p>
-              <p>Portfolio: {props.currentUser.portfolio_url}</p>
+              <p>Github: <a href={props.currentUser.github_url}>{props.currentUser.github_url}</a></p>
+              <p>Resume: <a href={props.currentUser.resume}>{props.currentUser.resume}</a></p>
+              <p>Portfolio: <a href={props.currentUser.portfolio_url}>{props.currentUser.portfolio_url}</a></p>
             </div>
           </section>
         </>}
