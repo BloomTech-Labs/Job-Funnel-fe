@@ -17,8 +17,6 @@
 	padding: 0;
 }
 
-
-
 .profileNameDiv {
 	display: flex;
 	width: 50%;
@@ -109,8 +107,8 @@
 	.flex(@border: 1px solid @profile-border, @flexDirection: column, 
     @justifyContent: space-between, @alignItems: center, @width: 50%, @margin: .5% 0 .5% 0, @padding: 2%);
 
-    background: @quickhire-background;
-    border-radius: 5px;
+	background: @quickhire-background;
+	border-radius: 5px;
 
 	@media @mobile {
 		width: 75%;
@@ -234,7 +232,7 @@
 				}
 			}
 		}
-	} 
+	}
 	div {
 		.flex(@border: @edit-profile-input, @flexDirection: column, @flexWrap: wrap, 
         @justifyContent: none, @alignItems: center, @width: 100%, @margin: 1%, @padding: 0);

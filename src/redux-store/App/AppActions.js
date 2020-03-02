@@ -28,15 +28,6 @@ export const getCurrentUser = () => dispatch => {
     .catch(err => {dispatch({ type: LOGIN_FAILED, payload: err }); console.log('GetCurrentUser CATCH ERROR: ', err.response.data.message) });
     return null;
 }
-export const getOtherUser = (id) => dispatch => {
-    // axiosWithAuth().get(`/users/${id}`)
-    // .then(res =>{
-    //     // console.log('getOtherUser res: ', res);
-    //     dispatch({ type: SET_OTHER_USER, payload: res.data })
-    // })
-    // .catch(err => {dispatch({ type: LOADING_DONE, payload: err }); console.log('GetOtherUser CATCH ERROR: ', err.response.data.message) });
-    // return null;
-}
 export const wipeOtherUser = () => dispatch => {
     // dispatch({ type: WIPE_OTHER_USER, payload: '' });
     // return null;
