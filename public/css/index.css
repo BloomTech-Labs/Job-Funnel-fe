@@ -871,7 +871,7 @@ footer h4 {
 	padding-top: 1%;
 }
 @media (max-width: 350px) {
-	min-width: unset;
+	/* min-width: unset; */
 }
 .dashboardNav {
 	display: flex;
@@ -895,7 +895,7 @@ footer h4 {
 	border: #ac2a38;
 	background-color: #ffffff;
 	color: #ac2a38;
-	width: ;
+	/* width: ; */
 	height: 35px;
 	border-radius: 8px;
 	font-size: 1.2rem;
