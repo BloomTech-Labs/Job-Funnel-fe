@@ -211,6 +211,24 @@ function Profile(props) {
                         <h3>Skills</h3>
                         <input className="text-input" name="skills" type="text" onChange={handleChange} placeholder={props.currentUser.skills ? props.currentUser.skills : 'Skills' } />
                     </div> */}
+                    
+                      <div>
+                        <h3>First Name</h3>
+                        <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} />
+                      </div>
+                      <div>
+                        <h3>Last Name</h3>
+                        <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name} />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 style={{ marginTop: "1%" }}>About</h3>
+                      <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself'} />
+                    </div>
+                    <div>
+                      <h3>Education</h3>
+                      <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education'} />
+                    </div>
                     <div>
                         <h3>Github</h3>
                         <input className="text-input" name="github" type="text" onChange={handleChange} placeholder={props.currentUser.github_url ? props.currentUser.github_url : 'Enter Github URL' } />
@@ -227,23 +245,6 @@ function Profile(props) {
                         <h3>Upload Resume</h3>
                         <input className="text-input" name="resume" type="text" onChange={handleChange} placeholder={props.currentUser.resume ? props.currentUser.resume : 'Upload Resume Here' } />
                     </div>
-                    <div>
-                        <h3>New password</h3>
-                        <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password'/> 
-                    </div>
-                    <div>
-                      <h3>Last Name</h3>
-                      <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 style={{ marginTop: "1%" }}>About</h3>
-                    <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself'} />
-                  </div>
-                  <div>
-                    <h3>Education</h3>
-                    <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education'} />
-                  </div>
                   <div>
                     <h3>New password</h3>
                     <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password' />
