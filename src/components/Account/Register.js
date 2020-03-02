@@ -71,9 +71,9 @@ const Register = (props) => {
             <>
                 <div className="main-div2">
                     <div className="second-main2">
-                        <h3 className="make2">Make the most of your professional life.</h3>
+                        <h3 className="make2 animated faster zoomInRight">Make the most of your professional life.</h3>
                         {/* The form used on the registration page */}
-                        <form className="main-form2" onSubmit={handleSubmit}>
+                        <form className="main-form2  animated faster zoomInLeft" onSubmit={handleSubmit}>
                             <div className="form-inputs2">
                                 <label>First Name </label>
                                 <input type="text" name="first_name" value={newUser.first_name} onChange={handleChange} />

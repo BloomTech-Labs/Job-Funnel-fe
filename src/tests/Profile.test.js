@@ -2,41 +2,46 @@ import React from 'react';
 import { Provider as MockProvider } from 'react-redux';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
-import { initialState, reducer } from '../redux-store/index.js';
+import Adapter from 'enzyme-adapter-react-16';
 import Profile from '../components/Account/Profile';
-import { AppReducer } from '../redux-store/App/AppReducer.js';
+
 
 // afterEach(cleanup);
+const mockStore = configureStore();
+Enzyme.configure({ Adapter: newAdapter() })
+
 
 // ------------ ATTEMPTED MOCK STORE --------- 
-// const mockStore = configureStore([]);
 
-// describe('Profile Connected React-Redux Component', () => {
-//     let store;
-//     let component;
+describe('Profile Connected React-Redux Component', () => {
+    let store;
 
-//     beforeEach((state, action) => {
-//         const initialState = {
-//             currentUser: {
-//                 ...state.currentUser, ...action.payload
-//             }
-//         }
+    beforeEach(() => {
+        store = mockStore({
+            auth: {
+                first_name: "Tony",
+                last_name: "Montana"
+            },
+        });
+    });
+    it('Renders Profile', () => {
+        const wrapper = mount(
+            <MockProvider store={store}><Profile/></MockProvider>
+        );
+        
+        expect(wrapper.find(Profile).length).to.equal(1);
+        const container = wrapper.find(Profile);
+        expect(container.find(Profile).length).to.equal(1);
+        expect(container.find(Profile).props().auth).to.eql({ first_name: "Tony", last_name: "Montana" });
+    })
 
-//         store = mockStore(initialState)
-
-//         component = renderer.create(
-//             <MockProvider store = {store}>
-//                 <Profile/>
-//             </MockProvider>
-//         )
-//     });
-
-//     it('Should Render First & Last Name', () => {
-//         expect(component.props().currentUser.first_name).toBe('Bob')
-//     });
-// })
+    // it('Should Render First & Last Name', () => {
+    //     expect(component.props().currentUser.first_name).toBe('Bob')
+    // });
+})
 // -------------------------- END OF ATTEMPTED MOCK STORE -----------------------//
 
 
@@ -93,10 +98,6 @@ import { AppReducer } from '../redux-store/App/AppReducer.js';
 // it("should match the snapshot", () => {
 //     expect(<Profile />).toJSON().toMatchSnapshot();
 //   });
-
-test("Displays the Component", () => {
-    render(<Profile/>)
-})
 
 
 // test("Profile Page Loads Heading", async () => {
