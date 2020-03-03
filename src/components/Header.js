@@ -49,7 +49,7 @@ function Header(props) {
                         )
                     }
 
-                    else if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved') {
+                    else if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved' || location.pathname === '/Dashboard/Applied') {
                         return (
                             <nav>
                                 <Link to="/Profile"> <button>My Profile</button> </Link>
@@ -66,6 +66,7 @@ function Header(props) {
                             </nav>
                         )
                     }
+
 
                     else if (location.pathname === '/login' || location.pathname === '/Login') {
                         return (
@@ -85,7 +86,7 @@ function Header(props) {
                         return (
                             <nav>
                                 <Link to="/Login"> <button>Login</button> </Link>
-                                <Link to="/Dashboard"> <button>Dashboard</button> </Link>
+                                <Link to="/Register"> <button>Register</button> </Link>
                             </nav>
                         )
                     }

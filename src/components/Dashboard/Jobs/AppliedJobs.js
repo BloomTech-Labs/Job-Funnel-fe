@@ -61,12 +61,12 @@ function AppliedJobs(props) {
      // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
-            <div className="saved-jobs-main">
+            <div className={(apply.length >= 1 && apply.length < 3 ? "saved-jobs-small" : "saved-jobs-main"  )}>
             {(apply.length < 1 ? 
             //if object is empty, render empty message  
             <div className="empty-jobs">
-                <h1>Click "Saved as Applied" on any Job Detail page to save your applied jobs!
-                </h1>
+                <div className="animated flipInX"><h1>Click "Saved as Applied" on any Job Detail page to save your applied jobs!
+                </h1></div>
             </div> : apply.map((e) => {
                     return (
                         <div key={id} className="card-saved-jobs">
