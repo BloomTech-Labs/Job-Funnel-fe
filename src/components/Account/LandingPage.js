@@ -10,12 +10,12 @@ const LandingPage = () => {
         <section className='animated zoomInUp fast landing-page'>
             <div className='content-div'>
                 <div>
-                    <h1 >Welcome to your Quickhire Community</h1>
+                    <h1 >Welcome to your Quickhire Community.</h1>
                 </div>
                 <div className='p-div' >
-                    <p className='p-1'>You just finished your Bootcamp and want to find a job</p>
-                    <p className='p-2'> Join us at Quickhire and we will help you </p>
-                    <p className='p-3'> find the tech job that best matches you</p>
+                    <p className='p-1'>You've been learning how to program, day in and day out, for the past nine months - Now, you're looking for your next, high-paying job.</p>
+                    <p className='p-2'>But, finding that job is a challenge, and the process as a whole, is broken. </p>
+                    <p className='p-3'> Join us at Quickhire.dev, where we help you find tech jobs, tailored completely to you. </p>
                 </div>
 
                 
