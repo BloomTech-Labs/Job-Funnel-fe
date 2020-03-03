@@ -14,6 +14,7 @@ function SavedJobs(props) {
     console.log('props in savedjobs', props)
     const [save, setSave] = useState([])
     const [loading, setLoading] = useState(false);
+  
 
     const id = props.currentUser.id
 
@@ -33,7 +34,6 @@ function SavedJobs(props) {
                 setLoading(false);
             })
     }, [id])
-
 
     //deletes the selected saved job
     const handleDelete = (job_id) => {
@@ -67,15 +67,16 @@ function SavedJobs(props) {
     // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
-            <div className="saved-jobs-main">
+            {/* if save.length 1>= x < 3, then assign css class saved-jobs-small */}
+            <div className={(save.length === 1 ? "saved-jobs-single" : (save.length === 2 ? "saved-jobs-small" : "saved-jobs-main"))}>
             {(save.length < 1 ?     
             //if object is empty, render empty message 
             <div className="empty-jobs">
-                <h1>Nothing here yet...Save a job in <Link to="/Dashboard">Dashboard</Link> to continue!
-                </h1>
+                <div className="animated flipInX"><h1>Nothing here yet...Save a job in Dashboard to continue!
+                </h1></div>
              </div>: save.map((e) => {
                     return (
-                        <div key={id} className="card-saved-jobs">
+                        <div key={id} className="card-saved-jobs" >
                             <h3>{e.companyName}</h3>
                             <h5>📍{e.city} {e.stateOrProvince}, {e.country}</h5>
                             <p> Overview <br></br>{e.description.slice(0, 250)}...</p>

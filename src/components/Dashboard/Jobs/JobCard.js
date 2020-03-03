@@ -6,7 +6,6 @@ import { connect } from "react-redux"
 
 function JobCard(props) {
 
-
     //variables
     const user_id = props.currentUser.id
     const job_id = props.id;

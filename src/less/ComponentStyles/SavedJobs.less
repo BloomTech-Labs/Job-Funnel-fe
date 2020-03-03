@@ -2,25 +2,75 @@
 
 .empty-jobs {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: @quickhire-message;
+
+    div {
+
+        border-radius: 10px;
+        margin-top: 5%;
+        padding: 1%;
+        box-shadow: 5px 5px white;
+        text-align: center;
+        border: 2px solid #ffffff;
+
+        h1 {
+            color: #ffffff;
+          
+        }
+
+
+    }
+  
+
+
+}
+
+//same as saved-jobs, but with vh that is unset on smaller screen sizes. Didn't get around to not making it repetitive yet
+
+.saved-jobs-small {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: @quickhire-message;
+
+    @media @mobile {
+        height: unset;
+    }
+
+    @media @mobile2 {
+        height: unset;
+    }
+
 }
 
+.saved-jobs-single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: @quickhire-message;
+
+}
 
 .saved-jobs-main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background: @quickhire-message;
 }
 
 .card-saved-jobs {
 
     // @desktop-1000: ~'(max-width: 1000px)';
     // @desktop-1080: ~'(max-width: 1400px)';
-
 
     border: 1px solid @quickhire-main;
     background-color: #fafafa;
