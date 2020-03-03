@@ -13,7 +13,6 @@ import LoadingOverlay from "react-loading-overlay";
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
-    // const [submit, setSubmit]= useState(false)
 
     const location = useLocation();
 
@@ -25,7 +24,6 @@ export default function SuggestedJobs() {
         state_province: '',
         experience: ''
     });
-
 
 
     const onSelectChange = e => {
@@ -43,8 +41,7 @@ export default function SuggestedJobs() {
             console.log(response)
             setJobs(response.data.responses);
             setLoading(false)
-            // console.log({ response })
-            // console.log('ok', search)
+
 
         })
         .catch(err => {
@@ -92,7 +89,7 @@ export default function SuggestedJobs() {
                 <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
             </div>
             <StyledLoader active={loading} spinner text='Searching for jobs...'>
-                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : "card-container")}>
+                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : (jobs.length >= 1 && jobs.length < 4 ? "card-container-vh" : 'card-container'))}>
                     {/* if cards are not loading AND the job obj is empty, then:  */}
                     {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
                         jobs.map((job, index) => {

@@ -186,23 +186,29 @@
   
 }
 
-
-.card-container {
+.card-container-vh {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
   background:  #87CEEB;
+  height: 100vh;
 
-  
+  @media @mobile {
+    height: unset;
+  }
 
- .use-search {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 25rem;
-   width: 90rem;
+  @media @mobile2 {
+    height: unset;
+  }
+
+  .use-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    width: 90rem;
   
 
 
@@ -214,7 +220,6 @@
      border-radius: 10px;
      box-shadow: 5px 5px;
      text-align: center;
-    //  background: @quickhire-main;
      color: #ffffff;
      @media @tablet {
        width:50rem;
@@ -225,9 +230,9 @@
       padding-top: 20%;
     }
 
-   }
+   } //end of h2
    
- }
+ }//end of usesarch
 
   .jobCard {
     border: 1px solid @quickhire-main;
@@ -260,7 +265,7 @@
         width: 75%;
       }
   
-    }
+    } //end of card info
 
     .company-name {
       background-color: @quickhire-main;
@@ -274,7 +279,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+    } //end of company name
 
     .job-desc {
       width: 260px;
@@ -282,7 +287,7 @@
       height: 100px;
       border: 1px solid red;
     }
-  }
+  }//end of job card
 
 
   .card-image {
@@ -303,7 +308,7 @@
       width: 80px;
       height: 80px;
     }
-  }
+  } //end of card image
 
   .card-text {
     display: flex;
@@ -314,7 +319,164 @@
         color: #646464;
       }
     }
+  } //end of card-text
+
+
+  @media @tablet {
+    width: 100%;
+    margin-left: 0px;
+
+    .jobCard {
+      width: 300px;
+    }
   }
+
+  @media @mobile {
+    width: 100%;
+
+    .jobCard {
+      width: 320px;
+    }
+  }
+
+  @media @mobile2 {
+    .jobCard {
+      width: 320px;
+    }
+  }
+
+
+}
+
+
+.card-container  {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 2%;
+  background:  #87CEEB;
+
+  
+
+  .use-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    width: 90rem;
+  
+
+
+   h2 { 
+    //  border: 1px solid orange;
+     padding: 2%;
+     border: 2px solid #ffffff;
+     width: 80%;
+     border-radius: 10px;
+     box-shadow: 5px 5px;
+     text-align: center;
+     color: #ffffff;
+     @media @tablet {
+       width:50rem;
+     }
+
+     @media @mobile {
+      width: 24rem;
+      padding-top: 20%;
+    }
+
+   } //end of h2
+   
+ }//end of usesarch
+
+  .jobCard {
+    border: 1px solid @quickhire-main;
+    background-color: #fafafa;
+    width: 35rem;
+    height: 30rem;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    margin: .20%;
+
+    @media @mobile {
+      margin: 3%;
+    }
+
+    @media @tablet {
+      margin: 1% .20% 1% .20%;
+    }
+
+    .card-info {
+      height: 5.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      h3 {
+        font-size: 1.4rem;
+        text-align: center;
+        width: 75%;
+      }
+  
+    } //end of card info
+
+    .company-name {
+      background-color: @quickhire-main;
+      width: 100%;
+      height: 4rem;
+      text-align: center;
+      color: white;
+      padding: 1%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } //end of company name
+
+    .job-desc {
+      width: 260px;
+      text-align: center;
+      height: 100px;
+      border: 1px solid red;
+    }
+  }//end of job card
+
+
+  .card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 4%;
+
+    div {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  } //end of card image
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    p {
+
+      span {
+        color: #646464;
+      }
+    }
+  } //end of card-text
 
 
   @media @tablet {
