@@ -379,6 +379,9 @@ header nav button:hover {
 .dark-mode .jobCard div {
   background: #36454f;
 }
+.dark-mode .card-info h3 {
+  color: white;
+}
 .dark-mode .dashboardNav nav button {
   border: 1px solid black;
   width: 100%;
