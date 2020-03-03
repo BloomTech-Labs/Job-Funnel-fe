@@ -6,7 +6,7 @@ import { connect } from "react-redux"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
-// applied jobs component allows a spot for you to pretty much save jobs that you've applied for, it has it's own personal spot on the website, where you can view applied jobs and also remove them from the applied jobs list
+// applied jobs component allows a spot for you to pretty much save jobs that you've applied for. 
 function AppliedJobs(props) {
 
     const [apply, setApply] = useState([])
@@ -20,6 +20,7 @@ function AppliedJobs(props) {
         axiosWithAuth().get(`/saved/${id}`)
             .then(res => {
                 console.log('response from applied jobs', res.data)
+                //below -> filtering for items in the array that have the status coded in as applied 
                 let AppliedCopy = res.data.filter((e) => e.status === "applied")
                 setApply(AppliedCopy)
                 setLoading(false);
@@ -61,6 +62,7 @@ function AppliedJobs(props) {
      // else, return this 
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
+            {/* if save.length 1>= x < 3, then assign css class saved-jobs-small */}
             <div className={(apply.length >= 1 && apply.length < 3 ? "saved-jobs-small" : "saved-jobs-main"  )}>
             {(apply.length < 1 ? 
             //if object is empty, render empty message  

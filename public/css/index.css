@@ -1679,13 +1679,14 @@ footer h4 {
 @media (max-width: 650px) {
   .profile-top {
     flex-direction: column;
-    width: 100%;
+    width: 75%;
   }
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .profile-top {
     flex-direction: column;
-    width: 100%;
+    width: 70%;
+    margin-bottom: 1%;
   }
 }
 .profileCard {

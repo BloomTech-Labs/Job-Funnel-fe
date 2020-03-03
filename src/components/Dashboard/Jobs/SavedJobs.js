@@ -35,8 +35,6 @@ function SavedJobs(props) {
             })
     }, [id])
 
-
-
     //deletes the selected saved job
     const handleDelete = (job_id) => {
         setLoading(true)
@@ -67,9 +65,9 @@ function SavedJobs(props) {
         )
     } 
     // else, return this 
-    // console.log("array", arr)
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
+            {/* if save.length 1>= x < 3, then assign css class saved-jobs-small */}
             <div className={(save.length >= 1 && save.length < 3 ? "saved-jobs-small" : "saved-jobs-main"  )}>
             {(save.length < 1 ?     
             //if object is empty, render empty message 

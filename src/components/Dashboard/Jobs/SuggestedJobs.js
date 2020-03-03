@@ -8,15 +8,11 @@ import { useLocation } from "react-router-dom"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
-
-
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const location = useLocation();
-
-
 
     const [search, setSearch] = useState({
         title: '',
@@ -24,7 +20,6 @@ export default function SuggestedJobs() {
         state_province: '',
         experience: ''
     });
-
 
     const onSelectChange = e => {
         const selectValue = e.target.value;
@@ -89,13 +84,14 @@ export default function SuggestedJobs() {
                 <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
             </div>
             <StyledLoader active={loading} spinner text='Searching for jobs...'>
+                {/* on the div below: if loading is false and jobs.length 
+                <1 , then render card-container message. if jobs.length 1<= x < 4, then render card-container-vh. else, render card container  */}
                 <div className={(loading === false && jobs.length < 1 ? "card-container-message" : (jobs.length >= 1 && jobs.length < 4 ? "card-container-vh" : 'card-container'))}>
                     {/* if cards are not loading AND the job obj is empty, then:  */}
                     {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
                         jobs.map((job, index) => {
                             // console.log(job);
-                            return (
-                                
+                            return (  
                                 <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
                             )
                         }))}
@@ -103,7 +99,6 @@ export default function SuggestedJobs() {
             </StyledLoader>
             </>
 
-   
     )
 }
 

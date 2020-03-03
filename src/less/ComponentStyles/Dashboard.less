@@ -108,7 +108,6 @@
 
 .dashboardNav {
   display: flex;
-  // width: 100%;
   width: 60%;
   min-width: 315px;
   max-width: 500px;
@@ -186,6 +185,7 @@
   
 }
 
+// start of card-container-vh -> had to repeat styles from card-container for it to work, so repetitive - did not get around to fully fixing it. 
 .card-container-vh {
   display: flex;
   flex-wrap: wrap;
@@ -346,11 +346,10 @@
   }
 
 
-}
+} // end of .card-container-vh
 
 
 .card-container  {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -358,19 +357,14 @@
   padding-top: 2%;
   background:  #87CEEB;
 
-  
-
   .use-search {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 25rem;
     width: 90rem;
-  
-
 
    h2 { 
-    //  border: 1px solid orange;
      padding: 2%;
      border: 2px solid #ffffff;
      width: 80%;
@@ -389,7 +383,7 @@
 
    } //end of h2
    
- }//end of usesarch
+ }//end of usesearch
 
   .jobCard {
     border: 1px solid @quickhire-main;
