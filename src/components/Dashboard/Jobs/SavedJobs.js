@@ -68,7 +68,7 @@ function SavedJobs(props) {
     return (
         <StyledLoader active={loading} spinner text='Loading...'>
             {/* if save.length 1>= x < 3, then assign css class saved-jobs-small */}
-            <div className={(save.length >= 1 && save.length < 3 ? "saved-jobs-small" : "saved-jobs-main"  )}>
+            <div className={(save.length === 1 ? "saved-jobs-single" : (save.length === 2 ? "saved-jobs-small" : "saved-jobs-main"))}>
             {(save.length < 1 ?     
             //if object is empty, render empty message 
             <div className="empty-jobs">

@@ -351,6 +351,61 @@ header nav button:hover {
   color: #fff;
   background-color: #313843;
 }
+.dark-mode .saved-jobs-small {
+  background-color: #313843;
+}
+.dark-mode .saved-jobs-small .empty-jobs {
+  background: #313843;
+  color: #ffffff;
+}
+.dark-mode .container-profile {
+  background-color: #313843;
+}
+.dark-mode .profile-form-inputs2 div h3 {
+  color: black;
+}
+.dark-mode .card-container {
+  background: green;
+}
+.dark-mode .card-container-message {
+  background: #313843;
+}
+.dark-mode .card-container-vh {
+  background: #313843;
+}
+.dark-mode .card-container {
+  background: #313843;
+}
+.dark-mode .jobCard div {
+  background: #36454f;
+}
+.dark-mode .dashboardNav nav button {
+  border: 1px solid black;
+  width: 100%;
+  border: #3073AB;
+  background-color: #3073AB;
+  color: white;
+  width: 100px;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 1px;
+  padding: 1.5%;
+}
+.dark-mode .dashboardNav nav button:hover {
+  border: #ffffff;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #3073AB;
+  cursor: pointer;
+}
+.dark-mode .saved-jobs-main {
+  background-color: #313843;
+}
+.dark-mode .saved-jobs-main .empty-jobs {
+  background: #313843;
+  color: #ffffff;
+}
 .dark-mode .header {
   background-color: #313843;
   border: none;
@@ -397,6 +452,14 @@ header nav button:hover {
 }
 .dark-mode .profile-form-inputs2 h3 {
   color: white;
+}
+.dark-mode .job-details-container-2 {
+  background: #313843;
+  color: #ffffff;
+}
+.dark-mode .job-details-container {
+  background: #313843;
+  color: #ffffff;
 }
 .navbar {
   display: flex;
@@ -674,6 +737,14 @@ footer h4 {
   .saved-jobs-small {
     height: unset;
   }
+}
+.saved-jobs-single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  background: #87CEEB;
 }
 .saved-jobs-main {
   display: flex;
@@ -1037,7 +1108,7 @@ footer h4 {
   border: 1px solid #3073AB;
   background-color: #fafafa;
   width: 35rem;
-  height: 30rem;
+  height: 26rem;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   margin: 0.2%;
@@ -1169,10 +1240,10 @@ footer h4 {
   border: 1px solid #3073AB;
   background-color: #fafafa;
   width: 35rem;
-  height: 30rem;
+  height: 26rem;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
-  margin: 0.2%;
+  margin: 1%;
 }
 @media (max-width: 650px) {
   .card-container .jobCard {
@@ -1265,7 +1336,6 @@ footer h4 {
 .jobButtons {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 3%;
   padding: 2%;
 }
 .jobButtons button {
@@ -1313,6 +1383,11 @@ footer h4 {
   color: #fff;
 }
 @media (max-width: 650px) {
+  .job-details-container-2 {
+    height: unset;
+  }
+}
+@media (max-width: 350px) {
   .job-details-container-2 {
     height: unset;
   }
@@ -1381,16 +1456,6 @@ footer h4 {
   flex-direction: column;
   background: #87CEEB;
   color: #fff;
-}
-@media (max-width: 650px) {
-  .job-details-container {
-    height: unset;
-  }
-}
-@media (max-width: 350px) {
-  .job-details-container {
-    height: unset;
-  }
 }
 .job-details-container .deets-apply-button {
   display: flex;
