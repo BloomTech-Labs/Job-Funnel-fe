@@ -490,7 +490,8 @@ footer h4 {
   color: #ffffff;
 }
 .landing-page {
-  width: 90%;
+  background: #87CEEB;
+  width: 100%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .landing-page {
@@ -618,6 +619,7 @@ footer h4 {
   display: flex;
   width: 49%;
   justify-content: flex-end;
+  padding: 3%;
 }
 .landing-page .img-div img {
   max-width: 100%;
@@ -1307,6 +1309,8 @@ footer h4 {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #87CEEB;
+  color: #fff;
 }
 @media (max-width: 650px) {
   .job-details-container-2 {
@@ -1366,12 +1370,17 @@ footer h4 {
   padding: 0.5% 2%;
   font-size: 1.6rem;
 }
+.job-details-container-2 .desc-div {
+  color: black;
+}
 .job-details-container-2 .desc-div p {
   padding: 0.5% 2%;
 }
 .job-details-container {
   display: flex;
   flex-direction: column;
+  background: #87CEEB;
+  color: #fff;
 }
 @media (max-width: 650px) {
   .job-details-container {
@@ -1436,6 +1445,9 @@ footer h4 {
   padding: 0.5% 2%;
   font-size: 1.6rem;
 }
+.job-details-container .desc-div {
+  color: black;
+}
 .job-details-container .desc-div p {
   padding: 0.5% 2%;
 }
@@ -1444,6 +1456,7 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #87CEEB;
 }
 @media (max-width: 350px) {
   .main-div {
@@ -1900,6 +1913,7 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #87CEEB;
 }
 @media (max-width: 350px) {
   .main-div2 {
