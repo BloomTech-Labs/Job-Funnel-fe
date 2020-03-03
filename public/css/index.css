@@ -406,6 +406,9 @@ header nav button:hover {
   background: #313843;
   color: #ffffff;
 }
+.dark-mode .saved-jobs-single {
+  background-color: #313843;
+}
 .dark-mode .header {
   background-color: #313843;
   border: none;
