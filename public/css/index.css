@@ -911,6 +911,9 @@ footer h4 {
   padding-left: 3.3%;
   margin: 2%;
 }
+.filter-class form {
+  display: flex;
+}
 .filter-class div {
   margin: 1%;
 }
