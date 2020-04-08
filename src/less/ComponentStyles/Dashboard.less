@@ -14,11 +14,11 @@ form {
     margin: 1%;
   }
   .search-bar {
-    width: 180px;
+    width: 12vw;
     height: 35px;
     text-align: center;
     border-radius: 6px;
-    border: 1px solid @quickhire-main;
+    border:none;
   }
 
   .job-select {
@@ -113,22 +113,24 @@ form {
 
 .dashboardNav {
   display: flex;
-  width: 60%;
+  width: 14vw;
   min-width: 315px;
   max-width: 500px;
 
   nav {
-    border: 1px solid @quickhire-main;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 2%;
     border-radius: 8px;
-    width: 100%;
+    width: 50%;
     height: 40px;
+
+    
     button {
       border: 1px solid black;
       width: 95px;
+
       .button(
         @border: @quickhire-main,
         @borderHover: #ffffff,
@@ -136,7 +138,7 @@ form {
         @backgroundHover: @quickhire-main,
         @fontColor: @quickhire-main,
         @fontColorHover: white,
-        @height: 35px,
+        @height: 5px,
         @borderRadius: 8px,
         @margin: 0 2px,
         // @padding: 5%,
@@ -545,7 +547,22 @@ form {
 }
 
 .dashboard-nav {
-  padding-left: 3.3%;
   padding-bottom: 1.5%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   padding-top: 2%;
+
+}
+
+
+.left-nav-container{
+  background-color: #FFFFFF;
+  height: 100%;
+}
+#dash {
+  background-color: #FAFAFA;
+  display:flex;
+
 }
