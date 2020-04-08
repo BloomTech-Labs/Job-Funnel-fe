@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../redux-store/App/AppActions.js';
 import SimpleMenu from "./DropDown"
-import quickhire from './../images/quickhire.svg'
 
 
 // header - includes links to login, register, dashboard, menu drop down with logout and darkmode on it.
@@ -29,9 +28,7 @@ function Header(props) {
     return (
         <>
             <header>
-                <Link id="logo" to='/Dashboard'>
-                    <img src={quickhire} alt="logo" />
-                </Link>
+                <Link to='/Dashboard'><h1>QuickHire</h1></Link>
                 {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>
                 <option value={"css/red.css"}>red</option>

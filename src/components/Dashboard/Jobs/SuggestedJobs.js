@@ -16,18 +16,17 @@ export default function SuggestedJobs() {
 
     const [search, setSearch] = useState({
         title: null,
-        job_type: null,
         city: null,
         state_province: null,
         experience: null
     });
 
     const onSelectChange = e => {
-        setSearch({ ...search, [e.target.name]: e.target.value ? e.target.value : null });
+        const selectValue = e.target.value;
+        const selectInputName = e.target.name;
+        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : null });
+        console.log('set value', search)
     }
-
-
-
     const handleSubmit = event => {
         event.preventDefault();
         setLoading(true)
@@ -49,43 +48,19 @@ export default function SuggestedJobs() {
     return (
         <>
             <div className="filter-class ">
-                <form className="search-div" onSubmit={onSelectChange}>
+                <form className="search-div">
                     <div className='search-div animated flipInX faster' > <input className="search-bar"
                         type="text"
                         name="title"
-                        placeholder="Title"
+                        placeholder="Keywords"
                         tabIndex="0"
                         onChange={onSelectChange}
+                        handleSubmit={onSelectChange}
                     /></div>
-
-
-                    {//WE DONT HAVE THIS DATA YET
-                    /* <div className='search-div animated flipInX fast' > <select className="search-bar" onChange={onSelectChange} name="job_type" value={search.job_type}
-                    >
-                        <option selected value="coconut">Job Type</option>
-                        <option value="fulltime">Full-time</option>
-                        <option value="partime-">Part-Time</option>
-                        <option value="contract">Contract</option>
-                        <option value="temporary">Temporary</option>
-                        <option value="internships">Internships</option>
-                    </select>
-                    </div> */}
-
-                    <div className='search-div animated flipInX fast' > <select className="search-bar" name="experience" onChange={onSelectChange}
-                    >
-                        <option selected value="coconut">Experience</option>
-                        <option value="internship">Internship</option>
-                        <option value="entry">Entry</option>
-                        <option value="mid">Mid-level</option>
-                        <option value="senior">Senior</option>
-                    </select>
-                    </div>
-
-
                     <div className='search-div animated flipInX fast' > <input className="search-bar"
                         type="text"
                         name="city"
-                        placeholder="City"
+                        placeholder="Enter City"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
@@ -93,13 +68,20 @@ export default function SuggestedJobs() {
                     <div className='search-div animated flipInX  ' ><input className="search-bar"
                         type="text"
                         name="state_province"
-                        placeholder="State"
+                        placeholder="Enter State"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
 
-
+                    <div className='search-div animated flipInX slow'><input className="search-bar"
+                        type="text"
+                        name="experience"
+                        placeholder="Enter Experience"
+                        tabIndex="0"
+                        onChange={onSelectChange}
+                        handleSubmit={onSelectChange}
+                    /></div>
                     <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
