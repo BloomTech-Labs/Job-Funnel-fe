@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from "../../../utils/axiosWithAuth"
-
+import Modal from 'react-modal';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 
 function JobCard(props) {
-
+    console.log('PROPS', props)
     //variables
     const user_id = props.currentUser.id
     const job_id = props.id;
-
+    const [modal, setModal] = useState(false)
     const [toggle, setToggle] = useState(false)
     const [applytoggle, setApplytoggle] = useState(false)
-    
+
 
     //state for saved status
     const [saved, setSaved] = useState({
@@ -61,17 +61,18 @@ function JobCard(props) {
         <div className="jobCard">
             <div>
                 {(props.company === "" ? <p className="company-name">Name Unavailable</p>
-                 : <p className="company-name">{props.company}</p>)}
+                    : <p className="company-name">{props.company}</p>)}
             </div>
             <div className="card-text">
                 <div className="card-image">
                     <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
-                    <div>📍{props.location}</div>
+                    {props.location === ', ' ? null : <div>📍{props.location}</div>}
+
                 </div>
 
-            <div className="card-info">
-                <h3>{props.title}</h3>
-            </div>
+                <div className="card-info">
+                    <h3>{props.title}</h3>
+                </div>
 
             </div>
             <div className='jobButtons' >

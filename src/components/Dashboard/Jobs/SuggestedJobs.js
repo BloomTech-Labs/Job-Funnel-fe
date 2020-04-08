@@ -15,33 +15,20 @@ export default function SuggestedJobs() {
     const location = useLocation();
 
     const [search, setSearch] = useState({
-        title: '',
-        job_type: '',
-        city: '',
-        state_province: '',
-        experience: ''
+        title: null,
+        job_type: null,
+        city: null,
+        state_province: null,
+        experience: null
     });
 
     const onSelectChange = e => {
-        console.log(e)
-        const selectValue = e.target.value;
-        const selectInputName = e.target.name;
-        setSearch({ ...search, [selectInputName]: selectValue, job_type: e.target.value ? selectValue : undefined });
-        console.log('set value', search)
+        setSearch({ ...search, [e.target.name]: e.target.value ? e.target.value : null });
     }
 
 
-    const onSelectChange = e => {
-        console.log(e)
-        const selectValue = e.target.value;
-
-        const selectInputName = e.target.name;
-        setSearch({ ...search, [selectInputName]: selectValue, job_type: e.target.value ? selectValue : undefined });
-        console.log('set value', search)
-    }
 
     const handleSubmit = event => {
-        console.log('thisisseacrgh,', search)
         event.preventDefault();
         setLoading(true)
         searchAPI().get('/search', {
@@ -72,7 +59,8 @@ export default function SuggestedJobs() {
                     /></div>
 
 
-                    <div className='search-div animated flipInX fast' > <select className="search-bar" onChange={onSelect} name="job_type" value={search.job_type}
+                    {//WE DONT HAVE THIS DATA YET
+                    /* <div className='search-div animated flipInX fast' > <select className="search-bar" onChange={onSelectChange} name="job_type" value={search.job_type}
                     >
                         <option selected value="coconut">Job Type</option>
                         <option value="fulltime">Full-time</option>
@@ -81,7 +69,7 @@ export default function SuggestedJobs() {
                         <option value="temporary">Temporary</option>
                         <option value="internships">Internships</option>
                     </select>
-                    </div>
+                    </div> */}
 
                     <div className='search-div animated flipInX fast' > <select className="search-bar" name="experience" onChange={onSelectChange}
                     >
@@ -97,7 +85,7 @@ export default function SuggestedJobs() {
                     <div className='search-div animated flipInX fast' > <input className="search-bar"
                         type="text"
                         name="city"
-                        placeholder="Enter City"
+                        placeholder="City"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
@@ -105,7 +93,7 @@ export default function SuggestedJobs() {
                     <div className='search-div animated flipInX  ' ><input className="search-bar"
                         type="text"
                         name="state_province"
-                        placeholder="Enter State"
+                        placeholder="State"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
