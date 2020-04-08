@@ -86,8 +86,8 @@ function Header(props) {
                     else if (location.pathname === '/about' || location.pathname === '/About') {
                         return (
                             <nav>
-                                <Link to="/Login"> <button>Login</button> </Link>
-                                <Link to="/Register"> <button>Register</button> </Link>
+                                <Link to="/Dashboard"> <button>Dashboard</button> </Link>
+                                <Link to="/Profile"> <button>Profile</button> </Link>
                             </nav>
                         )
                     }

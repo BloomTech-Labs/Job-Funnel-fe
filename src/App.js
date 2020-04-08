@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Route,useLocation } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute.js"
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
@@ -24,31 +24,31 @@ function App(props) {
   const location = useLocation();
 
   useEffect(() => {
-      if (!props.loginFailed && !props.currentUser && sessionStorage.getItem('token')){
-        props.getCurrentUser();
-        setLoading(false);
-      }
-      else{
-        setLoading(false);
-      }
+    if (!props.loginFailed && !props.currentUser && sessionStorage.getItem('token')) {
+      props.getCurrentUser();
+      setLoading(false);
+    }
+    else {
+      setLoading(false);
+    }
   }, [props.currentUser])
 
   const changeTheme = (e) => {
     setTheme(e.target.value);
   }
-  
-  
+
+
   return (
     <div>
-      <link rel="stylesheet" type="text/css" href={theme}/>
-      <Header changeTheme={changeTheme}/>
+      <link rel="stylesheet" type="text/css" href={theme} />
+      <Header changeTheme={changeTheme} />
       <Route exact path='/' component={LandingPage} />
-        <Route exact path='/Login' component={Login} />
-        <Route exact path='/Register' component={Register} />
-        <Route exact path='/About' component={AboutUs}/>
-        <PrivateRoute path='/Profile' component={Profile} />
-        <PrivateRoute path='/Dashboard' component={Dashboard}/>
-        <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
+      <Route exact path='/Login' component={Login} />
+      <Route exact path='/Register' component={Register} />
+      <Route exact path='/About' component={AboutUs} />
+      <PrivateRoute path='/Profile' component={Profile} />
+      <PrivateRoute path='/Dashboard' component={Dashboard} />
+      <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
       <Footer />
     </div>
   );
@@ -57,10 +57,10 @@ function App(props) {
 const mapStateToProps = state => {
   // console.log('mapstatetoprops: ', state);
   return {
-      currentUser: state.AppReducer.currentUser,
-      otherUser: state.AppReducer.otherUser,
-      loading: state.AppReducer.loading,
-      loginFailed: state.AppReducer.loginFailed,
+    currentUser: state.AppReducer.currentUser,
+    otherUser: state.AppReducer.otherUser,
+    loading: state.AppReducer.loading,
+    loginFailed: state.AppReducer.loginFailed,
   }
 }
 
