@@ -15,16 +15,16 @@ export default function SuggestedJobs() {
     const location = useLocation();
 
     const [search, setSearch] = useState({
-        title: '',
-        city: '',
-        state_province: '',
-        experience: ''
+        title: null,
+        city: null,
+        state_province: null,
+        experience: null
     });
 
     const onSelectChange = e => {
         const selectValue = e.target.value;
         const selectInputName = e.target.name;
-        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : undefined });
+        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : null });
         console.log('set value', search)
     }
     const handleSubmit = event => {
