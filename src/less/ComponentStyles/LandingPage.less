@@ -1,27 +1,42 @@
 
 .landing-page {
   //   border: salmon dashed 1px;
-  background: @quickhire-message;
+  background: @quickhire-main;
+  background-image: linear-gradient(to bottom right, red, white);
   width: 100%;
+  height:90vh;
   // height: 100vh;
   @media @tablet{
     width: 100%;
   } @media @mobile{
     width: 100%;
   }
+
+.content-div {
+  display: flex;
+  height: 90vh;
+}
+
+.landing-info {
+  width: 50%;
+}
+
   h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 3.25rem;
-    padding: 2%;
+    font-family: "Lato", sans-serif;
+    font-size: 4.8rem;
+    padding: 5%;
+  color: white;
+
     @media @mobile{
       padding-left:2%;
     }
   }
-  .p-div {
-    font-size: large;
-    padding-top: 5%;
+ 
     .p-1 {
-      padding-left: 10%;
+      padding: 0 5%;
+      font-size: 1.7em;
+      width:80%;
+      color:white;
     }
     .p-2 {
       padding-left: 7%;
@@ -40,7 +55,7 @@
       .p-3 {
         padding-left: 4%;
       }
-    }
+    
   }
   .bottom-content {
     display: flex;
@@ -56,58 +71,13 @@
       width: 40%;
       height: 30%;
     }
-    .button-div {
-      display: flex;
-      width: 49%;
-      align-items: center;
-      justify-content: center;
-      @media @tablet {
-        width: 100%;
-        height: 15vh;
-        padding-top: 4%;
-      }
-      @media @mobile {
-        width: 100%;
-        height: 15vh;
-        padding-top: 4%;
-      }
-      button {
-        width: 100%;
-        height: 50%;
-        text-decoration: none;
-        font-size: medium;
-        color: @quickhire-main;
-        border: 1px solid @quickhire-main;
-        border-radius: 3px;
-        &:hover {
-          background: @quickhire-main;
-          border-radius: 5px;
-          color: #ffffff;
-        }
-        @media @tablet {
-          height: 100%;
-        }
-        @media @mobile {
-          height: 100%;
-        }
-        a {
-          @media @tablet {
-            height: 35%;
-            width: 60%;
-          }
-          @media @mobile {
-            height: 35%;
-            width: 60%;
-          }
-        }
-      }
-    }
+
   }
   .img-div {
     display: flex;
-    width: 49%;
+    width: 50%;
     justify-content: flex-end;
-    padding: 3%;
+    float: right;
     img {
       max-width: 100%;
     }
@@ -120,6 +90,57 @@
       flex-direction: column;
       width: 100%;
       justify-content: center;
+    }
+  }
+}
+
+
+.button-div {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-start;
+  @media @tablet {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+  @media @mobile {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+  button {
+    width: 100%;
+    text-decoration: none;
+    font-size: 2.5em;
+    color: @quickhire-main;
+    border: 1px solid @quickhire-main;
+    border-radius: 3px;
+    padding:5px 30px;
+    margin-left: 20%;
+    margin-top:5vh;
+    cursor: pointer;
+    &:hover {
+      background: @quickhire-main;
+      border-radius: 5px;
+      color: #ffffff;
+    }
+    @media @tablet {
+      height: 100%;
+    }
+    @media @mobile {
+      height: 100%;
+    }
+    a {
+      @media @tablet {
+        height: 35%;
+        width: 60%;
+      }
+      @media @mobile {
+        height: 35%;
+        width: 60%;
+      }
     }
   }
 }
