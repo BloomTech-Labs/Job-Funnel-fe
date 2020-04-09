@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
-
 import { validateInputs, isValidPassword } from '../../utils/AppUtils.js'
 import { updateUser, deleteProfilePicture, updateProfilePicture } from '../../redux-store/App/AppActions.js';
 import ProfilePicture from "./ProfilePicture.js"

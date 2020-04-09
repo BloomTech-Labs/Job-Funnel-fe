@@ -9,9 +9,9 @@ const LinkNav = styled(Link)`
     color: #000000;
     font-family: 'Lato';
     font-style: normal;
-font-weight: normal;
-font-size: 18px;
-margin-left:3vw;
+    font-weight: normal;
+    font-size: 18px;
+    margin-left:3vw;
 `
 
 export {

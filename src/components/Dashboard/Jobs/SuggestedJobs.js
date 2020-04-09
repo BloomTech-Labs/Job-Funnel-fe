@@ -100,7 +100,7 @@ export default function SuggestedJobs() {
                     /></div>
 
 
-                    <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
+                    <button className="submit-button animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
             <StyledLoader active={loading} spinner text='Searching for jobs...'>

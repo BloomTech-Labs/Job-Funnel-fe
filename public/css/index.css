@@ -204,6 +204,14 @@ header #logo {
   justify-content: center;
   align-items: center;
 }
+header #profile-image {
+  display: flex;
+}
+header .profile-nav {
+  border-radius: 50% 50%;
+  border: 1px solid #EC3944;
+  padding: 1px;
+}
 header a {
   text-decoration: none;
 }
@@ -244,7 +252,7 @@ header h1 {
   font-family: "Franklin Gothic Medium", Arial, sans-serif;
   margin: 0 0 0 30px;
   font-size: 25px;
-  color: #3073AB;
+  color: #EC3944;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   header h1 {
@@ -293,16 +301,16 @@ header nav {
   }
 }
 header nav button {
-  color: #3073AB;
+  color: #EC3944;
   width: 100px;
   height: 35px;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 3px;
   padding: 1%;
   background-color: whitesmoke;
 }
 header nav button:hover {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -342,7 +350,7 @@ header nav button:hover {
   width: 40px;
 }
 .toggle {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 50px;
   height: 12px;
   left: 0;
@@ -391,8 +399,8 @@ header nav button:hover {
 .dark-mode .dashboardNav nav button {
   border: 1px solid black;
   width: 100%;
-  border: #3073AB;
-  background-color: #3073AB;
+  border: #EC3944;
+  background-color: #EC3944;
   color: white;
   width: 100px;
   height: 45px;
@@ -405,7 +413,7 @@ header nav button:hover {
   border: #ffffff;
   border-radius: 6px;
   background: #ffffff;
-  color: #3073AB;
+  color: #EC3944;
   cursor: pointer;
 }
 .dark-mode .saved-jobs-main {
@@ -441,11 +449,11 @@ header nav button:hover {
   color: #313843;
 }
 .dark-mode .profile-top {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 6px;
 }
 .dark-mode .profileCard {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
 }
 .dark-mode .landing-page p {
   color: white;
@@ -504,11 +512,11 @@ header nav button:hover {
   }
 }
 .m-ui-container .drop-down-btn {
-  color: #3073AB;
+  color: #EC3944;
   background-color: whitesmoke;
   width: 100px;
   height: 35px;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 3px;
   padding: 1%;
   text-transform: capitalize;
@@ -541,7 +549,7 @@ header nav button:hover {
   }
 }
 .m-ui-container .drop-down-btn:hover {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -658,12 +666,12 @@ footer h4 {
   height: 50%;
   text-decoration: none;
   font-size: medium;
-  color: #3073AB;
-  border: 1px solid #3073AB;
+  color: #EC3944;
+  border: 1px solid #EC3944;
   border-radius: 3px;
 }
 .landing-page .bottom-content .button-div button:hover {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 5px;
   color: #ffffff;
 }
@@ -765,7 +773,7 @@ footer h4 {
   background: #FAFAFA;
 }
 .card-saved-jobs {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   background-color: #fafafa;
   padding: 2%;
   width: 30%;
@@ -817,14 +825,14 @@ footer h4 {
   justify-content: space-evenly;
 }
 .card-saved-jobs .saved-buttons button {
-  color: #3073AB;
+  color: #EC3944;
   width: 100px;
   height: 35px;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 3px;
 }
 .card-saved-jobs .saved-buttons button:hover {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 5px;
   color: #ffffff;
   cursor: pointer;
@@ -933,15 +941,17 @@ footer h4 {
   width: 133px;
   height: 35px;
   border-radius: 6px;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
 }
 .filter-class button {
   height: 35px;
-  background-color: #3073AB;
+  background-color: #EC3944;
   color: #ffffff;
   text-align: center;
   border-radius: 6px;
   margin: 1%;
+  border: none;
+  width: 10vw;
 }
 @media (max-width: 1000px) {
   .filter-class button {
@@ -952,9 +962,9 @@ footer h4 {
 }
 .filter-class button:hover {
   cursor: pointer;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   background-color: #ffffff;
-  color: #3073AB;
+  color: #EC3944;
 }
 @media (max-width: 1000px) {
   .filter-class {
@@ -1015,9 +1025,9 @@ footer h4 {
 .dashboardNav nav button {
   border: 1px solid black;
   width: 95px;
-  border: #3073AB;
+  border: #EC3944;
   background-color: #ffffff;
-  color: #3073AB;
+  color: #EC3944;
   width: ;
   height: 5px;
   border-radius: 8px;
@@ -1028,7 +1038,7 @@ footer h4 {
 .dashboardNav nav button:hover {
   border: #ffffff;
   border-radius: 6px;
-  background: #3073AB;
+  background: #EC3944;
   color: white;
   cursor: pointer;
 }
@@ -1053,12 +1063,12 @@ footer h4 {
 }
 .card-container-message .use-search h2 {
   padding: 2%;
-  border: 2px solid #ffffff;
+  border: 2px solid #EC3944;
   width: 80%;
   border-radius: 10px;
   box-shadow: 5px 5px;
   text-align: center;
-  color: #ffffff;
+  color: #EC3944;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .card-container-message .use-search h2 {
@@ -1118,7 +1128,7 @@ footer h4 {
   }
 }
 .card-container-vh .jobCard {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   background-color: #fafafa;
   width: 35rem;
   height: 26rem;
@@ -1150,7 +1160,7 @@ footer h4 {
   width: 75%;
 }
 .card-container-vh .jobCard .company-name {
-  background-color: #3073AB;
+  background-color: #EC3944;
   width: 100%;
   height: 4rem;
   text-align: center;
@@ -1250,7 +1260,7 @@ footer h4 {
   }
 }
 .card-container .jobCard {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   background-color: #fafafa;
   width: 35rem;
   height: 26rem;
@@ -1282,7 +1292,7 @@ footer h4 {
   width: 75%;
 }
 .card-container .jobCard .company-name {
-  background-color: #3073AB;
+  background-color: #EC3944;
   width: 100%;
   height: 4rem;
   text-align: center;
@@ -1356,12 +1366,12 @@ footer h4 {
   width: 100px;
   height: 35px;
   border-radius: 5px;
-  background: #3073AB;
+  background: #EC3944;
 }
 .jobButtons button:hover {
   background: #ffffff;
-  border: 1px solid #3073AB;
-  color: #3073AB;
+  border: 1px solid #EC3944;
+  color: #EC3944;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -1371,14 +1381,14 @@ footer h4 {
   margin: 10px 15px;
 }
 .jobButtons-top button {
-  color: #3073AB;
+  color: #EC3944;
   width: 100px;
   height: 35px;
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 3px;
 }
 .jobButtons-top button:hover {
-  background: #3073AB;
+  background: #EC3944;
   border-radius: 5px;
   color: #ffffff;
   cursor: pointer;
@@ -1398,6 +1408,9 @@ footer h4 {
 #dash {
   background-color: #FAFAFA;
   display: flex;
+}
+.submit-button {
+  background-color: #EC3944;
 }
 .job-details-container-2 {
   height: 100vh;
@@ -1423,7 +1436,7 @@ footer h4 {
 }
 .job-details-container-2 .deets-apply-button button {
   border: 1px solid black;
-  background-color: #3073AB;
+  background-color: #EC3944;
   color: #ffffff;
   width: 10%;
   height: 35px;
@@ -1433,10 +1446,10 @@ footer h4 {
   padding: 0;
 }
 .job-details-container-2 .deets-apply-button button:hover {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 6px;
   background: #ffffff;
-  color: #3073AB;
+  color: #EC3944;
   cursor: pointer;
 }
 @media (max-width: 650px) {
@@ -1488,7 +1501,7 @@ footer h4 {
 }
 .job-details-container .deets-apply-button button {
   border: 1px solid black;
-  background-color: #3073AB;
+  background-color: #EC3944;
   color: #ffffff;
   width: 10%;
   height: 35px;
@@ -1498,10 +1511,10 @@ footer h4 {
   padding: 0;
 }
 .job-details-container .deets-apply-button button:hover {
-  border: 1px solid #3073AB;
+  border: 1px solid #EC3944;
   border-radius: 6px;
   background: #ffffff;
-  color: #3073AB;
+  color: #EC3944;
   cursor: pointer;
 }
 @media (max-width: 650px) {
