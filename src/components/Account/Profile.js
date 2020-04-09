@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
-
 import { validateInputs, isValidPassword } from '../../utils/AppUtils.js'
 import { updateUser, deleteProfilePicture, updateProfilePicture } from '../../redux-store/App/AppActions.js';
 import ProfilePicture from "./ProfilePicture.js"
@@ -16,7 +15,7 @@ function Profile(props) {
   // #region Local State
   const [loading, setLoading] = useState(false);
   const [pictureLoading, setPictureLoading] = useState(false);
-  
+
   const [showEditForm, setShowEditForm] = useState(false);
   const [editFirstName, setEditFirstName] = useState('');
   const [editLastName, setEditLastName] = useState('');
@@ -32,51 +31,51 @@ function Profile(props) {
   const [newPassword, setNewPassword] = useState('');
   // #endregion
 
-  useEffect(()=>{
-    if(editFirstName || editLastName || editAbout || editEducation || editSkills || editPortfolio || editLinkedin || editResume || editGithub  || newPassword){
-        setEnterPasswordField(true)
-    }else{
-        setEnterPasswordField(false)
+  useEffect(() => {
+    if (editFirstName || editLastName || editAbout || editEducation || editSkills || editPortfolio || editLinkedin || editResume || editGithub || newPassword) {
+      setEnterPasswordField(true)
+    } else {
+      setEnterPasswordField(false)
     }
-    },[editFirstName, editLastName, editAbout, editEducation, newPassword, editSkills, editPortfolio, editLinkedin, editGithub, editResume])
+  }, [editFirstName, editLastName, editAbout, editEducation, newPassword, editSkills, editPortfolio, editLinkedin, editGithub, editResume])
 
-// #region functions
+  // #region functions
 
   // HANDLES CHANGES FOR EDIT PROFILE
   const handleChange = e => {
-      if (e.target.name === 'first_name'){
-          setEditFirstName(e.target.value);
-      }
-      else if (e.target.name === 'last_name'){
-          setEditLastName(e.target.value);
-      }
-      else if (e.target.name === 'education'){
-          setEditEducation(e.target.value);
-      }
-      else if (e.target.name === 'about'){
-          setEditAbout(e.target.value);
-      }
-      else if (e.target.name === 'skills'){
-          setEditSkills(e.target.value);
-      }
-      else if (e.target.name === 'portfolio'){
-          setEditPortfolio(e.target.value);
-      }
-      else if (e.target.name === 'linkedin'){
-          setEditLinkedin(e.target.value);
-      }
-      else if (e.target.name === 'github'){
-          setEditGithub(e.target.value);
-      }
-      else if (e.target.name === 'resume'){
-          setEditResume(e.target.value);
-      }
-      else if (e.target.name === 'newPassword'){
-          setNewPassword(e.target.value);
-      }
-      else if (e.target.name === 'oldPassword'){
-          setCurrentPassword(e.target.value);
-      }
+    if (e.target.name === 'first_name') {
+      setEditFirstName(e.target.value);
+    }
+    else if (e.target.name === 'last_name') {
+      setEditLastName(e.target.value);
+    }
+    else if (e.target.name === 'education') {
+      setEditEducation(e.target.value);
+    }
+    else if (e.target.name === 'about') {
+      setEditAbout(e.target.value);
+    }
+    else if (e.target.name === 'skills') {
+      setEditSkills(e.target.value);
+    }
+    else if (e.target.name === 'portfolio') {
+      setEditPortfolio(e.target.value);
+    }
+    else if (e.target.name === 'linkedin') {
+      setEditLinkedin(e.target.value);
+    }
+    else if (e.target.name === 'github') {
+      setEditGithub(e.target.value);
+    }
+    else if (e.target.name === 'resume') {
+      setEditResume(e.target.value);
+    }
+    else if (e.target.name === 'newPassword') {
+      setNewPassword(e.target.value);
+    }
+    else if (e.target.name === 'oldPassword') {
+      setCurrentPassword(e.target.value);
+    }
   };
 
   // WILL BE USED TO RESET ALL INPUTS AFTER HANDLE SUBMIT
@@ -113,23 +112,23 @@ function Profile(props) {
     if (editAbout) {
       userObj = { ...userObj, about: editAbout }
     }
-    if (editSkills){
-        userObj = {...userObj, skills: editSkills}
+    if (editSkills) {
+      userObj = { ...userObj, skills: editSkills }
     }
-    if (editLinkedin){
-        userObj = {...userObj, linkedin_url: editLinkedin}
+    if (editLinkedin) {
+      userObj = { ...userObj, linkedin_url: editLinkedin }
     }
-    if (editPortfolio){
-        userObj = {...userObj, portfolio_url: editPortfolio}
+    if (editPortfolio) {
+      userObj = { ...userObj, portfolio_url: editPortfolio }
     }
-    if (editGithub){
-        userObj = {...userObj, github_url: editGithub}
+    if (editGithub) {
+      userObj = { ...userObj, github_url: editGithub }
     }
-    if (editResume){
-        userObj = {...userObj, resume: editResume}
+    if (editResume) {
+      userObj = { ...userObj, resume: editResume }
     }
-    if (newPassword){
-        userObj = {...userObj, newPassword: newPassword}
+    if (newPassword) {
+      userObj = { ...userObj, newPassword: newPassword }
     }
 
     if (currentPassword === '') {
@@ -164,7 +163,7 @@ function Profile(props) {
 
   return (
     <StyledLoader active={loading} spinner text='Loading...'>
-     
+
       {/* Profile Page info, takes in props in order to fill in the information that you used while signing up, it also allows the data to be passed into it from where you edit the profile form.       */}
       <div className="container-profile animated fadeIn faster delay-1s ">
         {!showEditForm && <>
@@ -172,8 +171,8 @@ function Profile(props) {
             <div className="profile-top" >
               <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
               <div className="profileNameDiv">
-                  <h3 data-testid="first-last">{props.currentUser.first_name} {props.currentUser.last_name}</h3>
-                  <h4>{props.currentUser.email}</h4>
+                <h3 data-testid="first-last">{props.currentUser.first_name} {props.currentUser.last_name}</h3>
+                <h4>{props.currentUser.email}</h4>
                 <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
               </div>
             </div>
@@ -185,21 +184,22 @@ function Profile(props) {
               <h3>Education</h3>
               <p>{props.currentUser.education}</p>
             </div>
-            <div className="profileCard" style={{marginBottom: "2%"}}>
+            <div className="profileCard" style={{ marginBottom: "2%" }}>
               <h3>Profile Links</h3>
               <p>Github: <a href={props.currentUser.github_url}>{props.currentUser.github_url}</a></p>
+              <p>LinkedIn: <a href={props.currentUser.linkedin_url}>{props.currentUser.linkedin_url}</a></p>
               <p>Resume: <a href={props.currentUser.resume}>{props.currentUser.resume}</a></p>
               <p>Portfolio: <a href={props.currentUser.portfolio_url}>{props.currentUser.portfolio_url}</a></p>
             </div>
           </section>
         </>}
 
-{/* This is the edit form information, this is what you're messing with whenever you click edit profile on the profile page. */}
-      {showEditForm && <>
-        <div className="profile-main-div2" data-testid="first-last">
-          <div className="profile-second-main2">
-            <section className="profile-section">
-              <div className="edit-profile-top" >
+        {/* This is the edit form information, this is what you're messing with whenever you click edit profile on the profile page. */}
+        {showEditForm && <>
+          <div className="profile-main-div2" data-testid="first-last">
+            <div className="profile-second-main2">
+              <section className="profile-section">
+                <div className="edit-profile-top" >
                   <h3>Update Profile</h3>
                   <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
                 </div>
@@ -211,40 +211,40 @@ function Profile(props) {
                         <h3>Skills</h3>
                         <input className="text-input" name="skills" type="text" onChange={handleChange} placeholder={props.currentUser.skills ? props.currentUser.skills : 'Skills' } />
                     </div> */}
-                    
-                      <div>
-                        <h3>First Name</h3>
-                        <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} />
-                      </div>
-                      <div>
-                        <h3>Last Name</h3>
-                        <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name} />
-                      </div>
+
+                    <div>
+                      <h3>First Name</h3>
+                      <input className="text-input" name="first_name" onChange={handleChange} placeholder={props.currentUser.first_name} />
                     </div>
                     <div>
-                      <h3 style={{ marginTop: "1%" }}>About</h3>
-                      <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself'} />
+                      <h3>Last Name</h3>
+                      <input className="text-input" name="last_name" onChange={handleChange} placeholder={props.currentUser.last_name} />
                     </div>
-                    <div>
-                      <h3>Education</h3>
-                      <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education'} />
-                    </div>
-                    <div>
-                        <h3>Github</h3>
-                        <input className="text-input" name="github" type="text" onChange={handleChange} placeholder={props.currentUser.github_url ? props.currentUser.github_url : 'Enter Github URL' } />
-                    </div>
-                    <div>
-                        <h3>Portfolio</h3>
-                        <input className="text-input" name="portfolio" type="text" onChange={handleChange} placeholder={props.currentUser.portfolio_url ? props.currentUser.portfolio_url : 'Enter Portfolio' } />
-                    </div>
-                    <div>
-                        <h3>Linkedin</h3>
-                        <input className="text-input" name="linkedin" type="text" onChange={handleChange} placeholder={props.currentUser.linkedin_url ? props.currentUser.linkedin_url : 'Enter Linkedin URL ' } />
-                    </div>
-                    <div>
-                        <h3>Upload Resume</h3>
-                        <input className="text-input" name="resume" type="text" onChange={handleChange} placeholder={props.currentUser.resume ? props.currentUser.resume : 'Upload Resume Here' } />
-                    </div>
+                  </div>
+                  <div>
+                    <h3 style={{ marginTop: "1%" }}>About</h3>
+                    <textarea className="text-input" name="about" type="text" onChange={handleChange} placeholder={props.currentUser.about ? props.currentUser.about : 'Tell Us Something About Yourself'} />
+                  </div>
+                  <div>
+                    <h3>Education</h3>
+                    <input className="text-input" name="education" type="text" onChange={handleChange} placeholder={props.currentUser.education ? props.currentUser.education : 'Education'} />
+                  </div>
+                  <div>
+                    <h3>Github</h3>
+                    <input className="text-input" name="github" type="text" onChange={handleChange} placeholder={props.currentUser.github_url ? props.currentUser.github_url : 'Enter Github URL'} />
+                  </div>
+                  <div>
+                    <h3>Portfolio</h3>
+                    <input className="text-input" name="portfolio" type="text" onChange={handleChange} placeholder={props.currentUser.portfolio_url ? props.currentUser.portfolio_url : 'Enter Portfolio'} />
+                  </div>
+                  <div>
+                    <h3>Linkedin</h3>
+                    <input className="text-input" name="linkedin" type="text" onChange={handleChange} placeholder={props.currentUser.linkedin_url ? props.currentUser.linkedin_url : 'Enter Linkedin URL '} />
+                  </div>
+                  <div>
+                    <h3>Upload Resume</h3>
+                    <input className="text-input" name="resume" type="text" onChange={handleChange} placeholder={props.currentUser.resume ? props.currentUser.resume : 'Upload Resume Here'} />
+                  </div>
                   <div>
                     <h3>New password</h3>
                     <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password' />

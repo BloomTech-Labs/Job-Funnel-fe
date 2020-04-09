@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from '../../images/landing.png'
+import landing from '../../images/landing.png'
+
 
 
 
@@ -20,10 +21,9 @@ const LandingPage = () => {
                         <p>match!</p>
                     </div>
                     
-                    <div className='img'>
-                        {/* <div><img src={image} /></div> */}
-                    </div>
+                 <div className='img-div'><img src={landing} width="650" /></div>
                 </div>
+
             </div>
 
 

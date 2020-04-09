@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DarkMode from './DarkMode/DarkMode-Toggle';
 import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -6,12 +6,17 @@ import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../redux-store/App/AppActions.js';
 import SimpleMenu from "./DropDown";
 import logo from '../images/quickhire.svg';
+import { getCurrentUser } from '../redux-store/App/AppActions.js'
+import SimpleMenu from "./DropDown"
+import quickhire from './../images/quickhire.svg'
 
 
 // header - includes links to login, register, dashboard, menu drop down with logout and darkmode on it.
 function Header(props) {
     const location = useLocation();
     const history = useHistory();
+
+    const profilePic = props.currentUser.profile_img
 
     const logOut = () => {
         sessionStorage.removeItem('token');
@@ -23,7 +28,7 @@ function Header(props) {
     //     props.history.push('/')
     // }
 
-
+    console.log('?????', props.currentUser)
 
     console.log('location', location.pathname)
     return (
@@ -31,6 +36,7 @@ function Header(props) {
             <header>
                 <Link to='/Dashboard'>
                     <img className="logo-img" src={logo} />
+
                 </Link>
                 {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>
@@ -56,9 +62,13 @@ function Header(props) {
                     else if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved' || location.pathname === '/Dashboard/Applied') {
                         return (
                             <nav>
-                                <Link to="/Profile"> <button>My Profile</button> </Link>
+
                                 {/* <button onClick={logOut}> Sign Out </button> */}
                                 <SimpleMenu logout={logOut} />
+                                <div id="profile-image">
+                                    <Link to="/Profile">
+                                        <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> </Link>
+                                </div>
                             </nav>
                         )
                     }
