@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import axios from 'axios'
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
+import { Link, NavLink } from 'react-router-dom';
 
 import { login } from "../../redux-store/App/AppActions"
 
@@ -48,24 +49,39 @@ const Login = (props) => {
     }
 
     return (
-        <StyledLoader active={loading} spinner text='Loading...'>
-            <>
-                <div className="main-div ">
-                    <div className="second-main">
-                        <h3 className="make animated faster zoomInRight">Make the most of your professional life.</h3>
-                        <form className="main-form animated faster zoomInLeft" onSubmit={handleSubmit}>
-                            <div className="form-inputs">
-                                <label>Email</label>
-                                <input type="email" name="email" value={user.email} onChange={handleChange} />
-                                <label>Password</label>
-                                <input type="password" name="password" value={user.password} onChange={handleChange} />
-                            </div>
-                            <button className="buttonclass" onClick={handleSubmit}>Login</button>
-                        </form>
+        // <StyledLoader active={loading} spinner text='Loading...'>
+        //     <>
+        //         <div className="main-div ">
+        //             <div className="second-main">
+        //                 <h3 className="make animated faster zoomInRight">Make the most of your professional life.</h3>
+        //                 <form className="main-form animated faster zoomInLeft" onSubmit={handleSubmit}>
+        //                     <div className="form-inputs">
+        //                         <label>Email</label>
+        //                         <input type="email" name="email" value={user.email} onChange={handleChange} />
+        //                         <label>Password</label>
+        //                         <input type="password" name="password" value={user.password} onChange={handleChange} />
+        //                     </div>
+        //                     <button className="buttonclass" onClick={handleSubmit}>Login</button>
+        //                 </form>
+        //             </div>
+        //         </div>
+        //     </>
+        // </StyledLoader>
+        <div className="login-page">
+          <div className="form-wrap">
+            <form onSubmit={handleSubmit}>
+                <div className="form-inputs">
+                    <div className="buttons-wrap">
+                        <button className="log-in-btn">Log in</button>
+                        <Link to="/Register"><button className="sign-up-btn">Sign up</button></Link>
                     </div>
+                    <input type="email" name="email" value={user.email} placeholder="Username" onChange={handleChange} />
+                    <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange} />
                 </div>
-            </>
-        </StyledLoader>
+                <button className="submit-login" onClick={handleSubmit}>Log in</button>
+            </form>
+          </div>
+        </div>
     )
 }
 

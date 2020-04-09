@@ -12,6 +12,10 @@ export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+
+    }, [])
+
     const location = useLocation();
 
     const [search, setSearch] = useState({
@@ -34,7 +38,7 @@ export default function SuggestedJobs() {
         searchAPI().get('/search', {
             params: search,
         }).then((response) => {
-            console.log(response)
+            console.log('RESPONSE: ', response)
             setJobs(response.data.responses);
             setLoading(false)
 

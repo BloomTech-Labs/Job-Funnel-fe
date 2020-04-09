@@ -1,95 +1,54 @@
 
 .landing-page {
-  //   border: salmon dashed 1px;
-  background: @quickhire-main;
-  background-image: linear-gradient(to bottom right, red, white);
   width: 100%;
-  height:90vh;
-  // height: 100vh;
-  @media @tablet{
-    width: 100%;
-  } @media @mobile{
-    width: 100%;
-  }
-
-.content-div {
+  height: calc(100vh - 75px);
   display: flex;
-  height: 90vh;
-}
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(140deg,  rgba(193, 58, 67, 1) , rgba(193, 58, 67, 1), rgba(193, 58, 67, 0.9), rgba(231, 214, 215, 1), rgba(231, 214, 215, 0),);
 
-.landing-info {
-  width: 50%;
-}
+  .content-div {
+    height: 60%;
+    width: 80%;
+    color: white;
 
-  h1 {
-    font-family: "Lato", sans-serif;
-    font-size: 4.8rem;
-    padding: 5%;
-  color: white;
+    h1 {
+      line-height: 1.2em;
+      font-weight: 200;
+      letter-spacing: 2px;
+    }
 
-    @media @mobile{
-      padding-left:2%;
-    }
-  }
- 
-    .p-1 {
-      padding: 0 5%;
-      font-size: 1.7em;
-      width:80%;
-      color:white;
-    }
-    .p-2 {
-      padding-left: 7%;
-    }
-    .p-3 {
-      padding-left: 4%;
-    }
-    @media @mobile {
-      font-size: unset;
-      .p-1 {
-        padding-left: 4%;
+    .bottom-content {
+      display: flex;
+
+      .text {
+        font-weight: 200;
+        padding-top: 30px;
+
+        button {
+          width: 120px;
+          height: 32px;
+          border-radius: 2px;
+          color: white;
+          // background-color: #EC3944;
+          background: rgba(236, 57, 68, 0.9);
+          // background-color: #EF7880;
+          border: 1px solid transparent;
+          margin-top: 40px;
+          font-size: 1.4rem;
+          cursor: pointer;
+          padding: 5px;
+        }
+        button:hover {
+          box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
       }
-      .p-2 {
-        padding-left: 4%;
-      }
-      .p-3 {
-        padding-left: 4%;
-      }
-    
-  }
-  .bottom-content {
-    display: flex;
-    @media @tablet {
-      flex-direction: column;
-      width: 100%;
-    }
-    @media @mobile {
-      flex-direction: column;
-      width: 100%;
-    }
-    a {
-      width: 40%;
-      height: 30%;
-    }
 
-  }
-  .img-div {
-    display: flex;
-    width: 50%;
-    justify-content: flex-end;
-    float: right;
-    img {
-      max-width: 100%;
-    }
-    @media @mobile {
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-    }
-    @media @tablet {
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
+      .img {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
