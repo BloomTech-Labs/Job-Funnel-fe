@@ -9,10 +9,10 @@ function DashboardNav() {
                 {/* <Link to='/Dashboard'>
                     <button className="dashboard-nav">Dashboard</button>
                 </Link> */}
-                <LinkNav to='/Dashboard/Saved'>
+                <LinkNav to='/Dashboard/Applied'>
                     Applied
                 </LinkNav>
-                <LinkNav to='/Dashboard/Applied'>
+                <LinkNav to='/Dashboard/Saved'>
                     Saved
                 </LinkNav>
             </nav>
