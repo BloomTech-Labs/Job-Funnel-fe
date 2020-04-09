@@ -1424,6 +1424,9 @@ footer h4 {
 .submit-button {
   background-color: #EC3944;
 }
+button {
+  cursor: pointer;
+}
 .job-details-container-2 {
   height: 100vh;
   display: flex;
@@ -2056,19 +2059,16 @@ footer h4 {
     margin-top: 20%;
   }
 }
-.main-div2 .second-main2 .make2 {
-  text-align: center;
-  padding: 2%;
-}
 .main-div2 .second-main2 button {
-  width: 387px;
+  width: 10vw;
   height: 48px;
-  background: #3073AB;
-  border: 1px solid #D3D3D3;
+  background: #EC3944;
   color: #fff;
-  font-size: 1rem;
+  font-size: 2em;
+  border: none;
   border-radius: 8px;
   margin-top: 5%;
+  right: 0;
 }
 @media (max-width: 350px) {
   .main-div2 .second-main2 button {
@@ -2082,7 +2082,8 @@ footer h4 {
 }
 .main-div2 .second-main2 button:hover {
   background: #fff;
-  color: #3073AB;
+  color: #EC3944;
+  border: 2px solid #EC3944;
 }
 .main-div2 .second-main2 .main-form2 {
   border: 1px solid #D6D6D6;

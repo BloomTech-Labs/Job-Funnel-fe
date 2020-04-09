@@ -71,7 +71,7 @@ const Register = (props) => {
             <>
                 <div className="main-div2">
                     <div className="second-main2">
-                        <h3 className="make2 animated faster zoomInRight">Make the most of your professional life.</h3>
+
                         {/* The form used on the registration page */}
                         <form className="main-form2  animated faster zoomInLeft" onSubmit={handleSubmit}>
                             <div className="form-inputs2">
@@ -91,7 +91,7 @@ const Register = (props) => {
                             <option value={"company"}>Company</option>
                         </select>  */}
                             </div>
-                            <button className="buttonclass" onClick={handleSubmit}>Register</button>
+                            <button className="buttonclass" onClick={handleSubmit}>Next</button>
                         </form>
                     </div>
                 </div>

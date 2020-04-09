@@ -16,7 +16,7 @@ const LandingPage = () => {
                     <div className='animated flip button-div'><Link to="/Register"> <button >Join Now!</button></Link></div>
                 </div>
 
-                <div className='img-div'><img src={landing} width="600" /></div>
+                <div className='img-div'><img src={landing} width="650" /></div>
 
 
 
