@@ -572,8 +572,10 @@ footer h4 {
   color: #ffffff;
 }
 .landing-page {
-  background: #FAFAFA;
+  background: #EC3944;
+  background-image: linear-gradient(to bottom right, red, white);
   width: 100%;
+  height: 90vh;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   .landing-page {
@@ -585,40 +587,47 @@ footer h4 {
     width: 100%;
   }
 }
+.landing-page .content-div {
+  display: flex;
+  height: 90vh;
+}
+.landing-page .landing-info {
+  width: 50%;
+}
 .landing-page h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 3.25rem;
-  padding: 2%;
+  font-family: "Lato", sans-serif;
+  font-size: 4.8rem;
+  padding: 5%;
+  color: white;
 }
 @media (max-width: 650px) {
   .landing-page h1 {
     padding-left: 2%;
   }
 }
-.landing-page .p-div {
-  font-size: large;
-  padding-top: 5%;
+.landing-page .p-1 {
+  padding: 0 5%;
+  font-size: 1.7em;
+  width: 80%;
+  color: white;
 }
-.landing-page .p-div .p-1 {
-  padding-left: 10%;
-}
-.landing-page .p-div .p-2 {
+.landing-page .p-2 {
   padding-left: 7%;
 }
-.landing-page .p-div .p-3 {
+.landing-page .p-3 {
   padding-left: 4%;
 }
 @media (max-width: 650px) {
-  .landing-page .p-div {
+  .landing-page {
     font-size: unset;
   }
-  .landing-page .p-div .p-1 {
+  .landing-page .p-1 {
     padding-left: 4%;
   }
-  .landing-page .p-div .p-2 {
+  .landing-page .p-2 {
     padding-left: 4%;
   }
-  .landing-page .p-div .p-3 {
+  .landing-page .p-3 {
     padding-left: 4%;
   }
 }
@@ -641,67 +650,11 @@ footer h4 {
   width: 40%;
   height: 30%;
 }
-.landing-page .bottom-content .button-div {
-  display: flex;
-  width: 49%;
-  align-items: center;
-  justify-content: center;
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .landing-page .bottom-content .button-div {
-    width: 100%;
-    height: 15vh;
-    padding-top: 4%;
-  }
-}
-@media (max-width: 650px) {
-  .landing-page .bottom-content .button-div {
-    width: 100%;
-    height: 15vh;
-    padding-top: 4%;
-  }
-}
-.landing-page .bottom-content .button-div button {
-  width: 100%;
-  height: 50%;
-  text-decoration: none;
-  font-size: medium;
-  color: #EC3944;
-  border: 1px solid #EC3944;
-  border-radius: 3px;
-}
-.landing-page .bottom-content .button-div button:hover {
-  background: #EC3944;
-  border-radius: 5px;
-  color: #ffffff;
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .landing-page .bottom-content .button-div button {
-    height: 100%;
-  }
-}
-@media (max-width: 650px) {
-  .landing-page .bottom-content .button-div button {
-    height: 100%;
-  }
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .landing-page .bottom-content .button-div button a {
-    height: 35%;
-    width: 60%;
-  }
-}
-@media (max-width: 650px) {
-  .landing-page .bottom-content .button-div button a {
-    height: 35%;
-    width: 60%;
-  }
-}
 .landing-page .img-div {
   display: flex;
-  width: 49%;
+  width: 50%;
   justify-content: flex-end;
-  padding: 3%;
+  float: right;
 }
 .landing-page .img-div img {
   max-width: 100%;
@@ -718,6 +671,65 @@ footer h4 {
     flex-direction: column;
     width: 100%;
     justify-content: center;
+  }
+}
+.button-div {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .button-div {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+}
+@media (max-width: 650px) {
+  .button-div {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+}
+.button-div button {
+  width: 100%;
+  text-decoration: none;
+  font-size: 2.5em;
+  color: #EC3944;
+  border: 1px solid #EC3944;
+  border-radius: 3px;
+  padding: 5px 30px;
+  margin-left: 20%;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+.button-div button:hover {
+  background: #EC3944;
+  border-radius: 5px;
+  color: #ffffff;
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .button-div button {
+    height: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .button-div button {
+    height: 100%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .button-div button a {
+    height: 35%;
+    width: 60%;
+  }
+}
+@media (max-width: 650px) {
+  .button-div button a {
+    height: 35%;
+    width: 60%;
   }
 }
 .empty-jobs {
