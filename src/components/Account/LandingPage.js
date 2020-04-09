@@ -21,10 +21,10 @@ const LandingPage = () => {
                         <p>match!</p>
                     </div>
                     
-                 <div className='img-div'><img src={landing} width="650" /></div>
                 </div>
 
             </div>
+            <div className='img-div'><img src={landing} width="650" /></div>
 
 
         </section>

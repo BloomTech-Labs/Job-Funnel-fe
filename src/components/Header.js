@@ -7,7 +7,6 @@ import { logout } from '../redux-store/App/AppActions.js';
 import SimpleMenu from "./DropDown";
 import logo from '../images/quickhire.svg';
 import { getCurrentUser } from '../redux-store/App/AppActions.js'
-import SimpleMenu from "./DropDown"
 import quickhire from './../images/quickhire.svg'
 
 
