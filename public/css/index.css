@@ -564,7 +564,7 @@ footer h4 {
   color: #ffffff;
 }
 .landing-page {
-  background: #87CEEB;
+  background: #FAFAFA;
   width: 100%;
 }
 @media (min-width: 651px) and (max-width: 800px) {
@@ -718,7 +718,7 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 .empty-jobs div {
   border-radius: 10px;
@@ -737,7 +737,7 @@ footer h4 {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 @media (max-width: 650px) {
   .saved-jobs-small {
@@ -755,14 +755,14 @@ footer h4 {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 .saved-jobs-main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 .card-saved-jobs {
   border: 1px solid #3073AB;
@@ -1041,7 +1041,7 @@ footer h4 {
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background: #87CEEB;
+  background: #FAFAFA;
   height: 100vh;
 }
 .card-container-message .use-search {
@@ -1077,7 +1077,7 @@ footer h4 {
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background: #87CEEB;
+  background: #FAFAFA;
   height: 100vh;
 }
 @media (max-width: 650px) {
@@ -1220,7 +1220,7 @@ footer h4 {
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 .card-container .use-search {
   display: flex;
@@ -1403,7 +1403,7 @@ footer h4 {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #87CEEB;
+  background: #FAFAFA;
   color: #fff;
 }
 @media (max-width: 650px) {
@@ -1478,7 +1478,7 @@ footer h4 {
 .job-details-container {
   display: flex;
   flex-direction: column;
-  background: #87CEEB;
+  background: #FAFAFA;
   color: #fff;
 }
 .job-details-container .deets-apply-button {
@@ -1545,7 +1545,7 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 @media (max-width: 350px) {
   .main-div {
@@ -2002,7 +2002,7 @@ footer h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #87CEEB;
+  background: #FAFAFA;
 }
 @media (max-width: 350px) {
   .main-div2 {
