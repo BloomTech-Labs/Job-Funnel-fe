@@ -49,7 +49,7 @@ function App(props) {
         <PrivateRoute path='/Profile' component={Profile} />
         <PrivateRoute path='/Dashboard' component={Dashboard}/>
         <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
