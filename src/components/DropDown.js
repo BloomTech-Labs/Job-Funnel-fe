@@ -13,7 +13,7 @@ import { ThemeProvider } from '@material-ui/styles';
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      'Franklin Gothic Medium',
+      'Lato',
       'Arial',
       'sans-serif'
     ].join(','),

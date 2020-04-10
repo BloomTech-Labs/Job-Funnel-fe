@@ -1,4 +1,32 @@
 @font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-v.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwfo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
+@font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -96,7 +124,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: BlinkMacSystemFont, Helvetica Neue, sans-serif;
+  font-family: Lato, Helvetica Neue, sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -202,6 +230,16 @@ header .logo-img {
 }
 header #profile-image {
   display: flex;
+  width: 100%;
+  margin-left: 1vw;
+}
+header #profile-image button {
+  background-color: #EC3944;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  margin-left: 5px;
+  border-radius: 5px;
 }
 header .profile-nav {
   border-radius: 50% 50%;
@@ -245,7 +283,7 @@ header a {
   }
 }
 header h1 {
-  font-family: "Franklin Gothic Medium", Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   margin: 0 0 0 30px;
   font-size: 25px;
   color: #EC3944;
@@ -1631,16 +1669,52 @@ button {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background: #87CEEB;
+  background: white;
+  font-family: 'Lato';
 }
 .profile-section {
   display: flex;
   flex-flow: column wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.profile-section #profile-cards {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.profile-section button {
+  width: 35%;
+  padding: 10px 5px;
+  background: #AC2A38;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5em;
+  border-radius: 8px;
+  margin: 2%;
+}
+.profile-section button:hover {
+  background: #ffffff;
+  color: #AC2A38;
+}
+@media (max-width: 650px) {
+  .profile-section button {
+    height: 100%;
+    width: 50%;
+    padding: 3%;
+  }
+}
+@media (min-width: 651px) and (max-width: 800px) {
+  .profile-section button {
+    height: 5%;
+    width: 50%;
+    padding: 2%;
+  }
 }
 .profileNameDiv {
   display: flex;
@@ -1673,35 +1747,6 @@ button {
   margin: 0;
   padding: 0;
 }
-.profileNameDiv button {
-  width: 25%;
-  height: 75%;
-  padding: 2%;
-  background: #3073AB;
-  border: 1px solid #D3D3D3;
-  color: #ffffff;
-  font-size: 1rem;
-  border-radius: 8px;
-  margin-top: 5%;
-}
-.profileNameDiv button:hover {
-  background: #ffffff;
-  color: #3073AB;
-}
-@media (max-width: 650px) {
-  .profileNameDiv button {
-    height: 100%;
-    width: 50%;
-    padding: 3%;
-  }
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .profileNameDiv button {
-    height: 5%;
-    width: 50%;
-    padding: 2%;
-  }
-}
 .profile-top {
   display: flex;
   flex-direction: row;
@@ -1732,18 +1777,13 @@ button {
   }
 }
 .profileCard {
-  border: 1px solid #D3D3D3;
-  color: black;
+  width: 40%;
+  margin-bottom: 2vh;
   display: flex;
+  text-align: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  width: 50%;
-  margin: 0.5% 0 0.5% 0;
-  padding: 2%;
-  background: #ffffff;
-  border-radius: 5px;
+  justify-content: center;
 }
 @media (max-width: 650px) {
   .profileCard {
@@ -1756,8 +1796,14 @@ button {
     width: 70%;
   }
 }
+.profileCard h3 {
+  font-weight: bold;
+}
+.profileCard h4 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
 .profileCard div {
-  border: 2px solid #D3D3D3;
   border-radius: 8px;
   background-color: #f8f8f8;
   color: black;
@@ -1777,7 +1823,6 @@ button {
   }
 }
 .profileCard p {
-  text-align: left;
   width: 100%;
 }
 @media (max-width: 650px) {
@@ -1837,7 +1882,6 @@ button {
   min-height: 550px;
   background: #fff;
   width: 100%;
-  border: 1px solid #d1d5da;
   border-radius: 5px;
 }
 @media (max-width: 650px) {
@@ -1920,17 +1964,19 @@ button {
   }
 }
 .edit-profile-btns button {
-  width: 40%;
+  width: 30%;
   height: 4rem;
-  background: #3073AB;
+  background: #EC3944;
+  border: none;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.3em;
   border-radius: 8px;
   margin: 2%;
 }
 .edit-profile-btns button:hover {
   background: #ffffff;
-  color: #3073AB;
+  color: #AC2A38;
+  border: 1px solid #AC2A38;
 }
 @media (max-width: 650px) {
   .edit-profile-btns button {

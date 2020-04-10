@@ -17,8 +17,8 @@ export default function ProfilePicture(props) {
                             <FontAwesomeIcon icon={faCamera} className='fa-1x' />
                         </div>
                         {props.currentUser.profile_img
-                            ? (<ProfileImg style={{ backgroundImage: `url('${props.currentUser.profile_img}')` }} />)
-                            : (<DefaultProfile icon={faUserCircle} />)}
+                            ? <Image src={props.currentUser.profile_img} /> : (<DefaultProfile icon={faUserCircle} />)
+                        }
                     </ProfileFilter>
                 </label>
             </StyledLoader>
@@ -74,7 +74,7 @@ const DefaultProfile = styled(FontAwesomeIcon)`
         opacity: 0.2;
     }
 `;
-const ProfileImg = styled.div`
+const Image = styled.img`
     position: absolute;
     width: 100%;
     height: 100%;
