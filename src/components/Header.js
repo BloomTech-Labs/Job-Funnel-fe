@@ -66,7 +66,8 @@ function Header(props) {
                                 <SimpleMenu logout={logOut} />
                                 <div id="profile-image">
                                     <Link to="/Profile">
-                                        <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> </Link>
+                                        {props.currentUser.profile_img ? <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> : <button>Profile</button>}
+                                    </Link>
                                 </div>
                             </nav>
                         )
@@ -83,14 +84,14 @@ function Header(props) {
 
                     else if (location.pathname === '/login' || location.pathname === '/Login') {
                         return (
-                            <nav style={{minWidth: '0px'}}>
+                            <nav style={{ minWidth: '0px' }}>
                                 <Link to="/Register"> <button className="sign-up-btn">Sign up</button> </Link>
                             </nav>
                         )
                     }
                     else if (location.pathname === '/register' || location.pathname === '/Register') {
                         return (
-                            <nav style={{minWidth: '0px'}}>
+                            <nav style={{ minWidth: '0px' }}>
                                 <Link to="/Login"> <button className="log-in-btn">Log in</button> </Link>
                             </nav>
                         )
