@@ -241,77 +241,116 @@ header {
 	color: #fff;
 	background-color: @darkmode-background;
 
-	.saved-jobs-small {
-		background-color: @darkmode-background;
+		#dash{
+			background-color: @darkmode-background;
+		}
 
-		.empty-jobs {
+		.profile-top{
+			background-color: @darkmode-background;
+			border:none;
+		}
+			
+		.div1{
+			background-color: @darkmode-background;
+		}	
+
+		.left-nav-container {
+			background-color: @darkmode-background;
+		}
+
+		header{
+			background-color: @darkmode-header;
+		}
+
+		.dashboard-nav {
+			background-color: @darkmode-background;
+
+		}
+
+		.dashboardNav {
+			background-color: @darkmode-background;
+			color: white;
+		}
+
+		.saved-jobs-small {
+			background-color: @darkmode-background;
+
+			.empty-jobs {
+				background: @darkmode-background;
+				color: #ffffff;
+			}
+		}
+		.container-profile {
+			background-color: @darkmode-background;
+		
+
+			.profile-section{
+				h3, h4, p, a{
+					color: white;
+				}
+			}
+		}
+
+		.profile-form-inputs2{
+			background-color:@darkmode-background ;
+			div {
+				h3 {
+					color: white;
+				}
+			}
+		
+		}
+
+		.card-container {
+			background: green;
+		}
+		.card-container-message {
 			background: @darkmode-background;
-			color: #ffffff;
 		}
-	}
-	.container-profile {
-		background-color: @darkmode-background;
-	
-	}
 
-	.profile-form-inputs2{
+		.card-container-vh {
+			background: @darkmode-background;
+		}
 
-		div {
+		.card-container {
+			background: @darkmode-background;
+		}
+
+		.jobCard {
+			div {
+				background: rgb(54, 69, 79);
+
+			}
+		}
+		.card-info {
 			h3 {
-				color: black;
+				color: @darkmode-text;
 			}
 		}
-	
-	}
+		.dashboardNav {
+			nav {
+				a{
+					color:white
+				}
+				button {
+					width: 100%;
 
-	.card-container {
-		background: green;
-	}
-	.card-container-message {
-		background: @darkmode-background;
-	}
-
-	.card-container-vh {
-		background: @darkmode-background;
-	}
-
-	.card-container {
-		background: @darkmode-background;
-	}
-
-	.jobCard {
-		div {
-			background: rgb(54, 69, 79);
-
-		}
-	}
-	.card-info {
-		h3 {
-			color: @darkmode-text;
-		}
-	}
-	.dashboardNav {
-		nav {
-			button {
-				border: 1px solid black;
-				width: 100%;
-
-				.button(
-					@border: @quickhire-main,
-					@width: 100px,
-					@borderHover: #ffffff,
-					@background: @quickhire-main,
-					@backgroundHover: #ffffff,
-					@fontColor: white,
-					@fontColorHover: @quickhire-main,
-					@height: 45px,
-					@borderRadius: 8px,
-					@margin: 0 1px,
-				)
-	
-	
+					.button(
+						@border: @quickhire-main,
+						@width: 100px,
+						@borderHover: #ffffff,
+						@background: @quickhire-main,
+						@backgroundHover: #ffffff,
+						@fontColor: white,
+						@fontColorHover: @quickhire-main,
+						@height: 45px,
+						@borderRadius: 8px,
+						@margin: 0 1px,
+					)
+		
+		
+				}
 			}
-		}
 
 	}
 
@@ -367,47 +406,23 @@ header {
 		color: @darkmode-card-text;
 	}
 
-	.dashboardNav nav {
-		border: 1px solid @darkmode-background;
-	}
 
 	.container-profile {
-		color: @darkmode-background;
+		color: white;
 	}
 
 	.profile-top {
-		border: 1px solid @quickhire-main;
 		border-radius: 6px;
+		color: white;
+
 	}
 
 	.profileCard {
-		border: 1px solid @quickhire-main;
+		color: white;
+
 	}
 
-	.landing-page p {
-		color: @darkmode-text;
-	}
-
-	.about-container p {
-		color: @darkmode-text;
-	}
-
-	.about-container h3 {
-		color: @darkmode-text;
-	}
-
-	.job-details-container p {
-		color: @darkmode-text;
-	}
-
-	.edit-profile-top h3 {
-		color: @darkmode-text;
-	}
-
-	.profile-form-inputs2 h3 {
-		color: @darkmode-text;
-	}
-
+	
 	.job-details-container-2 {
 		background: @darkmode-background;
 		color: #ffffff;

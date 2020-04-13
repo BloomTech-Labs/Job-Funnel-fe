@@ -443,32 +443,64 @@ header nav .log-in-btn:hover {
 }
 .dark-mode {
   color: #fff;
-  background-color: #313843;
+  background-color: #212121;
+}
+.dark-mode #dash {
+  background-color: #212121;
+}
+.dark-mode .profile-top {
+  background-color: #212121;
+  border: none;
+}
+.dark-mode .div1 {
+  background-color: #212121;
+}
+.dark-mode .left-nav-container {
+  background-color: #212121;
+}
+.dark-mode header {
+  background-color: #424242;
+}
+.dark-mode .dashboard-nav {
+  background-color: #212121;
+}
+.dark-mode .dashboardNav {
+  background-color: #212121;
+  color: white;
 }
 .dark-mode .saved-jobs-small {
-  background-color: #313843;
+  background-color: #212121;
 }
 .dark-mode .saved-jobs-small .empty-jobs {
-  background: #313843;
+  background: #212121;
   color: #ffffff;
 }
 .dark-mode .container-profile {
-  background-color: #313843;
+  background-color: #212121;
+}
+.dark-mode .container-profile .profile-section h3,
+.dark-mode .container-profile .profile-section h4,
+.dark-mode .container-profile .profile-section p,
+.dark-mode .container-profile .profile-section a {
+  color: white;
+}
+.dark-mode .profile-form-inputs2 {
+  background-color: #212121;
 }
 .dark-mode .profile-form-inputs2 div h3 {
-  color: black;
+  color: white;
 }
 .dark-mode .card-container {
   background: green;
 }
 .dark-mode .card-container-message {
-  background: #313843;
+  background: #212121;
 }
 .dark-mode .card-container-vh {
-  background: #313843;
+  background: #212121;
 }
 .dark-mode .card-container {
-  background: #313843;
+  background: #212121;
 }
 .dark-mode .jobCard div {
   background: #36454f;
@@ -476,8 +508,10 @@ header nav .log-in-btn:hover {
 .dark-mode .card-info h3 {
   color: white;
 }
+.dark-mode .dashboardNav nav a {
+  color: white;
+}
 .dark-mode .dashboardNav nav button {
-  border: 1px solid black;
   width: 100%;
   border: #EC3944;
   background-color: #EC3944;
@@ -497,17 +531,17 @@ header nav .log-in-btn:hover {
   cursor: pointer;
 }
 .dark-mode .saved-jobs-main {
-  background-color: #313843;
+  background-color: #212121;
 }
 .dark-mode .saved-jobs-main .empty-jobs {
-  background: #313843;
+  background: #212121;
   color: #ffffff;
 }
 .dark-mode .saved-jobs-single {
-  background-color: #313843;
+  background-color: #212121;
 }
 .dark-mode .header {
-  background-color: #313843;
+  background-color: #212121;
   border: none;
 }
 .dark-mode p {
@@ -522,43 +556,22 @@ header nav .log-in-btn:hover {
 .dark-mode .card-text span {
   color: black;
 }
-.dark-mode .dashboardNav nav {
-  border: 1px solid #313843;
-}
 .dark-mode .container-profile {
-  color: #313843;
+  color: white;
 }
 .dark-mode .profile-top {
-  border: 1px solid #EC3944;
   border-radius: 6px;
+  color: white;
 }
 .dark-mode .profileCard {
-  border: 1px solid #EC3944;
-}
-.dark-mode .landing-page p {
-  color: white;
-}
-.dark-mode .about-container p {
-  color: white;
-}
-.dark-mode .about-container h3 {
-  color: white;
-}
-.dark-mode .job-details-container p {
-  color: white;
-}
-.dark-mode .edit-profile-top h3 {
-  color: white;
-}
-.dark-mode .profile-form-inputs2 h3 {
   color: white;
 }
 .dark-mode .job-details-container-2 {
-  background: #313843;
+  background: #212121;
   color: #ffffff;
 }
 .dark-mode .job-details-container {
-  background: #313843;
+  background: #212121;
   color: #ffffff;
 }
 .navbar {
