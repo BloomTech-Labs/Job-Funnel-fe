@@ -142,6 +142,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #FAFAFA;
 }
 ol,
 ul {
@@ -195,13 +196,19 @@ a {
 }
 header {
   position: sticky;
-  background-color: #FAFAFA;
+  background-color: white;
   width: 100%;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
   height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 9;
+  margin-bottom: 5vh;
+  border-bottom: 1px solid #e6e6e6;
+  box-shadow: 0 1px 1px -1px black;
 }
 @media (min-width: 651px) and (max-width: 800px) {
   header {
@@ -779,7 +786,6 @@ footer h4 {
   border-radius: 10px;
   margin-top: 5%;
   padding: 1%;
-  box-shadow: 5px 5px white;
   text-align: center;
   border: 2px solid #ffffff;
 }
@@ -817,16 +823,17 @@ footer h4 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: #FAFAFA;
+  background: white;
+}
+.saved-jobs-main h1 {
+  font-size: 1.5em;
 }
 .card-saved-jobs {
-  border: 1px solid #EC3944;
-  background-color: #fafafa;
-  padding: 2%;
-  width: 30%;
-  height: 50vh;
+  background-color: white;
+  padding: 5%;
+  width: 200px;
+  height: 200px;
   margin: 2%;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
 }
 @media (max-width: 1000px) {
@@ -835,11 +842,8 @@ footer h4 {
     width: 40%;
     height: 50vh;
     margin: 2%;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
   }
-}
-@media (min-width: 651px) and (max-width: 800px) {
 }
 @media (max-width: 650px) {
   .card-saved-jobs {
@@ -852,8 +856,7 @@ footer h4 {
   }
 }
 .card-saved-jobs h3 {
-  font-size: 2.25rem;
-  text-align: center;
+  font-size: 1.25rem;
   width: 100%;
 }
 .card-saved-jobs h5 {
@@ -866,6 +869,7 @@ footer h4 {
   height: 60%;
   margin-top: 2%;
   margin-bottom: 2%;
+  font-size: 1rem;
 }
 .card-saved-jobs .saved-buttons {
   display: flex;
@@ -963,13 +967,30 @@ footer h4 {
     padding-top: 1%;
   }
 }
+#right-nav {
+  height: 90vh;
+  width: 50vw;
+  display: flex;
+  margin: 70px 5px;
+  overflow-y: scroll;
+}
+#right-nav #saved {
+  width: 48%;
+  background-color: white;
+  margin-right: 2%;
+}
+#right-nav #applied {
+  width: 48%;
+}
+.element {
+  overflow: -moz-scrollbars-none;
+}
 .filter-class {
   display: flex;
-  width: 60%;
   justify-content: space-between;
-  min-width: 750px;
-  padding-left: 3.3%;
-  margin: 2%;
+  min-width: 100%;
+  width: 100%;
+  margin-bottom: 2vh;
 }
 .filter-class form {
   display: flex;
@@ -978,11 +999,10 @@ footer h4 {
   margin: 1%;
 }
 .filter-class .search-bar {
-  width: 12vw;
+  width: 15vw;
   height: 35px;
   text-align: center;
   border-radius: 6px;
-  border: none;
 }
 .filter-class .job-select {
   width: 133px;
@@ -998,7 +1018,7 @@ footer h4 {
   border-radius: 6px;
   margin: 1%;
   border: none;
-  width: 10vw;
+  width: 15vw;
 }
 @media (max-width: 1000px) {
   .filter-class button {
@@ -1098,7 +1118,7 @@ footer h4 {
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background: #FAFAFA;
+  background-color: #FAFAFA;
   height: 100vh;
 }
 .card-container-message .use-search {
@@ -1165,7 +1185,7 @@ footer h4 {
 }
 .card-container .jobCard {
   background-color: white;
-  width: 250px;
+  width: 550px;
   height: 150px;
   border-radius: 4px;
   margin: 10px;
@@ -1310,14 +1330,23 @@ footer h4 {
   padding-top: 2%;
 }
 .left-nav-container {
-  background-color: #FFFFFF;
-  height: 100%;
+  background-color: white;
+  height: 80vh;
   width: 15vw;
+  margin: 70px 20px;
   max-width: 15vw;
 }
 #dash {
   background-color: #FAFAFA;
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15vh;
+}
+#dash .div1 {
+  max-width: 50vw;
+  width: 50vw;
 }
 .submit-button {
   background-color: #EC3944;

@@ -6,7 +6,7 @@ import searchAPI from '../../../utils/searchAPI';
 import { useLocation } from "react-router-dom"
 
 import styled from "styled-components";
-import LoadingOverlay from "react-loading-overlay";
+import { Loading } from "./../Loading";
 
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
@@ -75,7 +75,7 @@ export default function SuggestedJobs() {
                     </select>
                     </div> */}
 
-                    <div> <select className="search-bar" name="experience" onChange={onSelectChange}
+                    <div className='search-div animated flipInX fast' > <select className="search-bar" name="experience" onChange={onSelectChange}
                     >
                         <option selected value="coconut">Experience</option>
                         <option value="internship">Internship</option>
@@ -86,7 +86,7 @@ export default function SuggestedJobs() {
                     </div>
 
 
-                    <div> <input className="search-bar"
+                    <div className='search-div animated flipInX fast' > <input className="search-bar"
                         type="text"
                         name="city"
                         placeholder="City"
@@ -94,7 +94,7 @@ export default function SuggestedJobs() {
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
-                    <div><input className="search-bar"
+                    <div className='search-div animated flipInX  ' ><input className="search-bar"
                         type="text"
                         name="state_province"
                         placeholder="State"
@@ -104,30 +104,29 @@ export default function SuggestedJobs() {
                     /></div>
 
 
-                    <button className="submit-button" onClick={handleSubmit}>Submit</button>
+                    <button className="submit-button animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
-            <StyledLoader active={loading} spinner text='Searching for jobs...'>
-                {/* on the div below: if loading is false and jobs.length 
-                <1 , then render card-container message. if jobs.length 1<= x < 4, then render card-container-vh. else, render card container  */}
-                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : 'card-container')}>
 
-                    {(loading === false && jobs.length < 1 ? <div className='use-search' ><h2>Use the search above to find your next job!</h2></div> :
-                        jobs.map((job, index) => {
-                            // console.log(job);
-                            return (
-                                <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
-                            )
-                        }))}
-                </div>
-            </StyledLoader>
+            {loading ? <Loading /> : <div className={(loading === false && jobs.length < 1 ? "card-container-message" : 'card-container')}>
+
+
+                {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
+                    jobs.map((job, index) => {
+                        // console.log(job);
+                        return (
+                            <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
+                        )
+                    }))}
+            </div>
+            }
         </>
 
     )
 }
 
-const StyledLoader = styled(LoadingOverlay)`
+/* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
     width:100%;
     z-index: 2;
-`;
+`; */

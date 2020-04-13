@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Route, useLocation } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute.js"
-import styled from "styled-components";
-import LoadingOverlay from "react-loading-overlay";
 
 import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
@@ -66,8 +64,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { getCurrentUser, })(App)
 
-const StyledLoader = styled(LoadingOverlay)`
-    min-height: 100vh;
-    width:100%;
-    z-index: 2;
-`;

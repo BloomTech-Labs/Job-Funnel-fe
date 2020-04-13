@@ -1,13 +1,17 @@
 header {
 	position: sticky;
-	background-color: #FAFAFA;
+	background-color: white;
 	width: 100%;
+	position: fixed; /* Set the navbar to fixed position */
+  top: 0;
 	height: 75px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 9;
-	// border-bottom: 1px solid rgb(230, 230, 230);
+	margin-bottom: 5vh;
+	border-bottom: 1px solid rgb(230, 230, 230);
+	box-shadow: 0 1px 1px -1px black;
 	@media @tablet {
 		flex-direction: column;
 		justify-content: center;
