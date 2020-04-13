@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import heart from './../../../images/heartEmpty.svg'
 import heartFull from './../../../images/heartFull.svg'
+import { updateSaved } from '../../../redux-store/App/AppActions'
 
 function JobCard(props) {
     console.log('PROPS', props)
@@ -34,7 +35,7 @@ function JobCard(props) {
     //handles save, sends the saved jobs to the saved endpoint.
     const handleSave = () => {
         if (toggle === false) {
-            axiosWithAuth().post('/saved/', saved)
+            /* axiosWithAuth().post('/saved/', saved)
                 .then(res => {
                     console.log('handle save job response', res.data)
                     setSaved({ ...saved })
@@ -42,9 +43,11 @@ function JobCard(props) {
                 })
                 .catch(error => {
                     console.error(error)
-                })
+                }) */
+            props.updateSaved(saved)
+            setToggle(true)
             //Delete save
-        } else if (toggle === true) {
+        } else if (props.toggle === true) {
             axiosWithAuth().delete(`/saved/${job_id}`)
                 .then(res => {
                     console.log('erased job from saved table?', res.data)
@@ -58,6 +61,7 @@ function JobCard(props) {
 
     }
 
+    console.log('TOGGLE', props.toggle)
 
     //the card display/stylings
     return (
@@ -65,9 +69,8 @@ function JobCard(props) {
             <div className="card-header">
                 <p className="company-name">{props.company}</p>
 
-                {/*    {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave} style={{ color: 'white', backgroundColor: 'green' }}>Unsave</button>)}
- */}
-                {(toggle === false ? <button onClick={handleSave}><img src={heart} /> </button> : <button onClick={handleSave}> <img src={heartFull} /></button>)}
+
+                {(toggle === false ? <button onClick={handleSave}><img src={heart} /> </button> : <button onClick={handleSave}><img src={heartFull} /></button>)}
 
 
             </div>
@@ -75,16 +78,14 @@ function JobCard(props) {
 
 
                 <div className="card-info">
-                    <h3>
-                        {props.title.length > 40 ? `${props.title.slice(0, 40)} + ...` : props.title}
-                    </h3>
-
+                    <h3>{props.title}</h3>
                 </div>
 
             </div>
             <div className='jobButtons' >
+
                 <Link to={`/Dashboard/Job/${props.id}`}>
-                    <button>Apply</button>
+                    <button>View</button>
                 </Link>
             </div>
         </div>
@@ -95,9 +96,10 @@ function JobCard(props) {
 const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
+        toggle: state.AppReducer.toggle
     }
 }
 
-export default connect(mapStateToProps, {})(JobCard)
+export default connect(mapStateToProps, { updateSaved })(JobCard)
 
 
