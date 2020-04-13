@@ -3,6 +3,8 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 import Modal from 'react-modal';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
+import heart from './../../../images/heartEmpty.svg'
+import heartFull from './../../../images/heartFull.svg'
 
 function JobCard(props) {
     console.log('PROPS', props)
@@ -56,30 +58,33 @@ function JobCard(props) {
 
     }
 
+
     //the card display/stylings
     return (
         <div className="jobCard">
-            <div>
-                {(props.company === "" ? <p className="company-name">Name Unavailable</p>
-                    : <p className="company-name">{props.company}</p>)}
+            <div className="card-header">
+                <p className="company-name">{props.company}</p>
+
+                {/*    {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave} style={{ color: 'white', backgroundColor: 'green' }}>Unsave</button>)}
+ */}
+                {(toggle === false ? <button onClick={handleSave}><img src={heart} /> </button> : <button onClick={handleSave}> <img src={heartFull} /></button>)}
+
+
             </div>
             <div className="card-text">
-                <div className="card-image">
-                    <img className="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" />
-                    {props.location === ', ' ? null : <div>📍{props.location}</div>}
 
-                </div>
 
                 <div className="card-info">
-                    <h3>{props.title}</h3>
+                    <h3>
+                        {props.title.length > 40 ? `${props.title.slice(0, 40)} + ...` : props.title}
+                    </h3>
+
                 </div>
 
             </div>
             <div className='jobButtons' >
-                {/* buttons to save and unsave jobs, or view jobs description. */}
-                {(toggle === false ? <button onClick={handleSave}>Save</button> : <button onClick={handleSave} style={{ color: 'white', backgroundColor: 'green' }}>Unsave</button>)}
                 <Link to={`/Dashboard/Job/${props.id}`}>
-                    <button>View</button>
+                    <button>Apply</button>
                 </Link>
             </div>
         </div>
