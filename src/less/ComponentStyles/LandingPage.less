@@ -1,125 +1,107 @@
-
 .landing-page {
-  //   border: salmon dashed 1px;
-  background: @quickhire-message;
   width: 100%;
-  // height: 100vh;
-  @media @tablet{
-    width: 100%;
-  } @media @mobile{
-    width: 100%;
-  }
-  h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 3.25rem;
-    padding: 2%;
-    @media @mobile{
-      padding-left:2%;
+  height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(140deg,  rgba(193, 58, 67, 1) , rgba(193, 58, 67, 1), rgba(193, 58, 67, 0.9), rgba(231, 214, 215, 1), rgba(231, 214, 215, 0),);
+
+  .content-div {
+    height: 60%;
+    width: 80%;
+    color: white;
+
+    h1 {
+      line-height: 1.2em;
+      font-weight: 200;
+      letter-spacing: 2px;
     }
-  }
-  .p-div {
-    font-size: large;
-    padding-top: 5%;
-    .p-1 {
-      padding-left: 10%;
-    }
-    .p-2 {
-      padding-left: 7%;
-    }
-    .p-3 {
-      padding-left: 4%;
-    }
-    @media @mobile {
-      font-size: unset;
-      .p-1 {
-        padding-left: 4%;
-      }
-      .p-2 {
-        padding-left: 4%;
-      }
-      .p-3 {
-        padding-left: 4%;
-      }
-    }
-  }
-  .bottom-content {
-    display: flex;
-    @media @tablet {
-      flex-direction: column;
-      width: 100%;
-    }
-    @media @mobile {
-      flex-direction: column;
-      width: 100%;
-    }
-    a {
-      width: 40%;
-      height: 30%;
-    }
-    .button-div {
+
+    .bottom-content {
       display: flex;
-      width: 49%;
-      align-items: center;
-      justify-content: center;
-      @media @tablet {
-        width: 100%;
-        height: 15vh;
-        padding-top: 4%;
-      }
-      @media @mobile {
-        width: 100%;
-        height: 15vh;
-        padding-top: 4%;
-      }
-      button {
-        width: 100%;
-        height: 50%;
-        text-decoration: none;
-        font-size: medium;
-        color: @quickhire-main;
-        border: 1px solid @quickhire-main;
-        border-radius: 3px;
-        &:hover {
-          background: @quickhire-main;
-          border-radius: 5px;
-          color: #ffffff;
+
+      .text {
+        font-weight: 200;
+        padding-top: 30px;
+
+        button {
+          width: 120px;
+          height: 32px;
+          border-radius: 2px;
+          color: white;
+          // background-color: #EC3944;
+          background: rgba(236, 57, 68, 0.9);
+          // background-color: #EF7880;
+          border: 1px solid transparent;
+          margin-top: 40px;
+          font-size: 1.4rem;
+          cursor: pointer;
+          padding: 5px;
         }
-        @media @tablet {
-          height: 100%;
-        }
-        @media @mobile {
-          height: 100%;
-        }
-        a {
-          @media @tablet {
-            height: 35%;
-            width: 60%;
-          }
-          @media @mobile {
-            height: 35%;
-            width: 60%;
-          }
+        button:hover {
+          box-shadow: 0 0 10px rgba(0,0,0,.2);
         }
       }
     }
   }
   .img-div {
-    display: flex;
-    width: 49%;
-    justify-content: flex-end;
-    padding: 3%;
-    img {
-      max-width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+
+    @media screen and (min-width: 0px) and (max-width: 995px) {
+      display: none;
     }
-    @media @mobile {
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
+  }
+}
+
+
+.button-div {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-start;
+  @media @tablet {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+  @media @mobile {
+    width: 100%;
+    height: 15vh;
+    padding-top: 4%;
+  }
+  button {
+    width: 100%;
+    text-decoration: none;
+    font-size: 2.5em;
+    color: @quickhire-main;
+    border: 1px solid @quickhire-main;
+    border-radius: 3px;
+    padding:5px 30px;
+    margin-left: 20%;
+    margin-top:5vh;
+    cursor: pointer;
+    &:hover {
+      background: @quickhire-main;
+      border-radius: 5px;
+      color: #ffffff;
     }
     @media @tablet {
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
+      height: 100%;
+    }
+    @media @mobile {
+      height: 100%;
+    }
+    a {
+      @media @tablet {
+        height: 35%;
+        width: 60%;
+      }
+      @media @mobile {
+        height: 35%;
+        width: 60%;
+      }
     }
   }
 }

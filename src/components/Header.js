@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DarkMode from './DarkMode/DarkMode-Toggle';
 import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../redux-store/App/AppActions.js';
-import SimpleMenu from "./DropDown"
+import SimpleMenu from "./DropDown";
+import logo from '../images/quickhire.svg';
+import { getCurrentUser } from '../redux-store/App/AppActions.js'
 import quickhire from './../images/quickhire.svg'
 
 
@@ -12,6 +14,8 @@ import quickhire from './../images/quickhire.svg'
 function Header(props) {
     const location = useLocation();
     const history = useHistory();
+
+    const profilePic = props.currentUser.profile_img
 
     const logOut = () => {
         sessionStorage.removeItem('token');
@@ -23,14 +27,15 @@ function Header(props) {
     //     props.history.push('/')
     // }
 
-
+    console.log('?????', props.currentUser)
 
     console.log('location', location.pathname)
     return (
         <>
             <header>
-                <Link id="logo" to='/Dashboard'>
-                    <img src={quickhire} alt="logo" />
+                <Link to='/Dashboard'>
+                    <img className="logo-img" src={logo} />
+
                 </Link>
                 {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>
@@ -47,8 +52,8 @@ function Header(props) {
 
                         return (
                             <nav>
-                                <Link to='/Login'> <button>Login</button></Link>
-                                <Link to='/Register'> <button>Register</button></Link>
+                                <Link to='/Register'> <button className="sign-up-btn">Sign up</button></Link>
+                                <Link to='/Login'> <button className="log-in-btn">Log in</button></Link>
                             </nav>
                         )
                     }
@@ -56,9 +61,14 @@ function Header(props) {
                     else if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved' || location.pathname === '/Dashboard/Applied') {
                         return (
                             <nav>
-                                <Link to="/Profile"> <button>My Profile</button> </Link>
+
                                 {/* <button onClick={logOut}> Sign Out </button> */}
                                 <SimpleMenu logout={logOut} />
+                                <div id="profile-image">
+                                    <Link to="/Profile">
+                                        {props.currentUser.profile_img ? <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> : <button>Profile</button>}
+                                    </Link>
+                                </div>
                             </nav>
                         )
                     }
@@ -74,23 +84,23 @@ function Header(props) {
 
                     else if (location.pathname === '/login' || location.pathname === '/Login') {
                         return (
-                            <nav>
-                                <Link to="/Register"> <button>Register</button> </Link>
+                            <nav style={{ minWidth: '0px' }}>
+                                <Link to="/Register"> <button className="sign-up-btn">Sign up</button> </Link>
                             </nav>
                         )
                     }
                     else if (location.pathname === '/register' || location.pathname === '/Register') {
                         return (
-                            <nav>
-                                <Link to="/Login"> <button>Login</button> </Link>
+                            <nav style={{ minWidth: '0px' }}>
+                                <Link to="/Login"> <button className="log-in-btn">Log in</button> </Link>
                             </nav>
                         )
                     }
                     else if (location.pathname === '/about' || location.pathname === '/About') {
                         return (
                             <nav>
-                                <Link to="/Dashboard"> <button>Dashboard</button> </Link>
-                                <Link to="/Profile"> <button>Profile</button> </Link>
+                                <Link to="/Login"> <button>Log in</button> </Link>
+                                <Link to="/Register"> <button>Sign up</button> </Link>
                             </nav>
                         )
                     }

@@ -12,6 +12,10 @@ export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+
+    }, [])
+
     const location = useLocation();
 
     const [search, setSearch] = useState({
@@ -34,7 +38,7 @@ export default function SuggestedJobs() {
         searchAPI().get('/search', {
             params: search,
         }).then((response) => {
-            console.log(response)
+            console.log('RESPONSE: ', response)
             setJobs(response.data.responses);
             setLoading(false)
 
@@ -71,7 +75,7 @@ export default function SuggestedJobs() {
                     </select>
                     </div> */}
 
-                    <div className='search-div animated flipInX fast' > <select className="search-bar" name="experience" onChange={onSelectChange}
+                    <div> <select className="search-bar" name="experience" onChange={onSelectChange}
                     >
                         <option selected value="coconut">Experience</option>
                         <option value="internship">Internship</option>
@@ -82,7 +86,7 @@ export default function SuggestedJobs() {
                     </div>
 
 
-                    <div className='search-div animated flipInX fast' > <input className="search-bar"
+                    <div> <input className="search-bar"
                         type="text"
                         name="city"
                         placeholder="City"
@@ -90,7 +94,7 @@ export default function SuggestedJobs() {
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
-                    <div className='search-div animated flipInX  ' ><input className="search-bar"
+                    <div><input className="search-bar"
                         type="text"
                         name="state_province"
                         placeholder="State"
@@ -100,15 +104,15 @@ export default function SuggestedJobs() {
                     /></div>
 
 
-                    <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
+                    <button className="submit-button" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
             <StyledLoader active={loading} spinner text='Searching for jobs...'>
                 {/* on the div below: if loading is false and jobs.length 
                 <1 , then render card-container message. if jobs.length 1<= x < 4, then render card-container-vh. else, render card container  */}
-                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : (jobs.length >= 1 && jobs.length < 4 ? "card-container-vh" : 'card-container'))}>
-                    {/* if cards are not loading AND the job obj is empty, then:  */}
-                    {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
+                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : 'card-container')}>
+
+                    {(loading === false && jobs.length < 1 ? <div className='use-search' ><h2>Use the search above to find your next job!</h2></div> :
                         jobs.map((job, index) => {
                             // console.log(job);
                             return (

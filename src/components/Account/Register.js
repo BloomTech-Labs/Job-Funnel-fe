@@ -4,6 +4,9 @@ import axios from "axios";
 import { isValidPassword, validateInputs } from '../../utils/AppUtils.js';
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
+import ProfilePicture from "./ProfilePicture.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle, faCamera } from "@fortawesome/free-solid-svg-icons";
 
 import { login } from "../../redux-store/App/AppActions"
 
@@ -67,36 +70,30 @@ const Register = (props) => {
     // #endregion
 
     return (
-        <StyledLoader active={loading} spinner text='Loading...'>
-            <>
-                <div className="main-div2">
-                    <div className="second-main2">
-                        <h3 className="make2 animated faster zoomInRight">Make the most of your professional life.</h3>
-                        {/* The form used on the registration page */}
-                        <form className="main-form2  animated faster zoomInLeft" onSubmit={handleSubmit}>
-                            <div className="form-inputs2">
-                                <label>First Name </label>
-                                <input type="text" name="first_name" value={newUser.first_name} onChange={handleChange} />
-                                <label>Last Name   </label>
-                                <input type="text" name="last_name" value={newUser.last_name} onChange={handleChange} />
-                                <label>Enter Email    </label>
-                                <input type="email" name="email" value={newUser.email} onChange={handleChange} />
-                                <label>Create Password  </label>
-                                <input type="password" name="password" value={newUser.password} onChange={handleChange} />
-                                {/* <label>Select User Type</label>
-                        <select  name="user_type" onChange={handleChange}>
-                            <option/>
-                            <option value={"applicant"}>Applicant</option>
-                            <option value={"recruiter"}>Recruiter</option>
-                            <option value={"company"}>Company</option>
-                        </select>  */}
-                            </div>
-                            <button className="buttonclass" onClick={handleSubmit}>Register</button>
-                        </form>
-                    </div>
+        <div className="register-page">
+            <form onSubmit={handleSubmit}>
+                <div className="profile-img">
+
                 </div>
-            </>
-        </StyledLoader>
+                <div className="form-inputs">
+                    <div className="first-row-wrap">
+                        <div>
+                            <label>First name </label>
+                            <input type="text" name="first_name" value={newUser.first_name} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Last name   </label>
+                            <input type="text" name="last_name" value={newUser.last_name} onChange={handleChange} />
+                        </div>
+                    </div>
+                    <label>Email</label>
+                    <input type="email" name="email" value={newUser.email} onChange={handleChange} />
+                    <label>Password  </label>
+                    <input type="password" name="password" value={newUser.password} onChange={handleChange} />
+                </div>
+                <button className="submit-register-btn" onClick={handleSubmit}>Register</button>
+            </form>
+        </div>
     )
 }
 

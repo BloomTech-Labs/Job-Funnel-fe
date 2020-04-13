@@ -43,13 +43,13 @@ function App(props) {
       <link rel="stylesheet" type="text/css" href={theme} />
       <Header changeTheme={changeTheme} />
       <Route exact path='/' component={LandingPage} />
+
       <Route exact path='/Login' component={Login} />
       <Route exact path='/Register' component={Register} />
       <Route exact path='/About' component={AboutUs} />
       <PrivateRoute path='/Profile' component={Profile} />
       <PrivateRoute path='/Dashboard' component={Dashboard} />
       <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
-      <Footer />
     </div>
   );
 }
