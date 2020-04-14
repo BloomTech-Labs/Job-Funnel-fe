@@ -63,19 +63,15 @@ function Header(props) {
                             <nav>
 
                                 {/* <button onClick={logOut}> Sign Out </button> */}
-                                <SimpleMenu logout={logOut} />
-                                <div id="profile-image">
-                                    <Link to="/Profile">
-                                        {props.currentUser.profile_img ? <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> : <button>Profile</button>}
-                                    </Link>
-                                </div>
+                                <SimpleMenu logout={logOut} currentUser={props.currentUser} />
+
                             </nav>
                         )
                     }
                     else if (location.pathname === '/profile' || location.pathname === '/Profile') {
                         return (
                             <nav>
-                                <Link to="/Dashboard"> <button>Back to Dashboard</button> </Link>
+                                <Link to="/Dashboard"> <button className="dashboard-btn">Back to Dashboard</button> </Link>
                                 <SimpleMenu logout={logOut} />
                             </nav>
                         )

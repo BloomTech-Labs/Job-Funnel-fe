@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { isValidPassword, validateInputs } from '../../utils/AppUtils.js';
+import { Link, NavLink } from 'react-router-dom';
+import landing from '../../images/landing.png'
+
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
-import ProfilePicture from "./ProfilePicture.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle, faCamera } from "@fortawesome/free-solid-svg-icons";
-
 import { login } from "../../redux-store/App/AppActions"
 
 //Register function that allows users to register new accounts. Does a POST request to backend in order to store the new data. Also pushes user to Dashboard on signup
@@ -71,28 +70,26 @@ const Register = (props) => {
 
     return (
         <div className="register-page">
-            <form onSubmit={handleSubmit}>
-                <div className="profile-img">
-
-                </div>
-                <div className="form-inputs">
-                    <div className="first-row-wrap">
-                        <div>
-                            <label>First name </label>
-                            <input type="text" name="first_name" value={newUser.first_name} onChange={handleChange} />
+            <div className="form-wrap">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-inputs">
+                        <div className="buttons-wrap">
+                            <Link to="/Login">
+                                <button className="log-in-btn">Log in</button>
+                            </Link>
+                            <button className="sign-up-btn active">Sign up</button>
                         </div>
-                        <div>
-                            <label>Last name   </label>
-                            <input type="text" name="last_name" value={newUser.last_name} onChange={handleChange} />
+                        <div className="name">
+                            <input type="text" name="first_name" placeholder="First Name" value={newUser.first_name} onChange={handleChange} />
+                            <input type="text" placeholder="Last Name" name="last_name" value={newUser.last_name} onChange={handleChange} />
                         </div>
+                        <input type="email" name="email" value={newUser.email} placeholder="E-mail" onChange={handleChange} />
+                        <input type="password" name="password" placeholder="Password" value={newUser.password} onChange={handleChange} />
                     </div>
-                    <label>Email</label>
-                    <input type="email" name="email" value={newUser.email} onChange={handleChange} />
-                    <label>Password  </label>
-                    <input type="password" name="password" value={newUser.password} onChange={handleChange} />
-                </div>
-                <button className="submit-register-btn" onClick={handleSubmit}>Register</button>
-            </form>
+                    <button className="submit-register-btn" onClick={handleSubmit}>Register</button>
+                </form>
+            </div>
+            <div className='img-register'><img src={landing} width="650" /></div>
         </div>
     )
 }

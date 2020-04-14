@@ -20,11 +20,11 @@ const LandingPage = () => {
                         <p>Join us in job funnel and we will help you to find your</p>
                         <p>match!</p>
                     </div>
-                    
-                </div>
 
+                </div>
+                <div className='img-div'><img src={landing} width="650" /></div>
             </div>
-            <div className='img-div'><img src={landing} width="650" /></div>
+
 
 
         </section>
