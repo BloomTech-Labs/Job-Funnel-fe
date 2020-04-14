@@ -195,7 +195,7 @@ a {
 }
 header {
   position: sticky;
-  background-color: white;
+  background-color: #FAFAFA;
   width: 100%;
   position: fixed;
   /* Set the navbar to fixed position */
@@ -1495,19 +1495,27 @@ button {
   padding: 0.5% 2%;
 }
 .login-page {
-  height: calc(100vh - 75px);
+  height: 100vh;
   background-image: linear-gradient(140deg, #c13a43, rgba(193, 58, 67, 0.9), rgba(193, 58, 67, 0.1));
   display: flex;
   align-items: center;
 }
+.login-page .img-login {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
 .login-page .form-wrap {
-  width: 50%;
-  height: 80%;
-  margin-left: 30px;
-  background: white;
+  width: 40%;
+  height: 75vh;
+  margin-top: 12vh;
+  margin-left: 3vw;
+  background: #FAFAFA;
+  border: 1px solid #C4C4C4;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 4px 4px 4px rgba(97, 71, 71, 0.16);
 }
 .login-page .form-wrap form {
   display: flex;
@@ -1521,12 +1529,20 @@ button {
 .login-page .form-wrap form .form-inputs input {
   height: 40px;
   margin-bottom: 30px;
-  border: 1px solid #c13a43;
-  border-radius: 5px;
+  border: 1px solid #EC3944;
+  border-radius: 8px;
   outline: none;
+  box-shadow: 0px 2px 2px rgba(236, 57, 68, 0.2);
   background: white;
   font-size: 1.5rem;
   padding-left: 5px;
+}
+.login-page .form-wrap form .form-inputs input::placeholder {
+  color: #C4C4C4;
+  opacity: 1;
+}
+.login-page .form-wrap form .form-inputs input:focus {
+  border: 2px solid #EC3944;
 }
 .login-page .form-wrap form .form-inputs .buttons-wrap {
   display: flex;
@@ -1534,29 +1550,40 @@ button {
   margin: 0 40px 30px 40px;
 }
 .login-page .form-wrap form .form-inputs .buttons-wrap .log-in-btn {
-  color: black;
+  color: #C4C4C4;
   border: 1px solid transparent;
-  font-size: 1.7rem;
+  font-size: 2rem;
   cursor: pointer;
   outline: none;
+  font-family: 'Lato';
+  font-weight: bold;
+  background-color: transparent;
 }
 .login-page .form-wrap form .form-inputs .buttons-wrap .sign-up-btn {
   color: #C4C4C4;
   border: 1px solid transparent;
-  font-size: 1.7rem;
+  font-size: 2rem;
   cursor: pointer;
   outline: none;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 40px;
+  background-color: transparent;
 }
 .login-page .form-wrap form .form-inputs .buttons-wrap .sign-up-btn:hover {
-  color: black;
+  color: #131336;
+}
+.login-page .form-wrap form .form-inputs .buttons-wrap .active {
+  color: #131336;
 }
 .login-page .form-wrap form .submit-login {
-  width: 120px;
+  width: 100px;
   height: 35px;
   color: white;
-  background: #EC3A44;
-  border: 1px solid transparent;
-  border-radius: 5px;
+  background: #EC3944;
+  border-radius: 8px;
+  border: none;
   font-size: 1.3rem;
   margin: 0 auto;
   outline: none;
@@ -1883,55 +1910,108 @@ button {
   }
 }
 .register-page {
-  height: calc(100vh - 75px);
+  height: 100vh;
+  background-image: linear-gradient(140deg, #c13a43, rgba(193, 58, 67, 0.9), rgba(193, 58, 67, 0.1));
+  display: flex;
+  align-items: center;
+}
+.register-page .img-register {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+.register-page .form-wrap {
+  width: 40%;
+  height: 75vh;
+  margin-top: 12vh;
+  margin-left: 3vw;
+  background: #FAFAFA;
+  border: 1px solid #C4C4C4;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 4px 4px 4px rgba(97, 71, 71, 0.16);
 }
-.register-page form {
-  width: 40%;
+.register-page .form-wrap form {
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
-.register-page form .form-inputs {
+.register-page .form-wrap form .form-inputs {
   display: flex;
   flex-direction: column;
 }
-.register-page form .form-inputs .first-row-wrap {
+.register-page .form-wrap form .form-inputs .name {
   display: flex;
   justify-content: space-between;
 }
-.register-page form .form-inputs .first-row-wrap div {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
+.register-page .form-wrap form .form-inputs .name input {
+  width: 47%;
 }
-.register-page form .form-inputs input {
+.register-page .form-wrap form .form-inputs input {
+  height: 40px;
+  margin-bottom: 30px;
+  border: 1px solid #EC3944;
+  border-radius: 8px;
   outline: none;
-  height: 30px;
-  border: 1px solid #D3D3D3;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-.register-page form .form-inputs label {
+  box-shadow: 0px 2px 2px rgba(236, 57, 68, 0.2);
+  background: white;
   font-size: 1.5rem;
-  color: #131436;
-  letter-spacing: 1px;
-  margin-left: 1px;
+  padding-left: 5px;
 }
-.register-page form .submit-register-btn {
-  width: 90px;
-  height: 35px;
+.register-page .form-wrap form .form-inputs input::placeholder {
+  color: #C4C4C4;
+  opacity: 1;
+}
+.register-page .form-wrap form .form-inputs input:focus {
+  border: 2px solid #EC3944;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px 30px 40px;
+  align-items: center;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap .log-in-btn {
+  color: #C4C4C4;
   border: 1px solid transparent;
-  border-radius: 5px;
-  background-color: #EC3A44;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Lato';
+  font-weight: bold;
+  background-color: transparent;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap .log-in-btn:hover {
+  color: #131336;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap .sign-up-btn {
+  color: #C4C4C4;
+  border: 1px solid transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 40px;
+  background-color: transparent;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap .sign-up-btn:hover {
+  color: #131336;
+}
+.register-page .form-wrap form .form-inputs .buttons-wrap .active {
+  color: #131336;
+}
+.register-page .form-wrap form .submit-register-btn {
+  width: 100px;
+  height: 35px;
   color: white;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+  background: #EC3944;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.3rem;
   margin: 0 auto;
   outline: none;
   cursor: pointer;
-}
-.register-page form .submit-register-btn:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

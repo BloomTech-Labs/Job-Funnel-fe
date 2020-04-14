@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 import { Link, NavLink } from 'react-router-dom';
+import landing from '../../images/landing.png'
 
 import { login } from "../../redux-store/App/AppActions"
 
@@ -50,19 +51,20 @@ const Login = (props) => {
 
     return (
         <div className="login-page">
-          <div className="form-wrap">
-            <form onSubmit={handleSubmit}>
-                <div className="form-inputs">
-                    <div className="buttons-wrap">
-                        <button className="log-in-btn">Log in</button>
-                        <Link to="/Register"><button className="sign-up-btn">Sign up</button></Link>
+            <div className="form-wrap">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-inputs">
+                        <div className="buttons-wrap">
+                            <button className="log-in-btn active">Log in</button>
+                            <Link to="/Register"><button className="sign-up-btn">Sign up</button></Link>
+                        </div>
+                        <input type="email" name="email" value={user.email} placeholder="E-mail" onChange={handleChange} />
+                        <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange} />
                     </div>
-                    <input type="email" name="email" value={user.email} placeholder="Username" onChange={handleChange} />
-                    <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange} />
-                </div>
-                <button className="submit-login" onClick={handleSubmit}>Log in</button>
-            </form>
-          </div>
+                    <button className="submit-login" onClick={handleSubmit}>Log in</button>
+                </form>
+            </div>
+            <div className='img-login'><img src={landing} width="650" /></div>
         </div>
     )
 }
