@@ -2,8 +2,9 @@ import React from 'react'
 
 export const Loading = () => {
     return (
-        <div className="loading">
-            <h4>Loading...</h4>
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
         </div>
     )
 }

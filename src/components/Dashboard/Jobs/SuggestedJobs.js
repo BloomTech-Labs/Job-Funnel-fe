@@ -36,7 +36,7 @@ export default function SuggestedJobs() {
     const handleSubmit = event => {
         event.preventDefault();
         setLoading(true)
-        
+
         const searchTerm = {
             title: search.experience ? `${search.experience} ${search.title}` : search.title,
             job_type: search.job_type,
@@ -62,8 +62,8 @@ export default function SuggestedJobs() {
     return (
         <>
             <div className="filter-class ">
-                <form className="search-div" onSubmit={onSelectChange}>
-                    <div className='search-div animated flipInX faster' > <input className="search-bar"
+                <form className="search-divs" onSubmit={onSelectChange}>
+                    <div className='search-div' > <input className="search-bar"
                         type="text"
                         name="title"
                         placeholder="Title"
@@ -84,7 +84,7 @@ export default function SuggestedJobs() {
                     </select>
                     </div> */}
 
-                    <div className='search-div animated flipInX fast'> 
+                    <div className='search-div'>
                         <select className="search-bar" name="experience" onChange={onSelectChange}>
                             <option selected value="">Experience</option>
                             <option value="">Show All Jobs</option>
@@ -96,7 +96,7 @@ export default function SuggestedJobs() {
                     </div>
 
 
-                    <div className='search-div animated flipInX fast'> <input className="search-bar"
+                    <div className='search-div'> <input className="search-bar"
                         type="text"
                         name="city"
                         placeholder="City"
@@ -104,7 +104,7 @@ export default function SuggestedJobs() {
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
-                    <div className='search-div animated flipInX fast'><input className="search-bar"
+                    <div className='search-div'><input className="search-bar"
                         type="text"
                         name="state_province"
                         placeholder="State"

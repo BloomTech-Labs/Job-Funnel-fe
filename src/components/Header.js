@@ -15,8 +15,6 @@ function Header(props) {
     const location = useLocation();
     const history = useHistory();
 
-    const profilePic = props.currentUser.profile_img
-
     const logOut = () => {
         sessionStorage.removeItem('token');
         props.logout();
@@ -61,10 +59,7 @@ function Header(props) {
                     else if (location.pathname === '/dashboard' || location.pathname === '/Dashboard' || location.pathname === '/Dashboard/Saved' || location.pathname === '/Dashboard/Applied') {
                         return (
                             <nav>
-
-                                {/* <button onClick={logOut}> Sign Out </button> */}
                                 <SimpleMenu logout={logOut} currentUser={props.currentUser} />
-
                             </nav>
                         )
                     }

@@ -5,6 +5,36 @@
   width: 100%;
   margin-bottom:2vh;
 
+.search-div {
+  
+  input {
+    background: #FFFFFF;
+    /* #D4D4D4 - Light Grey */
+    text-align: left;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    border-radius: 8px;
+  
+    &::placeholder {
+      padding-left: 10px;
+    }
+  }
+
+  select {
+    background: #FFFFFF;
+    /* #D4D4D4 - Light Grey */
+    text-align: left;
+    border: 1px solid #D4D4D4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color:grey;
+  
+    option {
+      padding-left: 10px;
+    }
+  }
+}
+
   form {
     display:flex;
 
@@ -236,12 +266,14 @@
  }//end of usesearch
 
   .jobCard {
-    background-color: white;
     width: 550px;
     height: 150px;
-    border-radius: 4px;
     margin: 10px;
     padding: 5px 10px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 8px;
 
     @media @mobile {
       margin: 3%;
@@ -363,12 +395,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 2%;
+  padding: 0;
 
   button {
     color: #ffffff;
     width: 70px;
-    height: 35px;
+    height: 30px;
     font-size: 14px;
     border-radius: 8px;
     background: @quickhire-main;
