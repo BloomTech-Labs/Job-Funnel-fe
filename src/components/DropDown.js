@@ -44,7 +44,7 @@ function SimpleMenu(props) {
   return (
     <ThemeProvider theme={theme}>
       <div className="m-ui-container">
-        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        <Button className="test" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
 
 
           {props.currentUser.profile_img ? <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> : <button className="profile">Profile</button>}

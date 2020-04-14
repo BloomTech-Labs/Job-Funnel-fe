@@ -142,6 +142,7 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #FAFAFA;
 }
 ol,
 ul {
@@ -192,6 +193,64 @@ a {
 }
 .bold {
   font-weight: 700;
+}
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-rotate 2s infinite linear;
+  animation: sk-rotate 2s infinite linear;
+}
+.dot1,
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #EC3944;
+  border-radius: 100%;
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+@-webkit-keyframes sk-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes sk-rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
 }
 header {
   position: sticky;
@@ -310,8 +369,8 @@ header nav {
   min-width: 220px;
   margin: 0 30px 0 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 header nav .dashboard-btn {
   color: #EC3944;
@@ -628,43 +687,6 @@ header nav .log-in-btn:hover {
 @media (max-width: 350px) {
   .m-ui-container {
     width: 100%;
-  }
-}
-.m-ui-container .drop-down-btn {
-  color: #EC3944;
-  background-color: whitesmoke;
-  width: 100px;
-  height: 35px;
-  border: 1px solid #EC3944;
-  border-radius: 50%;
-  padding: 1%;
-  text-transform: capitalize;
-}
-@media (min-width: 651px) and (max-width: 800px) {
-  .m-ui-container .drop-down-btn {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-bottom: 1%;
-  }
-}
-@media (max-width: 650px) {
-  .m-ui-container .drop-down-btn {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-bottom: 1%;
-  }
-}
-@media (max-width: 350px) {
-  .m-ui-container .drop-down-btn {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-bottom: 1%;
   }
 }
 .logout {
@@ -1016,6 +1038,29 @@ footer h4 {
   width: 100%;
   margin-bottom: 2vh;
 }
+.filter-class .search-div input {
+  background: #FFFFFF;
+  /* #D4D4D4 - Light Grey */
+  text-align: left;
+  border: 1px solid #D4D4D4;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.filter-class .search-div input::placeholder {
+  padding-left: 10px;
+}
+.filter-class .search-div select {
+  background: #FFFFFF;
+  /* #D4D4D4 - Light Grey */
+  text-align: left;
+  border: 1px solid #D4D4D4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: grey;
+}
+.filter-class .search-div select option {
+  padding-left: 10px;
+}
 .filter-class form {
   display: flex;
 }
@@ -1208,12 +1253,14 @@ footer h4 {
   }
 }
 .card-container .jobCard {
-  background-color: white;
   width: 550px;
   height: 150px;
-  border-radius: 4px;
   margin: 10px;
   padding: 5px 10px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 @media (max-width: 650px) {
   .card-container .jobCard {
@@ -1308,12 +1355,12 @@ footer h4 {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 2%;
+  padding: 0;
 }
 .jobButtons button {
   color: #ffffff;
   width: 70px;
-  height: 35px;
+  height: 30px;
   font-size: 14px;
   border-radius: 8px;
   background: #EC3944;

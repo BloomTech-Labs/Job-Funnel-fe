@@ -85,7 +85,7 @@ function JobCard(props) {
             <div className='jobButtons' >
 
                 <Link to={`/Dashboard/Job/${props.id}`}>
-                    <button>View</button>
+                    <button>Apply</button>
                 </Link>
             </div>
         </div>
