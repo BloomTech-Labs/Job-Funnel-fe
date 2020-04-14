@@ -353,8 +353,6 @@ header nav .sign-up-btn {
   letter-spacing: 1px;
 }
 header nav .sign-up-btn:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 19px;
   cursor: pointer;
 }
 @media (min-width: 651px) and (max-width: 800px) {
@@ -388,16 +386,15 @@ header nav .log-in-btn {
   color: black;
   width: 100px;
   height: 35px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(193, 58, 67, 0.9);
   border-radius: 19px;
   padding: 1%;
   background-color: #FAFAFA;
   outline: none;
   font-size: 1.4rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 1px;
 }
 header nav .log-in-btn:hover {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 @media (min-width: 651px) and (max-width: 800px) {
