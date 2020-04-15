@@ -7,11 +7,13 @@ export const LOGOUT = 'LOGOUT';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const SET_OTHER_USER = 'SET_OTHER_USER';
 export const WIPE_OTHER_USER = 'WIPE_OTHER_USER';
+export const SAVED_JOBS = 'SAVED_JOBS';
+export const DELETE_JOBS = 'DELETE_JOBS';
 
 // export const loadingStart = () =>{
 //     return { type: LOADING_START, payload: null };
 // }
-export const loadingDone = () =>{
+export const loadingDone = () => {
     return { type: LOADING_DONE, payload: null };
 }
 export const login = (user) => {
@@ -22,10 +24,10 @@ export const logout = () => {
 }
 export const getCurrentUser = () => dispatch => {
     axiosWithAuth().get('/users/user')
-    .then(res =>{
-        dispatch({ type: SET_CURRENT_USER, payload: res.data })
-    })
-    .catch(err => {dispatch({ type: LOGIN_FAILED, payload: err }); console.log('GetCurrentUser CATCH ERROR: ', err.response.data.message) });
+        .then(res => {
+            dispatch({ type: SET_CURRENT_USER, payload: res.data })
+        })
+        .catch(err => { dispatch({ type: LOGIN_FAILED, payload: err }); console.log('GetCurrentUser CATCH ERROR: ', err.response.data.message) });
     return null;
 }
 export const wipeOtherUser = () => dispatch => {
@@ -34,15 +36,16 @@ export const wipeOtherUser = () => dispatch => {
 }
 export const updateUser = (userObj, setLoading) => dispatch => {
     axiosWithAuth().put(`/users/user`, userObj)
-    .then(res =>{
-        console.log("update user", res);
-        dispatch({ type: SET_CURRENT_USER, payload: res.data })
-        dispatch({ type: SET_OTHER_USER, payload: res.data })
-    })
-    .catch(err => {
-        setLoading(false);
-        console.log('updateUser CATCH ERROR: ', err.response.data.message);  
-        alert(err.response.data.message); });
+        .then(res => {
+            console.log("update user", res);
+            dispatch({ type: SET_CURRENT_USER, payload: res.data })
+            dispatch({ type: SET_OTHER_USER, payload: res.data })
+        })
+        .catch(err => {
+            setLoading(false);
+            console.log('updateUser CATCH ERROR: ', err.response.data.message);
+            alert(err.response.data.message);
+        });
     return null;
 }
 export const adminUpdateUser = (id, userObj) => dispatch => {
@@ -58,27 +61,31 @@ export const adminUpdateUser = (id, userObj) => dispatch => {
 export const updateProfilePicture = (formData, setPictureLoading) => dispatch => {
     // console.log('updateProfilePicture firing', formData);
     axiosWithAuth().put('/users/user/picture', formData)
-    .then(res =>{
-        console.log('updateProfilePicture res: ', res);
-        dispatch({ type: SET_CURRENT_USER, payload: res.data });
-        setPictureLoading(false);
-    })
-    .catch(err => { console.log('updateProfilePicture CATCH ERROR: ', err.response.data.message) 
-        alert(err.response.data.message); 
-        setPictureLoading(false);} );
+        .then(res => {
+            console.log('updateProfilePicture res: ', res);
+            dispatch({ type: SET_CURRENT_USER, payload: res.data });
+            setPictureLoading(false);
+        })
+        .catch(err => {
+            console.log('updateProfilePicture CATCH ERROR: ', err.response.data.message)
+            alert(err.response.data.message);
+            setPictureLoading(false);
+        });
     return null;
 }
 export const deleteProfilePicture = (setPictureLoading) => dispatch => {
     console.log('deleteProfilePicture firing');
     axiosWithAuth().delete('/users/user/picture')
-    .then(res =>{
-        console.log('deleteProfilePicture res: ', res);
-        dispatch({ type: SET_CURRENT_USER, payload: {profile_img: ''} });
-        setPictureLoading(false);
-    })
-    .catch(err => { console.log('deleteProfilePicture CATCH ERROR: ', err.response.data.message) 
-        alert(err.response.data.message); 
-        setPictureLoading(false);});
+        .then(res => {
+            console.log('deleteProfilePicture res: ', res);
+            dispatch({ type: SET_CURRENT_USER, payload: { profile_img: '' } });
+            setPictureLoading(false);
+        })
+        .catch(err => {
+            console.log('deleteProfilePicture CATCH ERROR: ', err.response.data.message)
+            alert(err.response.data.message);
+            setPictureLoading(false);
+        });
     return null;
 }
 export const adminAddProfilePicture = (id, formData, setPictureLoading) => dispatch => {
@@ -130,3 +137,32 @@ export const adminDeleteProfilePicture = (id, setPictureLoading) => dispatch => 
 // DEL /admin/users/:id
 // /admin/users/:id
 // Delete a user by id as admin
+
+
+export const updateSaved = (saved) => dispatch => {
+    console.log('saving')
+    axiosWithAuth().post('/saved/', saved)
+        .then(res => {
+            console.log('saved updated', res.data);
+            dispatch({ type: SAVED_JOBS, payload: res.data });
+        })
+        .catch(err => {
+            console.log(err)
+        });
+    return null;
+}
+
+export const deleteSaved = (job_id) => dispatch => {
+    console.log('deleting')
+    axiosWithAuth().delete(`/saved/${job_id}`)
+        .then(res => {
+            console.log('erased', res.data);
+            dispatch({ type: DELETE_JOBS, payload: res.data });
+        })
+        .catch(err => {
+            console.log(err)
+        });
+    return null;
+}
+
+

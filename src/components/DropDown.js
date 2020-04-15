@@ -2,7 +2,10 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import { Link, NavLink } from 'react-router-dom';
+import { getCurrentUser } from '../redux-store/App/AppActions.js'
+import { connect } from 'react-redux';
+import styled from 'styled-components'
 
 import DarkMode from "./DarkMode/DarkMode-Toggle"
 
@@ -13,7 +16,7 @@ import { ThemeProvider } from '@material-ui/styles';
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      'Franklin Gothic Medium',
+      'Lato',
       'Arial',
       'sans-serif'
     ].join(','),
@@ -23,9 +26,11 @@ const theme = createMuiTheme({
 
 
 
-export default function SimpleMenu(props) {
+function SimpleMenu(props) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const profilePic = props.currentUser.profile_img
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -39,8 +44,12 @@ export default function SimpleMenu(props) {
   return (
     <ThemeProvider theme={theme}>
       <div className="m-ui-container">
-        <Button className="drop-down-btn" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-          Menu
+        <Button className="test" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+
+
+          {props.currentUser.profile_img ? <a id="profile-image"><img src={profilePic} width="55" height="55" className="profile-nav" /></a> : <button className="profile">Profile</button>}
+
+
         </Button>
         <Menu
           id="simple-menu"
@@ -49,12 +58,28 @@ export default function SimpleMenu(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
+
+          <MenuItem className="logout"><LinkStyled to="/Profile" > My Profile </LinkStyled> </MenuItem>
           <MenuItem >
             <DarkMode />
           </MenuItem>
           <MenuItem className="logout" onClick={props.logout}>Logout</MenuItem>
+
         </Menu>
       </div>
     </ThemeProvider>
   );
 }
+
+
+const LinkStyled = styled(Link)`
+  color:black;
+`
+
+const mapStateToProps = state => {
+  // console.log('mapstatetoprops: ', state);
+  return {
+    currentUser: state.AppReducer.currentUser,
+  }
+}
+export default connect(mapStateToProps)(SimpleMenu)

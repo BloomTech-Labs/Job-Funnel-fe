@@ -4,36 +4,50 @@ import JobCard from './JobCard.js';
 
 import searchAPI from '../../../utils/searchAPI';
 import { useLocation } from "react-router-dom"
-
+import Accordion from './Accordion'
 import styled from "styled-components";
-import LoadingOverlay from "react-loading-overlay";
+import { Loading } from "./../Loading";
 
 export default function SuggestedJobs() {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+
+    }, [])
+
     const location = useLocation();
 
     const [search, setSearch] = useState({
         title: null,
+        job_type: null,
         city: null,
         state_province: null,
         experience: null
     });
 
     const onSelectChange = e => {
-        const selectValue = e.target.value;
-        const selectInputName = e.target.name;
-        setSearch({ ...search, [selectInputName]: selectValue ? selectValue : null });
-        console.log('set value', search)
+        setSearch({ ...search, [e.target.name]: e.target.value ? e.target.value : null });
+        console.log(search);
     }
+
+
+
     const handleSubmit = event => {
         event.preventDefault();
         setLoading(true)
+
+        const searchTerm = {
+            title: search.experience ? `${search.experience} ${search.title}` : search.title,
+            job_type: search.job_type,
+            city: search.city,
+            state_province: search.state_province,
+        }
+
         searchAPI().get('/search', {
-            params: search,
+            params: searchTerm,
         }).then((response) => {
-            console.log(response)
+            console.log('RESPONSE: ', response)
             setJobs(response.data.responses);
             setLoading(false)
 
@@ -48,64 +62,74 @@ export default function SuggestedJobs() {
     return (
         <>
             <div className="filter-class ">
-                <form className="search-div">
-                    <div className='search-div animated flipInX faster' > <input className="search-bar"
+                <form className="search-divs" onSubmit={onSelectChange}>
+                    <div className='search-div' > <input className="search-bar"
                         type="text"
                         name="title"
-                        placeholder="Keywords"
+                        placeholder="Title"
                         tabIndex="0"
                         onChange={onSelectChange}
-                        handleSubmit={onSelectChange}
                     /></div>
-                    <div className='search-div animated flipInX fast' > <input className="search-bar"
+
+                    <div className='search-div'>
+                        <select className="search-bar" name="experience" onChange={onSelectChange}>
+                            <option selected value="">Experience</option>
+                            <option value="">Show All Jobs</option>
+                            <option value="Intern">Internship</option>
+                            <option value="Entry">Entry</option>
+                            <option value="Mid">Mid-level</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </div>
+
+
+                    <div className='search-div'> <input className="search-bar"
                         type="text"
                         name="city"
-                        placeholder="Enter City"
+                        placeholder="City"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
-                    <div className='search-div animated flipInX  ' ><input className="search-bar"
+                    <div className='search-div'><input className="search-bar"
                         type="text"
                         name="state_province"
-                        placeholder="Enter State"
+                        placeholder="State"
                         tabIndex="0"
                         onChange={onSelectChange}
                         handleSubmit={onSelectChange}
                     /></div>
 
-                    <div className='search-div animated flipInX slow'><input className="search-bar"
-                        type="text"
-                        name="experience"
-                        placeholder="Enter Experience"
-                        tabIndex="0"
-                        onChange={onSelectChange}
-                        handleSubmit={onSelectChange}
-                    /></div>
-                    <button className="animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
+                    <button className="submit-button animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
-            <StyledLoader active={loading} spinner text='Searching for jobs...'>
-                {/* on the div below: if loading is false and jobs.length 
-                <1 , then render card-container message. if jobs.length 1<= x < 4, then render card-container-vh. else, render card container  */}
-                <div className={(loading === false && jobs.length < 1 ? "card-container-message" : (jobs.length >= 1 && jobs.length < 4 ? "card-container-vh" : 'card-container'))}>
-                    {/* if cards are not loading AND the job obj is empty, then:  */}
-                    {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
-                        jobs.map((job, index) => {
-                            // console.log(job);
-                            return (
-                                <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
-                            )
-                        }))}
-                </div>
-            </StyledLoader>
+
+            {loading ? <Loading /> : <div className={(loading === false && jobs.length < 1 ? "card-container-message" : 'card-container')}>
+
+                {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
+                    jobs.map((job, index) => {
+                        // console.log(job);
+                        return (
+                            <Accordion 
+                                key={index} 
+                                id={job.job_id} 
+                                title={job.title} 
+                                description={job.description} 
+                                company={job.company_name} 
+                                image={job.company_logo_url} 
+                                location={`${job.location_city}, ${job.location_state_province}`} 
+                            />
+                        )
+                    }))}
+            </div>
+            }
         </>
 
     )
 }
 
-const StyledLoader = styled(LoadingOverlay)`
+/* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
     width:100%;
     z-index: 2;
-`;
+`; */

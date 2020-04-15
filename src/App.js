@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Route, useLocation } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute.js"
-import styled from "styled-components";
-import LoadingOverlay from "react-loading-overlay";
 
 import Login from "./components/Account/Login.js"
 import Profile from "./components/Account/Profile.js"
@@ -43,13 +41,13 @@ function App(props) {
       <link rel="stylesheet" type="text/css" href={theme} />
       <Header changeTheme={changeTheme} />
       <Route exact path='/' component={LandingPage} />
+
       <Route exact path='/Login' component={Login} />
       <Route exact path='/Register' component={Register} />
       <Route exact path='/About' component={AboutUs} />
       <PrivateRoute path='/Profile' component={Profile} />
       <PrivateRoute path='/Dashboard' component={Dashboard} />
       <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
-      <Footer />
     </div>
   );
 }
@@ -66,8 +64,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, { getCurrentUser, })(App)
 
-const StyledLoader = styled(LoadingOverlay)`
-    min-height: 100vh;
-    width:100%;
-    z-index: 2;
-`;

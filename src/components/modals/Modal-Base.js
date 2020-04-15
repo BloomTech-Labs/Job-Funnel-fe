@@ -8,18 +8,18 @@ import styled from 'styled-components';
 
 // Complete Style for Modal
 const customStyles = {
-    content : {
-    top        : '25%',
-    left       : '50%',
-    right      : 'auto',
-    bottom     : 'auto',
-    marginRight: '-50%',
-    transform  : 'translate(-50%, -50%)',
-    display    : 'flex',
-    flexFlow   : 'column', 
-    alignItems : 'center',
-    alignContent : 'center',
-    justifyContent : 'center',
+    content: {
+        top: '25%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        display: 'flex',
+        flexFlow: 'column',
+        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'center',
     }
 }
 
@@ -44,7 +44,7 @@ const Div = styled.div`
 Modal.setAppElement(document.getElementsByClassName('container'));
 
 
-function ModalBase(props){
+function ModalBase(props) {
     const [modalOpen, setOpen] = useState(false)
     const [activeModal, setActiveModal] = useState(0);
     const [job, setJob] = useState(''); // State for JOB PREF
@@ -56,22 +56,22 @@ function ModalBase(props){
 
     // Function for JOB PREF 
     const handleChange = event => {
-        setJob({...job, [event.target.name]: event.target.value})
+        setJob({ ...job, [event.target.name]: event.target.value })
     }
 
-    function openModal(){
+    function openModal() {
         setOpen(true);
         console.log(activeModal)
     }
 
-    function closeModal(){
+    function closeModal() {
         setOpen(false)
         setActiveModal(0)
     }
 
     //Styling the modal after it's open
-    function afterOpenModal(){
-        subtitle.style.color= '#f00';
+    function afterOpenModal() {
+        subtitle.style.color = '#f00';
     }
 
     const nextModal = () => { // USE FOR SUBMITTING UPDATED DATA
@@ -89,16 +89,16 @@ function ModalBase(props){
     }
 
     const prevModal = () => {
-           setActiveModal(activeModal - 1)
+        setActiveModal(activeModal - 1)
     }
 
-    return(
-        <div style={{zIndex: 20, display: 'absolute'}}>
+    return (
+        <div style={{ zIndex: 20, display: 'absolute' }}>
             <button onClick={openModal}>UPDATE</button>
             <Modal isOpen={modalOpen} onAfterOpen={afterOpenModal} onRequestClose={closeModal}
-            style={customStyles} contentLabel="Test Modal">
+                style={customStyles} contentLabel="Test Modal">
                 <h2 ref={titleColor => (subtitle = titleColor)}>Make Your Profile More Professional!</h2>
-                <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal}/>
+                <ModalData activeModal={activeModal} handleChange={handleChange} closeModal={closeModal} />
                 <Button className="submit-modal-button" onClick={skipModal}>Skip</Button>
                 <Button className="submit-modal-button" onClick={nextModal}>Next</Button>
                 <Button className="submit-modal-button" onClick={prevModal}>Previous</Button>
@@ -115,7 +115,7 @@ const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
     }
-  }
+}
 
 
 

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import LoadingOverlay from "react-loading-overlay";
 import styled from 'styled-components';
 
-
 import { validateInputs, isValidPassword } from '../../utils/AppUtils.js'
 import { updateUser, deleteProfilePicture, updateProfilePicture } from '../../redux-store/App/AppActions.js';
 import ProfilePicture from "./ProfilePicture.js"
@@ -166,7 +165,7 @@ function Profile(props) {
     <StyledLoader active={loading} spinner text='Loading...'>
 
       {/* Profile Page info, takes in props in order to fill in the information that you used while signing up, it also allows the data to be passed into it from where you edit the profile form.       */}
-      <div className="container-profile animated fadeIn faster delay-1s ">
+      <div className="container-profile">
         {!showEditForm && <>
           <section className='profile-section'>
             <div className="profile-top" >
@@ -174,23 +173,25 @@ function Profile(props) {
               <div className="profileNameDiv">
                 <h3 data-testid="first-last">{props.currentUser.first_name} {props.currentUser.last_name}</h3>
                 <h4>{props.currentUser.email}</h4>
-                <button onClick={() => setShowEditForm(!showEditForm)}>Edit</button>
+                <button onClick={() => setShowEditForm(!showEditForm)}>Edit Profile</button>
               </div>
             </div>
-            <div className="profileCard">
-              <h3>About</h3>
-              <p style={{ textAlign: "justify" }}>{props.currentUser.about}</p>
-            </div>
-            <div className="profileCard">
-              <h3>Education</h3>
-              <p>{props.currentUser.education}</p>
-            </div>
-            <div className="profileCard" style={{ marginBottom: "2%" }}>
-              <h3>Profile Links</h3>
-              <p>Github: <a href={props.currentUser.github_url}>{props.currentUser.github_url}</a></p>
-              <p>LinkedIn: <a href={props.currentUser.linkedin_url}>{props.currentUser.linkedin_url}</a></p>
-              <p>Resume: <a href={props.currentUser.resume}>{props.currentUser.resume}</a></p>
-              <p>Portfolio: <a href={props.currentUser.portfolio_url}>{props.currentUser.portfolio_url}</a></p>
+            <div id="profile-cards">
+              <div className="profileCard">
+                <h3>About Me</h3>
+                <p>{props.currentUser.about}</p>
+              </div>
+
+              <div className="profileCard" style={{ marginBottom: "2%" }}>
+                <h4>Github: <a href={props.currentUser.github_url}>{props.currentUser.github_url}</a></h4>
+                <h4>LinkedIn: <a href={props.currentUser.linkedin_url}>{props.currentUser.linkedin_url}</a></h4>
+                <h4>Resume: <a href={props.currentUser.resume}>{props.currentUser.resume}</a></h4>
+                <h4>Portfolio: <a href={props.currentUser.portfolio_url}>{props.currentUser.portfolio_url}</a></h4>
+              </div>
+              <div className="profileCard">
+                <h3>Education</h3>
+                <p>{props.currentUser.education}</p>
+              </div>
             </div>
           </section>
         </>}
@@ -201,7 +202,6 @@ function Profile(props) {
             <div className="profile-second-main2">
               <section className="profile-section">
                 <div className="edit-profile-top" >
-                  <h3>Update Profile</h3>
                   <ProfilePicture currentUser={props.currentUser} changeProfilePic={changeProfilePic} deleteProfilePic={deleteProfilePic} pictureLoading={pictureLoading} />
                 </div>
               </section>
@@ -242,16 +242,13 @@ function Profile(props) {
                     <h3>Linkedin</h3>
                     <input className="text-input" name="linkedin" type="text" onChange={handleChange} placeholder={props.currentUser.linkedin_url ? props.currentUser.linkedin_url : 'Enter Linkedin URL '} />
                   </div>
-                  <div>
-                    <h3>Upload Resume</h3>
-                    <input className="text-input" name="resume" type="text" onChange={handleChange} placeholder={props.currentUser.resume ? props.currentUser.resume : 'Upload Resume Here'} />
-                  </div>
+
                   <div>
                     <h3>New password</h3>
                     <input className="text-input" type='password' name="newPassword" onChange={handleChange} placeholder='New Password' />
                   </div>
                   <div>
-                    <h3 style={{ color: 'red' }}>Re-Enter Password to Save Changes</h3>
+                    <h4 style={{ color: 'red' }}>Re-Enter Password to Save Changes</h4>
                     <input className="text-input" type='password' name='oldPassword' onChange={handleChange} placeholder='Current Password' />
                   </div>
                   <div className="edit-profile-btns">

@@ -1,5 +1,5 @@
 // fonts
-// @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 @import "./Global/reset.less";
@@ -7,12 +7,13 @@
 @import "./Global/global.less";
 
 // #region colors
-@quickhire-main:  #3073AB;
+@quickhire-main:  #EC3944;
 @quickhire-secondary: #ffffff;
 // Standard Colors
+@quickhire-grey: #FAFAFA;
 @quickhire-background: #ffffff;
 @quickhire-footer:  #3073AB;
-@quickhire-message: #87CEEB;
+@quickhire-message: #FAFAFA;
 @footer-text: #ffffff;
 @navigation-button: #ffffff;
 @navigation-text: #AC2A38;
@@ -24,7 +25,7 @@
 @header-logo: #AC2A38;
 @card-border: #AC2A38;
 @side-navigation-background: #AC2A38;
-@profile-button-background: #3073AB;
+@profile-button-background: #AC2A38;
 @profile-button-text: #ffffff;
 @card-border: #d1d5da;
 @button-border:#D3D3D3;
@@ -32,7 +33,7 @@
 @profile-border: #D3D3D3;
 // Hover Colors
 @profile-button-hover: #ffffff;
-@profile-button-text-hover: #3073AB;
+@profile-button-text-hover: #AC2A38;
 @navigation-button-hover: #AC2A38;
 @navigation-text-hover: white;
 @card-button-hover: #AC2A38;
@@ -41,10 +42,63 @@
 @header-text-hover: white;
 // #endregion
 
+@main-font: 'Lato';
+
 //Dark Mode Colors
-@darkmode-background: #313843;
+@darkmode-header: #424242;
+@darkmode-background: #212121;
 @darkmode-text: white;
 @darkmode-card-text: black;
+
+//Loading
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+  
+  .dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: @quickhire-main;
+    border-radius: 100%;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
 
 @import "./Global/mixins.less";
 
@@ -53,7 +107,7 @@
 @import "./ComponentStyles/LandingPage.less";
 @import "./ComponentStyles/SavedJobs.less";
 @import "./ComponentStyles/AboutUs.less";
-
+@import "./ComponentStyles//RightNav.less";
 
 @import "./ComponentStyles/Dashboard.less";
 @import "./ComponentStyles/JobDetails.less";
@@ -66,3 +120,139 @@
 
 
 // less-watch-compiler src/less public/css index.less
+
+
+.accordion-item__line {
+  /* display: block; */
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+  width: 550px;
+  height: 150px;
+    margin: 10px;
+    padding: 5px 10px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+   
+}
+
+.accordion-item__title {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 700;
+  color: #121212;
+  display: flex;
+      margin-top: 2px;
+}
+
+.jobButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0;
+}
+
+
+.card-text {
+  width: 100%;
+}
+
+
+.accordion-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: transparent;
+    border:none
+  }
+}
+
+
+
+.accordion-list__item + .accordion-list__item {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.accordion-item--opened .accordion-item__icon {
+  transform: rotate(180deg);
+}
+
+.accordion-item--opened .accordion-item__inner {
+  max-height: 300rem;
+  transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition-duration: 0.5s;
+  transition-property: max-height;
+}
+
+.accordion-item--opened .accordion-item__content {
+  opacity: 1;
+  transform: translateY(0);
+  width: 550px;
+    background: #FFFFFF;
+  transition-delay: 0.2s;
+  border: 1px solid #C4C4C4;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-property: opacity, transform;
+}
+
+
+.accordion-item__line:hover {
+  cursor: pointer;
+}
+
+
+.accordion-item__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC);
+  opacity: 0.6;
+  text-align: center;
+}
+
+.accordion-item__inner {
+  max-height: 0;
+  overflow: hidden;
+  text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition-duration: 0.5s;
+  transition-property: max-height;
+  z-index: 1;
+  margin: 10px;
+  position: relative;
+}
+
+.accordion-item__content {
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition-timing-function: linear, ease;
+  transition-duration: 0.1s;
+  transition: opacity, transform;
+  transition-delay: 0.5s;
+  padding: 0 1.2rem 1.2rem;
+  border: 2px solid green;
+
+}
+
+.accordion-item__paragraph {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: #333;
+  /* font-weight: 300; */
+  line-height: 1.3;
+}
