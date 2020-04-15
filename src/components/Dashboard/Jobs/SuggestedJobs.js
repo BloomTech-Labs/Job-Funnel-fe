@@ -4,7 +4,7 @@ import JobCard from './JobCard.js';
 
 import searchAPI from '../../../utils/searchAPI';
 import { useLocation } from "react-router-dom"
-
+import Accordion from './Accordion'
 import styled from "styled-components";
 import { Loading } from "./../Loading";
 
@@ -110,7 +110,7 @@ export default function SuggestedJobs() {
                     jobs.map((job, index) => {
                         // console.log(job);
                         return (
-                            <JobCard 
+                            <Accordion 
                                 key={index} 
                                 id={job.job_id} 
                                 title={job.title} 
