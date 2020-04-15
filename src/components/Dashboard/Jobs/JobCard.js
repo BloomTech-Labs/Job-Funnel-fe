@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import heart from './../../../images/heartEmpty.svg'
 import heartFull from './../../../images/heartFull.svg'
-import { updateSaved } from '../../../redux-store/App/AppActions'
+import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
 
 function JobCard(props) {
     console.log('PROPS', props)
@@ -35,28 +35,13 @@ function JobCard(props) {
     //handles save, sends the saved jobs to the saved endpoint.
     const handleSave = () => {
         if (toggle === false) {
-            /* axiosWithAuth().post('/saved/', saved)
-                .then(res => {
-                    console.log('handle save job response', res.data)
-                    setSaved({ ...saved })
-                    setToggle(true)
-                })
-                .catch(error => {
-                    console.error(error)
-                }) */
-            props.updateSaved(saved)
-            setToggle(true)
+            props.updateSaved(saved);
+            setToggle(true);
+            
             //Delete save
-        } else if (props.toggle === true) {
-            axiosWithAuth().delete(`/saved/${job_id}`)
-                .then(res => {
-                    console.log('erased job from saved table?', res.data)
-                    setToggle(false)
-                    setSaved({ ...saved })
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+        } else if (toggle === true) {
+            props.deleteSaved(job_id);
+            setToggle(false);
         }
 
     }
@@ -100,6 +85,6 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateSaved })(JobCard)
+export default connect(mapStateToProps, { updateSaved, deleteSaved })(JobCard)
 
 

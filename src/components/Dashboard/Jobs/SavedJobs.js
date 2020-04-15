@@ -4,7 +4,7 @@ import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Loading } from './../Loading'
 
 
@@ -15,24 +15,26 @@ function SavedJobs(props) {
     const [save, setSave] = useState([])
     const [loading, setLoading] = useState(false);
 
-
     const id = props.currentUser.id
+
+    // This function loads saved jobs for a user.
+    const loadSaves = () => axiosWithAuth().get(`/saved/${id}`)
+    .then(res => {
+        console.log('response from save jobs', res.data)
+        let SavedCopy = res.data.filter((e) => e.status === "saved")
+        setSave(SavedCopy)
+        setLoading(false);
+    })
+    .catch(error => {
+        console.error(error.message)
+        setLoading(false);
+    })
 
 
     //axiosWithAuth is getting the saved id's that are made on the SuggestedJobs component whenever you click the save button
     useEffect(() => {
         setLoading(true);
-        axiosWithAuth().get(`/saved/${id}`)
-            .then(res => {
-                console.log('response from save jobs', res.data)
-                let SavedCopy = res.data.filter((e) => e.status === "saved")
-                setSave(SavedCopy)
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error(error.message)
-                setLoading(false);
-            })
+        loadSaves();
     }, [id, props.saved])
 
     //deletes the selected saved job
@@ -44,6 +46,7 @@ function SavedJobs(props) {
                 console.log('erased job from saved table', res.data)
                 setLoading(false)
                 setSave(SavedCopy)
+                loadSaves();
             })
             .catch(error => {
                 console.error(error)
@@ -96,7 +99,7 @@ const mapStateToProps = state => {
         saved: state.AppReducer.saved
     }
 }
-export default connect(mapStateToProps, {})(SavedJobs)
+export default withRouter(connect(mapStateToProps, {})(SavedJobs));
 
 /* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;

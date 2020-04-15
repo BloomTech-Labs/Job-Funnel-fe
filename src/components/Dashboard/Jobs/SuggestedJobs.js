@@ -125,7 +125,15 @@ export default function SuggestedJobs() {
                     jobs.map((job, index) => {
                         // console.log(job);
                         return (
-                            <JobCard key={index} id={job.job_id} title={job.title} description={job.description} company={job.company_name} image={job.company_logo_url} location={`${job.location_city}, ${job.location_state_province}`} />
+                            <JobCard 
+                                key={index} 
+                                id={job.job_id} 
+                                title={job.title} 
+                                description={job.description} 
+                                company={job.company_name} 
+                                image={job.company_logo_url} 
+                                location={`${job.location_city}, ${job.location_state_province}`} 
+                            />
                         )
                     }))}
             </div>

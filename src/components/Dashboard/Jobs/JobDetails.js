@@ -4,6 +4,7 @@ import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 
 import axiosWithAuth from "../../../utils/axiosWithAuth.js"
+import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
 import { connect } from "react-redux"
 
 
@@ -35,32 +36,38 @@ function JobDetails(props) {
             })
             .catch(err => console.error(err))
             
-    }, []);
+    }, [job_id]);
 
-   
+
     // posts the jobs that you save to the save component page so that you can view all the jobs you save.
     const handleApply = () => {
         if (applytoggle === false) {
-            axiosWithAuth().post('/saved/', applied)
-                .then(res => {
-                    console.log('handle save job response', res.data)
-                    setApplied({ ...applied })
-                    setApplytoggle(!applytoggle)
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+            // axiosWithAuth().post('/saved/', applied)
+            //     .then(res => {
+            //         console.log('handle save job response', res.data)
+            //         setApplied({ ...applied })
+            //         setApplytoggle(!applytoggle)
+            //     })
+            //     .catch(error => {
+            //         console.error(error)
+            //     })
+            props.updateSaved(applied);
+            setApplied({ ...applied })
+            setApplytoggle(true)
         } else {
             // delete jobs you save on the saved page
-            axiosWithAuth().delete(`/saved/${job_id}`)
-                .then(res => {
-                    console.log('erased job from saved table?', res.data)
-                    setApplytoggle(false)
-                    setApplied({ ...applied })
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+            // axiosWithAuth().delete(`/saved/${job_id}`)
+            //     .then(res => {
+            //         console.log('erased job from saved table?', res.data)
+            //         setApplytoggle(false)
+            //         setApplied({ ...applied })
+            //     })
+            //     .catch(error => {
+            //         console.error(error)
+            //     })
+            props.deleteSaved(job_id);
+            setApplied({ ...applied })
+            setApplytoggle(false)
         }
     }
 
@@ -73,7 +80,7 @@ function JobDetails(props) {
     let dateDay= date.getDate()
     let dateYear = date.getFullYear()
     
-   
+    
     //Styling for the Job Details Component Page
     if(loading === true){
         return (
@@ -108,7 +115,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {})(JobDetails)
+export default connect(mapStateToProps, { updateSaved, deleteSaved })(JobDetails)
 
 const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import axiosWithAuth from "../../../utils/axiosWithAuth"
-import { connect } from "react-redux"
+import React, { useState, useEffect } from 'react';
+import axiosWithAuth from "../../../utils/axiosWithAuth";
+import { connect } from "react-redux";
 import styled from "styled-components";
-import { Loading } from './../Loading'
+import { Loading } from './../Loading';
+import { withRouter } from 'react-router-dom';
 // applied jobs component allows a spot for you to pretty much save jobs that you've applied for. 
 function AppliedJobs(props) {
 
@@ -11,23 +12,25 @@ function AppliedJobs(props) {
 
     const id = props.currentUser.id
 
+    // This function loads applied jobs for a user.
+    const loadApplies = () => axiosWithAuth().get(`/saved/${id}`)
+    .then(res => {
+        console.log('response from applied jobs', res.data)
+        //below -> filtering for items in the array that have the status coded in as applied 
+        let AppliedCopy = res.data.filter((e) => e.status === "applied")
+        setApply(AppliedCopy)
+        setLoading(false);
+    })
+    .catch(error => {
+        console.error(error.message)
+        setLoading(false);
+    })
+
     // get request in order to get the job by the saved id
     useEffect(() => {
         setLoading(true);
-        axiosWithAuth().get(`/saved/${id}`)
-            .then(res => {
-                console.log('response from applied jobs', res.data)
-                //below -> filtering for items in the array that have the status coded in as applied 
-                let AppliedCopy = res.data.filter((e) => e.status === "applied")
-                setApply(AppliedCopy)
-                setLoading(false);
-
-            })
-            .catch(error => {
-                console.error(error.message)
-                setLoading(false);
-            })
-    }, [id])
+        loadApplies();
+    }, [id, props.saved])
 
     const JobDetails = (job_id) => {
         setTimeout(() => {
@@ -43,6 +46,7 @@ function AppliedJobs(props) {
                 console.log('erased job from saved table', res.data)
                 setLoading(false)
                 setApply(AppliedCopy)
+                loadApplies();
             })
             .catch(error => {
                 console.error(error)
@@ -73,7 +77,7 @@ function AppliedJobs(props) {
 
                             <p>{e.description.slice(0, 100)}...</p>
                             <div className="saved-buttons">
-                                <button onClick={() => handleDelete(e.job_id)}>Erase from Applied</button>
+                                <button onClick={() => handleDelete(e.job_id)}>Remove</button>
                                 <button onClick={() => JobDetails(e.job_id)}>More Info</button>
                             </div>
                         </div>
@@ -86,9 +90,10 @@ function AppliedJobs(props) {
 const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
+        saved: state.AppReducer.saved
     }
 }
-export default connect(mapStateToProps, {})(AppliedJobs)
+export default withRouter(connect(mapStateToProps, {})(AppliedJobs));
 
 /* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
