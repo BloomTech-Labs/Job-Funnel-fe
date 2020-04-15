@@ -8,7 +8,7 @@ export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const SET_OTHER_USER = 'SET_OTHER_USER';
 export const WIPE_OTHER_USER = 'WIPE_OTHER_USER';
 export const SAVED_JOBS = 'SAVED_JOBS';
-export const DELETE_JOBS = 'DELETE_JOBS'
+export const DELETE_JOBS = 'DELETE_JOBS';
 
 // export const loadingStart = () =>{
 //     return { type: LOADING_START, payload: null };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from "../../../utils/axiosWithAuth";
 import { connect } from "react-redux";
+import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
 import styled from "styled-components";
 import { Loading } from './../Loading';
 import { withRouter } from 'react-router-dom';
@@ -40,18 +41,7 @@ function AppliedJobs(props) {
     // delete request to remove the jobs that you don't want on your applied jobs page.
     const handleDelete = (job_id) => {
         setLoading(true)
-        axiosWithAuth().delete(`/saved/${job_id}`)
-            .then(res => {
-                let AppliedCopy = apply.filter((e) => e.job_id !== job_id)
-                console.log('erased job from saved table', res.data)
-                setLoading(false)
-                setApply(AppliedCopy)
-                loadApplies();
-            })
-            .catch(error => {
-                console.error(error)
-                setLoading(false)
-            })
+        props.deleteSaved(job_id);
     }
 
     //if loading is happening, then only return loader
@@ -93,7 +83,7 @@ const mapStateToProps = state => {
         saved: state.AppReducer.saved
     }
 }
-export default withRouter(connect(mapStateToProps, {})(AppliedJobs));
+export default withRouter(connect(mapStateToProps, {updateSaved, deleteSaved})(AppliedJobs));
 
 /* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
