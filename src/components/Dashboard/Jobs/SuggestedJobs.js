@@ -71,26 +71,13 @@ export default function SuggestedJobs() {
                         onChange={onSelectChange}
                     /></div>
 
-
-                    {//WE DONT HAVE THIS DATA YET
-                    /* <div className='search-div animated flipInX fast' > <select className="search-bar" onChange={onSelectChange} name="job_type" value={search.job_type}
-                    >
-                        <option selected value="coconut">Job Type</option>
-                        <option value="fulltime">Full-time</option>
-                        <option value="partime-">Part-Time</option>
-                        <option value="contract">Contract</option>
-                        <option value="temporary">Temporary</option>
-                        <option value="internships">Internships</option>
-                    </select>
-                    </div> */}
-
                     <div className='search-div'>
                         <select className="search-bar" name="experience" onChange={onSelectChange}>
                             <option selected value="">Experience</option>
                             <option value="">Show All Jobs</option>
-                            <option value="Internship">Internship</option>
+                            <option value="Intern">Internship</option>
                             <option value="Entry">Entry</option>
-                            <option value="Mid-level">Mid-level</option>
+                            <option value="Mid">Mid-level</option>
                             <option value="Senior">Senior</option>
                         </select>
                     </div>
@@ -113,13 +100,11 @@ export default function SuggestedJobs() {
                         handleSubmit={onSelectChange}
                     /></div>
 
-
                     <button className="submit-button animated flipInX delay-1s faster" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
 
             {loading ? <Loading /> : <div className={(loading === false && jobs.length < 1 ? "card-container-message" : 'card-container')}>
-
 
                 {(loading === false && jobs.length < 1 ? <div className='use-search  animated flipInX ' ><h2>Use the search above to find your next job!</h2></div> :
                     jobs.map((job, index) => {

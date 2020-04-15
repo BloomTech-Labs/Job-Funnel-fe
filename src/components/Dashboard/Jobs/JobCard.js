@@ -32,6 +32,20 @@ function JobCard(props) {
         status: "applied"
     })
 
+    //check to see if saved
+
+    useEffect(() => {
+        axiosWithAuth().get(`/saved/${user_id}`)
+        .then(res => {
+            let checkSaved = res.data.filter((e) => e.status === "saved" && e.job_id === job_id);
+            checkSaved.length > 0 && checkSaved ? setToggle(true) : setToggle(false);
+        })
+        .catch(error => {
+            console.error(error.message)
+        })
+            
+    }, [props.savedArray]);
+
 
     //handles save, sends the saved jobs to the saved endpoint.
     const handleSave = () => {
@@ -80,7 +94,8 @@ function JobCard(props) {
 const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
-        toggle: state.AppReducer.toggle
+        toggle: state.AppReducer.toggle,
+        savedArray: state.AppReducer.saved
     }
 }
 
