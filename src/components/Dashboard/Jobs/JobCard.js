@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import heart from './../../../images/heartEmpty.svg'
 import heartFull from './../../../images/heartFull.svg'
 import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
+import Accordion from './Accordion'
 
 function JobCard(props) {
     console.log('PROPS', props)
@@ -30,6 +31,20 @@ function JobCard(props) {
         job_id: job_id,
         status: "applied"
     })
+
+    //check to see if saved
+
+    useEffect(() => {
+        axiosWithAuth().get(`/saved/${user_id}`)
+        .then(res => {
+            let checkSaved = res.data.filter((e) => e.status === "saved" && e.job_id === job_id);
+            checkSaved.length > 0 && checkSaved ? setToggle(true) : setToggle(false);
+        })
+        .catch(error => {
+            console.error(error.message)
+        })
+            
+    }, [props.savedArray]);
 
 
     //handles save, sends the saved jobs to the saved endpoint.
@@ -60,19 +75,17 @@ function JobCard(props) {
 
             </div>
             <div className="card-text">
-
-
                 <div className="card-info">
                     <h3>{props.title}</h3>
                 </div>
-
-            </div>
-            <div className='jobButtons' >
-
+                <div className='jobButtons' >
                 <Link to={`/Dashboard/Job/${props.id}`}>
                     <button>Apply</button>
                 </Link>
             </div>
+            </div>
+            
+            <Accordion />
         </div>
     )
 }
@@ -81,7 +94,8 @@ function JobCard(props) {
 const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
-        toggle: state.AppReducer.toggle
+        toggle: state.AppReducer.toggle,
+        savedArray: state.AppReducer.saved
     }
 }
 
