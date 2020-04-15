@@ -289,7 +289,6 @@ header {
     height: 25vh;
   }
 }
-<<<<<<< HEAD
 header .logo-img {
   max-width: 70%;
   margin-left: 30px;
@@ -312,8 +311,6 @@ header .profile-nav {
   border: 1px solid #EC3944;
   padding: 1px;
 }
-=======
->>>>>>> master
 header a {
   text-decoration: none;
 }
@@ -1072,18 +1069,10 @@ footer h4 {
   margin: 1%;
 }
 .filter-class .search-bar {
-<<<<<<< HEAD
   width: 15vw;
   height: 35px;
   text-align: center;
   border-radius: 6px;
-=======
-  width: 180px;
-  height: 35px;
-  text-align: center;
-  border-radius: 6px;
-  border: 1px solid #3073AB;
->>>>>>> master
 }
 .filter-class .job-select {
   width: 133px;
@@ -1414,7 +1403,6 @@ footer h4 {
   padding-bottom: 1.5%;
   padding-top: 2%;
 }
-<<<<<<< HEAD
 .left-nav-container {
   background-color: white;
   height: 80vh;
@@ -1440,8 +1428,6 @@ footer h4 {
 button {
   cursor: pointer;
 }
-=======
->>>>>>> master
 .job-details-container-2 {
   height: 100vh;
   display: flex;

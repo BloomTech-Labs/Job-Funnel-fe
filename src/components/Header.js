@@ -4,14 +4,10 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../redux-store/App/AppActions.js';
-<<<<<<< HEAD
 import SimpleMenu from "./DropDown";
 import logo from '../images/quickhire.svg';
 import { getCurrentUser } from '../redux-store/App/AppActions.js'
 import quickhire from './../images/quickhire.svg'
-=======
-import SimpleMenu from "./DropDown"
->>>>>>> master
 
 
 // header - includes links to login, register, dashboard, menu drop down with logout and darkmode on it.
@@ -35,14 +31,10 @@ function Header(props) {
     return (
         <>
             <header>
-<<<<<<< HEAD
                 <Link to='/Dashboard'>
                     <img className="logo-img" src={logo} />
 
                 </Link>
-=======
-                <Link to='/Dashboard'><h1>QuickHire</h1></Link>
->>>>>>> master
                 {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>
                 <option value={"css/red.css"}>red</option>
