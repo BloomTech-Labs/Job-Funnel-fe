@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import heart from './../../../images/heartEmpty.svg'
 import heartFull from './../../../images/heartFull.svg'
 import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
+import Accordion from './Accordion'
 
 function JobCard(props) {
     console.log('PROPS', props)
@@ -60,19 +61,17 @@ function JobCard(props) {
 
             </div>
             <div className="card-text">
-
-
                 <div className="card-info">
                     <h3>{props.title}</h3>
                 </div>
-
-            </div>
-            <div className='jobButtons' >
-
+                <div className='jobButtons' >
                 <Link to={`/Dashboard/Job/${props.id}`}>
                     <button>Apply</button>
                 </Link>
             </div>
+            </div>
+            
+            <Accordion />
         </div>
     )
 }
