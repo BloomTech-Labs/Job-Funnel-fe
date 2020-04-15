@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axiosWithAuth from "../../../utils/axiosWithAuth"
 
 import { connect } from "react-redux"
+import { updateSaved, deleteSaved } from '../../../redux-store/App/AppActions'
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 import { Loading } from './../Loading'
@@ -40,18 +41,7 @@ function SavedJobs(props) {
     //deletes the selected saved job
     const handleDelete = (job_id) => {
         setLoading(true)
-        axiosWithAuth().delete(`/saved/${job_id}`)
-            .then(res => {
-                let SavedCopy = save.filter((e) => e.job_id !== job_id)
-                console.log('erased job from saved table', res.data)
-                setLoading(false)
-                setSave(SavedCopy)
-                loadSaves();
-            })
-            .catch(error => {
-                console.error(error)
-                setLoading(false)
-            })
+        props.deleteSaved(job_id);
     }
 
     //pushes saved jobs to here, and also returns nothing is available if you haven't saved any jobs, with a link back to the dashboard.
@@ -99,7 +89,7 @@ const mapStateToProps = state => {
         saved: state.AppReducer.saved
     }
 }
-export default withRouter(connect(mapStateToProps, {})(SavedJobs));
+export default withRouter(connect(mapStateToProps, {updateSaved, deleteSaved})(SavedJobs));
 
 /* const StyledLoader = styled(LoadingOverlay)`
     min-height: 100vh;
