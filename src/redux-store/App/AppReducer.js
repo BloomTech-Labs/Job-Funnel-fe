@@ -1,6 +1,6 @@
 import {
     SET_CURRENT_USER, LOGIN_FAILED, LOGOUT, SET_OTHER_USER,
-    WIPE_OTHER_USER, SAVED_JOBS
+    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS
 } from './AppActions.js';
 
 const initialState = {
@@ -50,6 +50,13 @@ export const AppReducer = (state = initialState, action) => {
                 currentUser: '',
             };
         case SAVED_JOBS:
+            console.log('from reducer')
+            return {
+                ...state,
+                saved: [...state.saved, `${action.payload}, `],
+                toggle: true
+            };
+        case DELETE_JOBS:
             console.log('from reducer')
             return {
                 ...state,

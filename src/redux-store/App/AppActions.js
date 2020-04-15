@@ -153,7 +153,7 @@ export const updateSaved = (saved) => dispatch => {
 }
 
 export const deleteSaved = (job_id) => dispatch => {
-    console.log('saving')
+    console.log('deleting')
     axiosWithAuth().delete(`/saved/${job_id}`)
         .then(res => {
             console.log('erased', res.data);
