@@ -3,56 +3,52 @@
   justify-content: space-between;
   min-width: 100%;
   width: 100%;
-  margin-bottom:2vh;
+  margin-bottom: 2vh;
+  margin-left: 2vw;
 
-.search-div {
-  
-  input {
-    background: #FFFFFF;
-    /* #D4D4D4 - Light Grey */
-    text-align: left;
-    border: 1px solid #D4D4D4;
-    box-sizing: border-box;
-    border-radius: 8px;
-  
-    &::placeholder {
-      padding-left: 10px;
+  .search-div {
+    input {
+      background: #ffffff;
+      /* #D4D4D4 - Light Grey */
+      text-align: left;
+      border: 1px solid #d4d4d4;
+      box-sizing: border-box;
+      border-radius: 8px;
+
+      &::placeholder {
+        padding-left: 10px;
+      }
+    }
+
+    select {
+      background: #ffffff;
+      /* #D4D4D4 - Light Grey */
+      text-align: left;
+      border: 1px solid #d4d4d4;
+      box-sizing: border-box;
+      border-radius: 8px;
+      color: grey;
+
+      option {
+        padding-left: 10px;
+      }
     }
   }
-
-  select {
-    background: #FFFFFF;
-    /* #D4D4D4 - Light Grey */
-    text-align: left;
-    border: 1px solid #D4D4D4;
-    box-sizing: border-box;
-    border-radius: 8px;
-    color:grey;
-  
-    option {
-      padding-left: 10px;
-    }
-  }
-}
 
   form {
-    display:flex;
+    display: flex;
+  }
 
-    }
+  div {
+    margin: 1%;
+  }
 
-    div {
-      margin: 1%;
-
-    }
-
-
-
-    .search-bar {
-      width: 15vw;
-      height: 35px;
-      text-align: center;
-      border-radius: 6px;
-    }
+  .search-bar {
+    width: 15vw;
+    height: 35px;
+    text-align: center;
+    border-radius: 6px;
+  }
 
   .job-select {
     width: 133px;
@@ -61,37 +57,29 @@
     border: 1px solid @quickhire-main;
   }
 
+  button {
+    height: 35px;
+    background-color: @quickhire-main;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    margin: 1%;
+    border: none;
+    width: 15vw;
 
-    button {
+    @media @desktop-1000 {
+      margin-top: 5%;
+      width: 30rem;
       height: 35px;
-      background-color: @quickhire-main;
-      color: #ffffff;
-      text-align: center;
-      border-radius: 6px;
-      margin: 1%;
-      border:none;
-      width: 15vw;
-  
-     
-  
-      @media @desktop-1000 {
-        margin-top: 5%;
-        width: 30rem;
-        height: 35px;
-  
-      }
-    
-      
-      &:hover {
-        cursor: pointer;
-        border: 1px solid @quickhire-main;
-        background-color: #ffffff;
-        color: @quickhire-main;
-      }
     }
-  
-  
-  
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid @quickhire-main;
+      background-color: #ffffff;
+      color: @quickhire-main;
+    }
+  }
 
   @media @desktop-1000 {
     display: flex;
@@ -99,7 +87,6 @@
 
     .search-bar {
       width: 300px;
-
     }
 
     .job-select {
@@ -115,11 +102,9 @@
     flex-direction: column;
     min-width: unset;
 
-    .search-div{
+    .search-div {
       padding-top: 1.5%;
-  
     }
-    
 
     .job-select {
       padding-top: 1%;
@@ -128,23 +113,19 @@
     .experience-select {
       padding-top: 1%;
     }
-
-    
   }
 
   @media @mobile {
     min-width: unset;
   }
 
-    .job-select {
-      padding-top: 1%;
-    }
-
-}
-  @media @mobile2 {
-    min-width: unset;
+  .job-select {
+    padding-top: 1%;
   }
-
+}
+@media @mobile2 {
+  min-width: unset;
+}
 
 .dashboardNav {
   display: flex;
@@ -181,7 +162,6 @@
       text-decoration: none;
     }
   }
-
 }
 
 .card-container-message {
@@ -190,7 +170,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background-color:  #FAFAFA;
+  background-color: #fafafa;
   height: 100vh;
 
   .use-search {
@@ -199,41 +179,37 @@
     align-items: center;
     height: 25rem;
     width: 90rem;
-    
-    h2 { 
+
+    h2 {
       padding: 2%;
-      border: 2px solid #EC3944;
+      border: 2px solid #ec3944;
       width: 80%;
       border-radius: 10px;
       box-shadow: 5px 5px;
       text-align: center;
-     //  background: @quickhire-main;
-      color: #EC3944;
+      //  background: @quickhire-main;
+      color: #ec3944;
       @media @tablet {
-        width:50rem;
+        width: 50rem;
       }
- 
+
       @media @mobile {
-       width: 24rem;
-       padding-top: 20%;
-     }
- 
+        width: 24rem;
+        padding-top: 20%;
+      }
     }
   }
-
-  
 }
 
-// start of card-container-vh -> had to repeat styles from card-container for it to work, so repetitive - did not get around to fully fixing it. 
+// start of card-container-vh -> had to repeat styles from card-container for it to work, so repetitive - did not get around to fully fixing it.
 
-
-.card-container  {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
   padding-top: 2%;
-  background:  #FAFAFA;
+  background: #fafafa;
 
   .use-search {
     display: flex;
@@ -242,34 +218,32 @@
     height: 25rem;
     width: 90rem;
 
-   h2 { 
-     padding: 2%;
-     border: 2px solid #ffffff;
-     width: 80%;
-     border-radius: 10px;
-     box-shadow: 5px 5px;
-     text-align: center;
-     color: #ffffff;
-     @media @tablet {
-       width:50rem;
-     }
+    h2 {
+      padding: 2%;
+      border: 2px solid #ffffff;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 5px 5px;
+      text-align: center;
+      color: #ffffff;
+      @media @tablet {
+        width: 50rem;
+      }
 
-     @media @mobile {
-      width: 24rem;
-      padding-top: 20%;
-    }
-
-   } //end of h2
-   
- }//end of usesearch
+      @media @mobile {
+        width: 24rem;
+        padding-top: 20%;
+      }
+    } //end of h2
+  } //end of usesearch
 
   .jobCard {
     width: 550px;
     height: 150px;
     margin: 10px;
     padding: 5px 10px;
-    background: #FFFFFF;
-    border: 1px solid #C4C4C4;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
     box-sizing: border-box;
     border-radius: 8px;
 
@@ -278,7 +252,7 @@
     }
 
     @media @tablet {
-      margin: 1% .20% 1% .20%;
+      margin: 1% 0.2% 1% 0.2%;
     }
 
     .card-header {
@@ -298,96 +272,88 @@
       }
 
       button {
-        border:none;
+        border: none;
         background-color: transparent;
       }
 
-      button:focus {outline:0;}
+      button:focus {
+        outline: 0;
+      }
     }
-      .card-info {
-        height: 5.5rem;
-        width: 100%;
-        padding:0;
-  
-        h3 {
-          font-size: 1.4rem;
-          width: 75%;
-        }
-    
-      
+    .card-info {
+      height: 5.5rem;
+      width: 100%;
+      padding: 0;
+
+      h3 {
+        font-size: 1.4rem;
+        width: 75%;
+      }
     }
 
-    
+    //end of card info
+  } //end of company name
 
-     //end of card info
+  .job-desc {
+    width: 260px;
+    text-align: center;
+    height: 100px;
+    border: 1px solid red;
+  }
+} //end of job card
 
-    
-    } //end of company name
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  padding: 4%;
 
-    .job-desc {
-      width: 260px;
-      text-align: center;
-      height: 100px;
-      border: 1px solid red;
-    }
-  }//end of job card
-
-
-  .card-image {
+  div {
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1%;
-    padding: 4%;
-
-    div {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    img {
-      width: 80px;
-      height: 80px;
-    }
-  } //end of card image
-
-  .card-text {
-    display: flex;
-    flex-direction: column;
-    p {
-
-      span {
-        color: #646464;
-      }
-    }
-  } //end of card-text
-
-
-  @media @tablet {
-    width: 100%;
-    margin-left: 0px;
-
-    .jobCard {
-      width: 300px;
-    }
   }
 
-  @media @mobile {
-    width: 100%;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+} //end of card image
 
-    .jobCard {
-      width: 320px;
+.card-text {
+  display: flex;
+  flex-direction: column;
+  p {
+    span {
+      color: #646464;
     }
   }
+} //end of card-text
 
-  @media @mobile2 {
-    .jobCard {
-      width: 320px;
-    }
+@media @tablet {
+  width: 100%;
+  margin-left: 0px;
+
+  .jobCard {
+    width: 300px;
   }
+}
 
+@media @mobile {
+  width: 100%;
+
+  .jobCard {
+    width: 320px;
+  }
+}
+
+@media @mobile2 {
+  .jobCard {
+    width: 320px;
+  }
+}
 
 .jobButtons {
   display: flex;
@@ -403,17 +369,17 @@
     font-size: 14px;
     border-radius: 8px;
     background: @quickhire-main;
-    font-family: 'Lato';
+    font-family: "Lato";
     text-align: center;
     vertical-align: text-bottom;
-    padding:20x 5px;
-    border:none;
+    padding: 20x 5px;
+    border: none;
     &:hover {
       background: #ffffff;
       border: 1px solid @quickhire-main;
       color: @quickhire-main;
       border-radius: 5px;
-    
+
       cursor: pointer;
     }
   }
@@ -444,33 +410,37 @@
   padding-top: 2%;
 }
 
-
-.left-nav-container{
-  background-color: white;
-  height: 80vh;
-  width: 15vw;
-  margin: 70px 20px;
-  max-width: 15vw;
+#left {
+  border: 3px solid green;
 }
 
+.left-nav-container {
+  border: 2px solid #bfbfbf;
+  height: 70vh;
+  width: 10vw;
+  max-width: 15vw;
+  position: fixed; /* Set the navbar to fixed position */
+  margin-top: 50vh;
+  top: 100;
+  margin-left: 1vw;
+}
 
 #dash {
-  background-color: #FAFAFA;
-  display:flex;
+  background-color: #fafafa;
+  display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: 88%;
   overflow: hidden;
-  margin-top:15vh;
-
+  margin-top: 15vh;
+  float: right;
   .div1 {
     max-width: 50vw;
     width: 50vw;
-
   }
 }
 
-.submit-button{
-  background-color: #EC3944;
+.submit-button {
+  background-color: #ec3944;
 }
 
 button {

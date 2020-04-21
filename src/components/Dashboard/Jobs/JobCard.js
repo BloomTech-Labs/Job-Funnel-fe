@@ -14,7 +14,6 @@ function JobCard(props) {
     const user_id = props.currentUser.id
     const job_id = props.id;
     const [modal, setModal] = useState(false)
-    const [toggle, setToggle] = useState(false)
     const [applytoggle, setApplytoggle] = useState(false)
 
 
@@ -32,46 +31,13 @@ function JobCard(props) {
         status: "applied"
     })
 
-    //check to see if saved
-
-    useEffect(() => {
-        axiosWithAuth().get(`/saved/${user_id}`)
-        .then(res => {
-            let checkSaved = res.data.filter((e) => e.status === "saved" && e.job_id === job_id);
-            checkSaved.length > 0 && checkSaved ? setToggle(true) : setToggle(false);
-        })
-        .catch(error => {
-            console.error(error.message)
-        })
-            
-    }, [props.savedArray]);
-
-
-    //handles save, sends the saved jobs to the saved endpoint.
-    const handleSave = () => {
-        if (toggle === false) {
-            props.updateSaved(saved);
-            setToggle(true);
-            
-            //Delete save
-        } else if (toggle === true) {
-            props.deleteSaved(job_id);
-            setToggle(false);
-        }
-
-    }
-
     console.log('TOGGLE', props.toggle)
 
     //the card display/stylings
     return (
         <div className="jobCard">
-            <div className="card-header">
+            {/* <div className="card-header">
                 <p className="company-name">{props.company}</p>
-
-
-                {(toggle === false ? <button onClick={handleSave}><img src={heart} /> </button> : <button onClick={handleSave}><img src={heartFull} /></button>)}
-
 
             </div>
             <div className="card-text">
@@ -84,8 +50,8 @@ function JobCard(props) {
                 </Link>
             </div>
             </div>
-            
-            <Accordion />
+             */}
+            <Accordion/>
         </div>
     )
 }
@@ -94,11 +60,8 @@ function JobCard(props) {
 const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
-        toggle: state.AppReducer.toggle,
         savedArray: state.AppReducer.saved
     }
 }
 
 export default connect(mapStateToProps, { updateSaved, deleteSaved })(JobCard)
-
-

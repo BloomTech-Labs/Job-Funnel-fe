@@ -1,48 +1,48 @@
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 @import "./Global/reset.less";
 @import "./Global/variables.less";
 @import "./Global/global.less";
 
 // #region colors
-@quickhire-main:  #EC3944;
+@quickhire-main: #ec3944;
 @quickhire-secondary: #ffffff;
 // Standard Colors
-@quickhire-grey: #FAFAFA;
+@quickhire-grey: #fafafa;
 @quickhire-background: #ffffff;
-@quickhire-footer:  #3073AB;
-@quickhire-message: #FAFAFA;
+@quickhire-footer: #3073ab;
+@quickhire-message: #fafafa;
 @footer-text: #ffffff;
 @navigation-button: #ffffff;
-@navigation-text: #AC2A38;
+@navigation-text: #ac2a38;
 @card-button: white;
 @card-button-text: black;
 @input-labels: black;
 @header-button: white;
-@header-text: #AC2A38;
-@header-logo: #AC2A38;
-@card-border: #AC2A38;
-@side-navigation-background: #AC2A38;
-@profile-button-background: #AC2A38;
+@header-text: #ac2a38;
+@header-logo: #ac2a38;
+@card-border: #ac2a38;
+@side-navigation-background: #ac2a38;
+@profile-button-background: #ac2a38;
 @profile-button-text: #ffffff;
 @card-border: #d1d5da;
-@button-border:#D3D3D3;
-@edit-profile-input: #D3D3D3;
-@profile-border: #D3D3D3;
+@button-border: #d3d3d3;
+@edit-profile-input: #d3d3d3;
+@profile-border: #d3d3d3;
 // Hover Colors
 @profile-button-hover: #ffffff;
-@profile-button-text-hover: #AC2A38;
-@navigation-button-hover: #AC2A38;
+@profile-button-text-hover: #ac2a38;
+@navigation-button-hover: #ac2a38;
 @navigation-text-hover: white;
-@card-button-hover: #AC2A38;
+@card-button-hover: #ac2a38;
 @card-button-text-hover: white;
-@header-button-hover: #AC2A38;
+@header-button-hover: #ac2a38;
 @header-text-hover: white;
 // #endregion
 
-@main-font: 'Lato';
+@main-font: "Lato";
 
 //Dark Mode Colors
 @darkmode-header: #424242;
@@ -52,53 +52,70 @@
 
 //Loading
 .spinner {
-    margin: 100px auto;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    text-align: center;
-    
-    -webkit-animation: sk-rotate 2.0s infinite linear;
-    animation: sk-rotate 2.0s infinite linear;
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+
+  -webkit-animation: sk-rotate 2s infinite linear;
+  animation: sk-rotate 2s infinite linear;
+}
+
+.dot1,
+.dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: @quickhire-main;
+  border-radius: 100%;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
   }
-  
-  .dot1, .dot2 {
-    width: 60%;
-    height: 60%;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    background-color: @quickhire-main;
-    border-radius: 100%;
-    
-    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+@keyframes sk-rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
-  
-  .dot2 {
-    top: auto;
-    bottom: 0;
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
   }
-  
-  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
-  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
-  
-  @-webkit-keyframes sk-bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50% { -webkit-transform: scale(1.0) }
+  50% {
+    -webkit-transform: scale(1);
   }
-  
-  @keyframes sk-bounce {
-    0%, 100% { 
-      transform: scale(0.0);
-      -webkit-transform: scale(0.0);
-    } 50% { 
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-    }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
   }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
 
 @import "./Global/mixins.less";
 
@@ -116,11 +133,7 @@
 @import "./ComponentStyles/Account/Profile.less";
 @import "./ComponentStyles/Account/Register.less";
 
-
-
-
 // less-watch-compiler src/less public/css index.less
-
 
 .accordion-item__line {
   /* display: block; */
@@ -134,14 +147,12 @@
   position: relative;
   width: 550px;
   height: 150px;
-    margin: 10px;
-    padding: 5px 10px;
-    background: #FFFFFF;
-    border: 1px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 8px;
-
-   
+  margin: 10px;
+  padding: 5px 10px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .accordion-item__title {
@@ -150,7 +161,7 @@
   font-weight: 700;
   color: #121212;
   display: flex;
-      margin-top: 2px;
+  margin-top: 2px;
 }
 
 .jobButtons {
@@ -160,13 +171,11 @@
   padding: 0;
 }
 
-
 .card-text {
   width: 100%;
 }
 
-
-.accordion-header{
+.accordion-header {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -174,11 +183,17 @@
 
   button {
     background: transparent;
-    border:none
+    border: none;
   }
 }
 
-
+.accordion-footer {
+  background-color: #d1d5da;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .accordion-list__item + .accordion-list__item {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -199,24 +214,22 @@
   opacity: 1;
   transform: translateY(0);
   width: 550px;
-    background: #FFFFFF;
+  background: #ffffff;
   transition-delay: 0.2s;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
 
   transition-timing-function: ease-in-out;
   transition-duration: 0.2s;
   transition-property: opacity, transform;
 }
 
-
 .accordion-item__line:hover {
   cursor: pointer;
 }
 
-
 .accordion-item__icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   transition: transform 0.3s ease-in-out;
   background-size: contain;
   background-repeat: no-repeat;
@@ -244,8 +257,6 @@
   transition: opacity, transform;
   transition-delay: 0.5s;
   padding: 0 1.2rem 1.2rem;
-  border: 2px solid green;
-
 }
 
 .accordion-item__paragraph {
@@ -255,4 +266,8 @@
   color: #333;
   /* font-weight: 300; */
   line-height: 1.3;
+}
+
+.hidden {
+  display: none;
 }
