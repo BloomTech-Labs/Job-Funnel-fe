@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import axiosWithAuth from "../../../utils/axiosWithAuth";
-
+import heartFull from "./../../../images/heartFull.svg";
 import { connect } from "react-redux";
 import { updateSaved, deleteSaved } from "../../../redux-store/App/AppActions";
 import styled from "styled-components";
@@ -58,7 +58,10 @@ function SavedJobs(props) {
   // else, return this
   return (
     <div className="saved-jobs-main">
-      <h1>Saved Jobs</h1>
+      <div className="saved-header">
+        <h1>Saved Jobs</h1>
+      </div>
+
       {save.length < 1 ? (
         //if object is empty, render empty message
         <div className="empty-jobs">
@@ -70,10 +73,15 @@ function SavedJobs(props) {
         save.map((e) => {
           return (
             <div key={id} className="card-saved-jobs">
-              <h3>{e.companyName}</h3>
+              <div className="card-saved-header">
+                <h3>{e.companyName}</h3>
+                <button onClick={() => handleDelete(e.job_id)}>
+                  <img src={heartFull} />
+                </button>
+              </div>
+
               <p>{e.description.slice(0, 50)}...</p>
               <div className="saved-buttons">
-                <button onClick={() => handleDelete(e.job_id)}>Unsave</button>
                 <button onClick={() => JobDetails(e.job_id)}>More Info</button>
               </div>
             </div>

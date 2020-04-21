@@ -69,52 +69,48 @@ function Accordion(props) {
   }
 
   return (
-    <div className={hide ? "hidden" : ""}>
-      <div className={className}>
-        <div className="accordion-item__line">
-          <div className="accordion-header">
-            <p className="accordion-item__title">{props.company}</p>
-            {heart == 0 ? (
-              <button onClick={handleSave}>
-                <img src={heartEmpty} alt="empty heart" />
-              </button>
-            ) : (
-              <button onClick={handleUnsave}>
-                <img src={heartFull} />
-              </button>
-            )}
-          </div>
+    <div className={className}>
+      <div className="accordion-item__line">
+        <div className="accordion-header">
+          <p className="accordion-item__title">{props.company}</p>
+          {heart == 0 ? (
+            <button onClick={handleSave}>
+              <img src={heartEmpty} alt="empty heart" />
+            </button>
+          ) : (
+            <button onClick={handleUnsave}>
+              <img src={heartFull} />
+            </button>
+          )}
+        </div>
 
-          <div className="card-text">
-            <div className="card-info">
-              <h3>{props.title}</h3>
-            </div>
-          </div>
-
-          <div className="jobButtons">
-            <a href={details.testexternal_url} target="_blank">
-              Apply
-            </a>
-          </div>
-          <div className="accordion-footer" onClick={expand}>
-            <span className="accordion-item__icon" />
+        <div className="card-text">
+          <div className="card-info">
+            <h3>{props.title}</h3>
           </div>
         </div>
 
-        <div className="accordion-item__inner">
-          <div className="accordion-item__content">
-            <p className="accordion-item__paragraph">{details.city}</p>
-            <p className="accordion-item__paragraph">
-              {details.stateOrProvince}
-            </p>
-            <p>
-              {dateMonth}-{dateDay}-{dateYear}
-            </p>
-            <a className="job-listing-link" href={details.testexternal_url}>
-              Links to Application
-            </a>
-            <p>{details.description}</p>
-          </div>
+        <div className="jobButtons">
+          <a href={details.testexternal_url} target="_blank">
+            Apply
+          </a>
+        </div>
+        <div className="accordion-footer" onClick={expand}>
+          <span className="accordion-item__icon" />
+        </div>
+      </div>
+
+      <div className="accordion-item__inner">
+        <div className="accordion-item__content">
+          <p className="accordion-item__paragraph">{details.city}</p>
+          <p className="accordion-item__paragraph">{details.stateOrProvince}</p>
+          <p>
+            {dateMonth}-{dateDay}-{dateYear}
+          </p>
+          <a className="job-listing-link" href={details.testexternal_url}>
+            Links to Application
+          </a>
+          <p>{details.description}</p>
         </div>
       </div>
     </div>

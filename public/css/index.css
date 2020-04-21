@@ -871,20 +871,41 @@ footer h4 {
   align-items: center;
   flex-wrap: wrap;
   background: white;
+  flex-direction: column;
 }
-.saved-jobs-main h1 {
-  font-size: 1.5em;
+.saved-jobs-main .saved-header {
+  background-color: #c4c4c4;
+  width: 100%;
+}
+.saved-jobs-main .saved-header h1 {
+  font-size: 2.5em;
+  text-align: center;
+  color: #131336;
+  font-weight: bold;
 }
 .card-saved-jobs {
   background-color: white;
-  padding: 5%;
-  width: 200px;
-  height: 200px;
+  width: 90%;
+  height: 10vh;
   margin: 2%;
+  border: 2px solid red;
   border-radius: 8px;
 }
+.card-saved-jobs .card-saved-header button {
+  color: #ec3944;
+  width: 100px;
+  height: 35px;
+  border: 1px solid #ec3944;
+  border-radius: 3px;
+}
+.card-saved-jobs .card-saved-header button:hover {
+  background: #ec3944;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
 @media (max-width: 1000px) {
-  .card-saved-jobs {
+  .card-saved-jobs .card-saved-header {
     padding: 2%;
     width: 40%;
     height: 50vh;
@@ -893,24 +914,24 @@ footer h4 {
   }
 }
 @media (max-width: 650px) {
-  .card-saved-jobs {
+  .card-saved-jobs .card-saved-header {
     width: 80%;
   }
 }
 @media (max-width: 350px) {
-  .card-saved-jobs {
+  .card-saved-jobs .card-saved-header {
     width: 100%;
   }
 }
-.card-saved-jobs h3 {
+.card-saved-jobs .card-saved-header h3 {
   font-size: 1.25rem;
   width: 100%;
 }
-.card-saved-jobs h5 {
+.card-saved-jobs .card-saved-header h5 {
   font-size: 1.5rem;
   color: black;
 }
-.card-saved-jobs p {
+.card-saved-jobs .card-saved-header p {
   padding: 2%;
   width: 100%;
   height: 60%;
@@ -918,22 +939,9 @@ footer h4 {
   margin-bottom: 2%;
   font-size: 1rem;
 }
-.card-saved-jobs .saved-buttons {
+.card-saved-jobs .card-saved-header .saved-buttons {
   display: flex;
   justify-content: space-evenly;
-}
-.card-saved-jobs .saved-buttons button {
-  color: #ec3944;
-  width: 100px;
-  height: 35px;
-  border: 1px solid #ec3944;
-  border-radius: 3px;
-}
-.card-saved-jobs .saved-buttons button:hover {
-  background: #ec3944;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
 }
 .about-container {
   margin-bottom: 5%;
@@ -1016,20 +1024,30 @@ footer h4 {
 }
 #right-nav {
   height: 90vh;
-  width: 50vw;
+  width: 45vw;
   display: flex;
+  font-family: "Lato";
   margin: 70px 5px;
-  overflow-y: scroll;
-  border: 1px solid grey;
-  overflow: -moz-scrollbars-none;
+  flex-direction: column;
 }
 #right-nav #saved {
-  width: 48%;
-  background-color: white;
+  width: 100%;
+  border: 2px solid #c4c4c4;
   margin-right: 2%;
+  overflow-y: scroll;
+  border-radius: 8px;
+  overflow: -moz-scrollbars-none;
+  max-height: 40vh;
+}
+#right-nav #saved::-webkit-scrollbar,
+#right-nav #applied::-webkit-scrollbar {
+  display: none;
 }
 #right-nav #applied {
-  width: 48%;
+  width: 100%;
+  max-height: 40vh;
+  overflow-y: scroll;
+  border-radius: 8px;
 }
 .filter-class {
   display: flex;
@@ -1037,6 +1055,7 @@ footer h4 {
   min-width: 100%;
   width: 100%;
   margin-bottom: 2vh;
+  margin-left: 2vw;
 }
 .filter-class .search-div input {
   background: #ffffff;
@@ -1366,7 +1385,7 @@ footer h4 {
   font-size: 14px;
   border-radius: 8px;
   background: #ec3944;
-  font-family: 'Lato';
+  font-family: "Lato";
   text-align: center;
   vertical-align: text-bottom;
   padding: 20x 5px;
@@ -1402,20 +1421,28 @@ footer h4 {
   padding-bottom: 1.5%;
   padding-top: 2%;
 }
+#left {
+  border: 3px solid green;
+}
 .left-nav-container {
-  background-color: white;
-  height: 80vh;
-  width: 15vw;
-  margin: 70px 20px;
+  border: 2px solid #bfbfbf;
+  height: 70vh;
+  width: 10vw;
   max-width: 15vw;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  margin-top: 17vh;
+  top: 100;
+  margin-left: 1vw;
 }
 #dash {
   background-color: #fafafa;
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: 88%;
   overflow: hidden;
   margin-top: 15vh;
+  float: right;
 }
 #dash .div1 {
   max-width: 50vw;
@@ -2089,9 +2116,6 @@ button {
   outline: none;
   cursor: pointer;
 }
-.accordion-item {
-  border: 2px solid red;
-}
 .accordion-item__line {
   /* display: block; */
   padding: 0.8rem 1.2rem;
@@ -2172,8 +2196,8 @@ button {
   cursor: pointer;
 }
 .accordion-item__icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   transition: transform 0.3s ease-in-out;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2199,7 +2223,6 @@ button {
   transition: opacity, transform;
   transition-delay: 0.5s;
   padding: 0 1.2rem 1.2rem;
-  border: 2px solid green;
 }
 .accordion-item__paragraph {
   margin: 0;
