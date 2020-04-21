@@ -1,36 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, useLocation } from 'react-router-dom';
-import DashboardNav from "./DashboardNav.js";
-import Leftnav from './Leftnav.js'
-import SavedJobs from "./Jobs/SavedJobs.js";
-import SuggestedJobs from "./Jobs/SuggestedJobs.js";
-
-import AppliedJobs from "./Jobs/AppliedJobs"
+import TabsList from './TabsList';
+import searchAPI from '../../utils/searchAPI';
+import Display from './Display';
 
 
 
 
 export default function Dashboard() {
+    const tabs = ['Search', 'Board'];
     const location = useLocation();
+    const [selected, setSelected] = useState('Search');
+    const [jobs, setJobs] = useState([]);
+    const [search, setSearch] = useState({ title: null, job_type: null, city: null, state_province: null,
+                                           experience: null })
+
+    useEffect(() => {
+        searchAPI().get('/search', { params: search})
+            .then((response) => {
+                console.log('RESPONSE: ', response)
+                setJobs(response.data.responses);
+                // setLoading(false)
+
+            })
+            .catch(err => {
+                console.log(err)
+                // setLoading(false)
+            })
+    }, [search])
 
     return (
-        <div id="dash">
-            <div>
-                <Leftnav />
-            </div>
-            <div className="div1" style={{ display: 'flex', flexDirection: 'column' }}>
-
-
-                <div className="dashboard-nav" >
-                    <DashboardNav />
-
-                </div>
-
-                <Route exact path='/Dashboard' component={SuggestedJobs} />
-                <Route exact path='/Dashboard/Saved' component={SavedJobs} />
-                <Route exact path='/Dashboard/Applied' component={AppliedJobs} />
-
-            </div>
+        <div className="dashboard">
+            <TabsList tabs={tabs} selected={selected} setSelected={setSelected} />
+            <Display selected={selected} jobs={jobs} setSearch={setSearch}/>
         </div>
     )
 }

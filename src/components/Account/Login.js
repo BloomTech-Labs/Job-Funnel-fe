@@ -4,6 +4,7 @@ import axios from 'axios'
 import styled from "styled-components";
 import LoadingOverlay from "react-loading-overlay";
 import { Link, NavLink } from 'react-router-dom';
+import landing from '../../images/landing.png'
 
 import { login } from "../../redux-store/App/AppActions"
 
@@ -63,6 +64,7 @@ const Login = (props) => {
                 <button className="submit-login" onClick={handleSubmit}>Log in</button>
             </form>
           </div>
+          <div className='img-div'><img src={landing} width="650" /></div>
         </div>
     )
 }
