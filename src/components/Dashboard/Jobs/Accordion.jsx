@@ -22,17 +22,31 @@ console.log('PROPS FROM ACCORDION', props)
 
     //state for saved status
     const [saved, setSaved] = useState({
-        user_id: user_id,
-        job_id: job_id,
-        status: "saved"
+      user_id: user_id,
+      job_id: job_id,
+      status: "saved"
     })
 
    //state for applied status
-   const [applied, setApplied] = useState({
-    user_id: user_id,
-    job_id: job_id,
-    status: "applied"
+    const [applied, setApplied] = useState({
+      user_id: user_id,
+      job_id: job_id,
+      status: "applied"
     })
+
+    //check to see if saved
+
+    useEffect(() => {
+      axiosWithAuth().get(`/saved/${user_id}`)
+      .then(res => {
+          let checkSaved = res.data.filter((e) => e.status === "saved" && e.job_id === job_id);
+          checkSaved.length > 0 && checkSaved ? setToggle(true) : setToggle(false);
+      })
+      .catch(error => {
+          console.error(error.message)
+      })
+          
+    }, [props.savedArray]);
 
 
     useEffect(() => {
@@ -69,14 +83,14 @@ console.log('PROPS FROM ACCORDION', props)
     const className = `accordion-item ${open && 'accordion-item--opened'}`;
 
      //Gives the posted date
-     let date = new Date(details.post_date_utc);
-     console.log('date', date)
-     
-     let dateMonth = (date.getUTCMonth()+ 1)
-     let dateDay= date.getDate()
-     let dateYear = date.getFullYear()
-   
-     if(loading === true){
+    let date = new Date(details.post_date_utc);
+    console.log('date', date)
+    
+    let dateMonth = (date.getUTCMonth()+ 1)
+    let dateDay= date.getDate()
+    let dateYear = date.getFullYear()
+    
+    if(loading === true){
         return (
             null
         )
@@ -84,7 +98,7 @@ console.log('PROPS FROM ACCORDION', props)
 
 
     return (
-      <div className={className} onClick={onClick}>
+      <div className={className}>
         <div className="accordion-item__line">
             <div className="accordion-header">
             <p className="accordion-item__title">{props.company}</p>
@@ -96,15 +110,15 @@ console.log('PROPS FROM ACCORDION', props)
             <div className="card-info">
                 <h3>{props.title}</h3>
             </div>
-         </div>
+          </div>
 
         <div className='jobButtons' >
 
                 
                     <a href={details.testexternal_url} target="_blank">Apply</a>
-               
+        
         </div>
-        <span className="accordion-item__icon" />
+        <span className="accordion-item__icon"  onClick={onClick}/>
         
         </div>
         
@@ -126,7 +140,7 @@ console.log('PROPS FROM ACCORDION', props)
   const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
-        toggle: state.AppReducer.toggle
+        savedArray: state.AppReducer.saved
     }
 }
 
