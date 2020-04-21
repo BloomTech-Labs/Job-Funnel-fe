@@ -66,9 +66,13 @@ function Header(props) {
             location.pathname === "/Dashboard/Applied"
           ) {
             return (
-              <nav>
-                <SimpleMenu logout={logOut} currentUser={props.currentUser} />
-              </nav>
+              <>
+                <nav>
+                  <SimpleMenu logout={logOut} currentUser={props.currentUser} />
+                </nav>
+
+                <Leftnav />
+              </>
             );
           } else if (
             location.pathname === "/profile" ||
@@ -128,9 +132,6 @@ function Header(props) {
           }
         })()}
       </header>
-      <div id="left">
-        <Leftnav />
-      </div>
     </>
   );
 }

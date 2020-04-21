@@ -94,6 +94,7 @@ export default function SuggestedJobs() {
           </div>
 
           <div className="search-div">
+            {" "}
             <input
               className="search-bar"
               type="text"
@@ -101,6 +102,7 @@ export default function SuggestedJobs() {
               placeholder="City"
               tabIndex="0"
               onChange={onSelectChange}
+              handleSubmit={onSelectChange}
             />
           </div>
           <div className="search-div">
@@ -111,6 +113,7 @@ export default function SuggestedJobs() {
               placeholder="State"
               tabIndex="0"
               onChange={onSelectChange}
+              handleSubmit={onSelectChange}
             />
           </div>
 
