@@ -6,13 +6,14 @@ import {
   WIPE_OTHER_USER,
   SAVED_JOBS,
   DELETE_JOBS,
-  RENDER_SAVED,
+  DELETE_APPLIED,
+  APPLIED_JOBS,
 } from "./AppActions.js";
 
 const initialState = {
   currentUser: "",
   saved: [],
-  heart: false,
+  applied: [],
   otherUser: "",
   loading: true,
   toggle: false,
@@ -61,7 +62,13 @@ export const AppReducer = (state = initialState, action) => {
       console.log("from reducer");
       return {
         ...state,
-        saved: [...state.saved, `${action.payload}, `],
+        saved: [...state.saved, `${action.payload} `],
+      };
+    case APPLIED_JOBS:
+      console.log("from reducer applied", action.payload);
+      return {
+        ...state,
+        applied: [...state.applied, `${action.payload}`],
       };
     case DELETE_JOBS:
       console.log("from reducer", action.payload);
@@ -69,6 +76,13 @@ export const AppReducer = (state = initialState, action) => {
         ...state,
 
         saved: [...state.saved, `${action.payload}, `],
+      };
+    case DELETE_APPLIED:
+      console.log("from reducer", action.payload);
+      return {
+        ...state,
+
+        applied: [...state.saved, `${action.payload}, `],
       };
     default:
       //console.log('REDUCER DEFAULT');

@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../../../utils/axiosWithAuth";
 import { connect } from "react-redux";
-import { updateSaved, deleteSaved } from "../../../redux-store/App/AppActions";
+
+import {
+  updateApplied,
+  deleteApplied,
+} from "../../../redux-store/App/AppActions";
 import heartFull from "./../../../images/heartFull.svg";
 
 import styled from "styled-components";
@@ -14,8 +18,9 @@ function AppliedJobs(props) {
 
   const id = props.currentUser.id;
 
-  // This function loads applied jobs for a user.
-  const loadApplies = () =>
+  // get request in order to get the job by the saved id
+  useEffect(() => {
+    setLoading(true);
     axiosWithAuth()
       .get(`/saved/${id}`)
       .then((res) => {
@@ -29,28 +34,25 @@ function AppliedJobs(props) {
         console.error(error.message);
         setLoading(false);
       });
+  }, [id, props.applied]);
 
-  // get request in order to get the job by the saved id
-  useEffect(() => {
-    setLoading(true);
-    loadApplies();
-  }, [id, props.saved]);
-
-  const JobDetails = (job_id) => {
+  /*   const JobDetails = (job_id) => {
     setTimeout(() => {
       props.history.push(`/Dashboard/Job/${job_id}`);
     }, 100);
-  };
+  }; */
   // delete request to remove the jobs that you don't want on your applied jobs page.
   const handleDelete = (job_id) => {
     setLoading(true);
-    props.deleteSaved(job_id);
+    props.deleteApplied(job_id);
   };
 
   //if loading is happening, then only return loader
   if (loading === true) {
     return <Loading />;
   }
+
+  console.log("THIS IS APPLIED JOBS", apply);
   // else, return this
   return (
     <div className="saved-jobs-main">
@@ -61,10 +63,7 @@ function AppliedJobs(props) {
         //if object is empty, render empty message
         <div className="empty-jobs">
           <div>
-            <p>
-              Click "Saved as Applied" on any Job Detail page to save your
-              applied jobs!
-            </p>
+            <p>You didn't applied to any jobs.</p>
           </div>
         </div>
       ) : (
@@ -74,13 +73,18 @@ function AppliedJobs(props) {
               <div className="card-saved-header">
                 <h3>{e.companyName}</h3>
                 <button onClick={() => handleDelete(e.job_id)}>
-                  <img src={heartFull} />
+                  <p>Delete</p>
                 </button>
               </div>
-              <p>{e.description.slice(0, 100)}...</p>
+              <div className="card-saved-info">
+                <a href={e.testexternal_url} target="_blank">
+                  More
+                </a>
+              </div>
+              {/*      <p>{e.description.slice(0, 100)}...</p>
               <div className="saved-buttons">
                 <button onClick={() => JobDetails(e.job_id)}>More Info</button>
-              </div>
+              </div> */}
             </div>
           );
         })
@@ -92,11 +96,11 @@ function AppliedJobs(props) {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.AppReducer.currentUser,
-    saved: state.AppReducer.saved,
+    applied: state.AppReducer.applied,
   };
 };
 export default withRouter(
-  connect(mapStateToProps, { updateSaved, deleteSaved })(AppliedJobs)
+  connect(mapStateToProps, { updateApplied, deleteApplied })(AppliedJobs)
 );
 
 /* const StyledLoader = styled(LoadingOverlay)`

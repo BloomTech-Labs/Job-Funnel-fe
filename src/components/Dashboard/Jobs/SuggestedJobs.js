@@ -104,9 +104,7 @@ export default function SuggestedJobs() {
               name="experience"
               onChange={onSelectChange}
             >
-              <option selected value="">
-                Experience
-              </option>
+              <option defaultValue="">Experience</option>
               <option value="">Show All Jobs</option>
               <option value="Intern">Internship</option>
               <option value="Entry">Entry</option>

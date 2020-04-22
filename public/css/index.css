@@ -821,18 +821,22 @@ footer h4 {
 }
 .empty-jobs {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   background: #fafafa;
+  overflow-y: none;
 }
 .empty-jobs div {
   border-radius: 8px;
   margin-top: 5%;
   padding: 1%;
   text-align: center;
-  border: 2px solid #ffffff;
+  width: 100%;
+}
+.empty-jobs div p {
+  color: #747474;
 }
 .empty-jobs div h1 {
   color: #ffffff;
@@ -868,11 +872,10 @@ footer h4 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: white;
   flex-direction: column;
 }
 .saved-jobs-main .saved-header {
-  background-color: #c4c4c4;
+  background-color: #d3d3d3;
   width: 100%;
 }
 .saved-jobs-main .saved-header h1 {
@@ -885,7 +888,7 @@ footer h4 {
   width: 90%;
   height: 15vh;
   margin: 2%;
-  background: #fafafa;
+  background: white;
   border: 1px solid #bfbfbf;
   box-sizing: border-box;
   border-radius: 8px;
@@ -1054,11 +1057,10 @@ footer h4 {
 }
 #right-nav #saved {
   width: 100%;
-  border: 2px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
   margin-right: 2%;
   overflow-y: scroll;
   border-radius: 8px;
-  overflow: -moz-scrollbars-none;
   margin-bottom: 2vh;
   min-height: 40vh;
 }
@@ -1070,7 +1072,7 @@ footer h4 {
   width: 100%;
   margin-right: 2%;
   min-height: 40vh;
-  border: 2px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
   overflow-y: scroll;
   border-radius: 8px;
   overflow: -moz-scrollbars-none;
@@ -2118,7 +2120,6 @@ button {
   align-items: flex-start;
   background-color: #fff;
   flex-direction: column;
-  z-index: 2;
   position: relative;
   width: 45vw;
   height: 150px;
@@ -2221,4 +2222,39 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal {
+  position: fixed;
+  z-index: 8888;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "Roboto Slab", serif;
+  margin: 3vh auto;
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+.more {
+  margin-left: 30px;
+  font-size: 17px;
+  border-radius: 4px;
+  font-family: "Roboto Slab", serif;
+  background-color: #010a3b;
+  width: 25%;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Roboto";
+  font-size: 1.1em;
+  cursor: pointer;
 }
