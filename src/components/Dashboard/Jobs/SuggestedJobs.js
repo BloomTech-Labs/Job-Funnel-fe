@@ -12,9 +12,31 @@ export default function SuggestedJobs() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const searchTerm = {
+      title: search.experience
+        ? `${search.experience} ${search.title}`
+        : search.title,
+      job_type: search.job_type,
+      city: search.city,
+      state_province: search.state_province,
+    };
+    setLoading(true);
 
-  const location = useLocation();
+    searchAPI()
+      .get("/search", {
+        params: searchTerm,
+      })
+      .then((response) => {
+        console.log("RESPONSE: ", response);
+        setJobs(response.data.responses);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
+  }, []);
 
   const [search, setSearch] = useState({
     title: null,

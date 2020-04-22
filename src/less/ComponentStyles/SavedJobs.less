@@ -9,7 +9,7 @@
   background: @quickhire-message;
 
   div {
-    border-radius: 10px;
+    border-radius: 8px;
     margin-top: 5%;
     padding: 1%;
     text-align: center;
@@ -74,24 +74,28 @@
   // @desktop-1000: ~'(max-width: 1000px)';
   // @desktop-1080: ~'(max-width: 1400px)';
 
-  background-color: white;
   width: 90%;
-  height: 10vh;
+  height: 15vh;
   margin: 2%;
-  border: 2px solid red;
+  background: #fafafa;
+  border: 1px solid #bfbfbf;
+  box-sizing: border-box;
   border-radius: 8px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: space-around;
+  flex-direction: column;
 
   .card-saved-header {
+    display: flex;
+    justify-content: space-between;
     button {
       color: @quickhire-main;
-      width: 100px;
       height: 35px;
-      border: 1px solid @quickhire-main;
+      background: none;
       border-radius: 3px;
+      border: none;
       &:hover {
-        background: @quickhire-main;
-        border-radius: 5px;
-        color: #ffffff;
         cursor: pointer;
       }
     }
@@ -113,8 +117,10 @@
     }
 
     h3 {
-      font-size: 1.25rem;
-      width: 100%;
+      width: 70%;
+      color: #131336;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     h5 {
@@ -135,6 +141,24 @@
       // border: 1px solid orange;
       display: flex;
       justify-content: space-evenly;
+    }
+  }
+
+  .card-saved-info {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    a {
+      background: none;
+      border: none;
+      color: #777777;
+      font-weight: bold;
+      font-size: 18px;
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #777777;
+      }
     }
   }
 }

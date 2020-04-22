@@ -7,8 +7,6 @@ import { updateSaved, deleteSaved } from "../../../redux-store/App/AppActions";
 import { Loading } from "./../Loading";
 import axiosWithAuth from "./../../../utils/axiosWithAuth";
 function Accordion(props) {
-  console.log("PROPS FROM ACCORDION", props);
-
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState({});
   const [description, setDescription] = useState({});
@@ -82,8 +80,6 @@ function Accordion(props) {
     setOpen(!open);
   };
 
-  const className = `accordion-item ${open && "accordion-item--opened"}`;
-
   //Gives the posted date
   let date = new Date(details.post_date_utc);
   console.log("date", date);
@@ -97,7 +93,7 @@ function Accordion(props) {
   }
 
   return (
-    <div className={className}>
+    <div className={open ? "accordion-item--opened" : "accordion-item"}>
       <div className="accordion-item__line">
         <div className="accordion-header">
           <p className="accordion-item__title">{props.company}</p>
@@ -124,7 +120,14 @@ function Accordion(props) {
             Apply
           </a>
         </div>
-        <span className="accordion-item__icon" onClick={onClick} />
+        <div className="testt">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC"
+            align="center"
+            onClick={onClick}
+            className="accordion-item__icon"
+          />
+        </div>
       </div>
 
       <div className="accordion-item__inner">

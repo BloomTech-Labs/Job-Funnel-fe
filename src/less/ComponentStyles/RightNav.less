@@ -1,10 +1,10 @@
 #right-nav {
   height: 90vh;
-  width: 45vw;
+  width: 35vw;
   display: flex;
   font-family: "Lato";
-  margin: 70px 5px;
   flex-direction: column;
+  margin-top: 15vh;
 
   #saved {
     width: 100%;
@@ -13,8 +13,8 @@
     overflow-y: scroll;
     border-radius: 8px;
     overflow: -moz-scrollbars-none;
-
-    max-height: 40vh;
+    margin-bottom: 2vh;
+    min-height: 40vh;
   }
 
   #saved::-webkit-scrollbar,
@@ -24,8 +24,11 @@
 
   #applied {
     width: 100%;
-    max-height: 40vh;
+    margin-right: 2%;
+    min-height: 40vh;
+    border: 2px solid #c4c4c4;
     overflow-y: scroll;
     border-radius: 8px;
+    overflow: -moz-scrollbars-none;
   }
 }

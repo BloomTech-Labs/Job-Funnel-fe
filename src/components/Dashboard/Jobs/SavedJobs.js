@@ -79,11 +79,16 @@ function SavedJobs(props) {
                   <img src={heartFull} />
                 </button>
               </div>
-
-              <p>{e.description.slice(0, 50)}...</p>
-              <div className="saved-buttons">
-                <button onClick={() => JobDetails(e.job_id)}>More Info</button>
+              <div className="card-saved-info">
+                <a href={e.testexternal_url} target="_blank">
+                  More
+                </a>
               </div>
+
+              {/* <p>{e.description.slice(0, 50)}...</p> */}
+              {/* <div className="saved-buttons">
+                <button onClick={() => JobDetails(e.job_id)}>More Info</button>
+              </div> */}
             </div>
           );
         })
