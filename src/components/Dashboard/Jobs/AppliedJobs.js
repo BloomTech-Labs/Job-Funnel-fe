@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../../../utils/axiosWithAuth";
 import { connect } from "react-redux";
+
 import {
   updateApplied,
   deleteApplied,

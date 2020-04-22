@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import heart from "./../../../images/heartEmpty.svg";
+import Modal from "react-modal";
+
 import heartFull from "./../../../images/heartFull.svg";
 import {
   updateSaved,
@@ -18,9 +20,27 @@ function Accordion(props) {
 
   const user_id = props.currentUser.id;
   const job_id = props.id;
-  const [modal, setModal] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const [applytoggle, setApplytoggle] = useState(false);
+  const [apply, setApply] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const ModalStyle = {
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      transition: "ease-in-out",
+    },
+    content: {
+      backgroundColor: "white",
+      top: "20%",
+      marginBottom: "50px",
+      maxHeight: "100vh",
+      /* 			overflowY: 'auto',
+       */ left: "30%",
+      right: "30%",
+      width: "40vw",
+      height: "40vh",
+    },
+  };
 
   //state for saved status
   const [saved, setSaved] = useState({
@@ -80,14 +100,16 @@ function Accordion(props) {
   };
 
   const handleApply = () => {
-    if (toggle === false) {
+    setModal(false);
+    console.log("toggle is", toggle);
+    if (apply === false) {
       props.updateApplied(applied);
-      setToggle(true);
+      setApply(true);
 
       //Delete save
-    } else if (toggle === true) {
+    } else if (apply === true) {
       props.deleteApplied(job_id);
-      setToggle(false);
+      setApply(false);
     }
   };
 
@@ -106,62 +128,97 @@ function Accordion(props) {
     return null;
   }
 
-  return (
-    <div className={open ? "accordion-item--opened" : "accordion-item"}>
-      <div className="accordion-item__line">
-        <div className="accordion-header">
-          <p className="accordion-item__title">{props.company}</p>
-
-          {toggle === false ? (
-            <button onClick={handleSave}>
-              <img src={heart} />{" "}
-            </button>
-          ) : (
-            <button onClick={handleSave}>
-              <img src={heartFull} />
-            </button>
-          )}
+  if (modal === true) {
+    return (
+      <Modal
+        className="modal"
+        isOpen={modal}
+        onRequestClose={() => setModal(false)}
+        style={ModalStyle}
+      >
+        <div class="close">
+          <button onClick={() => setModal(false)}>X</button>
         </div>
+        <div className="modal-content">
+          <p>Did you apply?</p>
+          <a onClick={handleApply}>Yes</a>
+          <a onClick={() => setModal(false)}>No</a>
+        </div>
+      </Modal>
+    );
+  }
 
-        <div className="card-text">
-          <div className="card-info">
-            <h3>{props.title}</h3>
+  return (
+    <>
+      <div className={open ? "accordion-item--opened" : "accordion-item"}>
+        <div className="accordion-item__line">
+          <div className="accordion-header">
+            <p className="accordion-item__title">{props.company}</p>
+
+            {toggle === false ? (
+              <button onClick={handleSave}>
+                <img src={heart} />{" "}
+              </button>
+            ) : (
+              <button onClick={handleSave}>
+                <img src={heartFull} />
+              </button>
+            )}
+          </div>
+
+          <div className="card-text">
+            <div className="card-info">
+              <h3>{props.title}</h3>
+            </div>
+          </div>
+
+          <div className="jobButtons">
+            {apply === false ? (
+              <a
+                className="more openModal"
+                href={details.testexternal_url}
+                target="_blank"
+                onClick={() => setModal(true)}
+              >
+                Apply
+              </a>
+            ) : (
+              <a
+                className="more openModal"
+                href={details.testexternal_url}
+                target="_blank"
+              >
+                Applied
+              </a>
+            )}
+          </div>
+          <div className="testt">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC"
+              align="center"
+              onClick={onClick}
+              className="accordion-item__icon"
+            />
           </div>
         </div>
 
-        <div className="jobButtons">
-          <a
-            href={details.testexternal_url}
-            target="_blank"
-            onClick={handleApply}
-          >
-            Apply
-          </a>
-        </div>
-        <div className="testt">
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABGklEQVR4Ae3RAcZCQRiF4buDfwshBGi+2UQgcIGAVtpSIuS/KyilG+UTcbk6zIH3GQBm3mM6AAAAAAAAAACA+eqf/yZBXcV/2XeCVPYx1FXj/FjGUMd45AQp/1HHGGLZNL+e61jHnKDmv8652YT1IvPfE2LX/Sh27/ycsF60yT/lk58JYn6eU4MJccjnlAmZ/33i0OAH4jg9Qcw/5g9YJpS+m6n0xvzpCfVe+nn59S7kGyYo+YYJWz3fO+E2PaFs9XzPhMy/6fmWCXq+YUJs9HzrhLh+JsQmrnq+bYKeb52g53snXPR88wQ93z9Bz/dP0PP9E/R89wQ93zpBz7dO0POtE/R86wQ93zpBzzdP+MoHAAAAAAAAAADAExTnTW20AtjhAAAAAElFTkSuQmCC"
-            align="center"
-            onClick={onClick}
-            className="accordion-item__icon"
-          />
+        <div className="accordion-item__inner">
+          <div className="accordion-item__content">
+            <p className="accordion-item__paragraph">{details.city}</p>
+            <p className="accordion-item__paragraph">
+              {details.stateOrProvince}
+            </p>
+            <p>
+              {dateMonth}-{dateDay}-{dateYear}
+            </p>
+            <a className="job-listing-link" href={details.testexternal_url}>
+              Link to Application
+            </a>
+            <p>{details.description}</p>
+          </div>
         </div>
       </div>
-
-      <div className="accordion-item__inner">
-        <div className="accordion-item__content">
-          <p className="accordion-item__paragraph">{details.city}</p>
-          <p className="accordion-item__paragraph">{details.stateOrProvince}</p>
-          <p>
-            {dateMonth}-{dateDay}-{dateYear}
-          </p>
-          <a className="job-listing-link" href={details.testexternal_url}>
-            Link to Application
-          </a>
-          <p>{details.description}</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
