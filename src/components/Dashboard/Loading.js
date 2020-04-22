@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export const Loading = () => {
-    return (
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
-        </div>
-    )
-}
+	return (
+		<div className='spinner'>
+			<div className='dot1'></div>
+			<div className='dot2'></div>
+		</div>
+	);
+};
