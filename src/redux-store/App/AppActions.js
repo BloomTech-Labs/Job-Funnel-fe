@@ -9,7 +9,8 @@ export const SET_OTHER_USER = "SET_OTHER_USER";
 export const WIPE_OTHER_USER = "WIPE_OTHER_USER";
 export const SAVED_JOBS = "SAVED_JOBS";
 export const DELETE_JOBS = "DELETE_JOBS";
-export const RENDER_SAVED = "RENDER_SAVED";
+export const APPLIED_JOBS = "APPLIED_JOBS";
+export const DELETE_APPLIED = "DELETE_APPLIED";
 
 // export const loadingStart = () =>{
 //     return { type: LOADING_START, payload: null };
@@ -177,6 +178,31 @@ export const deleteSaved = (job_id) => (dispatch) => {
     .delete(`/saved/${job_id}`)
     .then((res) => {
       dispatch({ type: DELETE_JOBS, payload: res.data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const updateApplied = (applied) => (dispatch) => {
+  console.log(" applied from actions", applied);
+
+  axiosWithAuth()
+    .post("/saved/", applied)
+    .then((res) => {
+      dispatch({ type: APPLIED_JOBS, payload: res.data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const deleteApplied = (job_id) => (dispatch) => {
+  console.log("deleting applied from actions", job_id);
+  axiosWithAuth()
+    .delete(`/saved/${job_id}`)
+    .then((res) => {
+      dispatch({ type: DELETE_APPLIED, payload: res.data });
     })
     .catch((err) => {
       console.log(err);

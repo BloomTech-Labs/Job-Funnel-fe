@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import heart from "./../../../images/heartEmpty.svg";
 import heartFull from "./../../../images/heartFull.svg";
-import { updateSaved, deleteSaved } from "../../../redux-store/App/AppActions";
+import {
+  updateSaved,
+  deleteSaved,
+  updateApplied,
+  deleteApplied,
+} from "../../../redux-store/App/AppActions";
 import { Loading } from "./../Loading";
 import axiosWithAuth from "./../../../utils/axiosWithAuth";
 function Accordion(props) {
@@ -55,7 +59,6 @@ function Accordion(props) {
     axiosWithAuth()
       .get(`/jobs/${job_id}`)
       .then((response) => {
-        console.log("job details axios response", response.data);
         setDetails(response.data);
         setDescription(response.data.description);
         setLoading(false);
@@ -76,13 +79,24 @@ function Accordion(props) {
     }
   };
 
+  const handleApply = () => {
+    if (toggle === false) {
+      props.updateApplied(applied);
+      setToggle(true);
+
+      //Delete save
+    } else if (toggle === true) {
+      props.deleteApplied(job_id);
+      setToggle(false);
+    }
+  };
+
   const onClick = () => {
     setOpen(!open);
   };
 
   //Gives the posted date
   let date = new Date(details.post_date_utc);
-  console.log("date", date);
 
   let dateMonth = date.getUTCMonth() + 1;
   let dateDay = date.getDate();
@@ -116,7 +130,11 @@ function Accordion(props) {
         </div>
 
         <div className="jobButtons">
-          <a href={details.testexternal_url} target="_blank">
+          <a
+            href={details.testexternal_url}
+            target="_blank"
+            onClick={handleApply}
+          >
             Apply
           </a>
         </div>
@@ -154,6 +172,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { updateSaved, deleteSaved })(
-  Accordion
-);
+export default connect(mapStateToProps, {
+  updateSaved,
+  deleteSaved,
+  updateApplied,
+  deleteApplied,
+})(Accordion);
