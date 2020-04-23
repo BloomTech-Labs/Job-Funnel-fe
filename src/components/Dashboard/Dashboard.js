@@ -5,7 +5,6 @@ import searchAPI from '../../utils/searchAPI';
 import Display from './Display';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 import axios from 'axios';
-import Header from '../Header';
 import { connect } from "react-redux";
 import { getCurrentUser, } from './../../redux-store/App/AppActions';
 
@@ -23,10 +22,8 @@ function Dashboard(props) {
                                            experience: null });
 
     useEffect(() => {
-        console.log('DASHBOARD: ', props)
         searchAPI().get('/search', { params: search})
             .then((response) => {
-                console.log('RESPONSE: ', response);
                 return response.data.responses
             })
             .then(data => {
@@ -41,10 +38,8 @@ function Dashboard(props) {
 
                 axios.all(promises).then((results) => {
                     results.forEach(response => {
-                        console.log('HEREEE', response)
                         jobDetailsStore[response.data.id.toString()] = response.data
                     })
-                    console.log('ARRRRRRRAY: ', jobDetailsStore)
                     setJobDetailsLookup(jobDetailsStore);
                     setJobs(data);
                     setLoading(false);

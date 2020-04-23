@@ -141,7 +141,6 @@ export const adminDeleteProfilePicture = (id, setPictureLoading) => dispatch => 
 
 
 export const updateSaved = (saved, user_id) => dispatch => {
-    console.log('saving')
     axiosWithAuth().post('/saved/', saved)
         .then(res => {
             console.log('saved updated', res.data);

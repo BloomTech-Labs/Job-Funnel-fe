@@ -19,7 +19,6 @@ const JobCard = ( props ) => {
     }, [props.savedArr])
 
     const handleSaveJob = (event) => {
-        console.log('EVENT: ', event)
         if (!props.savedLookup.hasOwnProperty(props.job.job_id)) {
             let job = {
                 user_id: props.currentUser.id,
@@ -30,7 +29,6 @@ const JobCard = ( props ) => {
                 // code here. // It will execute only once on multiple clicks
                 props.updateSaved(job, props.currentUser.id);
               }
-            // props.updateSaved(job, props.currentUser.id);
         } else {
             props.deleteSaved(props.job.job_id);
         }

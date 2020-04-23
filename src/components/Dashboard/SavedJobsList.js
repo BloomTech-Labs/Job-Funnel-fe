@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-// import axiosWithAuth from '../../utils/axiosWithAuth';
+import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-// import { getSavedAppliedJobs, updateSaved, deleteSaved } from '../../redux-store/App/AppActions';
 import SavedJobCard from './SavedJobCard';
 
 const SavedJobs = ( props ) => {
 
     useEffect(() => {
-        console.log('SAVED COMPONENT', props.savedArray)
+
     }, [props.savedArray])
 
     return (

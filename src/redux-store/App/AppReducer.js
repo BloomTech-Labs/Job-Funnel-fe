@@ -71,13 +71,10 @@ export const AppReducer = (state = initialState, action) => {
                 toggle: true
             };
         case DELETE_JOBS:
-            console.log('from reducer DELETE', state.saved)
             let updatedList = state.saved.filter(job => job.job_id !== action.payload);
-            console.log('UPDATED LIST: ', updatedList)
-            console.log('ORIGINAL: ', state.savedLookup)
             let updatedLookup = state.savedLookup;
             delete updatedLookup[action.payload];
-            console.log('MODIFIED: ', updatedLookup)
+            
             return {
                 ...state,
                 saved: updatedList,

@@ -7,7 +7,6 @@ import { getSavedAppliedJobs, updateSaved, deleteSaved } from '../../redux-store
 const SavedApplied = (props) => {
 
     useEffect(() => {
-        console.log('SAVED_APPLIED')
         if (props.currentUser !== "") {
             props.getSavedAppliedJobs(props.currentUser.id);
             
