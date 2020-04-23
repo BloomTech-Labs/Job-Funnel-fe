@@ -72,9 +72,7 @@ function AppliedJobs(props) {
             <div key={id} className="card-saved-jobs">
               <div className="card-saved-header">
                 <h3>{e.companyName}</h3>
-                <button onClick={() => handleDelete(e.job_id)}>
-                  <p>Delete</p>
-                </button>
+                <button onClick={() => handleDelete(e.job_id)}>Delete</button>
               </div>
               <div className="card-saved-info">
                 <a href={e.testexternal_url} target="_blank">

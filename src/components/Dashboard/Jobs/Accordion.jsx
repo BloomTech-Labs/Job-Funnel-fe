@@ -33,12 +33,12 @@ function Accordion(props) {
       backgroundColor: "white",
       top: "20%",
       marginBottom: "50px",
-      maxHeight: "100vh",
       /* 			overflowY: 'auto',
        */ left: "30%",
       right: "30%",
       width: "40vw",
-      height: "40vh",
+      height: "auto",
+      paddingBottom: "30px",
     },
   };
 
@@ -141,8 +141,8 @@ function Accordion(props) {
         </div>
         <div className="modal-content">
           <h2>
-            Did you apply to the job of <span>{props.title}</span> at{" "}
-            {props.company}?
+            Did you apply to the job of <span>{props.title}</span> at
+            <span>{props.company}</span>?
           </h2>
           <div className="modal-buttons">
             <button onClick={handleApply}>Yes</button>
