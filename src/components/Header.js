@@ -15,6 +15,10 @@ function Header(props) {
     const location = useLocation();
     const history = useHistory();
 
+    useEffect(() => {
+        console.log('HEADER', props)
+    }, [])
+
     const logOut = () => {
         sessionStorage.removeItem('token');
         props.logout();
@@ -28,6 +32,9 @@ function Header(props) {
     console.log('?????', props.currentUser)
 
     console.log('location', location.pathname)
+
+    
+
     return (
         <>
             <header>
@@ -44,6 +51,7 @@ function Header(props) {
                 <option value={"css/green.css"}>green</option>
                 <option value={"css/darkgreen.css"}>dark green</option>
             </select> */}
+
                 {(() => { //immediately invoked function to allow javascript inside JSX. syntax: {(()=>{})()}
 
                     if (location.pathname === '/') {
@@ -96,6 +104,7 @@ function Header(props) {
                         )
                     }
                 })()}
+
             </header>
         </>
     );

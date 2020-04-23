@@ -1,11 +1,14 @@
 import {
     SET_CURRENT_USER, LOGIN_FAILED, LOGOUT, SET_OTHER_USER,
-    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS
+    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS, GET_SAVED_APPLIED_JOBS
 } from './AppActions.js';
 
 const initialState = {
     currentUser: '',
     saved: [],
+    savedLookup: {},
+    applied: [],
+    appliedLookup: {},
     otherUser: '',
     loading: true,
     toggle: false,
@@ -51,18 +54,61 @@ export const AppReducer = (state = initialState, action) => {
             };
         case SAVED_JOBS:
             console.log('from reducer')
+            let arr = [];
+            let obj = {};
+
+            action.payload.forEach(job => {
+                if (job.status === 'saved') {
+                    arr.push(job);
+                    obj[job.job_id] = job;
+                }
+            });
+
             return {
                 ...state,
-                saved: [...state.saved, `${action.payload}, `],
+                saved: arr,
+                savedLookup: obj,
                 toggle: true
             };
         case DELETE_JOBS:
-            console.log('from reducer')
+            console.log('from reducer DELETE', state.saved)
+            let updatedList = state.saved.filter(job => job.job_id !== action.payload);
+            console.log('UPDATED LIST: ', updatedList)
+            console.log('ORIGINAL: ', state.savedLookup)
+            let updatedLookup = state.savedLookup;
+            delete updatedLookup[action.payload];
+            console.log('MODIFIED: ', updatedLookup)
             return {
                 ...state,
-                saved: [...state.saved, `${action.payload}, `],
+                saved: updatedList,
+                savedLookup: updatedLookup,
                 toggle: true
             }
+        case GET_SAVED_APPLIED_JOBS:
+            let savedArr = [];
+            let savedObj = {};
+            let appliedArr = [];
+            let appliedObj = {};
+            
+            action.payload.forEach(job => {
+                if (job.status === 'saved') {
+                    savedArr.push(job);
+                    savedObj[job.job_id] = job;
+                }
+                if (job.status === 'applied') {
+                    appliedArr.push(job);
+                    appliedObj[job.job_id] = job;
+                }
+            });
+
+            return {
+                ...state,
+                saved: savedArr,
+                savedLookup: savedObj,
+                applied: appliedArr,
+                appliedLookup: appliedObj
+            }
+
         default: //console.log('REDUCER DEFAULT'); 
             return state;
     }

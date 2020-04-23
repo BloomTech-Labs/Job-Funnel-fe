@@ -1,17 +1,13 @@
 header {
 	position: sticky;
-	background-color: @quickhire-grey;
+	background-color: #FAFAFA;
 	width: 100%;
-	position: fixed; /* Set the navbar to fixed position */
-  	top: 0;
 	height: 75px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 9;
-	margin-bottom: 5vh;
-	border-bottom: 1px solid rgb(230, 230, 230);
-	box-shadow: 0 1px 1px -1px black;
+	// border-bottom: 1px solid rgb(230, 230, 230);
 	@media @tablet {
 		flex-direction: column;
 		justify-content: center;
@@ -28,7 +24,6 @@ header {
 		height: 25vh;
 	}
 
-<<<<<<< HEAD
 	.logo-img {
 		max-width: 70%;
 		margin-left: 30px;
@@ -37,17 +32,6 @@ header {
 	
 	#profile-image {
 		display: flex;
-		width:100%;
-		margin-left:1vw;
-
-		button {
-			background-color: @quickhire-main;
-			color:white;
-			border: none;
-			padding:10px 25px;
-			margin-left:5px;
-			border-radius:5px;
-		}
 	}
 
 	.profile-nav{
@@ -57,8 +41,6 @@ header {
 
 	}
 
-=======
->>>>>>> master
 	a {
 		text-decoration: none;
 		@media @tablet {
@@ -91,7 +73,7 @@ header {
 	}
 	h1 {
 		// border:1px solid red;
-		font-family: "Lato", Arial, sans-serif;
+		font-family: "Franklin Gothic Medium", Arial, sans-serif;
 		margin: 0 0 0 30px;
 		font-size: 25px;
 		color: #EC3944;
@@ -104,29 +86,13 @@ header {
 	}
 
 	nav {
-		width: 5.5vw;
+		width: 10.5vw;
 		height: 100%;
-		min-width: 220px;
+		// min-width: 220px;
 		margin: 0 30px 0 0;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-
-		.dashboard-btn {
-			color: #EC3944;
-			width: 120px;
-			border:1px solid #EC3944;
-			height: 35px;
-			padding: 1%;
-			background-color: #FAFAFA;
-			outline: none;
-			font-size: 1.4rem;
-			letter-spacing: 1px;
-			&:hover {
-				cursor: pointer;
-			}
-		}
-
 		@media @tablet {
 			flex-direction: column;
 			justify-content: center;
@@ -163,6 +129,8 @@ header {
 			font-size: 1.4rem;
 			letter-spacing: 1px;
 			&:hover {
+				box-shadow: 0 0 5px rgba(0,0,0,.2);
+				border-radius: 19px;
 				cursor: pointer;
 			}
 			@media @tablet {
@@ -194,14 +162,16 @@ header {
 			color: black;
 			width: 100px;
 			height: 35px;
-			border: 1px solid rgba(193, 58, 67, 0.9);
+			border: 1px solid transparent;
 			border-radius: 19px;
 			padding: 1%;
 			background-color: #FAFAFA;
 			outline: none;
 			font-size: 1.4rem;
-			letter-spacing: 1px;
+			letter-spacing: 0.3px;
 			&:hover {
+				text-shadow: 0 0 10px rgba(0,0,0,.15);
+				// border-radius: 19px;
 				cursor: pointer;
 			}
 			@media @tablet {
@@ -230,6 +200,238 @@ header {
 		}
 	}
 }
+
+
+
+// header {
+// 	position: sticky;
+// 	background-color: @quickhire-grey;
+// 	width: 100%;
+// 	position: fixed; /* Set the navbar to fixed position */
+//   	top: 0;
+// 	height: 75px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	z-index: 9;
+// 	margin-bottom: 5vh;
+// 	border-bottom: 1px solid rgb(230, 230, 230);
+// 	box-shadow: 0 1px 1px -1px black;
+// 	@media @tablet {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 18vh;
+// 	}
+// 	@media @mobile {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 25vh;
+// 	}
+// 	@media @mobile2 {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 25vh;
+// 	}
+
+// 	.logo-img {
+// 		max-width: 70%;
+// 		margin-left: 30px;
+
+// 	}
+	
+// 	#profile-image {
+// 		display: flex;
+// 		width:100%;
+// 		margin-left:1vw;
+
+// 		button {
+// 			background-color: @quickhire-main;
+// 			color:white;
+// 			border: none;
+// 			padding:10px 25px;
+// 			margin-left:5px;
+// 			border-radius:5px;
+// 		}
+// 	}
+
+// 	.profile-nav{
+// 		border-radius: 50% 50%;
+// 		border: 1px solid #EC3944;
+// 		padding:1px;
+
+// 	}
+
+// 	a {
+// 		text-decoration: none;
+// 		@media @tablet {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 		@media @mobile {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 		@media @mobile2 {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 	}
+// 	h1 {
+// 		// border:1px solid red;
+// 		font-family: "Lato", Arial, sans-serif;
+// 		margin: 0 0 0 30px;
+// 		font-size: 25px;
+// 		color: #EC3944;
+// 		@media @tablet {
+// 			margin: unset;
+// 		}
+// 		@media @mobile {
+// 			margin: unset;
+// 		}
+// 	}
+
+// 	nav {
+// 		width: 5.5vw;
+// 		height: 100%;
+// 		min-width: 220px;
+// 		margin: 0 30px 0 0;
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+
+// 		.dashboard-btn {
+// 			color: #EC3944;
+// 			width: 120px;
+// 			border:1px solid #EC3944;
+// 			height: 35px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 		}
+
+// 		@media @tablet {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+
+// 		@media @mobile {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+
+// 		@media @mobile2 {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+// 		.sign-up-btn {
+// 			// margin-left: 4rem;
+// 			color: black;
+// 			width: 100px;
+// 			height: 35px;
+// 			border: 1px solid rgba(193, 58, 67, 0.9);
+// 			border-radius: 19px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 			@media @tablet {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile2 {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+// 		}
+// 		.log-in-btn {
+// 			// margin-left: 4rem;
+// 			color: black;
+// 			width: 100px;
+// 			height: 35px;
+// 			border: 1px solid rgba(193, 58, 67, 0.9);
+// 			border-radius: 19px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 			@media @tablet {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile2 {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+// 		}
+// 	}
+// }
 
 // --------------- DarkMode Toggle ------------------------------
 
@@ -472,7 +674,7 @@ header {
 
 
 	.profile{
-		color: black;
+		  color: black;
 			width: 100px;
 			height: 35px;
 			border: 1px solid rgba(193, 58, 67, 0.9);

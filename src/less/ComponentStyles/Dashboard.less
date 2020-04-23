@@ -1,478 +1,694 @@
-.filter-class {
+.dashboard {
   display: flex;
-  justify-content: space-between;
-  min-width: 100%;
-  width: 100%;
-  margin-bottom:2vh;
 
-.search-div {
-  
-  input {
-    background: #FFFFFF;
-    /* #D4D4D4 - Light Grey */
-    text-align: left;
-    border: 1px solid #D4D4D4;
-    box-sizing: border-box;
-    border-radius: 8px;
-  
-    &::placeholder {
-      padding-left: 10px;
-    }
-  }
+  .tabs-list {
+    width: 10%;
+    border-right: 1px solid lightgray;
 
-  select {
-    background: #FFFFFF;
-    /* #D4D4D4 - Light Grey */
-    text-align: left;
-    border: 1px solid #D4D4D4;
-    box-sizing: border-box;
-    border-radius: 8px;
-    color:grey;
-  
-    option {
-      padding-left: 10px;
-    }
-  }
-}
-
-  form {
-    display:flex;
-
-    }
-
-    div {
-      margin: 1%;
-
-    }
-
-
-
-    .search-bar {
-      width: 15vw;
-      height: 35px;
-      text-align: center;
-      border-radius: 6px;
-    }
-
-  .job-select {
-    width: 133px;
-    height: 35px;
-    border-radius: 6px;
-    border: 1px solid @quickhire-main;
-  }
-
-
-    button {
-      height: 35px;
-      background-color: @quickhire-main;
-      color: #ffffff;
-      text-align: center;
-      border-radius: 6px;
-      margin: 1%;
-      border:none;
-      width: 15vw;
-  
-     
-  
-      @media @desktop-1000 {
-        margin-top: 5%;
-        width: 30rem;
-        height: 35px;
-  
-      }
-    
-      
-      &:hover {
-        cursor: pointer;
-        border: 1px solid @quickhire-main;
-        background-color: #ffffff;
-        color: @quickhire-main;
-      }
-    }
-  
-  
-  
-
-  @media @desktop-1000 {
-    display: flex;
-    flex-direction: column;
-
-    .search-bar {
-      width: 300px;
-
-    }
-
-    .job-select {
-      width: 300px;
-    }
-
-    .experience-select {
-      width: 300px;
-    }
-  }
-
-  @media @tablet {
-    flex-direction: column;
-    min-width: unset;
-
-    .search-div{
-      padding-top: 1.5%;
-  
-    }
-    
-
-    .job-select {
-      padding-top: 1%;
-    }
-
-    .experience-select {
-      padding-top: 1%;
-    }
-
-    
-  }
-
-  @media @mobile {
-    min-width: unset;
-  }
-
-    .job-select {
-      padding-top: 1%;
-    }
-
-}
-  @media @mobile2 {
-    min-width: unset;
-  }
-
-
-.dashboardNav {
-  display: flex;
-  width: 60%;
-  min-width: 315px;
-  max-width: 500px;
-
-  nav {
-    border: 1px solid @quickhire-main;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
-    border-radius: 8px;
-    width: 100%;
-    height: 40px;
-    button {
-      border: 1px solid black;
-      width: 95px;
-      .button(
-        @border: @quickhire-main,
-        @borderHover: #ffffff,
-        @background: #ffffff,
-        @backgroundHover: @quickhire-main,
-        @fontColor: @quickhire-main,
-        @fontColorHover: white,
-        @height: 35px,
-        @borderRadius: 8px,
-        @margin: 0 2px,
-        // @padding: 5%,
-      );
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-
-}
-
-.card-container-message {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding-top: 2%;
-  background-color:  #FAFAFA;
-  height: 100vh;
-
-  .use-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25rem;
-    width: 90rem;
-    
-    h2 { 
-      padding: 2%;
-      border: 2px solid #EC3944;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 5px 5px;
-      text-align: center;
-     //  background: @quickhire-main;
-      color: #EC3944;
-      @media @tablet {
-        width:50rem;
-      }
- 
-      @media @mobile {
-       width: 24rem;
-       padding-top: 20%;
-     }
- 
-    }
-  }
-
-  
-}
-
-// start of card-container-vh -> had to repeat styles from card-container for it to work, so repetitive - did not get around to fully fixing it. 
-
-
-.card-container  {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding-top: 2%;
-  background:  #FAFAFA;
-
-  .use-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25rem;
-    width: 90rem;
-
-   h2 { 
-     padding: 2%;
-     border: 2px solid #ffffff;
-     width: 80%;
-     border-radius: 10px;
-     box-shadow: 5px 5px;
-     text-align: center;
-     color: #ffffff;
-     @media @tablet {
-       width:50rem;
-     }
-
-     @media @mobile {
-      width: 24rem;
-      padding-top: 20%;
-    }
-
-   } //end of h2
-   
- }//end of usesearch
-
-  .jobCard {
-    width: 550px;
-    height: 150px;
-    margin: 10px;
-    padding: 5px 10px;
-    background: #FFFFFF;
-    border: 1px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 8px;
-
-    @media @mobile {
-      margin: 3%;
-    }
-
-    @media @tablet {
-      margin: 1% .20% 1% .20%;
-    }
-
-    .card-header {
-      display: flex;
-      margin-top: 2px;
-
-      .company-name {
-        color: @quickhire-main;
-        width: 100%;
-        height: 4rem;
-        text-align: center;
-        padding: 1%;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
-        display: flex;
-        align-items: center;
-      }
-
-      button {
-        border:none;
-        background-color: transparent;
-      }
-
-      button:focus {outline:0;}
-    }
-      .card-info {
-        height: 5.5rem;
-        width: 100%;
-        padding:0;
-  
-        h3 {
-          font-size: 1.4rem;
-          width: 75%;
-        }
-    
-      
-    }
-
-    
-
-     //end of card info
-
-    
-    } //end of company name
-
-    .job-desc {
-      width: 260px;
-      text-align: center;
-      height: 100px;
-      border: 1px solid red;
-    }
-  }//end of job card
-
-
-  .card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1%;
-    padding: 4%;
-
-    div {
-      width: 50%;
+    .tab {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    img {
-      width: 80px;
-      height: 80px;
-    }
-  } //end of card image
-
-  .card-text {
-    display: flex;
-    flex-direction: column;
-    p {
-
-      span {
-        color: #646464;
-      }
-    }
-  } //end of card-text
-
-
-  @media @tablet {
-    width: 100%;
-    margin-left: 0px;
-
-    .jobCard {
-      width: 300px;
+      padding: 5px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: #504e4e;
+      
     }
   }
 
-  @media @mobile {
-    width: 100%;
+  .display {
+    width: 90%;
 
-    .jobCard {
-      width: 320px;
-    }
-  }
+    .search {
+      display: flex;
+      flex-direction: column;
 
-  @media @mobile2 {
-    .jobCard {
-      width: 320px;
-    }
-  }
-
-
-.jobButtons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0;
-  width: 100%;
-
-  a {
-    color: #ffffff;
-    width: 70px;
-    height: 25px;
-    font-size: 14px;
-    border-radius: 8px;
-    background: @quickhire-main;
-    font-family: 'Lato';
-    text-align: center;
-    vertical-align: text-bottom;
-    padding:20x 5px;
-    border:none;
-    &:hover {
-      background: #ffffff;
-      border: 1px solid @quickhire-main;
-      color: @quickhire-main;
-      border-radius: 5px;
+      .search-inputs {
+        display: flex;
+        justify-content: center;
+        height: 10%;
+        padding-top: 20px;
+        padding-bottom: 20px;
     
-      cursor: pointer;
+        input {
+          margin-right: 10px;
+          width: 140px;
+          padding-left: 7px;
+        }
+    
+        .dropdownRoot {
+          margin-right: 10px;
+          box-sizing: border-box;
+          width: 140px;
+        }
+      }
+
+      .bottom-wrap {
+        display: flex;
+        background-color: #FAFAFA;
+
+        .jobs-list {
+          width: 65%;
+          // border-top: 1px solid lightgray;
+          overflow-y: scroll;
+          height: calc(100vh - 149px);
+    
+          .job-card {
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            border: 1.5px solid lightgray;
+            margin: 10px 10px 10px 10px;
+            border-radius: 5px;
+            padding: 10px 10px 0 10px;
+            // transition: height 0.2s linear; //isn't working with height auto
+    
+            .first-row {
+              display: flex;
+              align-items: center;
+              
+    
+              .company {
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin-right: 10px;
+              }
+
+              .location {
+                font-size: 1.4rem;
+                font-weight: 200;
+
+                spin {
+                  vertical-align: middle;
+                  margin-bottom: 1px;
+                }
+              }
+            }
+            .title {
+              font-size: 1.5rem;
+              font-weight: 300;
+              margin-bottom: 10px;
+              letter-spacing: 0.6px;
+              
+            }
+
+            .content {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin-bottom: 10px;
+            }
+
+            .bottom-row {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.2rem;
+              padding-bottom: 3px;
+
+              .apply-btn {
+                cursor: pointer;
+              }
+            }
+
+          }
+        }
+
+        .saved-applied-wrap {
+          display: flex;
+          flex-direction: column;
+          width: 35%;
+          height: calc(100vh - 149px);
+          // border-top: 1px solid lightgray;
+
+          .top-box {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            height: 45%;
+            margin: 10px 0 20px 0;
+            overflow-y: scroll;
+
+
+            .saved-jobs-list {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 10px;
+
+              .saved-job-card {
+                display: flex;
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                margin-bottom: 5px;
+                padding: 5px;
+
+                button {
+                  margin-left: auto;
+                  cursor: pointer;
+                }
+              }
+            }
+
+          }
+
+          .bottom-box {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            height: 45%;
+            margin: 10px 0 20px 0;
+            overflow-y: scroll;
+
+            .applied-jobs-list {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 10px;
+            }
+
+            .applied-job-card {
+              display: flex;
+              border: 1px solid lightgray;
+              border-radius: 5px;
+              margin-bottom: 5px;
+              padding: 5px;
+            }
+          }
+
+          h4 {
+            position: sticky;
+            top: 0;
+            background-color: lightgray;
+            padding: 5px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+      }
+
     }
-  }
-}
 
-.jobButtons-top {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 15px;
-  button {
-    color: @quickhire-main;
-    width: 100px;
-    height: 35px;
-    border: 1px solid @quickhire-main;
-    border-radius: 3px;
-    &:hover {
-      background: @quickhire-main;
-      border-radius: 5px;
-      color: #ffffff;
-      cursor: pointer;
+    .board {
+      height: calc(100vh - 75px);
+      background-color: #FAFAFA;
     }
-  }
-}
-
-.dashboard-nav {
-  padding-left: 3.3%;
-  padding-bottom: 1.5%;
-  padding-top: 2%;
-}
-
-
-.left-nav-container{
-  background-color: white;
-  height: 80vh;
-  width: 15vw;
-  margin: 70px 20px;
-  max-width: 15vw;
-}
-
-
-#dash {
-  background-color: #FAFAFA;
-  display:flex;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  margin-top:15vh;
-
-  .div1 {
-    max-width: 50vw;
-    width: 50vw;
 
   }
+
 }
 
-.submit-button{
-  background-color: #EC3944;
-}
 
-button {
-  cursor: pointer;
-}
+
+
+
+
+
+
+
+
+
+// .filter-class {
+//   display: flex;
+//   justify-content: space-between;
+//   min-width: 100%;
+//   width: 100%;
+//   margin-bottom:2vh;
+
+// .search-div {
+  
+//   input {
+//     background: #FFFFFF;
+//     /* #D4D4D4 - Light Grey */
+//     text-align: left;
+//     border: 1px solid #D4D4D4;
+//     box-sizing: border-box;
+//     border-radius: 8px;
+  
+//     &::placeholder {
+//       padding-left: 10px;
+//     }
+//   }
+
+//   select {
+//     background: #FFFFFF;
+//     /* #D4D4D4 - Light Grey */
+//     text-align: left;
+//     border: 1px solid #D4D4D4;
+//     box-sizing: border-box;
+//     border-radius: 8px;
+//     color:grey;
+  
+//     option {
+//       padding-left: 10px;
+//     }
+//   }
+// }
+
+//   form {
+//     display:flex;
+
+//     }
+
+//     div {
+//       margin: 1%;
+
+//     }
+
+
+
+//     .search-bar {
+//       width: 15vw;
+//       height: 35px;
+//       text-align: center;
+//       border-radius: 6px;
+//     }
+
+//   .job-select {
+//     width: 133px;
+//     height: 35px;
+//     border-radius: 6px;
+//     border: 1px solid @quickhire-main;
+//   }
+
+
+//     button {
+//       height: 35px;
+//       background-color: @quickhire-main;
+//       color: #ffffff;
+//       text-align: center;
+//       border-radius: 6px;
+//       margin: 1%;
+//       border:none;
+//       width: 15vw;
+  
+     
+  
+//       @media @desktop-1000 {
+//         margin-top: 5%;
+//         width: 30rem;
+//         height: 35px;
+  
+//       }
+    
+      
+//       &:hover {
+//         cursor: pointer;
+//         border: 1px solid @quickhire-main;
+//         background-color: #ffffff;
+//         color: @quickhire-main;
+//       }
+//     }
+  
+  
+  
+
+//   @media @desktop-1000 {
+//     display: flex;
+//     flex-direction: column;
+
+//     .search-bar {
+//       width: 300px;
+
+//     }
+
+//     .job-select {
+//       width: 300px;
+//     }
+
+//     .experience-select {
+//       width: 300px;
+//     }
+//   }
+
+//   @media @tablet {
+//     flex-direction: column;
+//     min-width: unset;
+
+//     .search-div{
+//       padding-top: 1.5%;
+  
+//     }
+    
+
+//     .job-select {
+//       padding-top: 1%;
+//     }
+
+//     .experience-select {
+//       padding-top: 1%;
+//     }
+
+    
+//   }
+
+//   @media @mobile {
+//     min-width: unset;
+//   }
+
+//     .job-select {
+//       padding-top: 1%;
+//     }
+
+// }
+//   @media @mobile2 {
+//     min-width: unset;
+//   }
+
+
+// .dashboardNav {
+//   display: flex;
+//   width: 60%;
+//   min-width: 315px;
+//   max-width: 500px;
+
+//   nav {
+//     border: 1px solid @quickhire-main;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 2%;
+//     border-radius: 8px;
+//     width: 100%;
+//     height: 40px;
+//     button {
+//       border: 1px solid black;
+//       width: 95px;
+//       .button(
+//         @border: @quickhire-main,
+//         @borderHover: #ffffff,
+//         @background: #ffffff,
+//         @backgroundHover: @quickhire-main,
+//         @fontColor: @quickhire-main,
+//         @fontColorHover: white,
+//         @height: 35px,
+//         @borderRadius: 8px,
+//         @margin: 0 2px,
+//         // @padding: 5%,
+//       );
+//     }
+//     a {
+//       text-decoration: none;
+//     }
+//   }
+
+// }
+
+// .card-container-message {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-evenly;
+//   align-items: flex-start;
+//   padding-top: 2%;
+//   background-color:  #FAFAFA;
+//   height: 100vh;
+
+//   .use-search {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 25rem;
+//     width: 90rem;
+    
+//     h2 { 
+//       padding: 2%;
+//       border: 2px solid #EC3944;
+//       width: 80%;
+//       border-radius: 10px;
+//       box-shadow: 5px 5px;
+//       text-align: center;
+//      //  background: @quickhire-main;
+//       color: #EC3944;
+//       @media @tablet {
+//         width:50rem;
+//       }
+ 
+//       @media @mobile {
+//        width: 24rem;
+//        padding-top: 20%;
+//      }
+ 
+//     }
+//   }
+
+  
+// }
+
+// // start of card-container-vh -> had to repeat styles from card-container for it to work, so repetitive - did not get around to fully fixing it. 
+
+
+// .card-container  {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-evenly;
+//   align-items: flex-start;
+//   padding-top: 2%;
+//   background:  #FAFAFA;
+
+//   .use-search {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 25rem;
+//     width: 90rem;
+
+//    h2 { 
+//      padding: 2%;
+//      border: 2px solid #ffffff;
+//      width: 80%;
+//      border-radius: 10px;
+//      box-shadow: 5px 5px;
+//      text-align: center;
+//      color: #ffffff;
+//      @media @tablet {
+//        width:50rem;
+//      }
+
+//      @media @mobile {
+//       width: 24rem;
+//       padding-top: 20%;
+//     }
+
+//    } //end of h2
+   
+//  }//end of usesearch
+
+//   .jobCard {
+//     width: 550px;
+//     height: 150px;
+//     margin: 10px;
+//     padding: 5px 10px;
+//     background: #FFFFFF;
+//     border: 1px solid #C4C4C4;
+//     box-sizing: border-box;
+//     border-radius: 8px;
+
+//     @media @mobile {
+//       margin: 3%;
+//     }
+
+//     @media @tablet {
+//       margin: 1% .20% 1% .20%;
+//     }
+
+//     .card-header {
+//       display: flex;
+//       margin-top: 2px;
+
+//       .company-name {
+//         color: @quickhire-main;
+//         width: 100%;
+//         height: 4rem;
+//         text-align: center;
+//         padding: 1%;
+//         border-top-left-radius: 6px;
+//         border-top-right-radius: 6px;
+//         display: flex;
+//         align-items: center;
+//       }
+
+//       button {
+//         border:none;
+//         background-color: transparent;
+//       }
+
+//       button:focus {outline:0;}
+//     }
+//       .card-info {
+//         height: 5.5rem;
+//         width: 100%;
+//         padding:0;
+  
+//         h3 {
+//           font-size: 1.4rem;
+//           width: 75%;
+//         }
+    
+      
+//     }
+
+    
+
+//      //end of card info
+
+    
+//     } //end of company name
+
+//     .job-desc {
+//       width: 260px;
+//       text-align: center;
+//       height: 100px;
+//       border: 1px solid red;
+//     }
+//   }//end of job card
+
+
+//   .card-image {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 1%;
+//     padding: 4%;
+
+//     div {
+//       width: 50%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//     }
+
+//     img {
+//       width: 80px;
+//       height: 80px;
+//     }
+//   } //end of card image
+
+//   .card-text {
+//     display: flex;
+//     flex-direction: column;
+//     p {
+
+//       span {
+//         color: #646464;
+//       }
+//     }
+//   } //end of card-text
+
+
+//   @media @tablet {
+//     width: 100%;
+//     margin-left: 0px;
+
+//     .jobCard {
+//       width: 300px;
+//     }
+//   }
+
+//   @media @mobile {
+//     width: 100%;
+
+//     .jobCard {
+//       width: 320px;
+//     }
+//   }
+
+//   @media @mobile2 {
+//     .jobCard {
+//       width: 320px;
+//     }
+//   }
+
+
+// .jobButtons {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: flex-end;
+//   padding: 0;
+//   width: 100%;
+
+//   a {
+//     color: #ffffff;
+//     width: 70px;
+//     height: 25px;
+//     font-size: 14px;
+//     border-radius: 8px;
+//     background: @quickhire-main;
+//     font-family: 'Lato';
+//     text-align: center;
+//     vertical-align: text-bottom;
+//     padding:20x 5px;
+//     border:none;
+//     &:hover {
+//       background: #ffffff;
+//       border: 1px solid @quickhire-main;
+//       color: @quickhire-main;
+//       border-radius: 5px;
+    
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// .jobButtons-top {
+//   display: flex;
+//   justify-content: space-between;
+//   margin: 10px 15px;
+//   button {
+//     color: @quickhire-main;
+//     width: 100px;
+//     height: 35px;
+//     border: 1px solid @quickhire-main;
+//     border-radius: 3px;
+//     &:hover {
+//       background: @quickhire-main;
+//       border-radius: 5px;
+//       color: #ffffff;
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// .dashboard-nav {
+//   padding-left: 3.3%;
+//   padding-bottom: 1.5%;
+//   padding-top: 2%;
+// }
+
+
+// .left-nav-container{
+//   background-color: white;
+//   height: 80vh;
+//   width: 15vw;
+//   margin: 70px 20px;
+//   max-width: 15vw;
+// }
+
+
+// #dash {
+//   background-color: #FAFAFA;
+//   display:flex;
+//   justify-content: flex-start;
+//   width: 100%;
+//   overflow: hidden;
+//   margin-top:15vh;
+
+//   .div1 {
+//     max-width: 50vw;
+//     width: 50vw;
+
+//   }
+// }
+
+// .submit-button{
+//   background-color: #EC3944;
+// }
+
+// button {
+//   cursor: pointer;
+// }
