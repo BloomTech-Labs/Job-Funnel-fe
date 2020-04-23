@@ -46,7 +46,7 @@ function SavedJobs(props) {
       props.history.push(`/Dashboard/Job/${job_id}`);
     }, 100);
   };
-
+  console.log("THS IS SAED", save);
   //if loading is happening, then only return loader
   if (loading === true) {
     return <Loading />;
