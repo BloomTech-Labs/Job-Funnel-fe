@@ -290,7 +290,7 @@ header {
   }
 }
 header .logo-img {
-  max-width: 70%;
+  min-width: 20%;
   margin-left: 30px;
 }
 header #profile-image {
@@ -515,133 +515,6 @@ header nav .log-in-btn:hover {
 }
 .toggled {
   left: 18px;
-}
-.dark-mode {
-  color: #fff;
-  background-color: #212121;
-}
-.dark-mode #dash {
-  background-color: #212121;
-}
-.dark-mode .profile-top {
-  background-color: #212121;
-  border: none;
-}
-.dark-mode .div1 {
-  background-color: #212121;
-}
-.dark-mode .left-nav-container {
-  background-color: #212121;
-}
-.dark-mode header {
-  background-color: #424242;
-}
-.dark-mode .dashboard-nav {
-  background-color: #212121;
-}
-.dark-mode .dashboardNav {
-  background-color: #212121;
-  color: white;
-}
-.dark-mode .saved-jobs-small {
-  background-color: #212121;
-}
-.dark-mode .saved-jobs-small .empty-jobs {
-  background: #212121;
-  color: #ffffff;
-}
-.dark-mode .container-profile {
-  background-color: #212121;
-}
-.dark-mode .container-profile .profile-section h3,
-.dark-mode .container-profile .profile-section h4,
-.dark-mode .container-profile .profile-section p,
-.dark-mode .container-profile .profile-section a {
-  color: white;
-}
-.dark-mode .profile-form-inputs2 {
-  background-color: #212121;
-}
-.dark-mode .profile-form-inputs2 div h3 {
-  color: white;
-}
-.dark-mode .card-container-message {
-  background: #212121;
-}
-.dark-mode .card-container {
-  background: #212121;
-}
-.dark-mode .jobCard div {
-  background: #36454f;
-}
-.dark-mode .card-info h3 {
-  color: white;
-}
-.dark-mode .dashboardNav nav a {
-  color: white;
-}
-.dark-mode .dashboardNav nav button {
-  width: 100%;
-  border: #ec3944;
-  background-color: #ec3944;
-  color: white;
-  width: 100px;
-  height: 45px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  margin: 0 1px;
-  padding: 1.5%;
-}
-.dark-mode .dashboardNav nav button:hover {
-  border: #ffffff;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #ec3944;
-  cursor: pointer;
-}
-.dark-mode .saved-jobs-main {
-  background-color: #212121;
-}
-.dark-mode .saved-jobs-main .empty-jobs {
-  background: #212121;
-  color: #ffffff;
-}
-.dark-mode .saved-jobs-single {
-  background-color: #212121;
-}
-.dark-mode .header {
-  background-color: #212121;
-  border: none;
-}
-.dark-mode p {
-  color: black;
-}
-.dark-mode h3 {
-  color: black;
-}
-.dark-mode h4 {
-  color: black;
-}
-.dark-mode .card-text span {
-  color: black;
-}
-.dark-mode .container-profile {
-  color: white;
-}
-.dark-mode .profile-top {
-  border-radius: 6px;
-  color: white;
-}
-.dark-mode .profileCard {
-  color: white;
-}
-.dark-mode .job-details-container-2 {
-  background: #212121;
-  color: #ffffff;
-}
-.dark-mode .job-details-container {
-  background: #212121;
-  color: #ffffff;
 }
 .navbar {
   display: flex;
@@ -1077,6 +950,171 @@ footer h4 {
   border-radius: 8px;
   overflow: -moz-scrollbars-none;
 }
+.dark-mode {
+  color: #fff;
+  background-color: #171717;
+}
+.dark-mode .logo-quickhire {
+  display: flex;
+  align-items: center;
+}
+.dark-mode .logo-quickhire h1 {
+  color: white;
+  font-size: 32px;
+  font-family: "Lato";
+  font-weight: bold;
+  margin-left: 5px;
+}
+.dark-mode #dash {
+  background-color: #171717;
+}
+.dark-mode .profile-top {
+  background-color: #171717;
+  border: none;
+}
+.dark-mode .div1 {
+  background-color: #171717;
+}
+.dark-mode .left-nav-container {
+  background-color: #171717;
+}
+.dark-mode header {
+  background-color: #1f1f1f;
+  border: none;
+}
+.dark-mode .submit-button {
+  background-color: #8e2329;
+}
+.dark-mode .dashboard-nav {
+  background-color: #171717;
+}
+.dark-mode .dashboardNav {
+  background-color: #171717;
+  color: white;
+}
+.dark-mode .accordion-item__line {
+  background-color: #1f1f1f;
+  border: none;
+}
+.dark-mode .accordion-item__line .accordion-header p {
+  color: white;
+}
+.dark-mode .accordion-item__line .jobButtons a {
+  background-color: #8e2329;
+}
+.dark-mode #right-nav #saved,
+.dark-mode #right-nav #applied {
+  border: 1px solid #1f1f1f;
+}
+.dark-mode .saved-jobs-main .saved-header {
+  background-color: #1f1f1f;
+}
+.dark-mode .saved-jobs-main .saved-header h1 {
+  font-size: 2.5em;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.dark-mode .saved-jobs-small {
+  background-color: #171717;
+}
+.dark-mode .saved-jobs-small .empty-jobs {
+  background: #171717;
+  color: #ffffff;
+}
+.dark-mode .container-profile {
+  background-color: #171717;
+}
+.dark-mode .container-profile .profile-section h3,
+.dark-mode .container-profile .profile-section h4,
+.dark-mode .container-profile .profile-section p,
+.dark-mode .container-profile .profile-section a {
+  color: white;
+}
+.dark-mode .profile-form-inputs2 {
+  background-color: #171717;
+}
+.dark-mode .profile-form-inputs2 div h3 {
+  color: white;
+}
+.dark-mode .card-container-message {
+  background: #171717;
+}
+.dark-mode .card-container {
+  background: #171717;
+}
+.dark-mode .jobCard div {
+  background: #36454f;
+}
+.dark-mode .card-info h3 {
+  color: white;
+}
+.dark-mode .dashboardNav nav a {
+  color: white;
+}
+.dark-mode .dashboardNav nav button {
+  width: 100%;
+  border: #ec3944;
+  background-color: #ec3944;
+  color: white;
+  width: 100px;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin: 0 1px;
+  padding: 1.5%;
+}
+.dark-mode .dashboardNav nav button:hover {
+  border: #ffffff;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #ec3944;
+  cursor: pointer;
+}
+.dark-mode .saved-jobs-main {
+  background-color: #171717;
+}
+.dark-mode .saved-jobs-main .empty-jobs {
+  background: #171717;
+  color: #ffffff;
+}
+.dark-mode .saved-jobs-single {
+  background-color: #171717;
+}
+.dark-mode .header {
+  background-color: #171717;
+  border: none;
+}
+.dark-mode p {
+  color: black;
+}
+.dark-mode h3 {
+  color: black;
+}
+.dark-mode h4 {
+  color: black;
+}
+.dark-mode .card-text span {
+  color: black;
+}
+.dark-mode .container-profile {
+  color: white;
+}
+.dark-mode .profile-top {
+  border-radius: 6px;
+  color: white;
+}
+.dark-mode .profileCard {
+  color: white;
+}
+.dark-mode .job-details-container-2 {
+  background: #171717;
+  color: #ffffff;
+}
+.dark-mode .job-details-container {
+  background: #171717;
+  color: #ffffff;
+}
 .filter-class {
   display: flex;
   justify-content: space-between;
@@ -1142,12 +1180,6 @@ footer h4 {
     width: 30rem;
     height: 35px;
   }
-}
-.filter-class button:hover {
-  cursor: pointer;
-  border: 1px solid #ec3944;
-  background-color: #ffffff;
-  color: #ec3944;
 }
 @media (max-width: 1000px) {
   .filter-class {
@@ -1361,30 +1393,20 @@ footer h4 {
 }
 .jobButtons {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   width: 100%;
 }
 .jobButtons a {
-  color: #ffffff;
-  width: 70px;
-  height: 25px;
+  color: white;
   font-size: 14px;
   border-radius: 8px;
   background: #ec3944;
   font-family: "Lato";
   text-align: center;
-  vertical-align: text-bottom;
-  padding: 20x 5px;
+  width: auto;
   border: none;
-}
-.jobButtons a:hover {
-  background: #ffffff;
-  border: 1px solid #ec3944;
-  color: #ec3944;
-  border-radius: 5px;
-  cursor: pointer;
 }
 .jobButtons-top {
   display: flex;
@@ -1397,12 +1419,6 @@ footer h4 {
   height: 35px;
   border: 1px solid #ec3944;
   border-radius: 3px;
-}
-.jobButtons-top button:hover {
-  background: #ec3944;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
 }
 .dashboard-nav {
   padding-left: 3.3%;
@@ -2217,7 +2233,7 @@ button {
   transition-duration: 0.2s;
   transition-property: opacity, transform;
 }
-.testt {
+.icon-more {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -2241,6 +2257,32 @@ button {
   flex-direction: column;
   margin-top: 2vh;
 }
+.modal-content h2 {
+  border: 1px solid black;
+  font-size: 22px;
+  width: 70%;
+  text-align: center;
+}
+.modal-content span {
+  color: #ec3944;
+  font-weight: bold;
+}
+.modal-content .modal-buttons {
+  border: 1px solid green;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content .modal-buttons button {
+  border: none;
+  background-color: #ec3944;
+  font-size: 18px;
+  color: white;
+  padding: 10px 50px;
+  border-radius: 8px;
+  margin: 0 20px;
+}
 .more {
   margin-left: 30px;
   font-size: 17px;
@@ -2257,4 +2299,24 @@ button {
   font-family: "Roboto";
   font-size: 1.1em;
   cursor: pointer;
+}
+.close {
+  display: flex;
+  justify-content: flex-end;
+}
+.close button {
+  background-color: none;
+  color: grey;
+  border: none;
+}
+.logo-quickhire {
+  display: flex;
+  align-items: center;
+}
+.logo-quickhire h1 {
+  color: white;
+  font-size: 32px;
+  font-family: "Lato";
+  font-weight: bold;
+  margin-left: 5px;
 }

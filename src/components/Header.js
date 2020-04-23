@@ -31,8 +31,9 @@ function Header(props) {
   return (
     <>
       <header>
-        <Link to="/Dashboard">
+        <Link to="/Dashboard" className="logo-quickhire">
           <img className="logo-img" src={logo} />
+          <h1>Quickhire</h1>
         </Link>
         {/* <select  name="theme_switcher" onChange={props.changeTheme}>
                 <option selected="selected" value={'css/index.css'}>index</option>

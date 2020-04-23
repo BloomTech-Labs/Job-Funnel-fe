@@ -45,10 +45,11 @@
 @main-font: "Lato";
 
 //Dark Mode Colors
-@darkmode-header: #424242;
-@darkmode-background: #212121;
+@darkmode-header: #1f1f1f;
+@darkmode-background: #171717;
 @darkmode-text: white;
 @darkmode-card-text: black;
+@darkmode-red: #8e2329;
 
 //Loading
 .spinner {
@@ -125,7 +126,7 @@
 @import "./ComponentStyles/SavedJobs.less";
 @import "./ComponentStyles/AboutUs.less";
 @import "./ComponentStyles//RightNav.less";
-
+@import "./ComponentStyles//DarkMode.less";
 @import "./ComponentStyles/Dashboard.less";
 @import "./ComponentStyles/JobDetails.less";
 
@@ -269,7 +270,7 @@
   transition-property: opacity, transform;
 }
 
-.testt {
+.icon-more {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -294,6 +295,35 @@
   align-items: center;
   flex-direction: column;
   margin-top: 2vh;
+
+  h2 {
+    border: 1px solid black;
+    font-size: 22px;
+    width: 70%;
+    text-align: center;
+  }
+
+  span {
+    color: #ec3944;
+    font-weight: bold;
+  }
+
+  .modal-buttons {
+    border: 1px solid green;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      border: none;
+      background-color: #ec3944;
+      font-size: 18px;
+      color: white;
+      padding: 10px 50px;
+      border-radius: 8px;
+      margin: 0 20px;
+    }
+  }
 }
 
 .more {
@@ -312,4 +342,28 @@
   font-family: "Roboto";
   font-size: 1.1em;
   cursor: pointer;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    background-color: none;
+    color: grey;
+    border: none;
+  }
+}
+
+.logo-quickhire {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    color: white;
+    font-size: 32px;
+    font-family: "Lato";
+    font-weight: bold;
+    margin-left: 5px;
+  }
 }
