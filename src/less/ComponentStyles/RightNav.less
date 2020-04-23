@@ -1,23 +1,33 @@
-
-
 #right-nav {
-    height: 90vh;
-    width: 50vw;
-    display:flex;
-    margin: 70px 5px;
+  height: 90vh;
+  width: 35vw;
+  display: flex;
+  font-family: "Lato";
+  flex-direction: column;
+  margin-top: 15vh;
+
+  #saved {
+    width: 100%;
+    border: 1px solid #c4c4c4;
+    margin-right: 2%;
     overflow-y: scroll;
-    
+    border-radius: 8px;
+    margin-bottom: 2vh;
+    min-height: 40vh;
+  }
 
-    #saved{
-        width:48%;
-        background-color: white;
-        margin-right:2%;
-    }
+  #saved::-webkit-scrollbar,
+  #applied::-webkit-scrollbar {
+    display: none;
+  }
 
-    #applied {
-        width: 48%;
-
-    }
+  #applied {
+    width: 100%;
+    margin-right: 2%;
+    min-height: 40vh;
+    border: 1px solid #c4c4c4;
+    overflow-y: scroll;
+    border-radius: 8px;
+    overflow: -moz-scrollbars-none;
+  }
 }
-
-.element { overflow: -moz-scrollbars-none; }

@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import DarkMode from './DarkMode/DarkMode-Toggle';
-import { useLocation, useHistory } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import { logout } from '../redux-store/App/AppActions.js';
+import React, { useState, useEffect } from "react";
+import DarkMode from "./DarkMode/DarkMode-Toggle";
+import { useLocation, useHistory } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { logout } from "../redux-store/App/AppActions.js";
 import SimpleMenu from "./DropDown";
-import logo from '../images/quickhire.svg';
-import { getCurrentUser } from '../redux-store/App/AppActions.js'
-import quickhire from './../images/quickhire.svg'
-
+import logo from "../images/quickhire.svg";
+import { getCurrentUser } from "../redux-store/App/AppActions.js";
+import quickhire from "./../images/quickhire.svg";
+import { Leftnav } from "./Dashboard/Leftnav";
 
 // header - includes links to login, register, dashboard, menu drop down with logout and darkmode on it.
 function Header(props) {
+
     const location = useLocation();
     const history = useHistory();
 
@@ -43,6 +44,7 @@ function Header(props) {
 
                 </Link>
                 {/* <select  name="theme_switcher" onChange={props.changeTheme}>
+
                 <option selected="selected" value={'css/index.css'}>index</option>
                 <option value={"css/red.css"}>red</option>
                 <option value={"css/darkred.css"}>dark red</option>
@@ -115,12 +117,13 @@ const mapStateToProps = state => {
     return {
         currentUser: state.AppReducer.currentUser,
     }
+
 }
-export default connect(mapStateToProps, { logout })(Header)
 
-
-
-
-
-
-
+const mapStateToProps = (state) => {
+  // console.log('mapstatetoprops: ', state);
+  return {
+    currentUser: state.AppReducer.currentUser,
+  };
+};
+export default connect(mapStateToProps, { logout })(Header);

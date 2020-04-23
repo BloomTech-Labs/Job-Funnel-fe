@@ -1,6 +1,7 @@
 import {
     SET_CURRENT_USER, LOGIN_FAILED, LOGOUT, SET_OTHER_USER,
-    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS, GET_SAVED_APPLIED_JOBS
+    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS, GET_SAVED_APPLIED_JOBS, DELETE_APPLIED,
+    APPLIED_JOBS
 } from './AppActions.js';
 
 const initialState = {
@@ -15,10 +16,11 @@ const initialState = {
     loginFailed: false,
     imageFileTypes: ".ai, .bmp, .jpeg, .jpg, .gif, .pdf, .png, .psd, .svg, .tga, .tiff,",
     videoFileTypes: ".3gp, .avi, .ogv, .mkv, .mov, .mpeg, .mp4, .wmv",
+
 };
 
-
 export const AppReducer = (state = initialState, action) => {
+
     // console.log('AppReducer initialState: ', initialState);
     // console.log('AppReducer firing: ', action);
     switch (action.type) {
@@ -105,8 +107,22 @@ export const AppReducer = (state = initialState, action) => {
                 applied: appliedArr,
                 appliedLookup: appliedObj
             }
+          case DELETE_APPLIED:
+            console.log("from reducer", action.payload);
+            return {
+              ...state,
+
+              applied: [...state.saved, `${action.payload}, `],
+            };
+          case APPLIED_JOBS:
+            console.log("from reducer applied", action.payload);
+            return {
+              ...state,
+              applied: [...state.applied, `${action.payload}`],
+            };
 
         default: //console.log('REDUCER DEFAULT'); 
             return state;
     }
 }
+
