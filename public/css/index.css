@@ -200,6 +200,7 @@ a {
   height: 40px;
   position: relative;
   text-align: center;
+  z-index: 8888;
   -webkit-animation: sk-rotate 2s infinite linear;
   animation: sk-rotate 2s infinite linear;
 }
@@ -414,6 +415,8 @@ header nav .dashboard-btn:hover {
 }
 header nav .sign-up-btn {
   color: black;
+  border: 2px solid orange;
+  margin-left: 45px;
   width: 100px;
   height: 35px;
   border: 1px solid rgba(193, 58, 67, 0.9);
@@ -457,6 +460,7 @@ header nav .sign-up-btn:hover {
 header nav .log-in-btn {
   color: black;
   width: 100px;
+  margin-right: 100px;
   height: 35px;
   border: 1px solid rgba(193, 58, 67, 0.9);
   border-radius: 19px;
@@ -759,7 +763,7 @@ footer h4 {
 }
 .card-saved-jobs {
   width: 90%;
-  height: 15vh;
+  height: auto;
   margin: 2%;
   background: white;
   border: 1px solid #bfbfbf;
@@ -1002,6 +1006,9 @@ footer h4 {
 .dark-mode .accordion-item__line .jobButtons a {
   background-color: #8e2329;
 }
+.dark-mode .modal-content h2 {
+  color: #010a3b;
+}
 .dark-mode #right-nav #saved,
 .dark-mode #right-nav #applied {
   border: 1px solid #1f1f1f;
@@ -1021,6 +1028,14 @@ footer h4 {
 .dark-mode .saved-jobs-small .empty-jobs {
   background: #171717;
   color: #ffffff;
+}
+.dark-mode .card-saved-jobs {
+  background-color: #1f1f1f;
+  border: none;
+}
+.dark-mode .card-saved-jobs button,
+.dark-mode .card-saved-jobs h3 {
+  color: white;
 }
 .dark-mode .container-profile {
   background-color: #171717;
@@ -1121,7 +1136,7 @@ footer h4 {
   min-width: 100%;
   width: 100%;
   margin-bottom: 2vh;
-  margin-left: 2.5vw;
+  margin-left: 12.5vw;
 }
 .filter-class .search-div input {
   background: #ffffff;
@@ -1295,7 +1310,7 @@ footer h4 {
 }
 .card-container .jobCard {
   width: 550px;
-  height: 150px;
+  height: 250px;
   margin: 10px;
   padding: 5px 10px;
   background: #ffffff;
@@ -1440,14 +1455,14 @@ footer h4 {
   background-color: #fafafa;
   display: flex;
   justify-content: flex-start;
-  width: 88%;
+  width: 100%;
   overflow: hidden;
   margin-top: 15vh;
   float: right;
 }
 #dash .div1 {
-  max-width: 50vw;
-  width: 50vw;
+  max-width: 60vw;
+  width: 60vw;
 }
 .submit-button {
   background-color: #ec3944;
@@ -2138,9 +2153,9 @@ button {
   flex-direction: column;
   position: relative;
   width: 45vw;
-  height: 150px;
+  height: auto;
   margin: 10px;
-  padding: 5px 10px;
+  padding: 15px 20px;
   background: #ffffff;
   border: 1px solid #c4c4c4;
   box-sizing: border-box;
@@ -2258,7 +2273,6 @@ button {
   margin-top: 2vh;
 }
 .modal-content h2 {
-  border: 1px solid black;
   font-size: 22px;
   width: 70%;
   text-align: center;
@@ -2268,7 +2282,6 @@ button {
   font-weight: bold;
 }
 .modal-content .modal-buttons {
-  border: 1px solid green;
   margin-top: 50px;
   display: flex;
   align-items: center;
@@ -2314,7 +2327,7 @@ button {
   align-items: center;
 }
 .logo-quickhire h1 {
-  color: white;
+  color: #010a3b;
   font-size: 32px;
   font-family: "Lato";
   font-weight: bold;

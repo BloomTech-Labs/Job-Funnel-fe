@@ -50,12 +50,7 @@ function Header(props) {
           if (location.pathname === "/") {
             return (
               <nav>
-                <Link to="/Register">
-                  {" "}
-                  <button className="sign-up-btn">Sign up</button>
-                </Link>
                 <Link to="/Login">
-                  {" "}
                   <button className="log-in-btn">Log in</button>
                 </Link>
               </nav>
@@ -71,8 +66,6 @@ function Header(props) {
                 <nav>
                   <SimpleMenu logout={logOut} currentUser={props.currentUser} />
                 </nav>
-
-                <Leftnav />
               </>
             );
           } else if (
@@ -95,7 +88,7 @@ function Header(props) {
             location.pathname === "/Login"
           ) {
             return (
-              <nav style={{ minWidth: "0px" }}>
+              <nav>
                 <Link to="/Register">
                   {" "}
                   <button className="sign-up-btn">Sign up</button>{" "}
