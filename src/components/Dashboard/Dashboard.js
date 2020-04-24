@@ -24,6 +24,7 @@ function Dashboard(props) {
     useEffect(() => {
         searchAPI().get('/search', { params: search})
             .then((response) => {
+                console.log(response.data.responses)
                 return response.data.responses
             })
             .then(data => {

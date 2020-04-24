@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 import { updateSaved, deleteSaved } from '../../redux-store/App/AppActions';
 import { connect } from "react-redux";
@@ -8,11 +9,32 @@ import { faHeart as heartOutline} from '@fortawesome/free-regular-svg-icons';
 import { states } from '../../data';
 import heart from './../../images/heartEmpty.svg';
 import heartFull from './../../images/heartFull.svg';
+import Modal from "react-modal";
+
+const ModalStyle = {
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      transition: "ease-in-out",
+    },
+    content: {
+      backgroundColor: "white",
+      top: "20%",
+      marginBottom: "50px",
+      /* 			overflowY: 'auto',
+       */ left: "30%",
+      right: "30%",
+      width: "40vw",
+      height: "auto",
+      paddingBottom: "30px",
+    },
+  };
+
 
 const JobCard = ( props ) => {
     const [word, setWord] = useState("more");
     const [open, setOpen] = useState(false);
     const [jobDetails, setJobDetails] = useState({});
+    const [modal, setModal] = useState(false);
 
     useEffect(() => {
         setJobDetails(props.jobDetailsLookup[props.job.job_id.toString()]);
@@ -34,6 +56,10 @@ const JobCard = ( props ) => {
         }
     }
 
+    const handleAppliedJob = () => {
+
+    }
+
     const handleTextExpand = () => {
         if (!open) {
             setOpen(true)
@@ -43,6 +69,31 @@ const JobCard = ( props ) => {
             setWord("more")
         }
     }
+
+    if (modal === true) {
+        return (
+          <Modal
+            className="modal"
+            isOpen={modal}
+            onRequestClose={() => setModal(false)}
+            style={ModalStyle}
+          >
+            <div className="close">
+              <button onClick={() => setModal(false)}>X</button>
+            </div>
+            <div className="modal-content">
+              <h2>
+                Did you apply to the position of <span>{props.job.title}</span> at
+                <span style={{marginLeft: '5px'}}>{props.job.company_name}</span>?
+              </h2>
+              <div className="modal-buttons">
+                <button onClick={handleAppliedJob} style={{backgroundColor: '#a6daa6'}}>Yes</button>
+                <button onClick={() => setModal(false)}>No</button>
+              </div>
+            </div>
+          </Modal>
+        );
+      }
 
     return (
         <div className='job-card' style={{height: `${open ? 'auto' : '150px'}`}}>
@@ -61,7 +112,13 @@ const JobCard = ( props ) => {
                     <div>Read {word}</div>
                     <FontAwesomeIcon onClick={handleTextExpand} style={{width: '16px', height: '16px', cursor: 'pointer', color: 'gray', marginLeft: '3px', marginTop: '2px'}} icon={open ? faChevronUp : faChevronDown} size='lg'/> 
                 </div>
-                <button className="apply-btn">Apply</button>
+                <Link to='/' target="_blank" onClick={(event) => 
+                                                      { event.preventDefault(); 
+                                                        window.open(props.job.link);
+                                                        setModal(true);
+                                                      }}>
+                    <button className="apply-btn">Apply</button> 
+                </Link>
             </div>
         </div>
     )
