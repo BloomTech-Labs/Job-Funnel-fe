@@ -128,7 +128,7 @@ const JobCard = ( props ) => {
                                                         window.open(props.job.link);
                                                         setModal(true);
                                                       }}>
-                    <button className="apply-btn">Apply</button> 
+                    <button className="apply-btn" style={{backgroundColor: `${props.appliedLookup.hasOwnProperty(props.job.job_id) ? '#a6daa6' : '#ec3944'}`}}>{`${props.appliedLookup.hasOwnProperty(props.job.job_id) ? "Applied" : "Apply"}`}</button> 
                 </Link>
             </div>
         </div>
