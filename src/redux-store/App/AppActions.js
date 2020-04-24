@@ -10,9 +10,10 @@ export const SET_OTHER_USER = 'SET_OTHER_USER';
 export const WIPE_OTHER_USER = 'WIPE_OTHER_USER';
 export const SAVED_JOBS = 'SAVED_JOBS';
 export const DELETE_JOBS = 'DELETE_JOBS';
+export const DELETE_APPLIED = "DELETE_APPLIED";
 export const GET_SAVED_APPLIED_JOBS = 'GET_SAVED_APPLIED_JOBS';
 export const APPLIED_JOBS = "APPLIED_JOBS";
-export const DELETE_APPLIED = "DELETE_APPLIED";
+
 
 
 // export const loadingStart = () =>{
@@ -164,16 +165,16 @@ export const adminDeleteProfilePicture = (id, setPictureLoading) => (
 // /admin/users/:id
 // Delete a user by id as admin
 
-export const updateSaved = (saved) => (dispatch) => {
-  axiosWithAuth()
-    .post("/saved/", saved)
-    .then((res) => {
-      dispatch({ type: SAVED_JOBS, payload: res.data });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+// export const updateSaved = (saved) => (dispatch) => {
+//   axiosWithAuth()
+//     .post("/saved/", saved)
+//     .then((res) => {
+//       dispatch({ type: SAVED_JOBS, payload: res.data });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
 
 export const updateSaved = (saved, user_id) => dispatch => {

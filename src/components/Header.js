@@ -120,10 +120,4 @@ const mapStateToProps = state => {
 
 }
 
-const mapStateToProps = (state) => {
-  // console.log('mapstatetoprops: ', state);
-  return {
-    currentUser: state.AppReducer.currentUser,
-  };
-};
 export default connect(mapStateToProps, { logout })(Header);

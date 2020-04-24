@@ -1,6 +1,13 @@
 import {
-    SET_CURRENT_USER, LOGIN_FAILED, LOGOUT, SET_OTHER_USER,
-    WIPE_OTHER_USER, SAVED_JOBS, DELETE_JOBS, GET_SAVED_APPLIED_JOBS, DELETE_APPLIED,
+    SET_CURRENT_USER, 
+    LOGIN_FAILED, 
+    LOGOUT, 
+    SET_OTHER_USER,
+    WIPE_OTHER_USER, 
+    SAVED_JOBS, 
+    DELETE_JOBS, 
+    GET_SAVED_APPLIED_JOBS, 
+    DELETE_APPLIED, 
     APPLIED_JOBS
 } from './AppActions.js';
 
@@ -107,6 +114,7 @@ export const AppReducer = (state = initialState, action) => {
                 applied: appliedArr,
                 appliedLookup: appliedObj
             }
+
           case DELETE_APPLIED:
             console.log("from reducer", action.payload);
             return {
@@ -114,6 +122,7 @@ export const AppReducer = (state = initialState, action) => {
 
               applied: [...state.saved, `${action.payload}, `],
             };
+            
           case APPLIED_JOBS:
             console.log("from reducer applied", action.payload);
             return {
