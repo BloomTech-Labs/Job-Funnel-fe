@@ -124,10 +124,21 @@ export const AppReducer = (state = initialState, action) => {
             };
             
           case APPLIED_JOBS:
-            console.log("from reducer applied", action.payload);
+            console.log('from reducer')
+            let arr2 = [];
+            let obj2 = {};
+
+            action.payload.forEach(job => {
+                if (job.status === 'applied') {
+                    arr2.push(job);
+                    obj2[job.job_id] = job;
+                }
+            });
             return {
-              ...state,
-              applied: [...state.applied, `${action.payload}`],
+                ...state,
+                applied: arr2,
+                appliedLookup: obj2,
+                toggle: true
             };
 
         default: //console.log('REDUCER DEFAULT'); 

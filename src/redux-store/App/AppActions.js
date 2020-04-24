@@ -230,17 +230,25 @@ export const getSavedAppliedJobs = (user_id) => dispatch => {
 
 
 
-export const updateApplied = (applied) => (dispatch) => {
+export const updateApplied = (applied, user_id) => (dispatch) => {
   console.log(" applied from actions", applied);
 
-  axiosWithAuth()
-    .post("/saved/", applied)
-    .then((res) => {
-      dispatch({ type: APPLIED_JOBS, payload: res.data });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    axiosWithAuth()
+      .post("/saved/", applied)
+      .then((res) => {
+            //TO-DO: update BE to return a full job object to avoid extra call (use SAVED_JOBS)
+            axiosWithAuth().get(`/saved/${user_id}`)
+            .then(res => {
+                console.log('response from save jobs', res.data)
+                dispatch({ type: APPLIED_JOBS, payload: res.data });
+            })
+            .catch(error => {
+                console.error(error.message)
+            })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 };
 
 

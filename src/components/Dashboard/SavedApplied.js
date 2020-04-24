@@ -17,12 +17,12 @@ const SavedApplied = (props) => {
         <div className="saved-applied-wrap">
 
             <div className="top-box">
-                <h4>Saved Jobs</h4>
+                <h4>Saved Jobs ({props.savedArray.length})</h4>
                 <SavedJobsList />
             </div>
 
             <div className="bottom-box">
-                <h4>Applied Jobs</h4>
+                <h4>Applied Jobs ({props.appliedArray.length})</h4>
                 <AppliedJobsList />
             </div>
 

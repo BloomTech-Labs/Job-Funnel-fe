@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axiosWithAuth from '../../utils/axiosWithAuth';
-import { updateSaved, deleteSaved } from '../../redux-store/App/AppActions';
+import { updateSaved, deleteSaved, updateApplied } from '../../redux-store/App/AppActions';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -56,8 +56,19 @@ const JobCard = ( props ) => {
         }
     }
 
-    const handleAppliedJob = () => {
-
+    const handleAppliedJob = (event) => {
+        if (!props.appliedLookup.hasOwnProperty(props.job.job_id)) {
+            let job = {
+                user_id: props.currentUser.id,
+                job_id: props.job.job_id,
+                status: "applied"
+            }
+            if(!event.detail || event.detail == 1){//activate on first click only to avoid hiding again on multiple clicks
+                // code here. // It will execute only once on multiple clicks
+                props.updateApplied(job, props.currentUser.id);
+                setModal(false);
+              }
+        }
     }
 
     const handleTextExpand = () => {
@@ -134,4 +145,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateSaved, deleteSaved })(JobCard);
+export default connect(mapStateToProps, { updateSaved, deleteSaved, updateApplied })(JobCard);
