@@ -10,6 +10,7 @@ import { states } from '../../data';
 import heart from './../../images/heartEmpty.svg';
 import heartFull from './../../images/heartFull.svg';
 import Modal from "react-modal";
+const ReactMarkdown = require('react-markdown')
 
 const ModalStyle = {
     overlay: {
@@ -33,15 +34,14 @@ const ModalStyle = {
 const JobCard = ( props ) => {
     const [word, setWord] = useState("more");
     const [open, setOpen] = useState(false);
-    const [jobDetails, setJobDetails] = useState({});
     const [modal, setModal] = useState(false);
 
     useEffect(() => {
-        setJobDetails(props.jobDetailsLookup[props.job.job_id.toString()]);
+
     }, [props.savedArr])
 
     const handleSaveJob = (event) => {
-        if (!props.savedLookup.hasOwnProperty(props.job.job_id)) {
+        if (!props.savedLookup.hasOwnProperty(props.job.job_id) && !props.appliedLookup.hasOwnProperty(props.job.job_id)) {
             let job = {
                 user_id: props.currentUser.id,
                 job_id: props.job.job_id,
@@ -52,7 +52,9 @@ const JobCard = ( props ) => {
                 props.updateSaved(job, props.currentUser.id);
               }
         } else {
-            props.deleteSaved(props.job.job_id);
+            if (!props.appliedLookup.hasOwnProperty(props.job.job_id)) {
+                props.deleteSaved(props.job.job_id);
+            }
         }
     }
 
@@ -88,6 +90,7 @@ const JobCard = ( props ) => {
             isOpen={modal}
             onRequestClose={() => setModal(false)}
             style={ModalStyle}
+            appElement={document.getElementById('root')}
           >
             <div className="close">
               <button onClick={() => setModal(false)}>X</button>
@@ -116,7 +119,7 @@ const JobCard = ( props ) => {
             </div>
             <div className="title">{props.job.title}</div>
             <div className="content">
-               {jobDetails.description }
+                <ReactMarkdown source={props.jobDetailsLookup[props.job.job_id.toString()].description} />
             </div>
             <div className="bottom-row">
                 <div style={{display: 'flex', margin: '0 auto'}}>
@@ -124,9 +127,15 @@ const JobCard = ( props ) => {
                     <FontAwesomeIcon onClick={handleTextExpand} style={{width: '16px', height: '16px', cursor: 'pointer', color: 'gray', marginLeft: '3px', marginTop: '2px'}} icon={open ? faChevronUp : faChevronDown} size='lg'/> 
                 </div>
                 <Link to='/' target="_blank" onClick={(event) => 
-                                                      { event.preventDefault(); 
-                                                        window.open(props.job.link);
-                                                        setModal(true);
+                                                      { 
+                                                        if (props.appliedLookup.hasOwnProperty(props.job.job_id)) {
+                                                            event.preventDefault(); 
+                                                            window.open(props.job.link);
+                                                        } else {
+                                                            event.preventDefault(); 
+                                                            window.open(props.job.link);
+                                                            setModal(true);
+                                                        }
                                                       }}>
                     <button className="apply-btn" style={{backgroundColor: `${props.appliedLookup.hasOwnProperty(props.job.job_id) ? '#a6daa6' : '#ec3944'}`}}>{`${props.appliedLookup.hasOwnProperty(props.job.job_id) ? "Applied" : "Apply"}`}</button> 
                 </Link>

@@ -1185,6 +1185,9 @@ footer h4 {
   text-overflow: ellipsis;
   margin-bottom: 10px;
 }
+.dashboard .display .search .bottom-wrap .jobs-list .job-card .content p {
+  font-size: 1.4rem;
+}
 .dashboard .display .search .bottom-wrap .jobs-list .job-card .bottom-row {
   display: flex;
   justify-content: center;
