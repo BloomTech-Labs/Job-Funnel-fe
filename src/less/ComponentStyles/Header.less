@@ -1,17 +1,13 @@
 header {
 	position: sticky;
-	background-color: @quickhire-grey;
+	background-color: #FAFAFA;
 	width: 100%;
-	position: fixed; /* Set the navbar to fixed position */
-	top: 0;
 	height: 75px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 9;
-	margin-bottom: 5vh;
-	border-bottom: 1px solid rgb(230, 230, 230);
-	box-shadow: 0 1px 1px -1px black;
+	// border-bottom: 1px solid rgb(230, 230, 230);
 	@media @tablet {
 		flex-direction: column;
 		justify-content: center;
@@ -31,27 +27,18 @@ header {
 	.logo-img {
 		max-width: 70%;
 		margin-left: 30px;
-	}
 
+	}
+	
 	#profile-image {
 		display: flex;
-		width: 100%;
-		margin-left: 1vw;
-
-		button {
-			background-color: @quickhire-main;
-			color: white;
-			border: none;
-			padding: 10px 25px;
-			margin-left: 5px;
-			border-radius: 5px;
-		}
 	}
 
-	.profile-nav {
+	.profile-nav{
 		border-radius: 50% 50%;
-		border: 1px solid #ec3944;
-		padding: 1px;
+		border: 1px solid #EC3944;
+		padding:1px;
+
 	}
 
 	a {
@@ -86,10 +73,10 @@ header {
 	}
 	h1 {
 		// border:1px solid red;
-		font-family: 'Lato', Arial, sans-serif;
+		font-family: "Franklin Gothic Medium", Arial, sans-serif;
 		margin: 0 0 0 30px;
 		font-size: 25px;
-		color: #ec3944;
+		color: #EC3944;
 		@media @tablet {
 			margin: unset;
 		}
@@ -99,29 +86,13 @@ header {
 	}
 
 	nav {
-		width: 5.5vw;
+		// width: 10.5vw;
 		height: 100%;
-		min-width: 220px;
+		// min-width: 220px;
 		margin: 0 30px 0 0;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-
-		.dashboard-btn {
-			color: #ec3944;
-			width: 120px;
-			border: 1px solid #ec3944;
-			height: 35px;
-			padding: 1%;
-			background-color: #fafafa;
-			outline: none;
-			font-size: 1.4rem;
-			letter-spacing: 1px;
-			&:hover {
-				cursor: pointer;
-			}
-		}
-
 		@media @tablet {
 			flex-direction: column;
 			justify-content: center;
@@ -153,11 +124,13 @@ header {
 			border: 1px solid rgba(193, 58, 67, 0.9);
 			border-radius: 19px;
 			padding: 1%;
-			background-color: #fafafa;
+			background-color: #FAFAFA;
 			outline: none;
 			font-size: 1.4rem;
 			letter-spacing: 1px;
 			&:hover {
+				box-shadow: 0 0 5px rgba(0,0,0,.2);
+				border-radius: 19px;
 				cursor: pointer;
 			}
 			@media @tablet {
@@ -189,14 +162,16 @@ header {
 			color: black;
 			width: 100px;
 			height: 35px;
-			border: 1px solid rgba(193, 58, 67, 0.9);
+			border: 1px solid transparent;
 			border-radius: 19px;
 			padding: 1%;
-			background-color: #fafafa;
+			background-color: #FAFAFA;
 			outline: none;
 			font-size: 1.4rem;
-			letter-spacing: 1px;
+			letter-spacing: 0.3px;
 			&:hover {
+				text-shadow: 0 0 10px rgba(0,0,0,.15);
+				// border-radius: 19px;
 				cursor: pointer;
 			}
 			@media @tablet {
@@ -224,238 +199,301 @@ header {
 			}
 		}
 	}
+
 }
+
+
+
+// header {
+// 	position: sticky;
+// 	background-color: @quickhire-grey;
+// 	width: 100%;
+// 	position: fixed; /* Set the navbar to fixed position */
+//   	top: 0;
+// 	height: 75px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	z-index: 9;
+// 	margin-bottom: 5vh;
+// 	border-bottom: 1px solid rgb(230, 230, 230);
+// 	box-shadow: 0 1px 1px -1px black;
+// 	@media @tablet {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 18vh;
+// 	}
+// 	@media @mobile {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 25vh;
+// 	}
+// 	@media @mobile2 {
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		height: 25vh;
+// 	}
+
+// 	.logo-img {
+// 		max-width: 70%;
+// 		margin-left: 30px;
+
+// 	}
+	
+// 	#profile-image {
+// 		display: flex;
+// 		width:100%;
+// 		margin-left:1vw;
+
+// 		button {
+// 			background-color: @quickhire-main;
+// 			color:white;
+// 			border: none;
+// 			padding:10px 25px;
+// 			margin-left:5px;
+// 			border-radius:5px;
+// 		}
+// 	}
+
+// 	.profile-nav{
+// 		border-radius: 50% 50%;
+// 		border: 1px solid #EC3944;
+// 		padding:1px;
+
+// 	}
+
+// 	a {
+// 		text-decoration: none;
+// 		@media @tablet {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 		@media @mobile {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 		@media @mobile2 {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			align-items: center;
+// 			display: flex;
+// 			width: 100%;
+// 			padding-bottom: 1.5%;
+// 		}
+// 	}
+// 	h1 {
+// 		// border:1px solid red;
+// 		font-family: "Lato", Arial, sans-serif;
+// 		margin: 0 0 0 30px;
+// 		font-size: 25px;
+// 		color: #EC3944;
+// 		@media @tablet {
+// 			margin: unset;
+// 		}
+// 		@media @mobile {
+// 			margin: unset;
+// 		}
+// 	}
+
+// 	nav {
+// 		width: 5.5vw;
+// 		height: 100%;
+// 		min-width: 220px;
+// 		margin: 0 30px 0 0;
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
+
+// 		.dashboard-btn {
+// 			color: #EC3944;
+// 			width: 120px;
+// 			border:1px solid #EC3944;
+// 			height: 35px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 		}
+
+// 		@media @tablet {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+
+// 		@media @mobile {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+
+// 		@media @mobile2 {
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			margin: unset;
+// 			width: 80%;
+// 			min-width: unset;
+// 		}
+// 		.sign-up-btn {
+// 			// margin-left: 4rem;
+// 			color: black;
+// 			width: 100px;
+// 			height: 35px;
+// 			border: 1px solid rgba(193, 58, 67, 0.9);
+// 			border-radius: 19px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 			@media @tablet {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile2 {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+// 		}
+// 		.log-in-btn {
+// 			// margin-left: 4rem;
+// 			color: black;
+// 			width: 100px;
+// 			height: 35px;
+// 			border: 1px solid rgba(193, 58, 67, 0.9);
+// 			border-radius: 19px;
+// 			padding: 1%;
+// 			background-color: #FAFAFA;
+// 			outline: none;
+// 			font-size: 1.4rem;
+// 			letter-spacing: 1px;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 			@media @tablet {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+
+// 			@media @mobile2 {
+// 				width: 100%;
+// 				justify-content: center;
+// 				align-items: center;
+// 				display: flex;
+// 				padding-bottom: 1%;
+// 			}
+// 		}
+// 	}
+// }
 
 // --------------- DarkMode Toggle ------------------------------
 
 .dark-mode__toggle {
-	background: papayawhip;
-	border-radius: 50px;
-	border: 1px solid black;
-	height: 30px;
-	position: relative;
-	width: 40px;
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 30px;
+  position: relative;
+  width: 40px;
 }
 
 .toggle {
-	background: @quickhire-main;
-	border-radius: 50px;
-	height: 12px;
-	left: 0;
-	position: absolute;
-	transition: 0.2s;
-	width: 20px;
+  background: @quickhire-main;
+  border-radius: 50px;
+  height: 12px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
 }
 
 .toggled {
-	left: 18px;
-}
-
-.dark-mode {
-	color: #fff;
-	background-color: @darkmode-background;
-
-	#dash {
-		background-color: @darkmode-background;
-	}
-
-	.profile-top {
-		background-color: @darkmode-background;
-		border: none;
-	}
-
-	.div1 {
-		background-color: @darkmode-background;
-	}
-
-	.left-nav-container {
-		background-color: @darkmode-background;
-	}
-
-	header {
-		background-color: @darkmode-header;
-	}
-
-	.dashboard-nav {
-		background-color: @darkmode-background;
-	}
-
-	.dashboardNav {
-		background-color: @darkmode-background;
-		color: white;
-	}
-
-	.saved-jobs-small {
-		background-color: @darkmode-background;
-
-		.empty-jobs {
-			background: @darkmode-background;
-			color: #ffffff;
-		}
-	}
-	.container-profile {
-		background-color: @darkmode-background;
-
-		.profile-section {
-			h3,
-			h4,
-			p,
-			a {
-				color: white;
-			}
-		}
-	}
-
-	.profile-form-inputs2 {
-		background-color: @darkmode-background;
-		div {
-			h3 {
-				color: white;
-			}
-		}
-	}
-
-	.card-container-message {
-		background: @darkmode-background;
-	}
-
-	.card-container {
-		background: @darkmode-background;
-	}
-
-	.jobCard {
-		div {
-			background: rgb(54, 69, 79);
-		}
-	}
-	.card-info {
-		h3 {
-			color: @darkmode-text;
-		}
-	}
-	.dashboardNav {
-		nav {
-			a {
-				color: white;
-			}
-			button {
-				width: 100%;
-
-				.button(
-						@border: @quickhire-main,
-						@width: 100px,
-						@borderHover: #ffffff,
-						@background: @quickhire-main,
-						@backgroundHover: #ffffff,
-						@fontColor: white,
-						@fontColorHover: @quickhire-main,
-						@height: 45px,
-						@borderRadius: 8px,
-						@margin: 0 1px,
-					);
-			}
-		}
-	}
-
-	// .job-details-container {
-	// 	background: @darkmode-background;
-	// }
-
-	// .job-details-container-2 {
-	// 	background: @darkmode-background;
-	// }
-
-	// "job-details-container-2" : "job-details-container"
-
-	.saved-jobs-main {
-		background-color: @darkmode-background;
-		.empty-jobs {
-			background: @darkmode-background;
-			color: #ffffff;
-		}
-	}
-
-	.saved-jobs-single {
-		background-color: @darkmode-background;
-	}
-
-	.header {
-		background-color: @darkmode-background;
-		border: none;
-	}
-
-	p {
-		color: @darkmode-card-text;
-	}
-
-	h3 {
-		color: @darkmode-card-text;
-	}
-
-	h4 {
-		color: @darkmode-card-text;
-	}
-
-	.card-text span {
-		color: @darkmode-card-text;
-	}
-
-	.container-profile {
-		color: white;
-	}
-
-	.profile-top {
-		border-radius: 6px;
-		color: white;
-	}
-
-	.profileCard {
-		color: white;
-	}
-
-	.job-details-container-2 {
-		background: @darkmode-background;
-		color: #ffffff;
-	}
-
-	.job-details-container {
-		background: @darkmode-background;
-		color: #ffffff;
-	}
+  left: 18px;
 }
 
 .navbar {
-	display: flex;
-	flex-direction: column;
-	height: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
 }
 
 .dark-container {
-	width: 100px;
-	height: 35px;
-	border-radius: 3px;
-	padding: 1%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  width: 100px;
+  height: 35px;
+  border-radius: 3px;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 // MUI styling
 .m-ui-container {
-	.profile {
-		color: black;
-		width: 100px;
-		height: 35px;
-		border: 1px solid rgba(193, 58, 67, 0.9);
-		border-radius: 19px;
-		padding: 1%;
-		background-color: #fafafa;
-		outline: none;
-		font-size: 1.4rem;
-		letter-spacing: 1px;
-		&:hover {
-			cursor: pointer;
-		}
+
+
+
+	.profile{
+		  color: black;
+			width: 100px;
+			height: 35px;
+			border: 1px solid rgba(193, 58, 67, 0.9);
+			border-radius: 19px;
+			padding: 1%;
+			background-color: #FAFAFA;
+			outline: none;
+			font-size: 1.4rem;
+			letter-spacing: 1px;
+			&:hover {
+				cursor: pointer;
+			}
 	}
 	@media @tablet {
 		width: 100%;
@@ -468,14 +506,15 @@ header {
 	@media @mobile2 {
 		width: 100%;
 	}
+
 }
 
 .logout {
-	display: flex;
-	justify-content: center;
-	color: black;
+  display: flex;
+  justify-content: center;
+  color: black;
 }
 
 #simple-menu {
-	margin-top: 10vh;
+  margin-top: 10vh;
 }

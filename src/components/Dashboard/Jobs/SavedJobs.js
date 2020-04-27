@@ -10,36 +10,32 @@ import { Loading } from "./../Loading";
 
 //Component that makes up the Saved Jobs page on site
 function SavedJobs(props) {
-  console.log("props in savedjobs", props);
   const [save, setSave] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const id = props.currentUser.id;
-
-  // This function loads saved jobs for a user.
-  const loadSaves = () =>
-    axiosWithAuth()
-      .get(`/saved/${id}`)
-      .then((res) => {
-        console.log("response from save jobs", res.data);
-        let SavedCopy = res.data.filter((e) => e.status === "saved");
-        setSave(SavedCopy);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error.message);
-        setLoading(false);
-      });
+  console.log("WHATS THIS?", id);
 
   //axiosWithAuth is getting the saved id's that are made on the SuggestedJobs component whenever you click the save button
   useEffect(() => {
     setLoading(true);
-    loadSaves();
+    if (id) {
+      console.log("theres id", id);
+      axiosWithAuth()
+        .get(`/saved/${id}`)
+        .then((res) => {
+          let SavedCopy = res.data.filter((e) => e.status === "saved");
+          setSave(SavedCopy);
+          setLoading(false);
+        })
+        .catch(({ name, code, message, stack }) => {
+          console.error("ERROR", { name, code, message, stack });
+          setLoading(false);
+        });
+    }
   }, [id, props.saved, props.deleteSaved]);
 
   //deletes the selected saved job
   const handleDelete = (job_id) => {
-    console.log("deleting from saved", job_id);
     setLoading(true);
     props.deleteSaved(job_id);
   };
@@ -50,7 +46,7 @@ function SavedJobs(props) {
       props.history.push(`/Dashboard/Job/${job_id}`);
     }, 100);
   };
-
+  console.log("THS IS SAED", save);
   //if loading is happening, then only return loader
   if (loading === true) {
     return <Loading />;
@@ -66,7 +62,7 @@ function SavedJobs(props) {
         //if object is empty, render empty message
         <div className="empty-jobs">
           <div>
-            <p>Nothing here yet...Save a job in Dashboard to continue!</p>
+            <p>No jobs saved.</p>
           </div>
         </div>
       ) : (
@@ -79,11 +75,16 @@ function SavedJobs(props) {
                   <img src={heartFull} />
                 </button>
               </div>
-
-              <p>{e.description.slice(0, 50)}...</p>
-              <div className="saved-buttons">
-                <button onClick={() => JobDetails(e.job_id)}>More Info</button>
+              <div className="card-saved-info">
+                <a href={e.testexternal_url} target="_blank">
+                  More
+                </a>
               </div>
+
+              {/* <p>{e.description.slice(0, 50)}...</p> */}
+              {/* <div className="saved-buttons">
+                <button onClick={() => JobDetails(e.job_id)}>More Info</button>
+              </div> */}
             </div>
           );
         })

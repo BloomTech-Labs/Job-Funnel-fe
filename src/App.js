@@ -21,17 +21,17 @@ function App(props) {
   const location = useLocation();
 
   useEffect(() => {
-    if (
-      !props.loginFailed &&
-      !props.currentUser &&
-      sessionStorage.getItem("token")
-    ) {
+    console.log('APP', props)
+
+    if (!props.loginFailed && !props.currentUser && sessionStorage.getItem('token')) {
       props.getCurrentUser();
       setLoading(false);
     } else {
       setLoading(false);
     }
-  }, [props.currentUser]);
+
+  }, [props.currentUser])
+  
 
   const changeTheme = (e) => {
     setTheme(e.target.value);
@@ -41,15 +41,13 @@ function App(props) {
     <div>
       <link rel="stylesheet" type="text/css" href={theme} />
       <Header changeTheme={changeTheme} />
-
-      <Route exact path="/" component={LandingPage} />
-
-      <Route exact path="/Login" component={Login} />
-      <Route exact path="/Register" component={Register} />
-      <Route exact path="/About" component={AboutUs} />
-      <PrivateRoute path="/Profile" component={Profile} />
-      <PrivateRoute path="/Dashboard" component={Dashboard} />
-      <PrivateRoute exact path="/Dashboard/Job/:id" component={JobDetails} />
+      <PrivateRoute path='/Profile' component={Profile} />
+      <PrivateRoute path='/Dashboard' component={Dashboard} />
+      <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
+      <Route exact path='/' component={LandingPage} />
+      <Route exact path='/Login' component={Login} />
+      <Route exact path='/Register' component={Register} />
+      <Route exact path='/About' component={AboutUs} />
     </div>
   );
 }
