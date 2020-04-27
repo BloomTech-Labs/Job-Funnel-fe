@@ -1099,6 +1099,15 @@ footer h4 {
   background: #171717;
   color: #ffffff;
 }
+.dark-mode .content {
+  background-color: #1f1f1f;
+}
+.dark-mode .job-list {
+  background: #171717;
+}
+.dark-mode .job-card {
+  background-color: #1f1f1f;
+}
 .dashboard {
   display: flex;
 }
