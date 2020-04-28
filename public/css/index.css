@@ -1150,7 +1150,7 @@ footer h4 {
 }
 .dashboard .display .search .bottom-wrap {
   display: flex;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .dashboard .display .search .bottom-wrap .jobs-list {
   width: 65%;
@@ -1241,6 +1241,8 @@ footer h4 {
 .dashboard .display .search .bottom-wrap .saved-applied-wrap .top-box .saved-jobs-list .saved-job-card button {
   margin-left: auto;
   cursor: pointer;
+  background-color: lightgray;
+  border: none;
 }
 .dashboard .display .search .bottom-wrap .saved-applied-wrap .bottom-box {
   display: flex;
@@ -1265,6 +1267,12 @@ footer h4 {
   margin-bottom: 5px;
   padding: 5px;
 }
+.dashboard .display .search .bottom-wrap .saved-applied-wrap .bottom-box .applied-job-card button {
+  margin-left: auto;
+  cursor: pointer;
+  background-color: lightgray;
+  border: none;
+}
 .dashboard .display .search .bottom-wrap .saved-applied-wrap h4 {
   position: sticky;
   top: 0;
@@ -1277,7 +1285,7 @@ footer h4 {
 }
 .dashboard .display .board {
   height: calc(100vh - 75px);
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .job-details-container-2 {
   height: 100vh;

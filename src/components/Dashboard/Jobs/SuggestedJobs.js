@@ -56,6 +56,7 @@ export default function SuggestedJobs() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("LOADING TRUE");
     setLoading(true);
 
     const searchTerm = {
