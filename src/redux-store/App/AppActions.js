@@ -1,20 +1,17 @@
 import axiosWithAuth from "../../utils/axiosWithAuth.js";
 
-
-export const LOADING_START = 'LOADING_START';
-export const LOADING_DONE = 'LOADING_DONE';
-export const LOGIN_FAILED = 'LOGIN_FAILED';
-export const LOGOUT = 'LOGOUT';
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';
-export const SET_OTHER_USER = 'SET_OTHER_USER';
-export const WIPE_OTHER_USER = 'WIPE_OTHER_USER';
-export const SAVED_JOBS = 'SAVED_JOBS';
-export const DELETE_JOBS = 'DELETE_JOBS';
+export const LOADING_START = "LOADING_START";
+export const LOADING_DONE = "LOADING_DONE";
+export const LOGIN_FAILED = "LOGIN_FAILED";
+export const LOGOUT = "LOGOUT";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const SET_OTHER_USER = "SET_OTHER_USER";
+export const WIPE_OTHER_USER = "WIPE_OTHER_USER";
+export const SAVED_JOBS = "SAVED_JOBS";
+export const DELETE_JOBS = "DELETE_JOBS";
 export const DELETE_APPLIED = "DELETE_APPLIED";
-export const GET_SAVED_APPLIED_JOBS = 'GET_SAVED_APPLIED_JOBS';
+export const GET_SAVED_APPLIED_JOBS = "GET_SAVED_APPLIED_JOBS";
 export const APPLIED_JOBS = "APPLIED_JOBS";
-
-
 
 // export const loadingStart = () =>{
 //     return { type: LOADING_START, payload: null };
@@ -176,88 +173,90 @@ export const adminDeleteProfilePicture = (id, setPictureLoading) => (
 //     });
 // };
 
+export const updateSaved = (saved, user_id) => (dispatch) => {
+  axiosWithAuth()
+    .post("/saved/", saved)
+    .then((res) => {
+      console.log("saved updated", res.data);
 
-export const updateSaved = (saved, user_id) => dispatch => {
-    axiosWithAuth().post('/saved/', saved)
-        .then(res => {
-            console.log('saved updated', res.data);
-
-            //TO-DO: update BE to return a full job object to avoid extra call (use SAVED_JOBS)
-            axiosWithAuth().get(`/saved/${user_id}`)
-                .then(res => {
-                    console.log('response from save jobs', res.data)
-                    dispatch({ type: SAVED_JOBS, payload: res.data });
-                })
-                .catch(error => {
-                    console.error(error.message)
-                })
-
+      //TO-DO: update BE to return a full job object to avoid extra call (use SAVED_JOBS)
+      axiosWithAuth()
+        .get(`/saved/${user_id}`)
+        .then((res) => {
+          console.log("response from save jobs", res.data);
+          dispatch({ type: SAVED_JOBS, payload: res.data });
         })
-        .catch(err => {
-            console.log(err)
+        .catch((error) => {
+          console.error(error.message);
         });
-    return null;
-}
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  return null;
+};
 
-export const deleteSaved = (job_id) => dispatch => {
-    console.log('deleting')
-    axiosWithAuth().delete(`/saved/${job_id}`)
-        .then(res => {
-            console.log('erased', res.data);
-            dispatch({ type: DELETE_JOBS, payload: job_id });
-        })
-        .catch(err => {
-            console.log(err)
-        });
-    return null;
-}
+export const deleteSaved = (job_id) => (dispatch) => {
+  console.log("deleting saved");
+  axiosWithAuth()
+    .delete(`/saved/${job_id}`)
+    .then((res) => {
+      console.log("erased", res.data);
+      dispatch({ type: DELETE_JOBS, payload: job_id });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  return null;
+};
 
-export const getSavedAppliedJobs = (user_id) => dispatch => {
-    axiosWithAuth().get(`/saved/${user_id}`)
-        .then(res => {
-            console.log('response from save jobs', res.data)
-            // let SavedCopy = res.data.filter((e) => e.status === "saved")
-            // setSavedJobs(SavedCopy)
-            // setLoading(false);
-            // console.log('SAVED JOBS HERE: ', SavedCopy)
-            dispatch( { type: GET_SAVED_APPLIED_JOBS, payload: res.data } );
-        })
-        .catch(error => {
-            console.error(error.message)
-            // setLoading(false);
-        })
-}
+export const deleteApplied = (job_id) => (dispatch) => {
+  console.log("deleting applied");
+  axiosWithAuth()
+    .delete(`/saved/${job_id}`)
+    .then((res) => {
+      console.log("erased", res.data);
+      dispatch({ type: DELETE_APPLIED, payload: job_id });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  return null;
+};
 
-
+export const getSavedAppliedJobs = (user_id) => (dispatch) => {
+  axiosWithAuth()
+    .get(`/saved/${user_id}`)
+    .then((res) => {
+      console.log("response from save jobs", res.data);
+      // let SavedCopy = res.data.filter((e) => e.status === "saved")
+      // setSavedJobs(SavedCopy)
+      // setLoading(false);
+      // console.log('SAVED JOBS HERE: ', SavedCopy)
+      dispatch({ type: GET_SAVED_APPLIED_JOBS, payload: res.data });
+    })
+    .catch((error) => {
+      console.error(error.message);
+      // setLoading(false);
+    });
+};
 
 export const updateApplied = (applied, user_id) => (dispatch) => {
   console.log(" applied from actions", applied);
 
-    axiosWithAuth()
-      .post("/saved/", applied)
-      .then((res) => {
-            //TO-DO: update BE to return a full job object to avoid extra call (use SAVED_JOBS)
-            axiosWithAuth().get(`/saved/${user_id}`)
-            .then(res => {
-                console.log('response from save jobs', res.data)
-                dispatch({ type: APPLIED_JOBS, payload: res.data });
-            })
-            .catch(error => {
-                console.error(error.message)
-            })
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-};
-
-
-export const deleteApplied = (job_id) => (dispatch) => {
-  console.log("deleting applied from actions", job_id);
   axiosWithAuth()
-    .delete(`/saved/${job_id}`)
+    .post("/saved/", applied)
     .then((res) => {
-      dispatch({ type: DELETE_APPLIED, payload: res.data });
+      //TO-DO: update BE to return a full job object to avoid extra call (use SAVED_JOBS)
+      axiosWithAuth()
+        .get(`/saved/${user_id}`)
+        .then((res) => {
+          console.log("response from save jobs", res.data);
+          dispatch({ type: APPLIED_JOBS, payload: res.data });
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
     })
     .catch((err) => {
       console.log(err);
