@@ -981,6 +981,7 @@ footer h4 {
 .dark-mode #right-nav #saved,
 .dark-mode #right-nav #applied {
   border: 1px solid #1f1f1f;
+  background-color: #1f1f1f;
 }
 .dark-mode .saved-jobs-main .saved-header {
   background-color: #1f1f1f;
@@ -1102,10 +1103,20 @@ footer h4 {
 .dark-mode .content {
   background-color: #1f1f1f;
 }
-.dark-mode .job-list {
-  background: #171717;
+.dark-mode .jobs-list {
+  background-color: #171717;
 }
-.dark-mode .job-card {
+.dark-mode .dashboard .display .search .bottom-wrap .jobs-list .job-card {
+  border: none;
+  background-color: #1f1f1f;
+}
+.dark-mode .saved-applied-wrap {
+  background-color: #171717;
+}
+.dark-mode .saved-applied-wrap h4 {
+  color: #1f1f1f;
+}
+.dark-mode .saved-applied-wrap .saved-job-card {
   background-color: #1f1f1f;
 }
 .dashboard {

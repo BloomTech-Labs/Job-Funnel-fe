@@ -73,6 +73,7 @@
   #right-nav #saved,
   #right-nav #applied {
     border: 1px solid @darkmode-header;
+    background-color: @darkmode-header;
   }
 
   .saved-jobs-main {
@@ -239,11 +240,25 @@
   .content {
     background-color: @darkmode-header;
   }
-  .job-list {
-    background: @darkmode-background;
+
+  .jobs-list {
+    background-color: @darkmode-background;
   }
 
-  .job-card {
+  .dashboard .display .search .bottom-wrap .jobs-list .job-card {
+    border: none;
     background-color: @darkmode-header;
+  }
+
+  .saved-applied-wrap {
+    background-color: @darkmode-background;
+
+    h4 {
+      color: @darkmode-header;
+    }
+
+    .saved-job-card {
+      background-color: @darkmode-header;
+    }
   }
 }
