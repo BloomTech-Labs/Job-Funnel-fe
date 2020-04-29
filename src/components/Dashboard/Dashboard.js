@@ -7,7 +7,6 @@ import axiosWithAuth from "../../utils/axiosWithAuth";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getCurrentUser } from "./../../redux-store/App/AppActions";
-import { Loading } from "./Loading";
 
 function Dashboard(props) {
   const tabs = ["Search", "Board"];

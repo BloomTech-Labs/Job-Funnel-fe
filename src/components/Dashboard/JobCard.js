@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosWithAuth from "../../utils/axiosWithAuth";
 import {
   updateSaved,
   deleteSaved,
@@ -8,12 +7,7 @@ import {
 } from "../../redux-store/App/AppActions";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faChevronDown,
-  faChevronUp,
-} from "@fortawesome/free-solid-svg-icons";
-import { faHeart as heartOutline } from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { states } from "../../data";
 import heart from "./../../images/heartEmpty.svg";
 import heartFull from "./../../images/heartFull.svg";
@@ -28,8 +22,7 @@ const ModalStyle = {
     backgroundColor: "white",
     top: "20%",
     marginBottom: "50px",
-    /* 			overflowY: 'auto',
-     */ left: "30%",
+    left: "30%",
     right: "30%",
     width: "40vw",
     height: "auto",

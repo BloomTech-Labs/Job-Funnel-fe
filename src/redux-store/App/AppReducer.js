@@ -27,30 +27,19 @@ const initialState = {
 };
 
 export const AppReducer = (state = initialState, action) => {
-  // console.log('AppReducer initialState: ', initialState);
-  // console.log('AppReducer firing: ', action);
   switch (action.type) {
     case SET_CURRENT_USER:
-      // console.log('SET_CURRENT_USER FIRING', state, action.payload);
       return {
         ...state,
         currentUser: { ...state.currentUser, ...action.payload },
         loginFailed: false,
       };
     case SET_OTHER_USER:
-      // console.log('SET_OTHER_USER FIRING', state, action.payload);
       return {
         ...state,
         otherUser: { ...state.otherUser, ...action.payload },
       };
-    case WIPE_OTHER_USER:
-      // console.log('WIPE_OTHER_USER FIRING', state, action.payload);
-      return {
-        ...state,
-        otherUser: "",
-      };
     case LOGIN_FAILED:
-      // console.log('SET_CURRENT_USER FIRING', state);
       return {
         ...state,
         loginFailed: true,
@@ -61,7 +50,6 @@ export const AppReducer = (state = initialState, action) => {
         currentUser: "",
       };
     case SAVED_JOBS:
-      console.log("from reducer");
       let arr = [];
       let obj = {};
 
@@ -129,7 +117,6 @@ export const AppReducer = (state = initialState, action) => {
       };
 
     case APPLIED_JOBS:
-      console.log("from reducer");
       let arr2 = [];
       let obj2 = {};
 
@@ -147,7 +134,6 @@ export const AppReducer = (state = initialState, action) => {
       };
 
     default:
-      //console.log('REDUCER DEFAULT');
       return state;
   }
 };
