@@ -9,9 +9,6 @@ import Register from "./components/Account/Register.js";
 import Dashboard from "../src/components/Dashboard/Dashboard";
 import Header from "./components/Header.js";
 import LandingPage from "./components/Account/LandingPage";
-import JobDetails from "./components/Dashboard/Jobs/JobDetails";
-import AboutUs from "./components/AboutUs";
-
 import { getCurrentUser } from "./redux-store/App/AppActions.js";
 import { Leftnav } from "./components/Dashboard/Leftnav.js";
 
@@ -21,17 +18,19 @@ function App(props) {
   const location = useLocation();
 
   useEffect(() => {
-    console.log('APP', props)
+    console.log("APP", props);
 
-    if (!props.loginFailed && !props.currentUser && sessionStorage.getItem('token')) {
+    if (
+      !props.loginFailed &&
+      !props.currentUser &&
+      sessionStorage.getItem("token")
+    ) {
       props.getCurrentUser();
       setLoading(false);
     } else {
       setLoading(false);
     }
-
-  }, [props.currentUser])
-  
+  }, [props.currentUser]);
 
   const changeTheme = (e) => {
     setTheme(e.target.value);
@@ -41,13 +40,11 @@ function App(props) {
     <div>
       <link rel="stylesheet" type="text/css" href={theme} />
       <Header changeTheme={changeTheme} />
-      <PrivateRoute path='/Profile' component={Profile} />
-      <PrivateRoute path='/Dashboard' component={Dashboard} />
-      <PrivateRoute exact path='/Dashboard/Job/:id' component={JobDetails} />
-      <Route exact path='/' component={LandingPage} />
-      <Route exact path='/Login' component={Login} />
-      <Route exact path='/Register' component={Register} />
-      <Route exact path='/About' component={AboutUs} />
+      <PrivateRoute path="/Profile" component={Profile} />
+      <PrivateRoute path="/Dashboard" component={Dashboard} />
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/Login" component={Login} />
+      <Route exact path="/Register" component={Register} />
     </div>
   );
 }

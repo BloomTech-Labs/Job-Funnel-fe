@@ -13,7 +13,6 @@
       font-size: 1.6rem;
       cursor: pointer;
       color: #504e4e;
-      
     }
   }
 
@@ -30,13 +29,13 @@
         height: 10%;
         padding-top: 20px;
         padding-bottom: 20px;
-    
+
         input {
           margin-right: 10px;
           width: 140px;
           padding-left: 7px;
         }
-    
+
         .dropdownRoot {
           margin-right: 10px;
           box-sizing: border-box;
@@ -46,14 +45,14 @@
 
       .bottom-wrap {
         display: flex;
-        background-color: #FAFAFA;
+        background-color: #fafafa;
 
         .jobs-list {
           width: 65%;
           // border-top: 1px solid lightgray;
           overflow-y: scroll;
           height: calc(100vh - 149px);
-    
+
           .job-card {
             display: flex;
             flex-direction: column;
@@ -63,12 +62,11 @@
             border-radius: 5px;
             padding: 10px 10px 0 10px;
             // transition: height 0.2s linear; //isn't working with height auto
-    
+
             .first-row {
               display: flex;
               align-items: center;
-              
-    
+
               .company {
                 font-size: 1.6rem;
                 font-weight: 500;
@@ -90,7 +88,6 @@
               font-weight: 300;
               margin-bottom: 10px;
               letter-spacing: 0.6px;
-              
             }
 
             .content {
@@ -113,13 +110,10 @@
                 border: 1px solid transparent;
                 border-radius: 5px;
                 color: white;
-                
               }
             }
-
           }
         }
-
 
         .saved-applied-wrap {
           display: flex;
@@ -138,7 +132,6 @@
             margin: 10px 0 20px 0;
             overflow-y: scroll;
 
-
             .saved-jobs-list {
               display: flex;
               flex-direction: column;
@@ -155,10 +148,11 @@
                 button {
                   margin-left: auto;
                   cursor: pointer;
+                  background-color: lightgray;
+                  border: none;
                 }
               }
             }
-
           }
 
           .bottom-box {
@@ -184,6 +178,13 @@
               border-radius: 5px;
               margin-bottom: 5px;
               padding: 5px;
+
+              button {
+                margin-left: auto;
+                cursor: pointer;
+                background-color: lightgray;
+                border: none;
+              }
             }
           }
 
@@ -199,14 +200,11 @@
           }
         }
       }
-
     }
 
     .board {
       height: calc(100vh - 75px);
-      background-color: #FAFAFA;
+      background-color: #fafafa;
     }
-
   }
-
 }
